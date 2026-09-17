@@ -1,0 +1,552 @@
+{
+  "app": "COPPERBENCH",
+  "schema": 1,
+  "version": "1.0.0",
+  "id": "golden-coupon",
+  "title": "Geometry proof — two-layer coupon",
+  "created": "2026-09-17T00:00:00.000Z",
+  "updated": "2026-09-17T00:00:00.000Z",
+  "board": {
+    "width": 40,
+    "height": 30,
+    "thickness": 1.6,
+    "shape": "rect",
+    "radius": 3,
+    "points": [],
+    "color": "green"
+  },
+  "parts": [
+    {
+      "id": "p_38cf4516378c",
+      "name": "Test point · 2 mm",
+      "category": "Utility",
+      "body": {
+        "kind": "testpoint",
+        "w": 1.2,
+        "h": 1.2,
+        "z": 1.5
+      },
+      "pads": [
+        {
+          "number": "1",
+          "x": 0,
+          "y": 0,
+          "w": 2,
+          "h": 2,
+          "drill": 0,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "top",
+          "net": "n_3c4d9032451f"
+        }
+      ],
+      "ref": "TP1",
+      "value": "Test point",
+      "source": "Automated fixture geometry, not a certified purchased component.",
+      "verified": true,
+      "libraryId": "testpoint",
+      "x": 8,
+      "y": 8,
+      "rotation": 0,
+      "side": "top",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 2.6,
+        "size": 1.3,
+        "visible": false
+      }
+    },
+    {
+      "id": "p_5663137c0ca2",
+      "name": "Test point · 2 mm",
+      "category": "Utility",
+      "body": {
+        "kind": "testpoint",
+        "w": 1.2,
+        "h": 1.2,
+        "z": 1.5
+      },
+      "pads": [
+        {
+          "number": "1",
+          "x": 0,
+          "y": 0,
+          "w": 2,
+          "h": 2,
+          "drill": 0,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "top",
+          "net": "n_3c4d9032451f"
+        }
+      ],
+      "ref": "TP2",
+      "value": "Test point",
+      "source": "Automated fixture geometry, not a certified purchased component.",
+      "verified": true,
+      "libraryId": "testpoint",
+      "x": 20,
+      "y": 8,
+      "rotation": 0,
+      "side": "top",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 2.6,
+        "size": 1.3,
+        "visible": false
+      }
+    },
+    {
+      "id": "p_660da95c2e38",
+      "name": "Test point · 2 mm",
+      "category": "Utility",
+      "body": {
+        "kind": "testpoint",
+        "w": 1.2,
+        "h": 1.2,
+        "z": 1.5
+      },
+      "pads": [
+        {
+          "number": "1",
+          "x": 0,
+          "y": 0,
+          "w": 2,
+          "h": 2,
+          "drill": 0,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "top",
+          "net": "n_bd2a5b6e7b31"
+        }
+      ],
+      "ref": "TP3",
+      "value": "Test point",
+      "source": "Automated fixture geometry, not a certified purchased component.",
+      "verified": true,
+      "libraryId": "testpoint",
+      "x": 8,
+      "y": 19,
+      "rotation": 0,
+      "side": "bottom",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 2.6,
+        "size": 1.3,
+        "visible": false
+      }
+    },
+    {
+      "id": "p_2f722535ced0",
+      "name": "Test point · 2 mm",
+      "category": "Utility",
+      "body": {
+        "kind": "testpoint",
+        "w": 1.2,
+        "h": 1.2,
+        "z": 1.5
+      },
+      "pads": [
+        {
+          "number": "1",
+          "x": 0,
+          "y": 0,
+          "w": 2,
+          "h": 2,
+          "drill": 0,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "top",
+          "net": "n_bd2a5b6e7b31"
+        }
+      ],
+      "ref": "TP4",
+      "value": "Test point",
+      "source": "Automated fixture geometry, not a certified purchased component.",
+      "verified": true,
+      "libraryId": "testpoint",
+      "x": 22,
+      "y": 19,
+      "rotation": 0,
+      "side": "bottom",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 2.6,
+        "size": 1.3,
+        "visible": false
+      }
+    },
+    {
+      "id": "p_1af9e3d52db7",
+      "name": "Test point · 2 mm",
+      "category": "Utility",
+      "body": {
+        "kind": "testpoint",
+        "w": 1.2,
+        "h": 1.2,
+        "z": 1.5
+      },
+      "pads": [
+        {
+          "number": "1",
+          "x": 0,
+          "y": 0,
+          "w": 2,
+          "h": 2,
+          "drill": 0,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "top",
+          "net": "n_6bb960bb8010"
+        }
+      ],
+      "ref": "TP5",
+      "value": "Test point",
+      "source": "Automated fixture geometry, not a certified purchased component.",
+      "verified": true,
+      "libraryId": "testpoint",
+      "x": 8,
+      "y": 25,
+      "rotation": 0,
+      "side": "bottom",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 2.6,
+        "size": 1.3,
+        "visible": false
+      }
+    },
+    {
+      "id": "p_e4c7d6815375",
+      "name": "Test point · 2 mm",
+      "category": "Utility",
+      "body": {
+        "kind": "testpoint",
+        "w": 1.2,
+        "h": 1.2,
+        "z": 1.5
+      },
+      "pads": [
+        {
+          "number": "1",
+          "x": 0,
+          "y": 0,
+          "w": 2,
+          "h": 2,
+          "drill": 0,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "top",
+          "net": "n_6bb960bb8010"
+        }
+      ],
+      "ref": "TP6",
+      "value": "Test point",
+      "source": "Automated fixture geometry, not a certified purchased component.",
+      "verified": true,
+      "libraryId": "testpoint",
+      "x": 22,
+      "y": 25,
+      "rotation": 0,
+      "side": "top",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 2.6,
+        "size": 1.3,
+        "visible": false
+      }
+    },
+    {
+      "id": "p_9c331668f502",
+      "name": "Header · 1 × 2",
+      "category": "Connectors",
+      "body": {
+        "kind": "header",
+        "w": 5.08,
+        "h": 2.54,
+        "z": 5
+      },
+      "pads": [
+        {
+          "number": "1",
+          "x": -1.27,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "both",
+          "net": "n_3c4d9032451f"
+        },
+        {
+          "number": "2",
+          "x": 1.27,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n_bd2a5b6e7b31"
+        }
+      ],
+      "ref": "J1",
+      "value": "1×2 / 2.54",
+      "source": "Parametric geometry; check against the selected component datasheet.",
+      "verified": true,
+      "libraryId": "header2",
+      "x": 30,
+      "y": 12,
+      "rotation": 90,
+      "side": "top",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 3.27,
+        "size": 1.3,
+        "visible": false
+      }
+    }
+  ],
+  "nets": [
+    {
+      "id": "n_3c4d9032451f",
+      "name": "TOP_LINK",
+      "width": 0.4
+    },
+    {
+      "id": "n_bd2a5b6e7b31",
+      "name": "BOTTOM_LINK",
+      "width": 0.4
+    },
+    {
+      "id": "n_6bb960bb8010",
+      "name": "VIA_LINK",
+      "width": 0.4
+    }
+  ],
+  "traces": [
+    {
+      "id": "t_13d8bb238443",
+      "net": "n_3c4d9032451f",
+      "points": [
+        {
+          "x": 8,
+          "y": 8
+        },
+        {
+          "x": 20,
+          "y": 8
+        }
+      ],
+      "layer": "top",
+      "width": 0.4,
+      "locked": false
+    },
+    {
+      "id": "t_4c70d88509ce",
+      "net": "n_bd2a5b6e7b31",
+      "points": [
+        {
+          "x": 8,
+          "y": 19
+        },
+        {
+          "x": 22,
+          "y": 19
+        }
+      ],
+      "layer": "bottom",
+      "width": 0.6,
+      "locked": false
+    },
+    {
+      "id": "t_5486740f1f6f",
+      "net": "n_6bb960bb8010",
+      "points": [
+        {
+          "x": 8,
+          "y": 25
+        },
+        {
+          "x": 14,
+          "y": 25
+        }
+      ],
+      "layer": "bottom",
+      "width": 0.4,
+      "locked": false
+    },
+    {
+      "id": "t_180834146c97",
+      "net": "n_6bb960bb8010",
+      "points": [
+        {
+          "x": 14,
+          "y": 25
+        },
+        {
+          "x": 22,
+          "y": 25
+        }
+      ],
+      "layer": "top",
+      "width": 0.4,
+      "locked": false
+    },
+    {
+      "id": "t_5ccc80a382b1",
+      "net": "n_3c4d9032451f",
+      "points": [
+        {
+          "x": 20,
+          "y": 8
+        },
+        {
+          "x": 25,
+          "y": 8
+        },
+        {
+          "x": 30,
+          "y": 10.73
+        }
+      ],
+      "layer": "top",
+      "width": 0.4,
+      "locked": false
+    },
+    {
+      "id": "t_d8bfd06d9427",
+      "net": "n_bd2a5b6e7b31",
+      "points": [
+        {
+          "x": 22,
+          "y": 19
+        },
+        {
+          "x": 30,
+          "y": 19
+        },
+        {
+          "x": 30,
+          "y": 13.27
+        }
+      ],
+      "layer": "bottom",
+      "width": 0.4,
+      "locked": false
+    }
+  ],
+  "vias": [
+    {
+      "id": "golden-via",
+      "x": 14,
+      "y": 25,
+      "diameter": 1,
+      "drill": 0.5,
+      "net": "n_6bb960bb8010",
+      "tented": false
+    }
+  ],
+  "holes": [
+    {
+      "id": "golden-hole",
+      "x": 3,
+      "y": 3,
+      "drill": 2,
+      "slot": 0,
+      "rotation": 0,
+      "plated": false
+    },
+    {
+      "id": "golden-slot",
+      "x": 36,
+      "y": 25,
+      "drill": 1.2,
+      "slot": 2,
+      "rotation": 30,
+      "plated": false
+    }
+  ],
+  "cutouts": [],
+  "keepouts": [],
+  "zones": [],
+  "art": [
+    {
+      "id": "golden-top-text",
+      "kind": "text",
+      "text": "TOP",
+      "x": 5,
+      "y": 12,
+      "size": 1.5,
+      "width": 0.2,
+      "rotation": 0,
+      "layer": "top",
+      "mirror": false
+    },
+    {
+      "id": "golden-bottom-text",
+      "kind": "text",
+      "text": "BOTTOM",
+      "x": 19,
+      "y": 4,
+      "size": 1.1,
+      "width": 0.18,
+      "rotation": 0,
+      "layer": "bottom",
+      "mirror": false
+    }
+  ],
+  "assets": [],
+  "profile": {
+    "id": "oshpark-2l",
+    "name": "OSH Park · 2 layer",
+    "verified": "2026-09-17",
+    "revision": 1,
+    "source": "https://docs.oshpark.com/services/two-layer/",
+    "minTrace": 0.1524,
+    "clearance": 0.1524,
+    "edge": 0.381,
+    "minDrill": 0.254,
+    "minRing": 0.127,
+    "minSlot": 0.508,
+    "minMaskWeb": 0.1016,
+    "minSilk": 0.127,
+    "maskExpansion": 0.075,
+    "minHoleGap": 0.127,
+    "minCutout": 1.01,
+    "minWidth": 6.35,
+    "minHeight": 6.35,
+    "maxWidth": 406.4,
+    "maxHeight": 558.8
+  },
+  "settings": {
+    "grid": 1.27,
+    "traceWidth": 0.4,
+    "viaDiameter": 0.9,
+    "viaDrill": 0.4,
+    "zoneStep": 0.25
+  },
+  "assumptions": [
+    {
+      "id": "assume_14d71b0c58bd",
+      "text": "Two copper layers; through vias only. This layout does not verify circuit function.",
+      "status": "open"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "fixture-note",
+      "text": "Software geometry fixture. Not manufacturer-approved or physically fabricated."
+    }
+  ],
+  "baseline": null
+}

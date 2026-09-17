@@ -1,0 +1,712 @@
+{
+  "app": "COPPERBENCH",
+  "schema": 2,
+  "version": "1.1.0",
+  "id": "uno-r3-carrier-board-1",
+  "title": "Arduino Uno R3 carrier starter",
+  "created": "2026-09-17T00:00:00.000Z",
+  "updated": "2026-09-17T00:00:00.000Z",
+  "board": {
+    "width": 88.58,
+    "height": 73.34,
+    "thickness": 1.6,
+    "shape": "rounded",
+    "radius": 3,
+    "points": [],
+    "color": "blue"
+  },
+  "parts": [
+    {
+      "id": "uno-r3-carrier-p-3",
+      "name": "Arduino Uno R3 · Carrier sockets",
+      "category": "Platforms",
+      "ref": "J1",
+      "value": "Arduino Uno R3 mating sockets",
+      "verified": false,
+      "source": "https://docs.arduino.cc/resources/pinouts/A000066-full-pinout.pdf\nhttps://docs.arduino.cc/resources/datasheets/A000066-datasheet.pdf\nhttps://raw.githubusercontent.com/KiCad/kicad-footprints/master/Module.pretty/Arduino_UNO_R3.kicad_mod",
+      "defaultSide": "top",
+      "body": {
+        "kind": "platform",
+        "w": 68.58,
+        "h": 53.34,
+        "z": 2.6
+      },
+      "pads": [
+        {
+          "number": "POWER.1",
+          "signal": "NC",
+          "bank": "POWER",
+          "x": -6.35,
+          "y": 24.13,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "both",
+          "net": null,
+          "pinType": "nc"
+        },
+        {
+          "number": "POWER.2",
+          "signal": "IOREF",
+          "bank": "POWER",
+          "x": -3.81,
+          "y": 24.13,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "power"
+        },
+        {
+          "number": "POWER.3",
+          "signal": "RESET",
+          "bank": "POWER",
+          "x": -1.27,
+          "y": 24.13,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "POWER.4",
+          "signal": "3V3",
+          "bank": "POWER",
+          "x": 1.27,
+          "y": 24.13,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "power"
+        },
+        {
+          "number": "POWER.5",
+          "signal": "5V",
+          "bank": "POWER",
+          "x": 3.81,
+          "y": 24.13,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "power"
+        },
+        {
+          "number": "POWER.6",
+          "signal": "GND",
+          "bank": "POWER",
+          "x": 6.35,
+          "y": 24.13,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "ground"
+        },
+        {
+          "number": "POWER.7",
+          "signal": "GND",
+          "bank": "POWER",
+          "x": 8.89,
+          "y": 24.13,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "ground"
+        },
+        {
+          "number": "POWER.8",
+          "signal": "VIN",
+          "bank": "POWER",
+          "x": 11.43,
+          "y": 24.13,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "power"
+        },
+        {
+          "number": "ANALOG.1",
+          "signal": "A0 / D14",
+          "bank": "ANALOG",
+          "x": 16.51,
+          "y": 24.13,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "ANALOG.2",
+          "signal": "A1 / D15",
+          "bank": "ANALOG",
+          "x": 19.05,
+          "y": 24.13,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "ANALOG.3",
+          "signal": "A2 / D16",
+          "bank": "ANALOG",
+          "x": 21.59,
+          "y": 24.13,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "ANALOG.4",
+          "signal": "A3 / D17",
+          "bank": "ANALOG",
+          "x": 24.13,
+          "y": 24.13,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "ANALOG.5",
+          "signal": "A4 / D18 / SDA",
+          "bank": "ANALOG",
+          "x": 26.67,
+          "y": 24.13,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "ANALOG.6",
+          "signal": "A5 / D19 / SCL",
+          "bank": "ANALOG",
+          "x": 29.21,
+          "y": 24.13,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "DIGITAL10.1",
+          "signal": "SCL / D19",
+          "bank": "DIGITAL10",
+          "x": -15.494,
+          "y": -24.13,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "DIGITAL10.2",
+          "signal": "SDA / D18",
+          "bank": "DIGITAL10",
+          "x": -12.954,
+          "y": -24.13,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "DIGITAL10.3",
+          "signal": "AREF",
+          "bank": "DIGITAL10",
+          "x": -10.414,
+          "y": -24.13,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "DIGITAL10.4",
+          "signal": "GND",
+          "bank": "DIGITAL10",
+          "x": -7.874,
+          "y": -24.13,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "ground"
+        },
+        {
+          "number": "DIGITAL10.5",
+          "signal": "D13 / SCK",
+          "bank": "DIGITAL10",
+          "x": -5.334,
+          "y": -24.13,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "DIGITAL10.6",
+          "signal": "D12 / MISO",
+          "bank": "DIGITAL10",
+          "x": -2.794,
+          "y": -24.13,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "DIGITAL10.7",
+          "signal": "D11 / MOSI",
+          "bank": "DIGITAL10",
+          "x": -0.254,
+          "y": -24.13,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "DIGITAL10.8",
+          "signal": "D10 / SS",
+          "bank": "DIGITAL10",
+          "x": 2.286,
+          "y": -24.13,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "DIGITAL10.9",
+          "signal": "D9",
+          "bank": "DIGITAL10",
+          "x": 4.826,
+          "y": -24.13,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "DIGITAL10.10",
+          "signal": "D8",
+          "bank": "DIGITAL10",
+          "x": 7.366,
+          "y": -24.13,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "DIGITAL8.1",
+          "signal": "D7",
+          "bank": "DIGITAL8",
+          "x": 11.43,
+          "y": -24.13,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "DIGITAL8.2",
+          "signal": "D6",
+          "bank": "DIGITAL8",
+          "x": 13.97,
+          "y": -24.13,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "DIGITAL8.3",
+          "signal": "D5",
+          "bank": "DIGITAL8",
+          "x": 16.51,
+          "y": -24.13,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "DIGITAL8.4",
+          "signal": "D4",
+          "bank": "DIGITAL8",
+          "x": 19.05,
+          "y": -24.13,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "DIGITAL8.5",
+          "signal": "D3",
+          "bank": "DIGITAL8",
+          "x": 21.59,
+          "y": -24.13,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "DIGITAL8.6",
+          "signal": "D2",
+          "bank": "DIGITAL8",
+          "x": 24.13,
+          "y": -24.13,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "DIGITAL8.7",
+          "signal": "D1 / TX",
+          "bank": "DIGITAL8",
+          "x": 26.67,
+          "y": -24.13,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "DIGITAL8.8",
+          "signal": "D0 / RX",
+          "bank": "DIGITAL8",
+          "x": 29.21,
+          "y": -24.13,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        }
+      ],
+      "mountingHoles": [
+        {
+          "x": -19.05,
+          "y": -24.13,
+          "drill": 3.2
+        },
+        {
+          "x": -20.32,
+          "y": 24.13,
+          "drill": 3.2
+        },
+        {
+          "x": 31.75,
+          "y": -8.89,
+          "drill": 3.2
+        },
+        {
+          "x": 31.75,
+          "y": 19.05,
+          "drill": 3.2
+        }
+      ],
+      "platform": {
+        "schema": 1,
+        "family": "uno-r3",
+        "revision": 1,
+        "role": "carrier",
+        "showHost": true,
+        "showPins": true,
+        "outline": [
+          {
+            "x": -34.29,
+            "y": -26.67
+          },
+          {
+            "x": 30.226,
+            "y": -26.67
+          },
+          {
+            "x": 31.75,
+            "y": -25.146
+          },
+          {
+            "x": 31.75,
+            "y": -13.716
+          },
+          {
+            "x": 34.29,
+            "y": -11.176
+          },
+          {
+            "x": 34.29,
+            "y": 21.59
+          },
+          {
+            "x": 31.75,
+            "y": 24.13
+          },
+          {
+            "x": 31.75,
+            "y": 26.67
+          },
+          {
+            "x": -34.29,
+            "y": 26.67
+          }
+        ],
+        "holePattern": [
+          {
+            "x": -19.05,
+            "y": -24.13,
+            "drill": 3.2
+          },
+          {
+            "x": -20.32,
+            "y": 24.13,
+            "drill": 3.2
+          },
+          {
+            "x": 31.75,
+            "y": -8.89,
+            "drill": 3.2
+          },
+          {
+            "x": 31.75,
+            "y": 19.05,
+            "drill": 3.2
+          }
+        ],
+        "geometryStatus": "nominal-review-required",
+        "sourceDate": "2026-09-17"
+      },
+      "label": {
+        "x": 0,
+        "y": 0,
+        "size": 1.3,
+        "visible": false
+      },
+      "libraryId": "platform-uno-r3-carrier",
+      "x": 44.29,
+      "y": 36.67,
+      "rotation": 0,
+      "side": "top",
+      "locked": true
+    }
+  ],
+  "nets": [],
+  "traces": [],
+  "vias": [],
+  "holes": [],
+  "cutouts": [],
+  "keepouts": [],
+  "zones": [],
+  "art": [],
+  "assets": [],
+  "profile": {
+    "id": "oshpark-2l",
+    "name": "OSH Park · 2 layer",
+    "verified": "2026-09-17",
+    "revision": 1,
+    "source": "https://docs.oshpark.com/services/two-layer/",
+    "minTrace": 0.1524,
+    "clearance": 0.1524,
+    "edge": 0.381,
+    "minDrill": 0.254,
+    "minRing": 0.127,
+    "minSlot": 0.508,
+    "minMaskWeb": 0.1016,
+    "minSilk": 0.127,
+    "maskExpansion": 0.075,
+    "minHoleGap": 0.127,
+    "minCutout": 1.01,
+    "minWidth": 6.35,
+    "minHeight": 6.35,
+    "maxWidth": 406.4,
+    "maxHeight": 558.8
+  },
+  "settings": {
+    "grid": 1.27,
+    "traceWidth": 0.4,
+    "viaDiameter": 0.9,
+    "viaDrill": 0.4,
+    "zoneStep": 0.25
+  },
+  "assumptions": [
+    {
+      "id": "uno-r3-carrier-assume-2",
+      "text": "Two copper layers; through vias only. This layout does not verify circuit function.",
+      "status": "open"
+    },
+    {
+      "id": "uno-r3-carrier-a-4",
+      "text": "Uno R3 / ATmega328P reference: 5 V I/O. Check IOREF and power direction.",
+      "status": "open"
+    },
+    {
+      "id": "uno-r3-carrier-a-5",
+      "text": "32 perimeter contacts (8 power + 6 analog + 10 + 8 digital). USB-left top view. The 4.064 mm D8–D7 gap is intentional. No ICSP 2×3 header or R4-specific features are included.",
+      "status": "open"
+    },
+    {
+      "id": "uno-r3-carrier-a-6",
+      "text": "Verify the selected Uno R3 or clone against the nominal header and mounting-hole coordinates before ordering.",
+      "status": "open"
+    },
+    {
+      "id": "uno-r3-carrier-a-7",
+      "text": "Choose male / stackable shield headers; check tail length, spacer height, USB-B and barrel-jack clearance.",
+      "status": "open"
+    },
+    {
+      "id": "uno-r3-carrier-a-8",
+      "text": "ICSP is not included. Add and verify it separately when your shield requires an ICSP SPI connection.",
+      "status": "open"
+    },
+    {
+      "id": "uno-r3-carrier-a-9",
+      "text": "No blanket electrical/mechanical compatibility claim for Uno R4, Uno Q, Mega, or third-party clones.",
+      "status": "open"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "uno-r3-carrier-e-10",
+      "text": "Nominal mating geometry transcribed from published pinouts/dimensioned references; no physical fit or manufacturer acceptance verified.",
+      "source": "https://docs.arduino.cc/resources/pinouts/A000066-full-pinout.pdf\nhttps://docs.arduino.cc/resources/datasheets/A000066-datasheet.pdf\nhttps://raw.githubusercontent.com/KiCad/kicad-footprints/master/Module.pretty/Arduino_UNO_R3.kicad_mod"
+    }
+  ],
+  "baseline": null,
+  "platformTemplate": {
+    "schema": 1,
+    "family": "uno-r3",
+    "revision": 1,
+    "role": "carrier",
+    "margin": 10
+  }
+}

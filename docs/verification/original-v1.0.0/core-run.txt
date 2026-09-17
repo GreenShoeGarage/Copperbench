@@ -1,0 +1,34 @@
+ok 1 - Native schema-1 JSON round-trip preserves an entire document
+ok 2 - All library footprints pass schema validation
+ok 3 - Malformed geometry, unknown schema, and duplicate identities stop import
+ok 4 - Circular pads cannot silently stretch or turn into incorrect circles
+ok 5 - Four rotations and two face flips preserve every pin identity and coordinate
+ok 6 - Bottom flip reflects physical pin position without changing pin numbering
+ok 7 - Board resizing does not resize footprints
+ok 8 - Net merges require explicit consent and update copper consistently
+ok 9 - Deleting copper does not erase intended electrical connectivity
+ok 10 - A real microscopic break is not considered a completed connection
+ok 11 - Different layers stay electrically separate until a through via is added
+ok 12 - Crossed distinct nets are blocking shorts; undersized traces are blocked
+ok 13 - Exact route checks reject board edges, cutouts, holes and keepouts
+ok 14 - Direct selected-pin autorouting creates verified copper
+ok 15 - Obstacle-aware A* takes a different path without illegal copper
+ok 16 - Blocked autorouting reports failure and never mutates its input
+ok 17 - Two-sided autorouting inserts a real through-via transition
+ok 18 - Multi-pin autowiring produces one physically connected net
+ok 19 - Autowiring already connected pins does not add redundant copper
+ok 20 - Filled zones are actual copper and isolated islands are removed
+ok 21 - Thermal relief pours connect pads while respecting a different-net obstacle
+ok 22 - Stale copper pours block manufacturing generation
+ok 23 - Excellon plated/non-plated files preserve slot endpoints and tool diameter
+ok 24 - Gerber copper, mask, silk, outline and optional paste all reparse
+ok 25 - Bottom manufacturing layers are not mirrored
+ok 26 - Gerber compatibility export drops attributes but not geometry
+ok 27 - Filled silkscreen polygons stay filled after KiCad interchange
+ok 28 - KiCad subset round-trip preserves flipped/rotated pad and drill coordinates
+ok 29 - KiCad inner layers, custom pads and explicit manufacturing graphics are rejected
+ok 30 - Manufacturing reader rejects unsupported/incomplete input rather than inventing geometry
+ok 31 - Baseline comparison records added, changed, and removed objects
+ok 32 - Golden two-layer coupon has no blocking geometry findings
+
+32/32 tests passed.

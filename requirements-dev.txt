@@ -1,0 +1,5 @@
+# Development/test dependencies only. The browser app does not load these.
+# Pinned to the versions used for the repository verification run.
+playwright==1.57.0
+shapely==2.1.2
+Pillow==12.3.0

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#163e33"><meta name="description" content="COPPERBENCH is a local-first, tactile two-layer PCB workbench. Place representative 3D parts, draw or autoroute selected nets, create silkscreen, and export Gerber and drill files. No account, no telemetry.">
+<title>COPPERBENCH — a little more hands-on</title><link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a href="#canvas" class="skip">Skip to the board</a>
+<header class="app-header">
+ <div class="brand"><div class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M10 8h20v24H10zM4 13h6m-6 7h6m-6 7h6m20-14h6m-6 7h6m-6 7h6"/><path d="M17 14h7v5h-7v7h7"/></svg></div><div><span class="eyebrow">GREEN SHOE GARAGE / FIELD INSTRUMENTS</span><h1>COPPERBENCH <span class="version">v1.1.0</span></h1></div></div>
+ <div class="header-actions"><span id="saveState" class="save-state" role="status"><i></i> Starting</span><button data-action="undo" title="Undo · ⌘/Ctrl Z" class="icon-button" aria-label="Undo">↶</button><button data-action="redo" title="Redo · ⌘/Ctrl Shift Z" class="icon-button" aria-label="Redo">↷</button><button data-action="files" class="mobile-files" aria-label="Project files" title="Project files">▤</button><button data-action="open" class="quiet">Open</button><button data-action="save" class="quiet">Save JSON</button><button data-action="export" class="primary">Export board <span aria-hidden="true">↗</span></button></div>
+</header>
+<div class="project-strip"><div class="project-title"><button data-action="toggle-drawer" class="mobile-button" aria-label="Open tools and parts">☰</button><span class="project-dot" aria-hidden="true"></span><button id="titleButton" data-action="rename">Little light · learning board</button><span id="projectDimensions" class="muted"></span></div><div class="strip-actions"><select id="modeSelect" aria-label="Interface detail"><option value="easy">Easy mode</option><option value="advanced">Advanced mode</option></select><button data-action="examples">Examples</button><button data-action="fresh">Fresh start</button><button data-action="help" class="help-btn" title="Guide and keyboard shortcuts">?</button><button data-action="theme" aria-label="Switch theme" title="Light, dark and high contrast themes">◐</button></div></div>
+<main class="app-body">
+ <aside id="drawer" class="drawer" aria-label="Parts and project tools">
+  <nav class="drawer-tabs" aria-label="Project panels"><button class="active" data-panel="parts">Parts</button><button data-panel="nets">Nets</button><button data-panel="board">Board</button><button data-panel="silk">Mark</button><button data-panel="records" title="Evidence and revisions">Log</button></nav>
+  <div id="drawerContent" class="drawer-content"></div>
+  <div class="drawer-bottom"><span class="local-dot"></span><div><strong>Your bench. Your files.</strong><small>Local-first · no account · no telemetry</small></div></div>
+ </aside>
+ <section class="workspace" aria-label="PCB workbench">
+  <div class="viewbar"><div class="segmented" role="group" aria-label="Board view"><button data-view="bench" class="active">Bench <span>3D</span></button><button data-view="copper">Copper</button><button data-view="fabrication">Fabrication</button></div><div class="view-controls"><div class="side-switch"><button data-side="top" class="active">Top</button><button data-side="bottom">Bottom</button></div><button data-action="fit" title="Fit board · Home">Fit</button><button data-action="zoom-out" aria-label="Zoom out">−</button><button data-action="zoom-in" aria-label="Zoom in">+</button><button data-action="toggle-inspector" title="Show or hide inspector" aria-label="Toggle inspector">▥</button></div></div>
+  <div class="stage" id="stage"><canvas id="canvas" tabindex="0" role="application" aria-label="Interactive PCB. Use the parts and nets tables for keyboard editing. Press H for help."></canvas>
+   <div class="tool-rail" role="toolbar" aria-label="Board drawing tools">
+    <button class="active" data-tool="select" title="Select and move · V" aria-label="Select and move"><svg viewBox="0 0 24 24"><path d="M5 3l14 10-7 1-3 7z"/></svg></button>
+    <button data-tool="trace" title="Draw trace · T" aria-label="Draw a trace"><svg viewBox="0 0 24 24"><circle cx="5" cy="18" r="2"/><circle cx="19" cy="6" r="2"/><path d="M5 16v-5l6-5h6"/></svg></button>
+    <button data-tool="connect" title="Pick leads to autowire · A" aria-label="Select leads for autowiring"><svg viewBox="0 0 24 24"><path d="M5 18V6h14v12H5zM9 12h6m-3-3v6"/><circle cx="5" cy="6" r="2"/><circle cx="19" cy="18" r="2"/></svg></button>
+    <span class="tool-separator"></span>
+    <button data-tool="hole" title="Place mounting hole · O" aria-label="Place a mounting hole"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><path d="M12 2v6m0 8v6M2 12h6m8 0h6"/></svg></button>
+    <button data-tool="zone" title="Draw a copper zone · Z" aria-label="Draw copper zone"><svg viewBox="0 0 24 24"><path d="M4 4h12l4 4v12H4zM6 9l5-5M6 15L17 4M8 20L20 8M14 20l6-6"/></svg></button>
+    <button data-tool="outline" title="Draw board outline · B" aria-label="Draw board outline"><svg viewBox="0 0 24 24"><path d="M4 5h10l6 6v8H4z"/><circle cx="4" cy="5" r="1.5"/><circle cx="20" cy="11" r="1.5"/></svg></button>
+    <span class="tool-separator"></span>
+    <button data-tool="text" title="Add silkscreen text · S" aria-label="Add silkscreen text"><svg viewBox="0 0 24 24"><path d="M5 6h14M12 6v14M8 20h8M5 4v4m14-4v4"/></svg></button>
+    <button data-tool="silk-line" title="Draw silkscreen line · L" aria-label="Draw silkscreen line"><svg viewBox="0 0 24 24"><path d="M4 20L20 4M4 16v4h4M16 4h4v4"/></svg></button>
+    <button data-action="image" title="Convert image to silkscreen" aria-label="Import image as silkscreen"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4zM4 17l5-6 4 4 3-4 4 5"/><circle cx="15" cy="8" r="1"/></svg></button>
+    <span class="tool-separator"></span><button data-action="check" title="Check design · D" aria-label="Run design checks"><svg viewBox="0 0 24 24"><path d="M5 12l4 4L19 6M19 12v8H4V5h8"/></svg></button>
+   </div>
+   <div class="canvas-label"><span id="viewKicker">YOUR BOARD, HANDS-ON</span><h2 id="viewTitle">Make a connection.</h2></div>
+   <div class="board-stats" id="boardStats"></div>
+   <div class="camera-controls" id="cameraControls"><label for="tilt">Tilt <input id="tilt" type="range" min="0" max="65" value="27"><span id="tiltValue">27°</span></label><button data-action="xray" id="xrayButton" title="See pads through component bodies · X">X-ray</button><button data-action="airwires" id="airButton" class="active" title="Toggle unrouted connection lines">Airwires</button><button data-action="grid" id="gridButton" class="active" title="Toggle grid · G">Grid</button></div>
+   <div id="selectionBar" class="selection-bar" hidden></div>
+   <div id="busyBar" class="busy-bar" hidden><span class="spinner"></span><span id="busyText">Working</span><button data-action="cancel-job">Cancel</button></div>
+   <div id="tooltip" class="canvas-tooltip" hidden></div>
+   <div id="welcomeCard" class="welcome-card"><strong>Start with a part. End with a board.</strong><p>Drag a part from the drawer, or click two leads with the connect tool. Everything stays on this device.</p><button data-action="welcome-dismiss">Let’s make something <span>→</span></button></div>
+  </div>
+  <div class="contextbar"><span class="tool-name" id="toolName">SELECT</span><span id="toolHint">Drag parts to place them. R rotates. F flips a selected part.</span><div class="route-width"><label for="traceWidth">Trace</label><select id="traceWidth"><option value=".2">Fine · 0.20 mm</option><option value=".4" selected>Standard · 0.40 mm</option><option value=".8">Wide · 0.80 mm</option><option value="1.2">Heavy · 1.20 mm</option><option value="custom">Custom…</option></select></div></div>
+ </section>
+ <aside id="inspector" class="inspector" aria-label="Selection inspector"><div class="inspector-heading"><span>INSPECTOR</span><button data-action="toggle-inspector" aria-label="Close inspector">×</button></div><div id="inspectorContent" class="inspector-content"></div></aside>
+</main>
+<footer class="statusbar"><span id="statusMessage" role="status" aria-live="polite">Ready.</span><div><span id="cursorPosition">X — &nbsp; Y —</span><button data-action="units" id="unitsButton">mm</button><span id="gridStatus">1.27 mm grid</span><span class="status-build">2 LAYERS / LOCAL</span></div></footer>
+<div id="toast" role="status" aria-live="polite" hidden></div>
+<dialog id="modal"><div class="modal-header"><div><span class="eyebrow" id="modalEyebrow">COPPERBENCH</span><h2 id="modalTitle"></h2></div><button id="modalClose" aria-label="Close dialog">×</button></div><div id="modalBody" class="modal-body"></div><div id="modalFooter" class="modal-footer"></div></dialog>
+<input type="file" id="fileInput" accept=".json,.zip,.kicad_pcb,.kicad_mod,.gbr,.ger,.drl" hidden><input type="file" id="imageInput" accept="image/png,image/jpeg,image/webp,image/gif,image/svg+xml" hidden><input type="file" id="svgInput" accept=".svg" hidden>
+<noscript><p>This PCB workbench needs JavaScript. It has no network requirement; open the complete local folder or the portable HTML edition with JavaScript enabled.</p></noscript>
+<script src="vendor/jszip.min.js"></script><script src="src/core.js"></script><script src="src/geometry.js"></script><script src="src/font.js"></script>
+<script src="src/platforms.js"></script><script src="src/manufacturing.js"></script><script src="src/router.js"></script><script src="src/interchange.js"></script><script src="src/renderer.js"></script><script src="src/worker-source.js"></script><script src="src/app.js"></script>
+</body></html>

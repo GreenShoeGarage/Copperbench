@@ -1,0 +1,18 @@
+G04 COPPERBENCH 1.0.0 - inspect before ordering*
+%FSLAX46Y46*%
+%MOMM*%
+%TF.GenerationSoftware,GreenShoeGarage,COPPERBENCH,1.0.0*%
+%TF.FileFunction,Paste,Top*%
+%TF.FilePolarity,Positive*%
+%ADD10C,0.100000*%
+%ADD11C,2.000000*%
+%LPD*%
+G01*
+D10*
+D11*
+X8000000Y22000000D03*
+D11*
+X20000000Y22000000D03*
+D11*
+X22000000Y5000000D03*
+M02*

@@ -1,0 +1,22 @@
+{
+  "run_at": "2026-09-17T22:29:02.969167+00:00",
+  "node": "v22.16.0",
+  "python": "3.13.5",
+  "chromium": "Chromium 144.0.7559.96 built on Debian GNU/Linux 13 (trixie)",
+  "suites": {
+    "engine": 32,
+    "browser": 20,
+    "manufacturing": 12,
+    "packaging": 9
+  },
+  "total_passed": 73,
+  "total_tests": 73,
+  "workflow_yaml": "parsed locally; not executed on GitHub",
+  "app_sources": "all ten src/*.js files, index.html, styles.css and portable HTML match supplied release byte-for-byte",
+  "limits": [
+    "embedded browser harness uses simulated storage and intercepted download blobs",
+    "no real-origin persistence or hosted service-worker lifecycle coverage",
+    "no external CAM, manufacturer acceptance or physical fabrication verification",
+    "no remote repository created or pushed"
+  ]
+}

@@ -1,0 +1,24 @@
+PASS Boot renders 3D parts and embedded worker completes design checks
+PASS Click-to-place, rotate, flip, undo and redo use the real controls
+PASS Manual lead-to-lead trace honors selected width
+PASS Three picked leads preview and commit an actual connected route
+PASS Starter board routes all three nets without blocking geometry findings
+PASS Native JSON export blob and reviewed file-input import round-trip
+PASS Unsupported native import leaves the existing board unchanged
+PASS Fabrication reads actual files and produces a complete manufacturing ZIP blob
+PASS Unrouted boards require explicit diagnostic-export override
+PASS Board size and polygon tools edit boundaries without scaling footprints
+PASS Silkscreen text and drag-drawn shapes create editable manufacturing geometry
+PASS Image conversion embeds its original and emits real silkscreen rectangles
+PASS Executable SVG is rejected before image conversion
+PASS Custom footprint wizard produces a placeable self-contained part
+PASS Copper-zone drawing invokes worker fill and establishes physical connectivity
+PASS Searchable pin table provides an alternative to picking small pads
+PASS Baseline comparison and downloadable review report work
+PASS Autosave/reload and quota-failure recovery work with the storage test double
+PASS Dark/high-contrast themes and narrow responsive layout avoid page overflow
+PASS No external asset requests or uncaught application exceptions
+{
+  "passed": 20,
+  "total": 20
+}

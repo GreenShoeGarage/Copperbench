@@ -1,0 +1,1068 @@
+{
+  "app": "COPPERBENCH",
+  "schema": 2,
+  "version": "1.1.0",
+  "id": "pi40-addon-board-1",
+  "title": "Raspberry Pi 40-pin HAT-layout starter",
+  "created": "2026-09-17T00:00:00.000Z",
+  "updated": "2026-09-17T00:00:00.000Z",
+  "board": {
+    "width": 65,
+    "height": 56,
+    "thickness": 1.6,
+    "shape": "rounded",
+    "radius": 3,
+    "points": [],
+    "color": "green"
+  },
+  "parts": [
+    {
+      "id": "pi40-addon-p-3",
+      "name": "Raspberry Pi 40-pin · HAT-layout header",
+      "category": "Platforms",
+      "ref": "J1",
+      "value": "Raspberry Pi 40-pin mating headers",
+      "verified": false,
+      "source": "https://datasheets.raspberrypi.com/rpi4/raspberry-pi-4-mechanical-drawing.pdf\nhttps://datasheets.raspberrypi.com/hat/hat-plus-specification.pdf\nhttps://www.raspberrypi.com/documentation/computers/raspberry-pi.html#gpio-and-the-40-pin-header",
+      "defaultSide": "bottom",
+      "body": {
+        "kind": "platform",
+        "w": 65,
+        "h": 56,
+        "z": 2.6
+      },
+      "pads": [
+        {
+          "number": "1",
+          "signal": "3V3",
+          "bank": "GPIO",
+          "x": 24.13,
+          "y": -23.23,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "both",
+          "net": null,
+          "pinType": "power"
+        },
+        {
+          "number": "2",
+          "signal": "5V",
+          "bank": "GPIO",
+          "x": 24.13,
+          "y": -25.77,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "power"
+        },
+        {
+          "number": "3",
+          "signal": "GPIO2 / SDA1",
+          "bank": "GPIO",
+          "x": 21.59,
+          "y": -23.23,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "4",
+          "signal": "5V",
+          "bank": "GPIO",
+          "x": 21.59,
+          "y": -25.77,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "power"
+        },
+        {
+          "number": "5",
+          "signal": "GPIO3 / SCL1",
+          "bank": "GPIO",
+          "x": 19.05,
+          "y": -23.23,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "6",
+          "signal": "GND",
+          "bank": "GPIO",
+          "x": 19.05,
+          "y": -25.77,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "ground"
+        },
+        {
+          "number": "7",
+          "signal": "GPIO4",
+          "bank": "GPIO",
+          "x": 16.51,
+          "y": -23.23,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "8",
+          "signal": "GPIO14 / TXD",
+          "bank": "GPIO",
+          "x": 16.51,
+          "y": -25.77,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "9",
+          "signal": "GND",
+          "bank": "GPIO",
+          "x": 13.97,
+          "y": -23.23,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "ground"
+        },
+        {
+          "number": "10",
+          "signal": "GPIO15 / RXD",
+          "bank": "GPIO",
+          "x": 13.97,
+          "y": -25.77,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "11",
+          "signal": "GPIO17",
+          "bank": "GPIO",
+          "x": 11.43,
+          "y": -23.23,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "12",
+          "signal": "GPIO18",
+          "bank": "GPIO",
+          "x": 11.43,
+          "y": -25.77,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "13",
+          "signal": "GPIO27",
+          "bank": "GPIO",
+          "x": 8.89,
+          "y": -23.23,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "14",
+          "signal": "GND",
+          "bank": "GPIO",
+          "x": 8.89,
+          "y": -25.77,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "ground"
+        },
+        {
+          "number": "15",
+          "signal": "GPIO22",
+          "bank": "GPIO",
+          "x": 6.35,
+          "y": -23.23,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "16",
+          "signal": "GPIO23",
+          "bank": "GPIO",
+          "x": 6.35,
+          "y": -25.77,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "17",
+          "signal": "3V3",
+          "bank": "GPIO",
+          "x": 3.81,
+          "y": -23.23,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "power"
+        },
+        {
+          "number": "18",
+          "signal": "GPIO24",
+          "bank": "GPIO",
+          "x": 3.81,
+          "y": -25.77,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "19",
+          "signal": "GPIO10 / MOSI",
+          "bank": "GPIO",
+          "x": 1.27,
+          "y": -23.23,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "20",
+          "signal": "GND",
+          "bank": "GPIO",
+          "x": 1.27,
+          "y": -25.77,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "ground"
+        },
+        {
+          "number": "21",
+          "signal": "GPIO9 / MISO",
+          "bank": "GPIO",
+          "x": -1.27,
+          "y": -23.23,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "22",
+          "signal": "GPIO25",
+          "bank": "GPIO",
+          "x": -1.27,
+          "y": -25.77,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "23",
+          "signal": "GPIO11 / SCLK",
+          "bank": "GPIO",
+          "x": -3.81,
+          "y": -23.23,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "24",
+          "signal": "GPIO8 / CE0",
+          "bank": "GPIO",
+          "x": -3.81,
+          "y": -25.77,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "25",
+          "signal": "GND",
+          "bank": "GPIO",
+          "x": -6.35,
+          "y": -23.23,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "ground"
+        },
+        {
+          "number": "26",
+          "signal": "GPIO7 / CE1",
+          "bank": "GPIO",
+          "x": -6.35,
+          "y": -25.77,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "27",
+          "signal": "ID_SD / GPIO0",
+          "bank": "GPIO",
+          "x": -8.89,
+          "y": -23.23,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "reserved"
+        },
+        {
+          "number": "28",
+          "signal": "ID_SC / GPIO1",
+          "bank": "GPIO",
+          "x": -8.89,
+          "y": -25.77,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "reserved"
+        },
+        {
+          "number": "29",
+          "signal": "GPIO5",
+          "bank": "GPIO",
+          "x": -11.43,
+          "y": -23.23,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "30",
+          "signal": "GND",
+          "bank": "GPIO",
+          "x": -11.43,
+          "y": -25.77,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "ground"
+        },
+        {
+          "number": "31",
+          "signal": "GPIO6",
+          "bank": "GPIO",
+          "x": -13.97,
+          "y": -23.23,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "32",
+          "signal": "GPIO12",
+          "bank": "GPIO",
+          "x": -13.97,
+          "y": -25.77,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "33",
+          "signal": "GPIO13",
+          "bank": "GPIO",
+          "x": -16.51,
+          "y": -23.23,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "34",
+          "signal": "GND",
+          "bank": "GPIO",
+          "x": -16.51,
+          "y": -25.77,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "ground"
+        },
+        {
+          "number": "35",
+          "signal": "GPIO19",
+          "bank": "GPIO",
+          "x": -19.05,
+          "y": -23.23,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "36",
+          "signal": "GPIO16",
+          "bank": "GPIO",
+          "x": -19.05,
+          "y": -25.77,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "37",
+          "signal": "GPIO26",
+          "bank": "GPIO",
+          "x": -21.59,
+          "y": -23.23,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "38",
+          "signal": "GPIO20",
+          "bank": "GPIO",
+          "x": -21.59,
+          "y": -25.77,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "39",
+          "signal": "GND",
+          "bank": "GPIO",
+          "x": -24.13,
+          "y": -23.23,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "ground"
+        },
+        {
+          "number": "40",
+          "signal": "GPIO21",
+          "bank": "GPIO",
+          "x": -24.13,
+          "y": -25.77,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        }
+      ],
+      "mountingHoles": [
+        {
+          "x": 29,
+          "y": -24.5,
+          "drill": 2.7
+        },
+        {
+          "x": -29,
+          "y": -24.5,
+          "drill": 2.7
+        },
+        {
+          "x": 29,
+          "y": 24.5,
+          "drill": 2.7
+        },
+        {
+          "x": -29,
+          "y": 24.5,
+          "drill": 2.7
+        }
+      ],
+      "platform": {
+        "schema": 1,
+        "family": "pi40",
+        "revision": 1,
+        "role": "addon",
+        "showHost": true,
+        "showPins": true,
+        "outline": [
+          {
+            "x": -29.5,
+            "y": -28
+          },
+          {
+            "x": -29.7941,
+            "y": -27.9856
+          },
+          {
+            "x": -30.0853,
+            "y": -27.9424
+          },
+          {
+            "x": -30.3709,
+            "y": -27.8708
+          },
+          {
+            "x": -30.6481,
+            "y": -27.7716
+          },
+          {
+            "x": -30.9142,
+            "y": -27.6458
+          },
+          {
+            "x": -31.1667,
+            "y": -27.4944
+          },
+          {
+            "x": -31.4032,
+            "y": -27.319
+          },
+          {
+            "x": -31.6213,
+            "y": -27.1213
+          },
+          {
+            "x": -31.819,
+            "y": -26.9032
+          },
+          {
+            "x": -31.9944,
+            "y": -26.6667
+          },
+          {
+            "x": -32.1458,
+            "y": -26.4142
+          },
+          {
+            "x": -32.2716,
+            "y": -26.1481
+          },
+          {
+            "x": -32.3708,
+            "y": -25.8709
+          },
+          {
+            "x": -32.4424,
+            "y": -25.5853
+          },
+          {
+            "x": -32.4856,
+            "y": -25.2941
+          },
+          {
+            "x": -32.5,
+            "y": -25
+          },
+          {
+            "x": -32.5,
+            "y": 25
+          },
+          {
+            "x": -32.4856,
+            "y": 25.2941
+          },
+          {
+            "x": -32.4424,
+            "y": 25.5853
+          },
+          {
+            "x": -32.3708,
+            "y": 25.8709
+          },
+          {
+            "x": -32.2716,
+            "y": 26.1481
+          },
+          {
+            "x": -32.1458,
+            "y": 26.4142
+          },
+          {
+            "x": -31.9944,
+            "y": 26.6667
+          },
+          {
+            "x": -31.819,
+            "y": 26.9032
+          },
+          {
+            "x": -31.6213,
+            "y": 27.1213
+          },
+          {
+            "x": -31.4032,
+            "y": 27.319
+          },
+          {
+            "x": -31.1667,
+            "y": 27.4944
+          },
+          {
+            "x": -30.9142,
+            "y": 27.6458
+          },
+          {
+            "x": -30.6481,
+            "y": 27.7716
+          },
+          {
+            "x": -30.3709,
+            "y": 27.8708
+          },
+          {
+            "x": -30.0853,
+            "y": 27.9424
+          },
+          {
+            "x": -29.7941,
+            "y": 27.9856
+          },
+          {
+            "x": -29.5,
+            "y": 28
+          },
+          {
+            "x": 29.5,
+            "y": 28
+          },
+          {
+            "x": 29.7941,
+            "y": 27.9856
+          },
+          {
+            "x": 30.0853,
+            "y": 27.9424
+          },
+          {
+            "x": 30.3709,
+            "y": 27.8708
+          },
+          {
+            "x": 30.6481,
+            "y": 27.7716
+          },
+          {
+            "x": 30.9142,
+            "y": 27.6458
+          },
+          {
+            "x": 31.1667,
+            "y": 27.4944
+          },
+          {
+            "x": 31.4032,
+            "y": 27.319
+          },
+          {
+            "x": 31.6213,
+            "y": 27.1213
+          },
+          {
+            "x": 31.819,
+            "y": 26.9032
+          },
+          {
+            "x": 31.9944,
+            "y": 26.6667
+          },
+          {
+            "x": 32.1458,
+            "y": 26.4142
+          },
+          {
+            "x": 32.2716,
+            "y": 26.1481
+          },
+          {
+            "x": 32.3708,
+            "y": 25.8709
+          },
+          {
+            "x": 32.4424,
+            "y": 25.5853
+          },
+          {
+            "x": 32.4856,
+            "y": 25.2941
+          },
+          {
+            "x": 32.5,
+            "y": 25
+          },
+          {
+            "x": 32.5,
+            "y": -25
+          },
+          {
+            "x": 32.4856,
+            "y": -25.2941
+          },
+          {
+            "x": 32.4424,
+            "y": -25.5853
+          },
+          {
+            "x": 32.3708,
+            "y": -25.8709
+          },
+          {
+            "x": 32.2716,
+            "y": -26.1481
+          },
+          {
+            "x": 32.1458,
+            "y": -26.4142
+          },
+          {
+            "x": 31.9944,
+            "y": -26.6667
+          },
+          {
+            "x": 31.819,
+            "y": -26.9032
+          },
+          {
+            "x": 31.6213,
+            "y": -27.1213
+          },
+          {
+            "x": 31.4032,
+            "y": -27.319
+          },
+          {
+            "x": 31.1667,
+            "y": -27.4944
+          },
+          {
+            "x": 30.9142,
+            "y": -27.6458
+          },
+          {
+            "x": 30.6481,
+            "y": -27.7716
+          },
+          {
+            "x": 30.3709,
+            "y": -27.8708
+          },
+          {
+            "x": 30.0853,
+            "y": -27.9424
+          },
+          {
+            "x": 29.7941,
+            "y": -27.9856
+          },
+          {
+            "x": 29.5,
+            "y": -28
+          }
+        ],
+        "holePattern": [
+          {
+            "x": 29,
+            "y": -24.5,
+            "drill": 2.7
+          },
+          {
+            "x": -29,
+            "y": -24.5,
+            "drill": 2.7
+          },
+          {
+            "x": 29,
+            "y": 24.5,
+            "drill": 2.7
+          },
+          {
+            "x": -29,
+            "y": 24.5,
+            "drill": 2.7
+          }
+        ],
+        "geometryStatus": "nominal-review-required",
+        "sourceDate": "2026-09-17"
+      },
+      "label": {
+        "x": 0,
+        "y": 0,
+        "size": 1.3,
+        "visible": false
+      },
+      "libraryId": "platform-pi40-addon",
+      "x": 32.5,
+      "y": 28,
+      "rotation": 0,
+      "side": "bottom",
+      "locked": true
+    }
+  ],
+  "nets": [],
+  "traces": [],
+  "vias": [],
+  "holes": [],
+  "cutouts": [],
+  "keepouts": [],
+  "zones": [],
+  "art": [],
+  "assets": [],
+  "profile": {
+    "id": "oshpark-2l",
+    "name": "OSH Park · 2 layer",
+    "verified": "2026-09-17",
+    "revision": 1,
+    "source": "https://docs.oshpark.com/services/two-layer/",
+    "minTrace": 0.1524,
+    "clearance": 0.1524,
+    "edge": 0.381,
+    "minDrill": 0.254,
+    "minRing": 0.127,
+    "minSlot": 0.508,
+    "minMaskWeb": 0.1016,
+    "minSilk": 0.127,
+    "maskExpansion": 0.075,
+    "minHoleGap": 0.127,
+    "minCutout": 1.01,
+    "minWidth": 6.35,
+    "minHeight": 6.35,
+    "maxWidth": 406.4,
+    "maxHeight": 558.8
+  },
+  "settings": {
+    "grid": 1.27,
+    "traceWidth": 0.4,
+    "viaDiameter": 0.9,
+    "viaDrill": 0.4,
+    "zoneStep": 0.25
+  },
+  "assumptions": [
+    {
+      "id": "pi40-addon-assume-2",
+      "text": "Two copper layers; through vias only. This layout does not verify circuit function.",
+      "status": "open"
+    },
+    {
+      "id": "pi40-addon-a-4",
+      "text": "3.3 V GPIO; 5 V supply contacts are not 5 V-tolerant GPIO.",
+      "status": "open"
+    },
+    {
+      "id": "pi40-addon-a-5",
+      "text": "40-pin Raspberry Pi SBC interface only. Not Pico, Compute Module, or the original 26-pin header. A 65 × 56 mm legacy-style outline is a starting shape, not HAT/HAT+ certification.",
+      "status": "open"
+    },
+    {
+      "id": "pi40-addon-a-6",
+      "text": "Review connector gender, 1.0 mm drill and 1.8 mm pads against the connector drawing.",
+      "status": "open"
+    },
+    {
+      "id": "pi40-addon-a-7",
+      "text": "Check the selected Pi model, spacer height, cooling, PoE connector and cable clearances. Host illustration is not a clearance model.",
+      "status": "open"
+    },
+    {
+      "id": "pi40-addon-a-8",
+      "text": "HAT+ requires more than this footprint: review ID EEPROM / ID_SD / ID_SC and standby/power rules. No EEPROM or power circuitry is inserted.",
+      "status": "open"
+    },
+    {
+      "id": "pi40-addon-a-9",
+      "text": "Check for 5 V into GPIO, back-powering, supply-current limits, and startup pin states.",
+      "status": "open"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "pi40-addon-e-10",
+      "text": "Nominal mating geometry transcribed from published pinouts/dimensioned references; no physical fit or manufacturer acceptance verified.",
+      "source": "https://datasheets.raspberrypi.com/rpi4/raspberry-pi-4-mechanical-drawing.pdf\nhttps://datasheets.raspberrypi.com/hat/hat-plus-specification.pdf\nhttps://www.raspberrypi.com/documentation/computers/raspberry-pi.html#gpio-and-the-40-pin-header"
+    }
+  ],
+  "baseline": null,
+  "platformTemplate": {
+    "schema": 1,
+    "family": "pi40",
+    "revision": 1,
+    "role": "addon",
+    "margin": 0
+  }
+}

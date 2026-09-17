@@ -1,0 +1,35 @@
+{
+  "name": "copperbench",
+  "version": "1.1.0",
+  "private": true,
+  "description": "Local-first, tactile two-layer PCB workbench",
+  "scripts": {
+    "start": "python3 tools/serve.py",
+    "serve": "python3 tools/serve.py",
+    "test": "node tests/core.test.js",
+    "test:manufacturing": "python3 tests/verify_manufacturing.py",
+    "test:browser": "python3 tests/browser_test.py",
+    "test:packaging": "python3 -m unittest discover -s tests -p \"test_packaging.py\"",
+    "test:all": "python3 tools/test.py",
+    "check": "python3 tools/check_repo.py",
+    "build": "python3 tools/package.py",
+    "portable": "python3 tools/package.py",
+    "release": "python3 tools/release.py",
+    "test:platforms": "node tests/platforms.test.js"
+  },
+  "license": "MIT",
+  "author": "Green Shoe Garage",
+  "engines": {
+    "node": ">=22"
+  },
+  "keywords": [
+    "pcb",
+    "eda",
+    "gerber",
+    "excellon",
+    "local-first",
+    "offline",
+    "electronics",
+    "field-instrument"
+  ]
+}

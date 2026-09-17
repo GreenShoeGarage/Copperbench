@@ -1,0 +1,888 @@
+{
+  "app": "COPPERBENCH",
+  "schema": 2,
+  "version": "1.1.0",
+  "id": "mkr-carrier-board-1",
+  "title": "Arduino MKR 28-pin carrier starter",
+  "created": "2026-09-17T00:00:00.000Z",
+  "updated": "2026-09-17T00:00:00.000Z",
+  "board": {
+    "width": 81.5,
+    "height": 45,
+    "thickness": 1.6,
+    "shape": "rounded",
+    "radius": 3,
+    "points": [],
+    "color": "blue"
+  },
+  "parts": [
+    {
+      "id": "mkr-carrier-p-3",
+      "name": "Arduino MKR 28-pin · Carrier sockets",
+      "category": "Platforms",
+      "ref": "J1",
+      "value": "Arduino MKR 28-pin mating sockets",
+      "verified": false,
+      "source": "https://docs.arduino.cc/resources/pinouts/ABX00012-full-pinout.pdf\nhttps://docs.arduino.cc/resources/datasheets/ABX00023-datasheet.pdf",
+      "defaultSide": "top",
+      "body": {
+        "kind": "platform",
+        "w": 61.5,
+        "h": 25,
+        "z": 2.6
+      },
+      "pads": [
+        {
+          "number": "1",
+          "signal": "AREF",
+          "bank": "ANALOG",
+          "x": -8.83,
+          "y": 10.26,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "2",
+          "signal": "A0 / DAC0",
+          "bank": "ANALOG",
+          "x": -6.29,
+          "y": 10.26,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "3",
+          "signal": "A1",
+          "bank": "ANALOG",
+          "x": -3.75,
+          "y": 10.26,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "4",
+          "signal": "A2",
+          "bank": "ANALOG",
+          "x": -1.21,
+          "y": 10.26,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "5",
+          "signal": "A3",
+          "bank": "ANALOG",
+          "x": 1.33,
+          "y": 10.26,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "6",
+          "signal": "A4",
+          "bank": "ANALOG",
+          "x": 3.87,
+          "y": 10.26,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "7",
+          "signal": "A5",
+          "bank": "ANALOG",
+          "x": 6.41,
+          "y": 10.26,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "8",
+          "signal": "A6",
+          "bank": "ANALOG",
+          "x": 8.95,
+          "y": 10.26,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "9",
+          "signal": "D0",
+          "bank": "ANALOG",
+          "x": 11.49,
+          "y": 10.26,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "10",
+          "signal": "D1",
+          "bank": "ANALOG",
+          "x": 14.03,
+          "y": 10.26,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "11",
+          "signal": "D2",
+          "bank": "ANALOG",
+          "x": 16.57,
+          "y": 10.26,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "12",
+          "signal": "D3",
+          "bank": "ANALOG",
+          "x": 19.11,
+          "y": 10.26,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "13",
+          "signal": "D4",
+          "bank": "ANALOG",
+          "x": 21.65,
+          "y": 10.26,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "14",
+          "signal": "D5",
+          "bank": "ANALOG",
+          "x": 24.19,
+          "y": 10.26,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "28",
+          "signal": "5V",
+          "bank": "DIGITAL",
+          "x": -8.83,
+          "y": -10.06,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "both",
+          "net": null,
+          "pinType": "power"
+        },
+        {
+          "number": "27",
+          "signal": "VIN",
+          "bank": "DIGITAL",
+          "x": -6.29,
+          "y": -10.06,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "power"
+        },
+        {
+          "number": "26",
+          "signal": "3V3",
+          "bank": "DIGITAL",
+          "x": -3.75,
+          "y": -10.06,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "power"
+        },
+        {
+          "number": "25",
+          "signal": "GND",
+          "bank": "DIGITAL",
+          "x": -1.21,
+          "y": -10.06,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "ground"
+        },
+        {
+          "number": "24",
+          "signal": "RESET",
+          "bank": "DIGITAL",
+          "x": 1.33,
+          "y": -10.06,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "23",
+          "signal": "D14 / TX",
+          "bank": "DIGITAL",
+          "x": 3.87,
+          "y": -10.06,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "22",
+          "signal": "D13 / RX",
+          "bank": "DIGITAL",
+          "x": 6.41,
+          "y": -10.06,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "21",
+          "signal": "D12 / SCL",
+          "bank": "DIGITAL",
+          "x": 8.95,
+          "y": -10.06,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "20",
+          "signal": "D11 / SDA",
+          "bank": "DIGITAL",
+          "x": 11.49,
+          "y": -10.06,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "19",
+          "signal": "D10 / MISO",
+          "bank": "DIGITAL",
+          "x": 14.03,
+          "y": -10.06,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "18",
+          "signal": "D9 / SCK",
+          "bank": "DIGITAL",
+          "x": 16.57,
+          "y": -10.06,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "17",
+          "signal": "D8 / MOSI",
+          "bank": "DIGITAL",
+          "x": 19.11,
+          "y": -10.06,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "16",
+          "signal": "D7",
+          "bank": "DIGITAL",
+          "x": 21.65,
+          "y": -10.06,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "15",
+          "signal": "D6",
+          "bank": "DIGITAL",
+          "x": 24.19,
+          "y": -10.06,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        }
+      ],
+      "mountingHoles": [
+        {
+          "x": -28.44,
+          "y": -10.19,
+          "drill": 2.25
+        },
+        {
+          "x": 28.44,
+          "y": -10.19,
+          "drill": 2.25
+        },
+        {
+          "x": -28.44,
+          "y": 10.19,
+          "drill": 2.25
+        },
+        {
+          "x": 28.44,
+          "y": 10.19,
+          "drill": 2.25
+        }
+      ],
+      "platform": {
+        "schema": 1,
+        "family": "mkr",
+        "revision": 1,
+        "role": "carrier",
+        "showHost": true,
+        "showPins": true,
+        "outline": [
+          {
+            "x": 28.75,
+            "y": -12.5
+          },
+          {
+            "x": 28.946,
+            "y": -12.4904
+          },
+          {
+            "x": 29.1402,
+            "y": -12.4616
+          },
+          {
+            "x": 29.3306,
+            "y": -12.4139
+          },
+          {
+            "x": 29.5154,
+            "y": -12.3478
+          },
+          {
+            "x": 29.6928,
+            "y": -12.2638
+          },
+          {
+            "x": 29.8611,
+            "y": -12.1629
+          },
+          {
+            "x": 30.0188,
+            "y": -12.046
+          },
+          {
+            "x": 30.1642,
+            "y": -11.9142
+          },
+          {
+            "x": 30.296,
+            "y": -11.7688
+          },
+          {
+            "x": 30.4129,
+            "y": -11.6111
+          },
+          {
+            "x": 30.5138,
+            "y": -11.4428
+          },
+          {
+            "x": 30.5978,
+            "y": -11.2654
+          },
+          {
+            "x": 30.6639,
+            "y": -11.0806
+          },
+          {
+            "x": 30.7116,
+            "y": -10.8902
+          },
+          {
+            "x": 30.7404,
+            "y": -10.696
+          },
+          {
+            "x": 30.75,
+            "y": -10.5
+          },
+          {
+            "x": 30.75,
+            "y": 10.5
+          },
+          {
+            "x": 30.7404,
+            "y": 10.696
+          },
+          {
+            "x": 30.7116,
+            "y": 10.8902
+          },
+          {
+            "x": 30.6639,
+            "y": 11.0806
+          },
+          {
+            "x": 30.5978,
+            "y": 11.2654
+          },
+          {
+            "x": 30.5138,
+            "y": 11.4428
+          },
+          {
+            "x": 30.4129,
+            "y": 11.6111
+          },
+          {
+            "x": 30.296,
+            "y": 11.7688
+          },
+          {
+            "x": 30.1642,
+            "y": 11.9142
+          },
+          {
+            "x": 30.0188,
+            "y": 12.046
+          },
+          {
+            "x": 29.8611,
+            "y": 12.1629
+          },
+          {
+            "x": 29.6928,
+            "y": 12.2638
+          },
+          {
+            "x": 29.5154,
+            "y": 12.3478
+          },
+          {
+            "x": 29.3306,
+            "y": 12.4139
+          },
+          {
+            "x": 29.1402,
+            "y": 12.4616
+          },
+          {
+            "x": 28.946,
+            "y": 12.4904
+          },
+          {
+            "x": 28.75,
+            "y": 12.5
+          },
+          {
+            "x": -28.75,
+            "y": 12.5
+          },
+          {
+            "x": -28.946,
+            "y": 12.4904
+          },
+          {
+            "x": -29.1402,
+            "y": 12.4616
+          },
+          {
+            "x": -29.3306,
+            "y": 12.4139
+          },
+          {
+            "x": -29.5154,
+            "y": 12.3478
+          },
+          {
+            "x": -29.6928,
+            "y": 12.2638
+          },
+          {
+            "x": -29.8611,
+            "y": 12.1629
+          },
+          {
+            "x": -30.0188,
+            "y": 12.046
+          },
+          {
+            "x": -30.1642,
+            "y": 11.9142
+          },
+          {
+            "x": -30.296,
+            "y": 11.7688
+          },
+          {
+            "x": -30.4129,
+            "y": 11.6111
+          },
+          {
+            "x": -30.5138,
+            "y": 11.4428
+          },
+          {
+            "x": -30.5978,
+            "y": 11.2654
+          },
+          {
+            "x": -30.6639,
+            "y": 11.0806
+          },
+          {
+            "x": -30.7116,
+            "y": 10.8902
+          },
+          {
+            "x": -30.7404,
+            "y": 10.696
+          },
+          {
+            "x": -30.75,
+            "y": 10.5
+          },
+          {
+            "x": -30.75,
+            "y": -10.5
+          },
+          {
+            "x": -30.7404,
+            "y": -10.696
+          },
+          {
+            "x": -30.7116,
+            "y": -10.8902
+          },
+          {
+            "x": -30.6639,
+            "y": -11.0806
+          },
+          {
+            "x": -30.5978,
+            "y": -11.2654
+          },
+          {
+            "x": -30.5138,
+            "y": -11.4428
+          },
+          {
+            "x": -30.4129,
+            "y": -11.6111
+          },
+          {
+            "x": -30.296,
+            "y": -11.7688
+          },
+          {
+            "x": -30.1642,
+            "y": -11.9142
+          },
+          {
+            "x": -30.0188,
+            "y": -12.046
+          },
+          {
+            "x": -29.8611,
+            "y": -12.1629
+          },
+          {
+            "x": -29.6928,
+            "y": -12.2638
+          },
+          {
+            "x": -29.5154,
+            "y": -12.3478
+          },
+          {
+            "x": -29.3306,
+            "y": -12.4139
+          },
+          {
+            "x": -29.1402,
+            "y": -12.4616
+          },
+          {
+            "x": -28.946,
+            "y": -12.4904
+          },
+          {
+            "x": -28.75,
+            "y": -12.5
+          }
+        ],
+        "holePattern": [
+          {
+            "x": -28.44,
+            "y": -10.19,
+            "drill": 2.25
+          },
+          {
+            "x": 28.44,
+            "y": -10.19,
+            "drill": 2.25
+          },
+          {
+            "x": -28.44,
+            "y": 10.19,
+            "drill": 2.25
+          },
+          {
+            "x": 28.44,
+            "y": 10.19,
+            "drill": 2.25
+          }
+        ],
+        "geometryStatus": "nominal-review-required",
+        "sourceDate": "2026-09-17"
+      },
+      "label": {
+        "x": 0,
+        "y": 0,
+        "size": 1.3,
+        "visible": false
+      },
+      "libraryId": "platform-mkr-carrier",
+      "x": 40.75,
+      "y": 22.5,
+      "rotation": 0,
+      "side": "top",
+      "locked": true
+    }
+  ],
+  "nets": [],
+  "traces": [],
+  "vias": [],
+  "holes": [],
+  "cutouts": [],
+  "keepouts": [],
+  "zones": [],
+  "art": [],
+  "assets": [],
+  "profile": {
+    "id": "oshpark-2l",
+    "name": "OSH Park · 2 layer",
+    "verified": "2026-09-17",
+    "revision": 1,
+    "source": "https://docs.oshpark.com/services/two-layer/",
+    "minTrace": 0.1524,
+    "clearance": 0.1524,
+    "edge": 0.381,
+    "minDrill": 0.254,
+    "minRing": 0.127,
+    "minSlot": 0.508,
+    "minMaskWeb": 0.1016,
+    "minSilk": 0.127,
+    "maskExpansion": 0.075,
+    "minHoleGap": 0.127,
+    "minCutout": 1.01,
+    "minWidth": 6.35,
+    "minHeight": 6.35,
+    "maxWidth": 406.4,
+    "maxHeight": 558.8
+  },
+  "settings": {
+    "grid": 1.27,
+    "traceWidth": 0.4,
+    "viaDiameter": 0.9,
+    "viaDrill": 0.4,
+    "zoneStep": 0.25
+  },
+  "assumptions": [
+    {
+      "id": "mkr-carrier-assume-2",
+      "text": "Two copper layers; through vias only. This layout does not verify circuit function.",
+      "status": "open"
+    },
+    {
+      "id": "mkr-carrier-a-4",
+      "text": "MKR reference: 3.3 V I/O, not 5 V tolerant. Verify variant power-pin behavior.",
+      "status": "open"
+    },
+    {
+      "id": "mkr-carrier-a-5",
+      "text": "Two 14-way rows, 2.54 mm pitch, 20.32 mm apart. Nominal 61.5 × 25 mm WiFi 1010 reference envelope. Board-to-edge and hole offsets are review-required, not universal across MKR variants.",
+      "status": "open"
+    },
+    {
+      "id": "mkr-carrier-a-6",
+      "text": "Confirm the exact MKR variant. Connector pattern does not guarantee body size, hole locations, antenna clearance or pin behavior.",
+      "status": "open"
+    },
+    {
+      "id": "mkr-carrier-a-7",
+      "text": "Verify nominal 21.92 / 2.44 mm header offsets and optional 2.25 mm mounting holes on the real board.",
+      "status": "open"
+    },
+    {
+      "id": "mkr-carrier-a-8",
+      "text": "Check 3.3 V GPIO, USB / VIN / 5V power direction, battery connector access and RF antenna keepout.",
+      "status": "open"
+    },
+    {
+      "id": "mkr-carrier-a-9",
+      "text": "Select mating sockets for a carrier or stacking headers for a shield; verify drill and engagement length.",
+      "status": "open"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "mkr-carrier-e-10",
+      "text": "Nominal mating geometry transcribed from published pinouts/dimensioned references; no physical fit or manufacturer acceptance verified.",
+      "source": "https://docs.arduino.cc/resources/pinouts/ABX00012-full-pinout.pdf\nhttps://docs.arduino.cc/resources/datasheets/ABX00023-datasheet.pdf"
+    }
+  ],
+  "baseline": null,
+  "platformTemplate": {
+    "schema": 1,
+    "family": "mkr",
+    "revision": 1,
+    "role": "carrier",
+    "margin": 10
+  }
+}

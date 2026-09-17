@@ -1,0 +1,14 @@
+PASS All nine generated Gerbers parse independently into valid geometries
+PASS Outline centerline is a closed 40 by 30 mm rectangle
+PASS Top exported copper matches independently constructed native geometry
+PASS Bottom exported copper matches independently constructed native geometry
+PASS Bottom copper shares the physical origin and is not mirrored
+PASS Plated drills align with both header pads and the through via
+PASS Non-plated round hole and G85 slot preserve centers, travel and tool sizes
+PASS Mask openings cover the applicable pads on each face
+PASS Final silkscreen is nonempty, inside the board and clear of openings
+PASS Paste apertures include surface pads, not through-hole pads or vias
+PASS All exported coupon copper remains within the configured board-edge clearance
+PASS Independent reader rejects unsupported Gerber operations
+
+12/12 checks passed.
