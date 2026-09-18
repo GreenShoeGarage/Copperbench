@@ -1,81 +1,103 @@
-# Verification record — COPPERBENCH 1.1.0
+# Verification record — COPPERBENCH v1.3.1
 
-**Release: 17 September 2026.** Raw results for this update are retained in
-`docs/verification/platforms-v1.1.0/`. Original v1.0 application and repository
-records remain under their own historical directories; they were not overwritten.
+**308 / 308 local regression tests passed.** The full runner executed every prior
+suite plus 30 new engine tests, 17 separate Python/Shapely checks and 16 new
+Chromium interactions. Frozen logs and per-test records are in
+`docs/verification/polarity-silk-v1.3.1/`.
 
-| Suite | Result | Coverage |
-|---|---:|---|
-| Core JavaScript engine | 32 / 32 | Model, transforms, nets, DRC, routing, pours, import/export and coupon. |
-| Platform JavaScript | 23 / 23 | Six interface variants, exact nominal coordinates, pin mapping, schema migration, linked mounts, routing, native/KiCad/CSV and manufacturing output. |
-| Core Chromium interactions | 20 / 20 | Actual application DOM/canvas/workers, placement, routing, files, geometry, imagery, recovery, themes and responsive layout. |
-| Platform Chromium interactions | 13 / 13 | Catalogue, chooser, template creation/undo, transforms, reference options, current-board placement, named pin search/routing, CSV/JSON and narrow layout. |
-| Independent coupon geometry | 12 / 12 | Python/Shapely reader and expected-geometry checks of the generated coupon. |
-| Independent platform exports | 12 / 12 | Literal nominal expected positions versus actual Excellon/Gerber, both roles, mask coverage, NPTH clearances and no bottom mirror. |
-| Packaging | 9 / 9 | Generated assets, embedded worker, portable runtime, vendor/paths, deployment staging and reproducible archive algorithm. |
-| **Total** | **121 / 121** | Executed local regression tests, not a hardware certification. |
+| Suite | Executed result |
+|---|---:|
+| Core JavaScript | 32 / 32 |
+| Platform JavaScript | 23 / 23 |
+| Via JavaScript | 27 / 27 |
+| Plane JavaScript | 31 / 31 |
+| Polarity / silkscreen JavaScript | 30 / 30 |
+| Independent coupon geometry | 12 / 12 |
+| Independent platform geometry | 12 / 12 |
+| Independent via geometry | 7 / 7 |
+| Independent plane geometry | 15 / 15 |
+| Independent silkscreen geometry | 17 / 17 |
+| Core Chromium interactions | 20 / 20 |
+| Platform Chromium interactions | 13 / 13 |
+| Via Chromium interactions | 21 / 21 |
+| Plane Chromium interactions | 23 / 23 |
+| Polarity / silkscreen Chromium interactions | 16 / 16 |
+| Packaging | 9 / 9 |
 
-Source syntax, version/lockfile/header consistency, documentation links, bundled
-vendor hashes and generated-runtime integrity are checked separately by
-`tools/check_repo.py`. Screenshots of the actual app were visually reviewed.
+`tools/check_repo.py` also passed source syntax, generated portable/worker/cache
+integrity, visible/runtime/package version agreement, local links and vendor hashes.
+Screenshots from the actual application were visually reviewed. No runtime
+dependencies were added. The root app and portable edition are generated from the
+same source. The included golden manufacturing sample was regenerated.
 
-## Platform-specific evidence
+## Correction to the previous manufacturing evidence
 
-Tests exercise physical contact identities separately from their signal aliases.
-They check the Pi 40-pin order; the Uno 4.064 mm D8–D7 gap; MKR 28 contacts,
-2.54 mm pitch and 20.32 mm row spacing; and the add-on/carrier initial top-view
-coordinate equivalence. Later rotation and face flips preserve pin identities.
+**The old Python reader was independent in language, not in its mistaken Gerber
+interpretation.** Like the old Canvas viewer, it XORed contours in a region. The
+specification requires their union. The old exporter used a nested clear frame
+which erased the board's legend under correct semantics. Historical pass counts
+are retained as historical records, not evidence that that silk output was correct.
 
-Optional NPTH holes move with the interface and participate in routing obstacles,
-clearances, masks and drill export. Separate exported drill counts are checked
-against 40/32/28 plated contacts and four requested mounts. Turning the host
-illustration or pin captions off produces byte-identical manufacturing output.
-Native JSON retains the compound relationship and aliases. KiCad subset export
-retains pad/hole geometry, but reimport does not recreate platform metadata.
+The new suites require the old-frame reproducer to produce an empty layer and an
+overlapping-dark-contour example to remain filled. The Canvas viewer and the
+Python reader pass both contracts. New exports must retain real on-board ink;
+tests do not merely count draw commands before a later clear operation erases it.
 
-A dedicated independent Python script reads exported text using the existing
-Python Gerber/Excellon parser. It compares against literal expected nominal
-coordinates rather than calling the JavaScript transforms/export readers. This
-is stronger than a self-round-trip, but it still cannot prove the reference
-dimensions match an actual purchased host, clone or connector.
+A diagnostic using the original v1.3.0 source confirmed that the all-tools example
+had zero final ink area on both faces. Corrected v1.3.1 output has approximately
+95.8611 mm² on top and 13.4503 mm² on bottom in the separate reader. The new marks
+are included in those areas. Captured old/new files and exact areas are stored in
+`verification/polarity-silk-v1.3.1/historical-blank-reproducer/`; this diagnostic is
+not counted as extra regression tests.
 
-Schema-1 files migrate to schema 2 without changing the source file. New saves
-use schema 2 so old v1.0 readers reject them instead of ignoring linked holes.
+## New coverage
 
-## Browser environment and limits
+The engine checks known/legacy roles, explicit-none overrides, unknown/numeric
+pins, preserved pin/net/geometry identity, print/reference independence, rotation,
+side changes, safe schema-3 round trips and invalid-metadata rejection. It checks
+actual retained ink, all-one-contour exterior pieces, pad/hole/cutout exclusion,
+X2/compatibility parity, deterministic export, KiCad vector-mark interchange and
+closed-contour validation. Fixtures cover both faces and all supported artwork
+kinds: text, references, role strokes, lines, outline/filled shapes and image regions.
 
-The browser suites run the complete portable HTML in Chromium using Playwright’s
-`page.set_content` embedded `about:blank` harness. Canvas rendering, DOM input,
-actual worker jobs, file inputs and generated Blob contents really execute.
-The harness injects a Storage-shaped test double and intercepts download anchors.
-No browser policy is changed or bypassed.
+The Python suite independently derives substrate, mask, hole, slot and cutout
+geometry for rectangular, rounded, elliptical, concave, reversed and offset
+outlines. Large flood artwork must resolve to exactly the permitted board area.
+Tented/open vias are distinguished. Other checks compare final ink with separate
+stroke buffers and clipped source shapes. These are bounded geometric tests,
+not proof for every possible arbitrary polygon or malformed third-party file.
 
-These tests do **not** verify unrestricted file/HTTP navigation, real-origin
-local storage, operating-system download/save dialogs, hosted service-worker
-installation/update/offline lifecycle, Safari/Firefox, or mobile device hardware.
-Narrow viewport checks are desktop Chromium layout checks, not iOS certification.
-“No external runtime requests” applies to the exercised flows only.
+Chromium tests use actual pointer/keyboard controls, clickable polarity badges,
+full-name hover/search, role/print dialogs, undo/redo, real file-input import,
+JSON and fabrication ZIP blobs, narrow layout, and Canvas pixels. They require
+nonblank top and bottom silk-only views and correctly blank old-frame rendering.
+All existing parts/platforms/vias/planes suites run against the same patched app.
 
-## Not verified
+## Environment and limits
 
-No mechanical fit test, host-board measurement, manufactured PCB, electrical
-function test, RF/thermal validation, installed KiCad/CAM check or manufacturer
-upload/acceptance is claimed. The official Arduino CAD archives could not be
-retrieved; geometry is source-derived nominal data, not a CAD extraction claim.
+Recorded environment: Node 22.16.0, Python 3.13.5, Chromium 144.0.7559.96,
+Playwright 1.57.0, Shapely 2.1.2 and Pillow 12.3.0.
 
-Pi port/cooler/PoE placement, MKR antenna/battery clearance, connector genders,
-tail engagement and stack heights require review of the actual hardware. No
-automatic HAT+ EEPROM/power implementation or Uno ICSP header is included.
-Review [FORM_FACTORS.md](FORM_FACTORS.md) before fabricating an add-on.
+The complete app is loaded with Playwright `page.set_content`; real DOM, canvas
+and workers execute. Browser storage is an explicit Storage-shaped test double.
+Download links are intercepted to inspect actual generated blobs. Real-origin
+persistence, unrestricted file launch, OS download navigation, hosted service-worker
+installation/update/offline lifecycle, Safari/Firefox and mobile hardware remain
+unverified. No policy restrictions were bypassed. Narrow screens are desktop
+Chromium viewport tests. No network requests occurred in the exercised flows.
 
-No GitHub remote was created or pushed and no Actions workflow was run in the
-user’s account. The delivered repository and workflow definitions were checked
-locally. No deployment, external upload or board order occurred.
+The independent Python reader is limited to the generated format subset. No
+installed external CAM product or KiCad application, manufacturer upload/acceptance,
+physical fabrication, assembly fit or electrical-function validation was performed.
+Generic parts remain review-required. Existing conservative plane-fill and local
+routing limitations still apply. Copper, drills and mask behavior have regression
+coverage, not manufacturing certification. No remote GitHub repository, workflow,
+deployment or board order was changed by this update.
 
 ## Reproduce
 
-The application itself needs no development dependency install or build. For
-testing, use Node.js 22+ and Python 3.13 in a virtual environment:
+The delivered application itself needs no build or dependency installation.
+Development/testing requires the pinned dependencies:
 
 ```sh
 python3 -m venv .venv
@@ -86,27 +108,22 @@ python3 tools/package.py
 python3 tools/test.py
 ```
 
-On Windows, use `py -3 -m venv .venv` and activate
-`.venv\Scripts\Activate.ps1`. npm shortcuts are optional. An already installed
-Chromium can be selected with `CHROMIUM_EXECUTABLE`; no path is hard-coded.
-
-Targeted commands:
+On Windows use `py -3` and `.venv\Scripts\Activate.ps1`. Set
+`CHROMIUM_EXECUTABLE` to an existing Chromium executable when necessary; no machine
+path is hard-coded. The complete runner includes all suites in fixture order.
+Targeted new checks are:
 
 ```sh
-node tests/core.test.js          # generates the test-only coupon
-node tests/platforms.test.js     # generates test-only platform export fixtures
-python3 tests/verify_manufacturing.py
-python3 tests/verify_platforms.py
-python3 tests/browser_test.py
-python3 tests/platform_browser_test.py
-python3 -m unittest discover -s tests -p 'test_packaging.py'
+node tests/silkscreen.test.js
+python3 tests/verify_silkscreen.py
+python3 tests/silkscreen_browser_test.py
 python3 tools/check_repo.py
 python3 tools/release.py
 ```
 
-New outputs go to ignored `tests/output/`. Tests do not rewrite checked-in example
-projects or README screenshots. The explicit optional
-`node tools/make_platform_examples.js` command regenerates the six example files
-with stable IDs/timestamps; it is not part of the test run. Runtime source edits
-require `tools/package.py` to refresh portable HTML, worker and scoped offline
-cache before commit. See [GitHub setup](GITHUB.md) and [deployment](DEPLOYMENT.md).
+Tests write only ignored `tests/output/`; they do not refresh checked-in example
+files, screenshots or frozen logs. Source edits require `tools/package.py`.
+
+[Fix guide](POLARITY_AND_SILKSCREEN.md) · [Compatibility](COMPATIBILITY.md) ·
+[Summary](verification/polarity-silk-v1.3.1/summary.json) ·
+[Console log](verification/polarity-silk-v1.3.1/full-tests.txt)

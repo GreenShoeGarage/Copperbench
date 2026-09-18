@@ -1,0 +1,74 @@
+{
+  "version": "1.1.0",
+  "date": "2026-09-18T02:42:36.718653+00:00",
+  "passed": 13,
+  "total": 13,
+  "environment": "Chromium embedded about:blank; Storage test double; intercepted download blobs",
+  "results": [
+    {
+      "name": "Platforms category exposes six searchable add-on/carrier parts",
+      "pass": true,
+      "ms": 762
+    },
+    {
+      "name": "Platform chooser renders a preview and explains nominal dimensions",
+      "pass": true,
+      "ms": 542
+    },
+    {
+      "name": "Every family creates an editable template; MKR carrier applies margin and hole options",
+      "pass": true,
+      "ms": 4043
+    },
+    {
+      "name": "Starting a template is undoable and restores the previous project",
+      "pass": true,
+      "ms": 1214
+    },
+    {
+      "name": "Unlock, rotate and flip controls move the compound header and its mounts",
+      "pass": true,
+      "ms": 1048
+    },
+    {
+      "name": "Reference visibility is manufacturing-neutral; mounting-hole toggle updates real NPTH",
+      "pass": true,
+      "ms": 1503
+    },
+    {
+      "name": "Place-on-current-board leaves the board boundary and existing data intact",
+      "pass": true,
+      "ms": 867
+    },
+    {
+      "name": "Searchable pin table finds GPIO aliases and selects the actual connector pad",
+      "pass": true,
+      "ms": 1577
+    },
+    {
+      "name": "Locked Pi interface pads can be clicked and routed to a new component",
+      "pass": true,
+      "ms": 1602
+    },
+    {
+      "name": "Pin-map CSV download contains physical IDs, signal names and top-view coordinates",
+      "pass": true,
+      "ms": 1000
+    },
+    {
+      "name": "Native JSON download preserves embedded platform metadata and linked holes",
+      "pass": true,
+      "ms": 60
+    },
+    {
+      "name": "Platform workflow stays within the narrow-screen viewport",
+      "pass": true,
+      "ms": 359
+    },
+    {
+      "name": "No uncaught errors or external runtime asset requests",
+      "pass": true,
+      "ms": 0
+    }
+  ]
+}

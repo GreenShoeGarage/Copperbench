@@ -39,7 +39,7 @@ for family,reference in expected.items():
     for x,y,d in r['holes']:assert mask.covers(Point(x+m,h-y-m).buffer(d/2,quad_segs=64))
    for x,y,d in r['holes']:assert top.geometry.distance(Point(x+m,h-y-m))>=d/2+.1524-1e-5
   test(f'{family}/{role}: copper/NPTH clearance, masks, and no bottom mirror',copper)
-record={'version':'1.1.0','date':datetime.now(timezone.utc).isoformat(),'passed':sum(r['pass'] for r in results),'total':len(results),'scope':'Independent Python/Shapely checks of literal nominal connector geometry, export alignment and mask coverage; not physical fit or third-party CAM certification.','results':results}
+record={'version':json.loads((ROOT/'package.json').read_text())['version'],'date':datetime.now(timezone.utc).isoformat(),'passed':sum(r['pass'] for r in results),'total':len(results),'scope':'Independent Python/Shapely checks of literal nominal connector geometry, export alignment and mask coverage; not physical fit or third-party CAM certification.','results':results}
 (OUT/'platform-manufacturing-results.json').write_text(json.dumps(record,indent=2))
 print(f"{record['passed']}/{record['total']} independent platform checks passed.")
 sys.exit(0 if record['passed']==record['total'] else 1)

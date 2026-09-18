@@ -1,0 +1,105 @@
+{
+  "version": "1.3.1",
+  "recordedUTC": "2026-09-18T02:45:37.367747+00:00",
+  "passed": 308,
+  "total": 308,
+  "suites": [
+    {
+      "suite": "Core JavaScript",
+      "passed": 32,
+      "total": 32,
+      "record": "core-results.json"
+    },
+    {
+      "suite": "Platform JavaScript",
+      "passed": 23,
+      "total": 23,
+      "record": "platform-results.json"
+    },
+    {
+      "suite": "Via JavaScript",
+      "passed": 27,
+      "total": 27,
+      "record": "via-results.json"
+    },
+    {
+      "suite": "Plane JavaScript",
+      "passed": 31,
+      "total": 31,
+      "record": "plane-core-results.json"
+    },
+    {
+      "suite": "Polarity / silkscreen JavaScript",
+      "passed": 30,
+      "total": 30,
+      "record": "silkscreen-results.json"
+    },
+    {
+      "suite": "Independent coupon geometry",
+      "passed": 12,
+      "total": 12,
+      "record": "manufacturing-results.json"
+    },
+    {
+      "suite": "Independent platform geometry",
+      "passed": 12,
+      "total": 12,
+      "record": "platform-manufacturing-results.json"
+    },
+    {
+      "suite": "Independent via geometry",
+      "passed": 7,
+      "total": 7,
+      "record": "via-manufacturing-results.json"
+    },
+    {
+      "suite": "Independent plane geometry",
+      "passed": 15,
+      "total": 15,
+      "record": "plane-manufacturing-results.json"
+    },
+    {
+      "suite": "Independent silkscreen geometry",
+      "passed": 17,
+      "total": 17,
+      "record": "silkscreen-manufacturing-results.json"
+    },
+    {
+      "suite": "Core Chromium interactions",
+      "passed": 20,
+      "total": 20,
+      "record": "browser-results.json"
+    },
+    {
+      "suite": "Platform Chromium interactions",
+      "passed": 13,
+      "total": 13,
+      "record": "platform-browser-results.json"
+    },
+    {
+      "suite": "Via Chromium interactions",
+      "passed": 21,
+      "total": 21,
+      "record": "via-browser-results.json"
+    },
+    {
+      "suite": "Plane Chromium interactions",
+      "passed": 23,
+      "total": 23,
+      "record": "plane-browser-results.json"
+    },
+    {
+      "suite": "Polarity / silkscreen Chromium interactions",
+      "passed": 16,
+      "total": 16,
+      "record": "silkscreen-browser-results.json"
+    },
+    {
+      "suite": "Packaging",
+      "passed": 9,
+      "total": 9,
+      "record": "full-tests.txt"
+    }
+  ],
+  "scope": "Actual Chromium UI/canvas/workers with storage/download doubles; separate-language Shapely checks corrected to Gerber union semantics. No external CAM, manufacturer upload or physical fabrication."
+}

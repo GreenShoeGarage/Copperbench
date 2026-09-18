@@ -1,8 +1,8 @@
-# Architecture — v1.1.0
+# Architecture — v1.3.0
 
 ## One model, three views
 
-`src/core.js` owns a schema-2 document, with explicit schema-1 migration on read. Coordinates are millimetres quantized to 0.0001 mm, represented as JavaScript numbers. This is a quantized floating-point model, **not** an integer-only exact-geometry kernel. Gerber writing uses a 0.000001 mm output grid; finer output notation does not add information to the native model.
+`src/core.js` owns a schema-3 document, with explicit schema-1/2 migration on read. Coordinates are millimetres quantized to 0.0001 mm, represented as JavaScript numbers. This is a quantized floating-point model, **not** an integer-only exact-geometry kernel. Gerber writing uses a 0.000001 mm output grid; finer output notation does not add information to the native model.
 
 A component owns its exact local pads and a separate representative body. Position, rotation and face determine world pad geometry. Pin identity does not change on rotation/flip. The renderer never supplies authoritative manufacturing coordinates.
 
@@ -14,9 +14,11 @@ Nets express intention. Pads, traces, vias and filled zones express physical cop
 |---|---|
 | `core.js` | Model, native validation, embedded generic parts, transforms, nets, snapshots, example documents. |
 | `geometry.js` | Contours, distances, copper primitives, spatial indexing, connectivity, findings and routing clearances. |
+| `vias.js` | Pure through-via proposals, net inference, both-face copper/edge/hole validation, guarded add/edit, size presets and trace-center snapping. |
 | `platforms.js` | Nominal platform interface library, template factories, linked mounting holes, signal aliases, metadata validation and review findings. |
 | `font.js` | Original geometric stroke alphabet and transformed silkscreen primitives. |
 | `router.js` | Selected-connection routing and conservative connected-cell copper fills. |
+| `planes.js` | Managed per-face zones, outline sync, real-region status/findings and pure all-or-nothing lead attachments. |
 | `manufacturing.js` | Gerber/Excellon writers, strict generated-file readers, BOM and SVG. |
 | `interchange.js` | Bounded KiCad parsing/writing with explicit failure/report paths. |
 | `renderer.js` | Projection/picking, 3D representative bodies, software depth rasterizer, Copper view and parsed-file Fabrication view. |
@@ -69,3 +71,49 @@ placed geometry, so future library changes cannot silently move saved pins.
 
 The platform module runs in the worker too. Reference warning findings do not
 substitute for a physical clearance solver or electrical rule checker.
+
+## Via transactions
+
+`CB.V.propose()` never changes the document. It derives the net from touching
+copper on either face or an explicit choice, validates pad/drill/ring values,
+checks both-layer clearance and all hole spacing, then returns an accepted
+through-via object or an actionable rejection. Unassigned copper is an obstacle.
+The UI commits only accepted proposals and rolls back invalid edits.
+
+Manual layer transitions validate the draft incoming trace and proposed via
+before one shared undo transaction. The editor then starts the next route on the
+opposite face. Existing copper is never stretched implicitly when a via moves.
+The renderer prioritizes via picks above traces and their vertex handles.
+
+## Managed planes and derived fills
+
+Schema 3 adds the `boardPlane` zone marker and `settings.autoPlanes`. All managed
+geometry remains ordinary zone copper at export time. Outline synchronization
+runs during commits/import/fill. Manual zones have fill priority. Routing ignores
+old managed fills as obstacles but never ignores hard copper: the next fill
+carves the corresponding different-net clearances.
+
+Automatic refill is a separately cancellable worker with revision gating,
+coalesced after edits and paused during active draws/proposals. Applied fills
+are derived state, not separate undo commands. Ordinary user edits remain
+transactional. `zoneGroups` and per-rectangle `zoneRoots` expose actual electrical
+components for plane status, rather than treating a zone ID as one conductor.
+
+`planConnections` works on a clone, rejects conflicting nets and selected-lead
+hard-copper violations, then tries existing contact, local routes/existing vias,
+or offset through-via candidates. Every successful attachment is rechecked after
+fill; multi-lead plans are rechecked as a whole. UI acceptance commits the full
+proposal once. Native managed-plane semantics are not KiCad round-trip metadata.
+
+## v1.3.1 terminal roles and legend compositing
+
+`core.js` owns explicit polarity roles, legacy-safe role inference and physical
+symbol anchors. `font.js` turns print-enabled symbols into normal source strokes.
+`renderer.js` adds independent clickable editor badges. `app.js` edits roles and
+printing options without changing electrical intent. Native schema remains 3.
+
+`manufacturing.js` clips silk using a horizontal sweep of simple outline edges,
+emitting single-contour exterior regions. Gerber region contours combine by union;
+the Canvas interpreter composites each contour accordingly, and the separate
+Python oracle uses union rather than symmetric difference. Negative old-frame
+fixtures guard against reinstating the exporter and reader's former shared bug.

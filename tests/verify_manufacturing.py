@@ -82,7 +82,7 @@ def read_gerber(path: Path) -> Layer:
             for contour in contours:
                 polygon = Polygon(contour)
                 assert polygon.is_valid
-                region = region.symmetric_difference(polygon)
+                region = region.union(polygon)  # Gerber 4.10: each contour is filled independently, not XORed.
             apply(region)
             contours = None
             continue

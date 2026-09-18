@@ -12,7 +12,8 @@ R.route=function(d,a,b,opts={}){
  const key=(x,y,l)=>(l*ny+y)*nx+x,position=(x,y)=>({x:x*step+origin.x,y:y*step+origin.y}),passCache=[new Map,new Map],viaCache=new Map;
  const clearAt=(p,l,r)=>{if(p.x<0||p.y<0||p.x>d.board.width||p.y>d.board.height||!G.inside(p,outline))return false;for(let i=0;i<outline.length;i++)if(G.segDist(p,outline[i],outline[(i+1)%outline.length])<r+d.profile.edge+C.EPS)return false;for(const c of cutouts)if(G.pointPolyDist(p,c)<r+d.profile.edge||G.inside(p,c))return false;let box={minX:p.x,minY:p.y,maxX:p.x,maxY:p.y};for(const j of obs[l].index.query(box,r+d.profile.clearance+C.EPS))if(G.pointPolyDist(p,obs[l].items[j].poly)<r+d.profile.clearance+C.EPS)return false;return true;};
  const pass=(x,y,l)=>{let k=y*nx+x,c=passCache[l];if(c.has(k))return c.get(k);let ok=clearAt(position(x,y),l,width/2);c.set(k,ok);return ok;};
- const viaPass=(x,y)=>{let k=y*nx+x;if(viaCache.has(k))return viaCache.get(k);let ok=clearAt(position(x,y),0,d.settings.viaDiameter/2)&&clearAt(position(x,y),1,d.settings.viaDiameter/2);viaCache.set(k,ok);return ok;};
+ const viaHoles=G.holes(d),viaSizeOK=d.settings.viaDrill>=d.profile.minDrill-1e-8&&(d.settings.viaDiameter-d.settings.viaDrill)/2>=d.profile.minRing-1e-8;
+ const viaPass=(x,y)=>{let k=y*nx+x;if(viaCache.has(k))return viaCache.get(k);let ok=viaSizeOK&&clearAt(position(x,y),0,d.settings.viaDiameter/2)&&clearAt(position(x,y),1,d.settings.viaDiameter/2)&&viaHoles.every(h=>{const[a,b]=G.holeEndpoints(h);return G.segDist(position(x,y),a,b)>=(h.drill+d.settings.viaDrill)/2+d.profile.minHoleGap;});viaCache.set(k,ok);return ok;};
  let open=new Heap,best=new Map,parents=new Map,closed=new Set,goal=null,visited=0;for(const l of starts){let k=key(sx,sy,l),h=G.dist(a,b);open.push({x:sx,y:sy,l,k,g:l===pref?0:.05,f:h+(l===pref?0:.05),dir:-1});best.set(k,0);}
  const dirs=[[1,0],[-1,0],[0,1],[0,-1],[1,1],[1,-1],[-1,1],[-1,-1]];
  while(open.length&&visited<(opts.maxNodes||80000)){
@@ -27,7 +28,7 @@ R.route=function(d,a,b,opts={}){
  if(!goal)return{traces:[],vias:[],visited,error:visited>=(opts.maxNodes||80000)?'Search limit reached. Try a different placement, a coarser route grid, or manual routing.':'No compliant path found at this width. Move a part, reduce width within the rules, or allow vias.'};
  let path=[],cur=goal;while(cur){path.push({...position(cur.x,cur.y),l:cur.l});cur=parents.get(cur.k);}path.reverse();path[0]={x:a.x,y:a.y,l:path[0].l};path.push({x:b.x,y:b.y,l:path[path.length-1].l});let traces=[],vias=[],points=[path[0]],l=path[0].l;
  const finish=()=>{let simple=[];for(const p of points){while(simple.length>1&&Math.abs(G.cross(simple[simple.length-2],simple[simple.length-1],p))<.00001)simple.pop();if(!simple.length||G.dist(simple[simple.length-1],p)>.0001)simple.push({x:C.q(p.x),y:C.q(p.y)});}if(simple.length>1)traces.push({id:C.uid('t'),net,layer:layers[l],width,points:simple,locked:false});};
- for(const p of path.slice(1)){if(p.l!==l){finish();vias.push({id:C.uid('v'),net,x:C.q(p.x),y:C.q(p.y),diameter:d.settings.viaDiameter,drill:d.settings.viaDrill,tented:false});l=p.l;points=[p];}else points.push(p);}finish();
+ for(const p of path.slice(1)){if(p.l!==l){finish();vias.push({id:C.uid('v'),net,x:C.q(p.x),y:C.q(p.y),diameter:d.settings.viaDiameter,drill:d.settings.viaDrill,tented:!!d.settings.viaTented});l=p.l;points=[p];}else points.push(p);}finish();
  // Exact final segment checks are independent of the search occupancy approximation.
  for(const t of traces)if(!G.pathClear(d,t.points,t.width,net,t.layer,obs[t.layer==='top'?0:1]).ok)return{traces:[],vias:[],visited,error:'A candidate failed exact clearance validation. No copper was committed; try a finer routing grid.'};
  return{traces,vias,visited};
@@ -37,7 +38,7 @@ R.fillZone=function(d,z){
  if(!z.net)throw Error('Assign a net before filling a zone.');if(!G.simple(z.points))throw Error('Zone must be a simple closed polygon.');
  const step=C.clamp(Math.min(z.step||.25,z.thermal===false?1:(z.spoke||.5)/2.1),.1,1),b=G.bounds(z.points),x0=Math.floor(Math.max(0,b.minX)/step)*step,y0=Math.floor(Math.max(0,b.minY)/step)*step,nx=Math.ceil((Math.min(d.board.width,b.maxX)-x0)/step),ny=Math.ceil((Math.min(d.board.height,b.maxY)-y0)/step),n=nx*ny;
  if(n>650000)throw Error('Zone is too large for this fill resolution. Increase the zone cell size or use smaller zones.');
- const mask=new Uint8Array(n),outline=G.outline(d),r=step/Math.SQRT2,ob=G.obstacles(d,z.net,z.layer),copper=G.copper(d,false).filter(p=>p.net===z.net&&G.layerMatch(p.layer,z.layer)),ownIndex=new G.Spatial(copper),thermals=copper.filter(p=>p.kind==='pad'||p.kind==='via'),thermalIndex=new G.Spatial(thermals),seeds=new Uint8Array(n);let allowed=0;
+ const mask=new Uint8Array(n),outline=G.outline(d),r=step/Math.SQRT2,ob=G.obstacles(d,z.net,z.layer,{includeBoardPlanes:true}),copper=G.copper(d,false).filter(p=>p.net===z.net&&G.layerMatch(p.layer,z.layer)),ownIndex=new G.Spatial(copper),thermals=copper.filter(p=>p.kind==='pad'||(!z.boardPlane&&p.kind==='via')),thermalIndex=new G.Spatial(thermals),seeds=new Uint8Array(n);let allowed=0;
  for(let y=0;y<ny;y++)for(let x=0;x<nx;x++){
   let p={x:x0+(x+.5)*step,y:y0+(y+.5)*step},k=y*nx+x,box={minX:p.x-r,minY:p.y-r,maxX:p.x+r,maxY:p.y+r};
   if(!G.inside(p,z.points)||!G.inside(p,outline))continue;let clear=true;for(let i=0;i<z.points.length;i++)if(G.segDist(p,z.points[i],z.points[(i+1)%z.points.length])<r){clear=false;break;}if(!clear)continue;
@@ -52,6 +53,6 @@ R.fillZone=function(d,z){
  let rects=[],active=new Map;for(let y=0;y<ny;y++){let next=new Map;for(let x=0;x<nx;x++){if(!mask[y*nx+x])continue;let start=x;while(x+1<nx&&mask[y*nx+x+1])x++;let key=start+':'+x,old=active.get(key);if(old){old.h=C.q(old.h+step);next.set(key,old);}else{let rect={x:C.q(x0+start*step),y:C.q(y0+y*step),w:C.q((x-start+1)*step),h:C.q(step)};rects.push(rect);next.set(key,rect);}}active=next;}
  return{rects,step,removedIslands,cells:retained,area:C.q(retained*step*step),method:'Conservative vectorized cell fill; isolated islands removed'};
 };
-R.fillAll=function(doc,progress=()=>{}){let d=C.clone(doc);d.zones.forEach(z=>z.fill=null);for(let i=0;i<d.zones.length;i++){d.zones[i].fill=R.fillZone(d,d.zones[i]);progress({complete:i+1,total:d.zones.length});}return d.zones.map(z=>({id:z.id,fill:z.fill}));};
+R.fillAll=function(doc,progress=()=>{}){let d=C.clone(doc);if(C.Planes)C.Planes.sync(d);d.zones.forEach(z=>z.fill=null);const order=[...d.zones.filter(z=>!z.boardPlane),...d.zones.filter(z=>z.boardPlane)];for(let i=0;i<order.length;i++){order[i].fill=R.fillZone(d,order[i]);progress({complete:i+1,total:order.length});}return d.zones.map(z=>({id:z.id,fill:z.fill}));};
 if(typeof module!=='undefined')module.exports=R;
 })(typeof self!=='undefined'?self:globalThis);

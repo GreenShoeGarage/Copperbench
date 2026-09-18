@@ -34,7 +34,7 @@ class PackagingTests(unittest.TestCase):
     def test_embedded_worker_is_current(self):
         text = builder.generate()['src/worker-source.js'].decode()
         worker = json.loads(text.split('window.CB_WORKER_SOURCE=', 1)[1].strip().rstrip(';'))
-        for name in ['core.js', 'geometry.js', 'font.js', 'platforms.js', 'router.js', 'worker-entry.js']:
+        for name in ['core.js', 'geometry.js', 'font.js', 'platforms.js', 'router.js', 'planes.js', 'worker-entry.js']:
             self.assertIn((ROOT/'src'/name).read_text(encoding='utf-8'), worker)
 
     def test_cache_revision_tracks_contents(self):

@@ -1,0 +1,101 @@
+{
+  "version": "1.3.0",
+  "recordedUTC": "2026-09-18T02:18:42.450715+00:00",
+  "passed": 245,
+  "total": 245,
+  "suites": [
+    {
+      "suite": "Core JavaScript",
+      "passed": 32,
+      "total": 32,
+      "record": "core-results.json"
+    },
+    {
+      "suite": "Platform JavaScript",
+      "passed": 23,
+      "total": 23,
+      "record": "platform-results.json"
+    },
+    {
+      "suite": "Via JavaScript",
+      "passed": 27,
+      "total": 27,
+      "record": "via-results.json"
+    },
+    {
+      "suite": "Plane JavaScript",
+      "passed": 31,
+      "total": 31,
+      "record": "plane-core-results.json"
+    },
+    {
+      "suite": "Independent coupon geometry",
+      "passed": 12,
+      "total": 12,
+      "record": "manufacturing-results.json"
+    },
+    {
+      "suite": "Independent platform geometry",
+      "passed": 12,
+      "total": 12,
+      "record": "platform-manufacturing-results.json"
+    },
+    {
+      "suite": "Independent via geometry",
+      "passed": 7,
+      "total": 7,
+      "record": "via-manufacturing-results.json"
+    },
+    {
+      "suite": "Independent plane geometry",
+      "passed": 15,
+      "total": 15,
+      "record": "plane-manufacturing-results.json"
+    },
+    {
+      "suite": "Core Chromium interactions",
+      "passed": 20,
+      "total": 20,
+      "record": "browser-results.json"
+    },
+    {
+      "suite": "Platform Chromium interactions",
+      "passed": 13,
+      "total": 13,
+      "record": "platform-browser-results.json"
+    },
+    {
+      "suite": "Via Chromium interactions",
+      "passed": 21,
+      "total": 21,
+      "record": "via-browser-results.json"
+    },
+    {
+      "suite": "Plane Chromium interactions",
+      "passed": 23,
+      "total": 23,
+      "record": "plane-browser-results.json"
+    },
+    {
+      "suite": "Packaging",
+      "passed": 9,
+      "total": 9,
+      "record": "full-tests.txt"
+    }
+  ],
+  "environment": {
+    "node": "22.16.0",
+    "python": "3.13.5",
+    "chromium": "144.0.7559.96",
+    "playwright": "1.57.0",
+    "shapely": "2.1.2",
+    "Pillow": "12.3.0"
+  },
+  "limitations": [
+    "Browser uses set_content, simulated localStorage and captured Blob downloads.",
+    "Hosted HTTP navigation attempt was blocked by the environment (ERR_BLOCKED_BY_ADMINISTRATOR); no bypass used.",
+    "No hosted service-worker/file-origin persistence/Safari/Firefox certification.",
+    "No installed KiCad, external CAM, manufacturer upload or physical fabrication.",
+    "No remote GitHub writes or deployment."
+  ]
+}

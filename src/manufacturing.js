@@ -14,8 +14,37 @@ class GerberWriter{
  finish(){return['G04 COPPERBENCH '+C.VERSION+' - inspect before ordering*','%FSLAX46Y46*%','%MOMM*%',...(this.x2?['%TF.GenerationSoftware,GreenShoeGarage,COPPERBENCH,'+C.VERSION+'*%','%TF.FileFunction,'+this.func+'*%','%TF.FilePolarity,'+this.polarity+'*%']:[]),...this.defs,'%LPD*%','G01*',...this.commands,'M02*',''].join('\n');}
 }
 M.GerberWriter=GerberWriter;
+// Gerber section 4.10: separate contours are UNIONED, never XORed. A nested
+// clear rectangle + board contour clears the entire legend (the v1.3.0 defect).
+// Decompose the exterior into non-self-intersecting horizontal trapezoids. This
+// is analytic geometry between outline vertices, not a pixel/grid approximation.
+M.exteriorRegions=function(outline,bounds){
+ const ys=[...new Set([bounds.minY,...outline.map(p=>p.y),bounds.maxY])].sort((a,b)=>a-b),result=[];
+ const edges=outline.map((a,i)=>[a,outline[(i+1)%outline.length]]).filter(([a,b])=>a.y!==b.y);
+ const xAt=(edge,y)=>edge===null?bounds.minX:edge==='right'?bounds.maxX:edge[0].x+(y-edge[0].y)*(edge[1].x-edge[0].x)/(edge[1].y-edge[0].y);
+ const add=(left,right,y0,y1)=>{
+  let poly=[{x:xAt(left,y0),y:y0},{x:xAt(right,y0),y:y0},{x:xAt(right,y1),y:y1},{x:xAt(left,y1),y:y1}].map(p=>({x:Math.round(p.x*1e6)/1e6,y:Math.round(p.y*1e6)/1e6}));
+  poly=poly.filter((p,i)=>p.x!==poly[(i+poly.length-1)%poly.length].x||p.y!==poly[(i+poly.length-1)%poly.length].y);
+  if(poly.length>=3&&Math.abs(G.area(poly))>1e-10)result.push(poly);
+ };
+ for(let i=1;i<ys.length;i++){
+  const y0=ys[i-1],y1=ys[i];if(y1-y0<1e-7)continue;const mid=(y0+y1)/2;
+  const hits=edges.filter(([a,b])=>mid>Math.min(a.y,b.y)&&mid<Math.max(a.y,b.y)).sort((a,b)=>xAt(a,mid)-xAt(b,mid));
+  if(hits.length%2)throw Error('Cannot clip silkscreen against an invalid board outline.');
+  let left=null;for(let j=0;j<hits.length;j+=2){add(left,hits[j],y0,y1);left=hits[j+1];}add(left,'right',y0,y1);
+ }
+ return result;
+};
+M.silkBounds=function(doc,strokes,images){
+ // Include the actual artwork, even far outside the board. Fixed 100 mm frames
+ // miss larger/off-board images. Stream the bounds to avoid argument-size limits.
+ const b={minX:0,minY:0,maxX:doc.board.width,maxY:doc.board.height};
+ const add=(p,r=0)=>{b.minX=Math.min(b.minX,p.x-r);b.minY=Math.min(b.minY,p.y-r);b.maxX=Math.max(b.maxX,p.x+r);b.maxY=Math.max(b.maxY,p.y+r);};
+ for(const p of G.outline(doc))add(p);for(const s of strokes)for(const p of s.points)add(p,s.width/2);for(const im of images)for(const p of im.poly)add(p);
+ return {minX:b.minX-1,minY:b.minY-1,maxX:b.maxX+1,maxY:b.maxY+1};
+};
 M.files=function(doc,{x2=true,paste=false}={}){
- const files={},pads=C.pads(doc),silk=C.silkStrokes(doc),images=C.silkRects(doc),base='board',stem={top:'F',bottom:'B'};
+ const files={},pads=C.pads(doc),silk=C.silkStrokes(doc),images=C.silkRects(doc),base='board',stem={top:'F',bottom:'B'},exterior=M.exteriorRegions(G.outline(doc),M.silkBounds(doc,silk,images));
  for(const layer of ['top','bottom']){
   const st=stem[layer],where=layer==='top'?'Top':'Bot',cu=new GerberWriter(doc,'Copper,'+(layer==='top'?'L1':'L2')+','+where,x2);
   for(const z of doc.zones.filter(z=>z.layer===layer)){if(!z.fill)throw Error('Refill all copper zones before generating manufacturing files.');for(const r of z.fill.rects)cu.region([G.rect(r.x,r.y,r.w,r.h)]);}
@@ -25,15 +54,16 @@ M.files=function(doc,{x2=true,paste=false}={}){
   files[base+'-'+st+'_Cu.gbr']=cu.finish();
   const mask=new GerberWriter(doc,'Soldermask,'+where,x2,'Negative');for(const p of pads.filter(p=>G.layerMatch(p.layers,layer)))mask.pad(p,doc.profile.maskExpansion);for(const v of doc.vias.filter(v=>!v.tented))mask.circle(v.x,v.y,v.diameter+2*doc.profile.maskExpansion);for(const h of G.holes(doc).filter(h=>!h.plated)){let[a,b]=G.holeEndpoints(h);mask.line([a,b],h.drill+.1);if(!h.slot)mask.circle(h.x,h.y,h.drill+.1);}files[base+'-'+st+'_Mask.gbr']=mask.finish();
   const legend=new GerberWriter(doc,'Legend,'+where,x2);for(const s of silk.filter(s=>s.layer===layer))legend.line(s.points,s.width);for(const im of images.filter(im=>im.layer===layer))legend.region([im.poly]);
-  // Clear mask openings, holes, cutouts, and everything outside the board. A two-contour
-  // region is an even-odd frame: its inner contour preserves the actual board image.
-  legend.polarityTo('clear');for(const p of pads.filter(p=>G.layerMatch(p.layers,layer)))legend.pad(p,doc.profile.maskExpansion+.05);for(const v of doc.vias.filter(v=>!v.tented))legend.circle(v.x,v.y,v.diameter+2*doc.profile.maskExpansion+.1);for(const h of G.holes(doc).filter(h=>!h.plated)){let[a,b]=G.holeEndpoints(h);legend.line([a,b],h.drill+.1);if(!h.slot)legend.circle(h.x,h.y,h.drill+.1);}for(const cut of doc.cutouts)legend.region([cut.points]);legend.region([G.rect(-100,-100,doc.board.width+200,doc.board.height+200),G.outline(doc)]);legend.polarityTo('dark');files[base+'-'+st+'_Silkscreen.gbr']=legend.finish();
+  // Subtract openings/cutouts and explicit exterior pieces. Each clear region
+  // has only one contour, so every compliant Gerber reader retains on-board ink.
+  legend.polarityTo('clear');for(const p of pads.filter(p=>G.layerMatch(p.layers,layer)))legend.pad(p,doc.profile.maskExpansion+.05);for(const v of doc.vias.filter(v=>!v.tented))legend.circle(v.x,v.y,v.diameter+2*doc.profile.maskExpansion+.1);for(const h of G.holes(doc).filter(h=>!h.plated)){let[a,b]=G.holeEndpoints(h);legend.line([a,b],h.drill+.1);if(!h.slot)legend.circle(h.x,h.y,h.drill+.1);}for(const cut of doc.cutouts)legend.region([cut.points]);for(const poly of exterior)legend.region([poly]);legend.polarityTo('dark');files[base+'-'+st+'_Silkscreen.gbr']=legend.finish();
   if(paste){const pa=new GerberWriter(doc,'Paste,'+where,x2);for(const p of pads.filter(p=>p.layers===layer&&!p.drill))pa.pad(p);files[base+'-'+st+'_Paste.gbr']=pa.finish();}
  }
  const edge=new GerberWriter(doc,'Profile,NP',x2),out=G.outline(doc);edge.line([...out,out[0]],.05);for(const c of doc.cutouts)edge.line([...c.points,c.points[0]],.05);files[base+'-Edge_Cuts.gbr']=edge.finish();
  const holes=G.holes(doc);for(const plated of [true,false]){const hs=holes.filter(h=>h.plated===plated);if(hs.length)files[base+(plated?'-PTH':'-NPTH')+'.drl']=M.drill(doc,hs,plated);}
  return files;
 };
+M.silkInventory=doc=>{const strokes=C.silkStrokes(doc),images=C.silkRects(doc);return ['top','bottom'].map(layer=>({layer,strokes:strokes.filter(x=>x.layer===layer).length,shapes:images.filter(x=>x.layer===layer).length}));};
 M.drill=function(doc,holes,plated){let sizes=[...new Set(holes.map(h=>h.drill.toFixed(6)))].sort((a,b)=>a-b),lines=['M48','; COPPERBENCH '+C.VERSION,'; TYPE='+(plated?'PLATED':'NON_PLATED'),'; FILE_FORMAT=4:6','METRIC,TZ',...sizes.map((s,i)=>'T'+String(i+1).padStart(2,'0')+'C'+s),'%','G90','G05'];const xy=p=>'X'+p.x.toFixed(6)+'Y'+(doc.board.height-p.y).toFixed(6);sizes.forEach((s,i)=>{lines.push('T'+String(i+1).padStart(2,'0'));for(const h of holes.filter(h=>h.drill.toFixed(6)===s)){if(h.slot){let[a,b]=G.holeEndpoints(h);lines.push(xy(a)+'G85'+xy(b),'G05');}else lines.push(xy(h));}});lines.push('M30','');return lines.join('\n');};
 // Read back the *text*, not the project. Supported generator subset is deliberately strict.
 M.readGerber=function(text){let apertures={},selected=null,x=0,y=0,unit=1,decimal=6,region=null,contour=null,pol='dark',objects=[],func='',done=false;
@@ -41,7 +71,7 @@ M.readGerber=function(text){let apertures={},selected=null,x=0,y=0,unit=1,decima
  for(let token of tokens){token=token.trim();if(!token)continue;
  if(token.startsWith('%')){let t=token.slice(1,-1).replace(/\*$/,'').trim();if(t.startsWith('FS')){let m=t.match(/X(\d)(\d)Y(\d)(\d)/);if(!m||m[2]!==m[4]||!t.startsWith('FSL'))throw Error('Unsupported Gerber coordinate format.');decimal=+m[2];}
  else if(t==='MOMM')unit=1;else if(t==='MOIN')unit=25.4;else if(t.startsWith('ADD')){let m=t.match(/^ADD(\d+)([CRO]),([\d.X+-]+)$/);if(!m)throw Error('Unsupported aperture.');apertures[+m[1]]={shape:m[2],sizes:m[3].split('X').map(v=>+v*unit)};}else if(t==='LPD')pol='dark';else if(t==='LPC')pol='clear';else if(t.startsWith('TF.FileFunction,'))func=t.slice(16);else if(/^T[FAOD]/.test(t)){}else throw Error('Unsupported Gerber parameter: '+t.slice(0,50));continue;}
- let t=token.replace(/\*$/,'').trim();if(/^G04/.test(t))continue;if(t==='M02'){done=true;continue;}if(t==='G01'||t==='G75')continue;if(t==='G36'){region=[];contour=null;continue;}if(t==='G37'){if(!region)throw Error('Unmatched region end.');objects.push({kind:'region',contours:region,polarity:pol});region=null;contour=null;continue;}
+ let t=token.replace(/\*$/,'').trim();if(/^G04/.test(t))continue;if(t==='M02'){done=true;continue;}if(t==='G01'||t==='G75')continue;if(t==='G36'){region=[];contour=null;continue;}if(t==='G37'){if(!region)throw Error('Unmatched region end.');if(!region.length||region.some(p=>p.length<4||p[0].x!==p[p.length-1].x||p[0].y!==p[p.length-1].y))throw Error('Gerber region contours must be closed.');objects.push({kind:'region',contours:region,polarity:pol});region=null;contour=null;continue;}
  if(/^D\d+$/.test(t)){let n=+t.slice(1);if(n<10)throw Error('Standalone drawing operations are not supported by this reader.');selected=apertures[n];if(!selected)throw Error('Undefined aperture');continue;}
  let m=t.match(/^(?:G01)?(?:X([+-]?\d+))?(?:Y([+-]?\d+))?D0?([123])$/);if(!m)throw Error('Unsupported Gerber command: '+t.slice(0,60));let nx=m[1]===undefined?x:+m[1]/10**decimal*unit,ny=m[2]===undefined?y:+m[2]/10**decimal*unit,op=+m[3];if(region){if(op===2){contour=[{x:nx,y:ny}];region.push(contour);}else if(op===1){if(!contour)throw Error('Region without start.');contour.push({x:nx,y:ny});}else throw Error('Flash inside region.');}else if(op===1){if(!selected||selected.shape!=='C')throw Error('Only circular stroked apertures are supported.');objects.push({kind:'line',a:{x,y},b:{x:nx,y:ny},width:selected.sizes[0],polarity:pol});}else if(op===3){if(!selected)throw Error('Flash without aperture.');objects.push({kind:'flash',x:nx,y:ny,shape:selected.shape,sizes:[...selected.sizes],polarity:pol});}x=nx;y=ny;
  }

@@ -1,0 +1,58 @@
+{
+  "version": "1.2.0",
+  "suiteResults": [
+    {
+      "suite": "browser-results.json",
+      "passed": 20,
+      "total": 20
+    },
+    {
+      "suite": "core-results.json",
+      "passed": 32,
+      "total": 32
+    },
+    {
+      "suite": "manufacturing-results.json",
+      "passed": 12,
+      "total": 12
+    },
+    {
+      "suite": "platform-browser-results.json",
+      "passed": 13,
+      "total": 13
+    },
+    {
+      "suite": "platform-manufacturing-results.json",
+      "passed": 12,
+      "total": 12
+    },
+    {
+      "suite": "platform-results.json",
+      "passed": 23,
+      "total": 23
+    },
+    {
+      "suite": "via-browser-results.json",
+      "passed": 21,
+      "total": 21
+    },
+    {
+      "suite": "via-manufacturing-results.json",
+      "passed": 7,
+      "total": 7
+    },
+    {
+      "suite": "via-results.json",
+      "passed": 27,
+      "total": 27
+    }
+  ],
+  "packaging": {
+    "passed": 9,
+    "total": 9,
+    "record": "full-suite.log"
+  },
+  "passed": 176,
+  "total": 176,
+  "scope": "Local engine, actual Chromium interactions with storage/download test doubles, independent Python/Shapely export checks and packaging. No external CAM, manufacturer upload, physical PCB or remote GitHub actions."
+}

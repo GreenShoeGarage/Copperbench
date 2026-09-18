@@ -1,6 +1,6 @@
 'use strict';
 const assert=require('node:assert/strict'), fs=require('node:fs'),path=require('node:path');
-for(const f of ['core','geometry','font','platforms','manufacturing','router','interchange'])require('../src/'+f+'.js');
+for(const f of ['core','geometry','vias','font','platforms','manufacturing','router','interchange'])require('../src/'+f+'.js');
 const C=globalThis.CB,G=C.G,R=C.R,M=C.M,K=C.K;
 const OUTPUT=path.join(__dirname,'output'), FIXTURES=path.join(OUTPUT,'fixtures');
 fs.mkdirSync(FIXTURES,{recursive:true});
@@ -12,7 +12,7 @@ function tp(d,x,y,net,side='top'){const p=C.makePart(d,'testpoint',x,y);p.side=s
 function trace(d,net,points,layer='top',width=.4){let t={id:C.uid('t'),net,points:points.map(([x,y])=>({x,y})),layer,width,locked:false};d.traces.push(t);return t;}
 function pair(){const d=board(),n=C.newNet(d,'TEST');tp(d,7,10,n);tp(d,32,10,n);return{d,n,p:C.pads(d)};}
 function errors(d){return G.findings(d).filter(f=>f.severity==='error');}
-test('Native schema-2 JSON round-trip preserves an entire document',()=>{let d=C.example();assert.deepEqual(C.validateDoc(JSON.parse(JSON.stringify(d))),d);});
+test('Native current-schema JSON round-trip preserves an entire document',()=>{let d=C.example();assert.deepEqual(C.validateDoc(JSON.parse(JSON.stringify(d))),d);});
 test('All library footprints pass schema validation',()=>{let d=board(200,150);C.LIB.forEach((f,i)=>d.parts.push(C.makePart(d,f,20+(i%6)*25,20+Math.floor(i/6)*25)));C.validateDoc(d);assert(C.LIB.length>=30);});
 test('Malformed geometry, unknown schema, and duplicate identities stop import',()=>{for(let mutate of [d=>d.schema=99,d=>d.board.width=NaN,d=>d.parts.push(d.parts[0]),d=>d.profile.clearance=-1,d=>d.art.push({id:'bad',kind:'script',x:0,y:0,layer:'top'})]){let d=C.example();mutate(d);assert.throws(()=>C.validateDoc(d));}});
 test('Circular pads cannot silently stretch or turn into incorrect circles',()=>{let d=C.example();d.parts[0].pads[0].shape='circle';d.parts[0].pads[0].h+=1;assert.throws(()=>C.validateDoc(d));});

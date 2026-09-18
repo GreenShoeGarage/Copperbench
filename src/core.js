@@ -4,14 +4,14 @@
 (function(root){
 'use strict';
 const C=root.CB=root.CB||{};
-C.VERSION='1.1.0'; C.SCHEMA=2; C.EPS=.003;
+C.VERSION='1.3.1'; C.SCHEMA=3; C.EPS=.003;
 C.q=v=>Math.round(Number(v)*10000)/10000;
 C.uid=(prefix='id')=>prefix+'_'+(typeof crypto!=='undefined'&&crypto.randomUUID?crypto.randomUUID().replace(/-/g,'').slice(0,12):Math.random().toString(36).slice(2,14));
 C.clone=o=>JSON.parse(JSON.stringify(o));
 C.clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 C.esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 C.PROFILE={id:'oshpark-2l',name:'OSH Park · 2 layer',verified:'2026-09-17',revision:1,source:'https://docs.oshpark.com/services/two-layer/',minTrace:.1524,clearance:.1524,edge:.381,minDrill:.254,minRing:.127,minSlot:.508,minMaskWeb:.1016,minSilk:.127,maskExpansion:.075,minHoleGap:.127,minCutout:1.01,minWidth:6.35,minHeight:6.35,maxWidth:406.4,maxHeight:558.8};
-C.blank=()=>({app:'COPPERBENCH',schema:C.SCHEMA,version:C.VERSION,id:C.uid('board'),title:'Untitled board',created:new Date().toISOString(),updated:new Date().toISOString(),board:{width:80,height:55,thickness:1.6,shape:'rounded',radius:3,points:[],color:'green'},parts:[],nets:[],traces:[],vias:[],holes:[],cutouts:[],keepouts:[],zones:[],art:[],assets:[],profile:C.clone(C.PROFILE),settings:{grid:1.27,traceWidth:.4,viaDiameter:.9,viaDrill:.4,zoneStep:.25},assumptions:[{id:C.uid('assume'),text:'Two copper layers; through vias only. This layout does not verify circuit function.',status:'open'}],evidence:[],baseline:null});
+C.blank=()=>({app:'COPPERBENCH',schema:C.SCHEMA,version:C.VERSION,id:C.uid('board'),title:'Untitled board',created:new Date().toISOString(),updated:new Date().toISOString(),board:{width:80,height:55,thickness:1.6,shape:'rounded',radius:3,points:[],color:'green'},parts:[],nets:[],traces:[],vias:[],holes:[],cutouts:[],keepouts:[],zones:[],art:[],assets:[],profile:C.clone(C.PROFILE),settings:{grid:1.27,traceWidth:.4,viaDiameter:.9,viaDrill:.4,viaTented:false,zoneStep:.25,autoPlanes:true},assumptions:[{id:C.uid('assume'),text:'Two copper layers; through vias only. This layout does not verify circuit function.',status:'open'}],evidence:[],baseline:null});
 const pad=(n,x,y,w=1.8,h=w,drill=.9,shape='circle')=>({number:String(n),x,y,w,h,drill,slot:0,shape,layers:drill?'both':'top',net:null});
 const foot=(id,name,category,body,pads,extra={})=>({id,name,category,body,pads,ref:'U',value:name,source:'Parametric geometry; check against the selected component datasheet.',verified:false,...extra});
 C.LIB=[];
@@ -31,9 +31,34 @@ C.LIB.push(foot('to92','Transistor · TO-92','Through-hole',{kind:'transistor',w
 C.LIB.push(foot('sot23','Transistor · SOT-23','Surface-mount',{kind:'ic',w:1.4,h:2.9,z:1.1},[pad(1,-1, -.95,1,.8,0,'rect'),pad(2,-1,.95,1,.8,0,'rect'),pad(3,1,0,1,.8,0,'rect')],{ref:'Q',value:'SOT-23'}));
 C.LIB.push(foot('switch','Pushbutton · 6 mm','Switches',{kind:'switch',w:6,h:6,z:4},[pad(1,-3.25,-2.25,1.8,1.8,1),pad(2,3.25,-2.25,1.8,1.8,1),pad(3,-3.25,2.25,1.8,1.8,1),pad(4,3.25,2.25,1.8,1.8,1)],{ref:'SW',value:'Momentary',source:'Generic four-lead switch; verify mechanical drawing and internally connected pin pairs.'}));
 C.LIB.push(foot('testpoint','Test point · 2 mm','Utility',{kind:'testpoint',w:1.2,h:1.2,z:1.5},[pad(1,0,0,2,2,0,'circle')],{ref:'TP',value:'Test point'}));
+// Pin roles are explicit metadata, never inferred from net names or numeric pin order.
+// Legacy built-ins used literal A/K and +/- pad identities; those identities remain intact.
+C.POLARITY={anode:{short:'A',label:'Anode'},cathode:{short:'K',label:'Cathode'},positive:{short:'+',label:'Positive'},negative:{short:'-',label:'Negative'}};
+C.polarityRole=(part,a)=>{
+ if(a.polarity!==undefined)return C.POLARITY[a.polarity]?a.polarity:null;
+ const id=part.libraryId||part.id,key=String(a.number).trim().toUpperCase();
+ if(['diode','led5'].includes(id))return key==='A'?'anode':key==='K'?'cathode':null;
+ if(id==='cap-radial')return key==='+'?'positive':key==='-'?'negative':null;
+ return null;
+};
+C.polarityOptions=p=>({visible:true,size:1.2,gap:.7,x:0,y:0,...p.polaritySilk});
+C.polarityMarks=function(p){
+ const o=C.polarityOptions(p),roles=p.pads.map((a,index)=>({a,index,role:C.polarityRole(p,a)})).filter(a=>a.role);
+ if(!roles.length)return[];
+ const cx=roles.reduce((v,r)=>v+r.a.x,0)/roles.length,cy=roles.reduce((v,r)=>v+r.a.y,0)/roles.length;
+ return roles.map(({a,index,role})=>{
+  let dx=a.x-cx,dy=a.y-cy;if(Math.hypot(dx,dy)<.00001)dx=role==='anode'||role==='positive'?1:-1;
+  let x=a.x,y=a.y;const angle=(a.rotation||0)*Math.PI/180,ex=(Math.abs(Math.cos(angle))*a.w+Math.abs(Math.sin(angle))*a.h)/2,ey=(Math.abs(Math.sin(angle))*a.w+Math.abs(Math.cos(angle))*a.h)/2;
+  if(Math.abs(dx)>=Math.abs(dy))x=Math.sign(dx)*(Math.max(p.body.w/2,Math.abs(a.x)+ex)+o.gap+o.size/3);
+  else y=Math.sign(dy)*(Math.max(p.body.h/2,Math.abs(a.y)+ey)+o.gap+o.size/2);
+  const center={x:x+o.x,y:y+o.y},pos=C.world(p,{x:center.x-o.size/3,y:center.y-o.size/2});
+  return {...C.POLARITY[role],role,index,padId:p.id+':'+index,pad:C.world(p,a),center:C.world(p,center),local:center,x:pos.x,y:pos.y,size:o.size,rotation:p.rotation,layer:p.side,owner:p.id,width:.18,visible:o.visible};
+ });
+};
+for(const f of C.LIB)for(const a of f.pads){const role=C.polarityRole(f,a);if(role)a.polarity=role;}
 C.makePart=(doc,libraryId,x,y)=>{let f=typeof libraryId==='string'?C.LIB.find(x=>x.id===libraryId):libraryId;if(!f)throw Error('Unknown footprint');let p=C.clone(f);p.libraryId=p.id;p.id=C.uid('p');let n=1;while(doc.parts.some(x=>x.ref===f.ref+n))n++;p.ref=f.ref+n;p.x=C.q(x);p.y=C.q(y);p.rotation=0;p.side=f.defaultSide||'top';p.locked=false;p.label=C.clone(f.label||{x:0,y:f.body.h/2+2,size:1.3,visible:true});return p;};
 C.world=(part,local)=>{let r=part.rotation*Math.PI/180,x=local.x*(part.side==='bottom'?-1:1),y=local.y;return{x:C.q(part.x+x*Math.cos(r)-y*Math.sin(r)),y:C.q(part.y+x*Math.sin(r)+y*Math.cos(r))};};
-C.pads=doc=>doc.parts.flatMap(p=>p.pads.map((a,i)=>({...a,...C.world(p,a),id:p.id+':'+i,partId:p.id,ref:p.ref,pin:a.number,index:i,side:p.side,rotation:p.rotation+(a.rotation||0)*(p.side==='bottom'?-1:1),layers:a.drill?'both':p.side,sourcePad:a})));
+C.pads=doc=>doc.parts.flatMap(p=>p.pads.map((a,i)=>({...a,...C.world(p,a),id:p.id+':'+i,partId:p.id,ref:p.ref,pin:a.number,index:i,side:p.side,rotation:p.rotation+(a.rotation||0)*(p.side==='bottom'?-1:1),layers:a.drill?'both':p.side,sourcePad:a,polarityRole:C.polarityRole(p,a),polarityLabel:C.POLARITY[C.polarityRole(p,a)]?.label||null})));
 C.getPad=(doc,id)=>C.pads(doc).find(p=>p.id===id);
 C.netName=(doc,id)=>doc.nets.find(n=>n.id===id)?.name||'Unassigned';
 C.newNet=(doc,name)=>{name=String(name||'NET_'+(doc.nets.length+1)).trim().slice(0,80);let old=doc.nets.find(n=>n.name===name);if(old)return old.id;let net={id:C.uid('n'),name,width:doc.settings.traceWidth};doc.nets.push(net);return net.id;};
@@ -42,8 +67,8 @@ C.reference=(doc,id)=>{const p=C.getPad(doc,id);return p?p.ref+'.'+p.pin:id;};
 C.snapshot=doc=>{const s=C.clone(doc);s.baseline=null;return s;};
 C.compare=(doc,base)=>{if(!base)return[];let out=[];for(const key of ['parts','traces','vias','holes','cutouts','keepouts','zones','art','nets']){let a=new Map((base[key]||[]).map(x=>[x.id,JSON.stringify(x)])),b=new Map((doc[key]||[]).map(x=>[x.id,JSON.stringify(x)]));for(let [id,v] of b)if(!a.has(id))out.push({kind:'Added',group:key,id});else if(v!==a.get(id))out.push({kind:'Changed',group:key,id});for(let id of a.keys())if(!b.has(id))out.push({kind:'Removed',group:key,id});}if(JSON.stringify(doc.board)!==JSON.stringify(base.board))out.push({kind:'Changed',group:'board',id:'board'});if(JSON.stringify(doc.profile)!==JSON.stringify(base.profile))out.push({kind:'Changed',group:'rules',id:'profile'});return out;};
 C.validateDoc=function(input){
- const d=C.clone(input);if(!d||d.app!=='COPPERBENCH'||![1,2].includes(d.schema))throw Error('Unsupported document. Use a COPPERBENCH schema-1 or schema-2 JSON project.');
- d.schema=C.SCHEMA;d.version=C.VERSION; // v1.0 readers must reject schema 2 instead of dropping linked NPTH holes.
+ const d=C.clone(input);if(!d||d.app!=='COPPERBENCH'||![1,2,3].includes(d.schema))throw Error('Unsupported document. Use a COPPERBENCH schema-1, schema-2 or schema-3 JSON project.');
+ d.schema=C.SCHEMA;d.version=C.VERSION; // Older readers must reject schema 3 rather than losing managed board-plane behavior.
  const ids=new Set(), checkId=x=>{if(typeof x.id!=='string'||!x.id||ids.has(x.id))throw Error('Missing or duplicate object identity.');ids.add(x.id);};
  const num=(v,a=-10000,b=10000)=>{if(typeof v!=='number'||!Number.isFinite(v)||v<a||v>b)throw Error('Invalid or out-of-range geometry.');};
  const xy=p=>{num(p.x);num(p.y);}; const pts=p=>{if(!Array.isArray(p)||p.length>30000)throw Error('Too many or missing polygon vertices.');p.forEach(xy);};
@@ -55,13 +80,16 @@ C.validateDoc=function(input){
  for(const k of ['minWidth','minHeight','maxWidth','maxHeight'])num(d.profile[k],1,1000);
  for(const n of d.nets){if(typeof n.name!=='string'||n.name.length>80)throw Error('Invalid net name.');num(n.width,.01,25);}
  for(const k of ['grid','traceWidth','viaDiameter','viaDrill','zoneStep'])num(d.settings[k],.01,25);
+ if(d.settings.autoPlanes===undefined)d.settings.autoPlanes=true;else if(typeof d.settings.autoPlanes!=='boolean')throw Error('Invalid automatic plane refill setting.');
+ if(d.settings.viaTented===undefined)d.settings.viaTented=false;else if(typeof d.settings.viaTented!=='boolean')throw Error('Invalid via tenting setting.');
  const netIds=new Set(d.nets.map(n=>n.id)),net=n=>{if(n!==null&&n!==undefined&&!netIds.has(n))throw Error('Geometry references a missing net.');};
  const side=s=>{if(!['top','bottom','both'].includes(s))throw Error('Invalid layer or board side.');};
- for(const p of d.parts){xy(p);num(p.rotation,-36000,36000);side(p.side);if(p.side==='both')throw Error('A part must be on one board face.');if(typeof p.ref!=='string'||typeof p.value!=='string'||!p.body||!Array.isArray(p.pads)||p.pads.length>256)throw Error('Invalid part or footprint.');num(p.body.w,.05,500);num(p.body.h,.05,500);num(p.body.z,.01,150);p.pads.forEach(a=>{xy(a);num(a.w,.01,200);num(a.h,.01,200);num(a.drill,0,50);num(a.slot||0,0,200);if(a.rotation!==undefined)num(a.rotation,-36000,36000);if(a.shape==='circle'&&Math.abs(a.w-a.h)>.0001)throw Error('A circular pad must have equal width and height. Use oval for unequal dimensions.');if(!['circle','rect','oval'].includes(a.shape))throw Error('Unsupported pad shape.');net(a.net);});if(p.label){xy(p.label);num(p.label.size,.2,30);}}
+ for(const p of d.parts){xy(p);num(p.rotation,-36000,36000);side(p.side);if(p.side==='both')throw Error('A part must be on one board face.');if(typeof p.ref!=='string'||typeof p.value!=='string'||!p.body||!Array.isArray(p.pads)||p.pads.length>256)throw Error('Invalid part or footprint.');num(p.body.w,.05,500);num(p.body.h,.05,500);num(p.body.z,.01,150);p.pads.forEach(a=>{xy(a);num(a.w,.01,200);num(a.h,.01,200);num(a.drill,0,50);num(a.slot||0,0,200);if(a.rotation!==undefined)num(a.rotation,-36000,36000);if(a.shape==='circle'&&Math.abs(a.w-a.h)>.0001)throw Error('A circular pad must have equal width and height. Use oval for unequal dimensions.');if(!['circle','rect','oval'].includes(a.shape))throw Error('Unsupported pad shape.');net(a.net);if(a.polarity!==undefined&&!['none','anode','cathode','positive','negative'].includes(a.polarity))throw Error('Invalid pad polarity role.');});if(p.polaritySilk){if(typeof p.polaritySilk!=='object'||Array.isArray(p.polaritySilk))throw Error('Invalid polarity marking options.');const o=C.polarityOptions(p);if(typeof o.visible!=='boolean')throw Error('Invalid polarity visibility.');num(o.size,.6,10);num(o.gap,.2,20);num(o.x,-100,100);num(o.y,-100,100);}if(p.label){xy(p.label);num(p.label.size,.2,30);}}
  for(const t of d.traces){pts(t.points);if(t.points.length<2)throw Error('Trace requires two points.');num(t.width,.01,25);side(t.layer);if(t.layer==='both')throw Error('Trace cannot span both layers.');net(t.net);}
- for(const v of d.vias){xy(v);num(v.diameter,.01,20);num(v.drill,.01,20);net(v.net);}
+ for(const v of d.vias){xy(v);num(v.diameter,.01,20);num(v.drill,.01,20);net(v.net);if(v.tented!==undefined&&typeof v.tented!=='boolean')throw Error('Invalid via tenting flag.');}
  for(const h of d.holes){if(h.plated)throw Error('Standalone holes must be non-plated. Use a through-hole footprint for plated pads.');xy(h);num(h.drill,.01,100);num(h.slot||0,0,200);num(h.rotation||0,-36000,36000);}
  for(const k of ['cutouts','keepouts','zones'])for(const a of d[k]){pts(a.points);if(a.points.length<3)throw Error(k+' requires a closed polygon.');if(a.layer)side(a.layer);if(k==='zones'){net(a.net);num(a.step||.25,.1,1);num(a.gap||.3,.05,5);num(a.spoke||.4,.05,5);}}
+ const planeSides=new Set;for(const z of d.zones){if(z.boardPlane!==undefined&&typeof z.boardPlane!=='boolean')throw Error('Invalid board-plane marker.');if(z.boardPlane){if(!['top','bottom'].includes(z.layer)||planeSides.has(z.layer)||!z.net)throw Error('Each board face can have only one managed plane with an assigned net.');planeSides.add(z.layer);}}
  for(const a of d.art){if(!['text','image','poly','line','rect','circle'].includes(a.kind))throw Error('Unsupported silkscreen object.');xy(a);if(['rect','circle'].includes(a.kind)){num(a.w,.0001,600);num(a.h,.0001,600);}if(a.layer==='both')throw Error('Artwork must be on one face.');num(a.rotation||0,-36000,36000);side(a.layer);num(a.width||.2,.01,25);if(a.kind==='text'){num(a.size,.2,100);if(typeof a.text!=='string'||a.text.length>500)throw Error('Invalid silkscreen text.');}if(a.points)pts(a.points);if(a.rects){if(a.rects.length>50000)throw Error('Image has too much geometry.');for(const r of a.rects){num(r.x);num(r.y);num(r.w,.0001,600);num(r.h,.0001,600);}}}
  for(const a of d.assets)if(typeof a.data!=='string'||a.data.length>16000000||!/^data:image\/(png|jpeg|webp|gif);base64,/.test(a.data))throw Error('Only embedded raster image assets are accepted.');
  d.assumptions=Array.isArray(d.assumptions)?d.assumptions:[];d.evidence=Array.isArray(d.evidence)?d.evidence:[];if(d.baseline){if(d.baseline.document)d.baseline.document=C.validateDoc({...d.baseline.document,baseline:null});else d.baseline=null;}

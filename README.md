@@ -1,15 +1,51 @@
 # COPPERBENCH
 ### A PCB workbench that feels like a PCB.
 
-**Version 1.1.0 · Green Shoe Garage / Field Instruments · 17 September 2026**
+**Version 1.3.1 · Green Shoe Garage / Field Instruments · 17 September 2026**
 
-[HATs & shields](#hats-shields-and-carriers) · [Get started](#start-here) · [Publish to GitHub](docs/GITHUB.md) · [Deploy](docs/DEPLOYMENT.md) · [Verification](docs/TESTING.md) · [Contribute](CONTRIBUTING.md)
+[Polarity & silkscreen fix](#polarity-and-silkscreen) · [Power & ground planes](#power-and-ground-planes) · [Create vias](#create-vias) · [HATs & shields](#hats-shields-and-carriers) · [Get started](#start-here) · [Publish to GitHub](docs/GITHUB.md) · [Deploy](docs/DEPLOYMENT.md) · [Verification](docs/TESTING.md) · [Contribute](CONTRIBUTING.md)
 
 Put down a board. Place recognizable parts. Connect their leads. Shape the copper. Add your markings. Inspect the files you will send for fabrication.
 
 COPPERBENCH is a local-first, two-copper-layer PCB layout app with an editable, depth-rendered 3D workbench. **COPPERBENCH is the working title for this release.** The physical bodies are representative; pad geometry and the electrical connection model—not rendered pixels—drive routing, checking and manufacturing export.
 
 ![The actual app: a small board routed by clicking component leads](docs/images/routed-bench.png)
+
+## Polarity and silkscreen
+
+**v1.3.1 fixes an export defect that could clear the entire silkscreen. Open your
+native project in this version and regenerate its manufacturing ZIP before
+ordering. Previously downloaded Gerbers are not repaired by updating the app.**
+
+Diodes and LEDs now identify **A · Anode** and **K · Cathode**. Polarized radial
+capacitors identify **+ · Positive** and **− · Negative**. Badges anchor to the
+actual pins, remain legible while zooming, and show full role names when selected
+or hovered. The inspector and searchable pin table also show the full names.
+
+![Actual polarity badges and full-name inspector](docs/images/polarity-workbench.png)
+
+Select a component and open **Polarity & pin roles** to assign roles to custom or
+imported pins, toggle printing, or adjust symbol size, clearance and offsets.
+Printed A/K or +/− symbols follow the component's rotation and board face and are
+included in the Gerbers. Hiding the reference label does not hide polarity marks;
+disabling printed polarity does not remove the editor badges. No operation
+silently swaps pin numbers or reassigns nets. Unknown/numeric pin roles are not
+guessed from net names or body appearance.
+
+**Fabrication → Top silk only / Bottom silk only** shows the generated files
+without component bodies or editor badges. Source text, part references,
+polarity marks, drawing tools and converted images survive export, while pad
+openings, holes, cutouts and off-board artwork are still cleared.
+
+![Actual generated top-silkscreen Gerber read back into the app](docs/images/silkscreen-gerber-top.png)
+
+The old writer incorrectly treated nested Gerber contours like an even-odd hole.
+The old viewer and Python test reader repeated that error. All three are fixed;
+new tests explicitly reproduce the blank old output and require union semantics.
+The clipping replacement uses individual exterior trapezoids, not another nested
+frame. See the [fix guide](docs/POLARITY_AND_SILKSCREEN.md) and
+[verification record](docs/TESTING.md). **No external CAM acceptance or physical
+fabrication is claimed.** Native schema remains 3; save a JSON backup first.
 
 ## Start here
 
@@ -27,6 +63,78 @@ Open `http://127.0.0.1:8000/`. Python is optional for using the portable HTML. N
 **Save JSON is your independent backup.** Autosave uses browser-local storage, which can be disabled, full, cleared, or unavailable for local files. A saved-state LED reports persistence status; a failed save does not disable JSON export. Downloaded JSON contains placed footprints and embedded source images.
 
 The release uses a real Chromium DOM/canvas/worker harness with a storage test double and intercepted download blobs. Unrestricted `file://` launch, origin-backed storage, actual download navigation, and hosted service-worker installation were **not** directly verified. Read the [verification record](docs/TESTING.md) for exact coverage instead of treating “offline-capable” as a claim that every browser environment has been tested.
+
+## Power and ground planes
+
+Open **Planes → Bottom ground · top routing**. Or assign a net independently to
+**Top copper** and **Bottom copper**. No whole-board polygon drawing is needed.
+The plane follows the outline and automatically refills after copper edits.
+
+![Actual power/ground plane controls and 3D board](docs/images/planes-bench.png)
+
+Choose **Connect a lead to GND** (or your selected net), click a component lead,
+then review **Keep connection / Discard**. Through-hole and same-face pads use
+existing direct contact when possible. Opposite-face surface-mount pads receive
+a short trace and nearby through via, or reuse a suitable existing via. Inspector
+pin buttons and picked multi-lead groups expose the same workflow.
+
+**No silent net merges.** Unassigned leads adopt the target net only on acceptance;
+a lead on a different net is blocked. Connection status uses real filled-copper
+paths, not names. Split planes, stranded leads and stale fills remain visible.
+Changing plane assignment does not relabel pins or existing copper. Manual zones
+are preserved. New traces carve clearance through managed pours and may split them.
+
+Thermal pad connections, solid via connections, per-face settings, a view-only
+hide-fill control, manual refill and one-step undo are included. The local helper
+is non-exhaustive and the existing fill engine is conservative/cell-derived.
+**Native saves now use schema 3; back up older projects before upgrading.**
+
+[Plane workflow and limitations](docs/PLANES.md) · [Verification](docs/TESTING.md)
+
+## Create vias
+
+Click **＋ Via** beside the trace-width control, choose **Place via** in the Nets
+panel, or press **Shift+V**. The inspector shows the via's net, copper-pad diameter,
+drill diameter and solder-mask setting. Click the board to place; keep clicking
+to place more. **Esc** leaves the tool.
+
+![Actual via placement tool with connected top and bottom copper](docs/images/via-placement.png)
+
+**Auto / from touching copper** takes the net from the copper beneath the via,
+including the opposite face. A placement joining different nets is blocked.
+For an empty area, choose a named net or create one. Unassigned vias remain
+editable but produce a blocking finding before ordinary manufacturing export.
+The green/red preview checks the selected rule profile on both copper layers.
+
+| Preset | Copper pad diameter | Drill diameter |
+|---|---:|---:|
+| Compact | 0.70 mm | 0.30 mm |
+| Standard | 0.90 mm | 0.40 mm |
+| Large | 1.20 mm | 0.60 mm |
+
+Enter custom dimensions as needed. Presets are geometric conveniences, not
+current ratings or universal fabrication approval. The inspector displays the
+annular ring and rejects dimensions below the active profile limits.
+
+**During manual tracing**, press **V** at the cursor, or click **Via → other side**
+and then the board. The incoming trace and via are one undoable edit, and the
+route continues on the opposite layer. A rejected placement leaves the trace
+and board unchanged. Traces can start or finish on existing vias and copper.
+
+**To edit**, leave placement mode and select the via—even at a trace endpoint.
+Change its position, net, diameters, mask coverage or lock state. **Manage vias**
+in the Nets panel lists all vias. Moving a connected via does not stretch the
+attached traces; resulting disconnections are reported.
+
+A via is real copper on **both faces** and **one plated Excellon drill**, not an
+NPTH mounting hole. **Tent both sides** omits its solder-mask openings on both
+faces; it does not request hole filling or guarantee a physically sealed hole.
+Native JSON preserves all settings. The bounded KiCad exchange preserves via
+geometry/nets, but not per-via tenting or locks; the app warns before that export.
+
+See the [via guide](docs/VIAS.md), [format limits](docs/COMPATIBILITY.md), and
+[verification record](docs/TESTING.md). No manufacturer upload or physical test
+board is claimed for this release.
 
 ## HATs, shields and carriers
 
@@ -62,24 +170,24 @@ All dimensions are **nominal, review-required**. Check the purchased connector,
 actual host, standoffs, power direction and clearances. See the detailed
 [form-factor reference and source register](docs/FORM_FACTORS.md).
 
-**Project format upgrade:** v1.1 reads v1.0 projects and saves schema 2. v1.0 rejects
-schema-2 files rather than silently losing linked mounting holes. Keep a backup
-of older projects; use the v1.1 app to reopen new saves. Native JSON preserves
-signal aliases and the compound mounting relationship. KiCad subset export
-preserves physical geometry, but reimport does not reconstruct platform metadata.
+**Project format:** v1.3 reads schema-1/2 projects and writes schema 3. Older apps
+reject the new schema instead of silently dropping automatic plane semantics.
+Keep the original JSON backup before upgrading. Native JSON preserves platform
+aliases, linked mounting holes and plane behavior. KiCad subset exchange retains
+supported geometry, not all application metadata.
 
 ## Try the complete workflow
 
 1. Open **Examples → Little light**, or open `examples/little-light-routed.json` to inspect the completed routing example. Choose **Fresh start** for an empty board.
 2. In **Parts**, click a part and click the board, or drag it from the drawer. **R** rotates; **F** moves the selected component to the opposite face. The inspector has exact position, angle, value and pin assignments.
 3. Choose **Connect** (**A**), pick two or more leads belonging on one net, then choose **Preview wire → Keep copper**. Copper is not committed until accepted. Different-net assignments require an explicit merge decision. **Pair connectors** creates separate mapped connections instead of shorting an entire selection together.
-4. Choose **Trace** (**T**) for manual routing. Set the visible trace width, click a lead, add waypoints and click the destination. **V** inserts a through via during a route. **Enter** finishes an open route; **Esc** cancels unfinished work.
+4. Choose **Trace** (**T**) for manual routing. Set the visible trace width, click a lead, via or existing trace, add waypoints and click the destination. **V** inserts a through via at the cursor during a route, switches to the opposite layer and continues. The visible **Via → other side** button instead arms the next click. **Enter** finishes an open route; **Esc** cancels unfinished work.
 5. Use **Board** to adjust size/shape, draw polygon boundaries, add mounting holes, slots or cutouts. Resizing changes the boundary, never the dimensions of parts or copper.
 6. Use **Mark** for text, lines, boxes, ellipses or image conversion. Imported raster/SVG images become explicit silkscreen rectangles, with the source raster retained for reprocessing. Use **Check design**, then **Fabrication**, then **Export board**. Review the actual manufacturer preview before ordering.
 
-To pour copper, draw a **Zone** (**Z**), assign its net and refill. Zones use conservative, vectorized cell fills, with optional thermal reliefs and island removal. Copper/board edits and project imports invalidate pours; stale pours block manufacturing export, even when diagnostic export is selected.
+For easy whole-board pours, use **Planes**. For manual local pours, draw a **Zone** (**Z**), assign its net and refill. Zones use conservative, vectorized cell fills, with optional thermal reliefs and island removal. Copper/board edits and project imports invalidate pours; stale pours block manufacturing export, even when diagnostic export is selected.
 
-## What is in v1.1
+## What is in v1.3.1
 
 | Area | Implemented |
 |---|---|
@@ -87,6 +195,8 @@ To pour copper, draw a **Zone** (**Z**), assign its net and refill. Zones use co
 | Parts | More than 30 generic packages, through-hole and SMD, footprint wizard, exact pad editing in Advanced mode, rotate/flip, duplicate, lock, pin table. |
 | Connection intent | Explicit nets independent of drawn copper, visible unrouted connections, guarded net merges, connector-pair mapping. |
 | Routing | Width-controlled manual polylines, selected two-/multi-pin A* proposals, keep/reject preview, through vias, cancellable worker jobs. |
+| Vias | Visible repeat-placement tool, net inheritance, pad/drill presets and exact sizes, mask tenting, live clearance checks, editable/lockable objects and a management table. |
+| Planes | Per-face net assignment, bottom-ground preset, board-following auto-refill, checked lead-to-plane previews, local stub/via helpers, real-region status and split-plane findings. |
 | Board/copper | Rectangular, rounded, circular/elliptical and polygon outlines; polygon cutouts/keepouts; holes/slots; thermal and solid cell-derived copper fills. |
 | Markings | Drafting text, basic shapes, mirror/rotate, threshold/invert/cleanup image conversion, original-image reprocessing, minimum-feature and clipping warnings. |
 | Inspection | Geometry/connectivity findings with severity and evidence, footprint-verification flags, assumptions/evidence register, baseline comparison, HTML/print review report. |
@@ -169,6 +279,8 @@ python3 tools/package.py          # Rebuild portable HTML, worker and offline ca
 python3 tools/package.py --check  # Verify generated assets without writing
 node tests/core.test.js           # Run engine tests; generate test-only coupon
 node tests/platforms.test.js      # Platform geometry and export fixtures
+node tests/vias.test.js           # Via rules, connectivity, mask and drill fixtures
+node tests/planes.test.js         # Plane attachment, real connectivity and export fixtures
 python3 tools/test.py             # Run all suites (requires test dependencies)
 python3 tools/release.py          # Source ZIP, static ZIP, portable HTML, checksums
 ```

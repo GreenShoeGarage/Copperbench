@@ -21,3 +21,18 @@
 .platform-preview p{font-size:12px;line-height:1.5}.platform-note{padding:10px;border:1px solid var(--line,#bcc8b9);border-radius:8px;font-size:11px;line-height:1.6;margin-bottom:14px}
 .pin-signal{display:block;font-size:10px;white-space:normal;max-width:140px;opacity:.88}.platform-note button{margin-top:7px}
 @media(max-width:650px){.platform-picker{grid-template-columns:1fr}.platform-choice{min-height:44px}.platform-preview{grid-template-columns:1fr}.platform-preview canvas{height:155px}}
+
+/* Through-via controls remain available in Easy mode and narrow layouts. */
+.via-summary{display:grid;gap:5px;padding:11px 12px;margin:12px 0;background:var(--panel-soft,var(--bg));border:1px solid var(--border);border-radius:9px;font-size:11px;line-height:1.5;overflow-wrap:anywhere}
+.via-summary strong{font-size:12px}.via-context-button{white-space:nowrap;flex-shrink:0}
+#viaPlacementStatus{min-height:70px} .selection-bar{flex-wrap:wrap;max-width:calc(100% - 100px)}
+@media(max-height:760px){.tool-rail{max-height:calc(100% - 115px);overflow-y:auto;scrollbar-width:thin;}}
+@media(max-width:600px){.contextbar .route-width{gap:5px}.via-context-button{padding:6px 9px!important}.selection-bar{max-width:calc(100% - 80px);left:65px;right:10px;transform:none;}}
+
+/* v1.3 — compact per-face plane assignment and actual-connectivity status. */
+.plane-card{border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:9px;padding:11px;margin:14px 0;background:var(--paper)}
+.plane-card.bottom{border-top-color:#368498}.plane-card-heading{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:12px}.plane-card-heading strong{font-size:10px;letter-spacing:1px}.plane-card-heading button{font-size:10px;padding:3px 7px}.plane-state{font-size:11px;color:var(--ink);line-height:1.5;margin:12px 0 8px;overflow-wrap:anywhere}.plane-state small{display:block;font-size:10px;color:var(--muted)}.plane-state.warning{color:var(--danger)}.plane-card .wide-button{white-space:normal;line-height:1.4}.plane-advanced{font-size:11px;margin-top:14px}.plane-advanced summary{cursor:pointer;padding:6px 0}.pin-plane{display:block;margin-top:5px;white-space:nowrap;font-size:9px;padding:3px 5px}.plane-indicator{pointer-events:auto;max-width:230px;white-space:normal;font-size:10px;line-height:1.4;padding:5px 8px;margin-top:8px}.drawer-tabs{padding-left:8px;padding-right:8px}.drawer-tabs button{font-size:10px;min-width:0}.selection-bar span{white-space:normal;overflow-wrap:anywhere}.selection-bar button{flex-shrink:0}
+@media(max-width:700px){.plane-indicator{max-width:145px}.contextbar .route-width [data-action=planes]{display:none}.selection-bar{flex-wrap:wrap}}
+
+/* Polarity is textual, never color-only. */
+.polarity-key{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 12px;font-size:12px;line-height:1.5}.polarity-key span{padding:5px 8px;border:1px solid var(--line);border-radius:6px}.polarity-key b{font-size:14px;margin-right:4px}.pin-polarity{display:block;font-weight:700;font-size:11px;white-space:normal;line-height:1.4}

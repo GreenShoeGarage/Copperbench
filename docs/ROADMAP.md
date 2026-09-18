@@ -1,4 +1,19 @@
-# Release roadmap — COPPERBENCH 1.1.0
+# Release roadmap — COPPERBENCH 1.3.0
+
+## Shipped in v1.3
+
+Per-face power/ground assignment, bottom-ground and dual-ground presets, outline
+following, cancellable automatic refill, actual-region connection status, split
+plane findings, direct and short-trace/via lead attachment previews, multi-lead
+transactions, keyboard-accessible per-pin actions, schema-3 persistence and
+explicit KiCad zone-metadata limits. See [PLANES.md](PLANES.md).
+
+## Shipped in v1.2
+
+Discoverable standalone vias, validated repeat placement, editable dimensions and
+nets, mask tenting, locking and a management table. Manual routing uses existing
+vias/copper as endpoints and commits via layer changes atomically. Dedicated
+engine, browser and independent export tests join the full regression suite.
 
 ## Shipped in v1.1
 

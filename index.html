@@ -7,13 +7,13 @@
 <body>
 <a href="#canvas" class="skip">Skip to the board</a>
 <header class="app-header">
- <div class="brand"><div class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M10 8h20v24H10zM4 13h6m-6 7h6m-6 7h6m20-14h6m-6 7h6m-6 7h6"/><path d="M17 14h7v5h-7v7h7"/></svg></div><div><span class="eyebrow">GREEN SHOE GARAGE / FIELD INSTRUMENTS</span><h1>COPPERBENCH <span class="version">v1.1.0</span></h1></div></div>
+ <div class="brand"><div class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M10 8h20v24H10zM4 13h6m-6 7h6m-6 7h6m20-14h6m-6 7h6m-6 7h6"/><path d="M17 14h7v5h-7v7h7"/></svg></div><div><span class="eyebrow">GREEN SHOE GARAGE / FIELD INSTRUMENTS</span><h1>COPPERBENCH <span class="version">v1.3.1</span></h1></div></div>
  <div class="header-actions"><span id="saveState" class="save-state" role="status"><i></i> Starting</span><button data-action="undo" title="Undo · ⌘/Ctrl Z" class="icon-button" aria-label="Undo">↶</button><button data-action="redo" title="Redo · ⌘/Ctrl Shift Z" class="icon-button" aria-label="Redo">↷</button><button data-action="files" class="mobile-files" aria-label="Project files" title="Project files">▤</button><button data-action="open" class="quiet">Open</button><button data-action="save" class="quiet">Save JSON</button><button data-action="export" class="primary">Export board <span aria-hidden="true">↗</span></button></div>
 </header>
 <div class="project-strip"><div class="project-title"><button data-action="toggle-drawer" class="mobile-button" aria-label="Open tools and parts">☰</button><span class="project-dot" aria-hidden="true"></span><button id="titleButton" data-action="rename">Little light · learning board</button><span id="projectDimensions" class="muted"></span></div><div class="strip-actions"><select id="modeSelect" aria-label="Interface detail"><option value="easy">Easy mode</option><option value="advanced">Advanced mode</option></select><button data-action="examples">Examples</button><button data-action="fresh">Fresh start</button><button data-action="help" class="help-btn" title="Guide and keyboard shortcuts">?</button><button data-action="theme" aria-label="Switch theme" title="Light, dark and high contrast themes">◐</button></div></div>
 <main class="app-body">
  <aside id="drawer" class="drawer" aria-label="Parts and project tools">
-  <nav class="drawer-tabs" aria-label="Project panels"><button class="active" data-panel="parts">Parts</button><button data-panel="nets">Nets</button><button data-panel="board">Board</button><button data-panel="silk">Mark</button><button data-panel="records" title="Evidence and revisions">Log</button></nav>
+  <nav class="drawer-tabs" aria-label="Project panels"><button class="active" data-panel="parts">Parts</button><button data-panel="nets">Nets</button><button data-panel="planes">Planes</button><button data-panel="board">Board</button><button data-panel="silk">Mark</button><button data-panel="records" title="Evidence and revisions">Log</button></nav>
   <div id="drawerContent" class="drawer-content"></div>
   <div class="drawer-bottom"><span class="local-dot"></span><div><strong>Your bench. Your files.</strong><small>Local-first · no account · no telemetry</small></div></div>
  </aside>
@@ -23,6 +23,7 @@
    <div class="tool-rail" role="toolbar" aria-label="Board drawing tools">
     <button class="active" data-tool="select" title="Select and move · V" aria-label="Select and move"><svg viewBox="0 0 24 24"><path d="M5 3l14 10-7 1-3 7z"/></svg></button>
     <button data-tool="trace" title="Draw trace · T" aria-label="Draw a trace"><svg viewBox="0 0 24 24"><circle cx="5" cy="18" r="2"/><circle cx="19" cy="6" r="2"/><path d="M5 16v-5l6-5h6"/></svg></button>
+    <button data-tool="via" title="Place through via · Shift+V (V while tracing)" aria-label="Place a through via"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M1 12h3m16 0h3"/></svg></button>
     <button data-tool="connect" title="Pick leads to autowire · A" aria-label="Select leads for autowiring"><svg viewBox="0 0 24 24"><path d="M5 18V6h14v12H5zM9 12h6m-3-3v6"/><circle cx="5" cy="6" r="2"/><circle cx="19" cy="18" r="2"/></svg></button>
     <span class="tool-separator"></span>
     <button data-tool="hole" title="Place mounting hole · O" aria-label="Place a mounting hole"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><path d="M12 2v6m0 8v6M2 12h6m8 0h6"/></svg></button>
@@ -42,7 +43,7 @@
    <div id="tooltip" class="canvas-tooltip" hidden></div>
    <div id="welcomeCard" class="welcome-card"><strong>Start with a part. End with a board.</strong><p>Drag a part from the drawer, or click two leads with the connect tool. Everything stays on this device.</p><button data-action="welcome-dismiss">Let’s make something <span>→</span></button></div>
   </div>
-  <div class="contextbar"><span class="tool-name" id="toolName">SELECT</span><span id="toolHint">Drag parts to place them. R rotates. F flips a selected part.</span><div class="route-width"><label for="traceWidth">Trace</label><select id="traceWidth"><option value=".2">Fine · 0.20 mm</option><option value=".4" selected>Standard · 0.40 mm</option><option value=".8">Wide · 0.80 mm</option><option value="1.2">Heavy · 1.20 mm</option><option value="custom">Custom…</option></select></div></div>
+  <div class="contextbar"><span class="tool-name" id="toolName">SELECT</span><span id="toolHint">Drag parts to place them. R rotates. F flips a selected part.</span><div class="route-width"><button data-action="planes" class="via-context-button">Planes</button><button data-tool="via" class="via-context-button" title="Place a plated connection between both copper layers">＋ Via</button><label for="traceWidth">Trace</label><select id="traceWidth"><option value=".2">Fine · 0.20 mm</option><option value=".4" selected>Standard · 0.40 mm</option><option value=".8">Wide · 0.80 mm</option><option value="1.2">Heavy · 1.20 mm</option><option value="custom">Custom…</option></select></div></div>
  </section>
  <aside id="inspector" class="inspector" aria-label="Selection inspector"><div class="inspector-heading"><span>INSPECTOR</span><button data-action="toggle-inspector" aria-label="Close inspector">×</button></div><div id="inspectorContent" class="inspector-content"></div></aside>
 </main>
@@ -51,6 +52,6 @@
 <dialog id="modal"><div class="modal-header"><div><span class="eyebrow" id="modalEyebrow">COPPERBENCH</span><h2 id="modalTitle"></h2></div><button id="modalClose" aria-label="Close dialog">×</button></div><div id="modalBody" class="modal-body"></div><div id="modalFooter" class="modal-footer"></div></dialog>
 <input type="file" id="fileInput" accept=".json,.zip,.kicad_pcb,.kicad_mod,.gbr,.ger,.drl" hidden><input type="file" id="imageInput" accept="image/png,image/jpeg,image/webp,image/gif,image/svg+xml" hidden><input type="file" id="svgInput" accept=".svg" hidden>
 <noscript><p>This PCB workbench needs JavaScript. It has no network requirement; open the complete local folder or the portable HTML edition with JavaScript enabled.</p></noscript>
-<script src="vendor/jszip.min.js"></script><script src="src/core.js"></script><script src="src/geometry.js"></script><script src="src/font.js"></script>
-<script src="src/platforms.js"></script><script src="src/manufacturing.js"></script><script src="src/router.js"></script><script src="src/interchange.js"></script><script src="src/renderer.js"></script><script src="src/worker-source.js"></script><script src="src/app.js"></script>
+<script src="vendor/jszip.min.js"></script><script src="src/core.js"></script><script src="src/geometry.js"></script><script src="src/vias.js"></script><script src="src/font.js"></script>
+<script src="src/platforms.js"></script><script src="src/manufacturing.js"></script><script src="src/router.js"></script><script src="src/planes.js"></script><script src="src/interchange.js"></script><script src="src/renderer.js"></script><script src="src/worker-source.js"></script><script src="src/app.js"></script>
 </body></html>

@@ -22,12 +22,21 @@ def main() -> int:
         [sys.executable, '-m', 'unittest', 'discover', '-s', 'tests', '-p', 'test_packaging.py'],
         [node, 'tests/core.test.js'],
         [node, 'tests/platforms.test.js'],
+        [node, 'tests/vias.test.js'],
+        [node, 'tests/planes.test.js'],
+        [node, 'tests/silkscreen.test.js'],
         [sys.executable, 'tests/verify_manufacturing.py'],
         [sys.executable, 'tests/verify_platforms.py'],
+        [sys.executable, 'tests/verify_vias.py'],
+        [sys.executable, 'tests/verify_planes.py'],
+        [sys.executable, 'tests/verify_silkscreen.py'],
     ]
     if not args.skip_browser:
         commands.append([sys.executable, 'tests/browser_test.py'])
         commands.append([sys.executable, 'tests/platform_browser_test.py'])
+        commands.append([sys.executable, 'tests/via_browser_test.py'])
+        commands.append([sys.executable, 'tests/plane_browser_test.py'])
+        commands.append([sys.executable, 'tests/silkscreen_browser_test.py'])
     try:
         for command in commands:
             print('\n> ' + ' '.join(command), flush=True)

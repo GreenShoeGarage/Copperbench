@@ -1,0 +1,162 @@
+{
+  "version": "1.3.0",
+  "passed": 31,
+  "total": 31,
+  "results": [
+    {
+      "name": "Each face accepts one explicit net or routing-only without assigning component pins",
+      "pass": true,
+      "ms": 4
+    },
+    {
+      "name": "Bottom-ground preset preserves manual zones and reuses an existing ground net",
+      "pass": true,
+      "ms": 0
+    },
+    {
+      "name": "Changing a plane updates the same object, never old pad/trace/via nets",
+      "pass": true,
+      "ms": 2
+    },
+    {
+      "name": "Removing a managed plane preserves pins, traces and manually placed vias",
+      "pass": true,
+      "ms": 1
+    },
+    {
+      "name": "Board resize updates full-plane outlines without stretching footprints",
+      "pass": true,
+      "ms": 119
+    },
+    {
+      "name": "Managed outline follows circles and custom polygon boards",
+      "pass": true,
+      "ms": 1
+    },
+    {
+      "name": "Native schema 3 preserves planes, settings and actual fill geometry",
+      "pass": true,
+      "ms": 31
+    },
+    {
+      "name": "Schema 2 migrates with no invented planes and no mutation of the old file",
+      "pass": true,
+      "ms": 1
+    },
+    {
+      "name": "Duplicate, both-face and malformed managed planes are rejected on import",
+      "pass": true,
+      "ms": 1
+    },
+    {
+      "name": "Through-hole lead contacts an opposite-face plane without an extra via",
+      "pass": true,
+      "ms": 34
+    },
+    {
+      "name": "Same-face surface-mount lead makes direct contact after adopting the plane net",
+      "pass": true,
+      "ms": 99
+    },
+    {
+      "name": "Opposite-face surface-mount attachment is a pure short-trace-plus-via proposal",
+      "pass": true,
+      "ms": 102
+    },
+    {
+      "name": "Existing different-net copper under a selected lead blocks attachment without mutation",
+      "pass": true,
+      "ms": 1
+    },
+    {
+      "name": "Net conflicts fail without reassigning pins or adding partial copper",
+      "pass": true,
+      "ms": 1
+    },
+    {
+      "name": "Repeating a verified plane attachment adds no extra traces or drills",
+      "pass": true,
+      "ms": 124
+    },
+    {
+      "name": "Nearby plane-connected via is reused instead of drilling another",
+      "pass": true,
+      "ms": 68
+    },
+    {
+      "name": "Multiple picked leads produce a single all-or-nothing plan",
+      "pass": true,
+      "ms": 96
+    },
+    {
+      "name": "A conflict anywhere in a multi-lead request leaves every lead untouched",
+      "pass": true,
+      "ms": 0
+    },
+    {
+      "name": "Blocked local via sites report failure without a fake electrical connection",
+      "pass": true,
+      "ms": 1
+    },
+    {
+      "name": "Bare plane with no seed copper remains empty, not a fictitious ground region",
+      "pass": true,
+      "ms": 26
+    },
+    {
+      "name": "A copper keepout splits a nominal net into two detected plane regions",
+      "pass": true,
+      "ms": 68
+    },
+    {
+      "name": "Same-name planes on opposite faces are not connected without a plated path",
+      "pass": true,
+      "ms": 253
+    },
+    {
+      "name": "Board-plane assignment survives explicit whole-net merges",
+      "pass": true,
+      "ms": 1
+    },
+    {
+      "name": "New signal routing can carve managed planes, but existing signal copper still blocks",
+      "pass": true,
+      "ms": 88
+    },
+    {
+      "name": "Local manual pours keep priority over different-net whole-board copper",
+      "pass": true,
+      "ms": 114
+    },
+    {
+      "name": "Plane fill clears both internal cutouts and non-plated mounting holes",
+      "pass": true,
+      "ms": 97
+    },
+    {
+      "name": "Stale fills block manufacturing rather than exporting obsolete planes",
+      "pass": true,
+      "ms": 84
+    },
+    {
+      "name": "Thermal settings are persistent and settings changes invalidate the fill",
+      "pass": true,
+      "ms": 68
+    },
+    {
+      "name": "Bad trace and via dimensions cannot be used by the connection helper",
+      "pass": true,
+      "ms": 1
+    },
+    {
+      "name": "Plane export becomes an ordinary zone in the documented KiCad subset",
+      "pass": true,
+      "ms": 56
+    },
+    {
+      "name": "Power and ground planes remain isolated when a ground attachment pierces both faces",
+      "pass": true,
+      "ms": 340
+    }
+  ]
+}
