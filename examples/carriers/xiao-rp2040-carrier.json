@@ -1,0 +1,681 @@
+{
+  "app": "COPPERBENCH",
+  "schema": 4,
+  "version": "1.5.0",
+  "id": "xiao-rp2040-carrier-board-001",
+  "title": "Seeed XIAO RP2040 · original carrier starter",
+  "created": "2026-09-18T00:00:00.000Z",
+  "updated": "2026-09-18T00:00:00.000Z",
+  "board": {
+    "width": 37.8,
+    "height": 41,
+    "thickness": 1.6,
+    "shape": "rounded",
+    "radius": 3,
+    "points": [],
+    "color": "blue"
+  },
+  "parts": [
+    {
+      "id": "xiao-rp2040-carrier-p-003",
+      "name": "Seeed XIAO RP2040 · original · Carrier sockets",
+      "category": "Platforms",
+      "ref": "J1",
+      "value": "Seeed XIAO RP2040 · original mating sockets",
+      "verified": false,
+      "source": "https://wiki.seeedstudio.com/XIAO-RP2040/\nhttps://wiki.seeedstudio.com/PCB_Design_XIAO/",
+      "defaultSide": "top",
+      "body": {
+        "kind": "platform",
+        "w": 17.8,
+        "h": 21,
+        "z": 2.6
+      },
+      "pads": [
+        {
+          "number": "D0",
+          "signal": "D0 / GPIO26 / A0",
+          "bank": "LEFT",
+          "x": -7.62,
+          "y": -7.62,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "D1",
+          "signal": "D1 / GPIO27 / A1",
+          "bank": "LEFT",
+          "x": -7.62,
+          "y": -5.08,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "D2",
+          "signal": "D2 / GPIO28 / A2",
+          "bank": "LEFT",
+          "x": -7.62,
+          "y": -2.54,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "D3",
+          "signal": "D3 / GPIO29 / A3",
+          "bank": "LEFT",
+          "x": -7.62,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "D4",
+          "signal": "D4 / GPIO6 / SDA",
+          "bank": "LEFT",
+          "x": -7.62,
+          "y": 2.54,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "D5",
+          "signal": "D5 / GPIO7 / SCL",
+          "bank": "LEFT",
+          "x": -7.62,
+          "y": 5.08,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "D6",
+          "signal": "D6 / GPIO0 / TX",
+          "bank": "LEFT",
+          "x": -7.62,
+          "y": 7.62,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "5V",
+          "signal": "5V / VBUS",
+          "bank": "RIGHT",
+          "x": 7.62,
+          "y": -7.62,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "power"
+        },
+        {
+          "number": "GND",
+          "signal": "GND",
+          "bank": "RIGHT",
+          "x": 7.62,
+          "y": -5.08,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "ground"
+        },
+        {
+          "number": "3V3",
+          "signal": "3V3",
+          "bank": "RIGHT",
+          "x": 7.62,
+          "y": -2.54,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "power"
+        },
+        {
+          "number": "D10",
+          "signal": "D10 / GPIO3 / MOSI",
+          "bank": "RIGHT",
+          "x": 7.62,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "D9",
+          "signal": "D9 / GPIO4 / MISO",
+          "bank": "RIGHT",
+          "x": 7.62,
+          "y": 2.54,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "D8",
+          "signal": "D8 / GPIO2 / SCK",
+          "bank": "RIGHT",
+          "x": 7.62,
+          "y": 5.08,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "D7",
+          "signal": "D7 / GPIO1 / RX",
+          "bank": "RIGHT",
+          "x": 7.62,
+          "y": 7.62,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        }
+      ],
+      "mountingHoles": [],
+      "platform": {
+        "schema": 1,
+        "family": "xiao-rp2040",
+        "revision": 1,
+        "role": "carrier",
+        "showHost": true,
+        "showPins": true,
+        "outline": [
+          {
+            "x": 7.9,
+            "y": -10.5
+          },
+          {
+            "x": 7.998,
+            "y": -10.4952
+          },
+          {
+            "x": 8.0951,
+            "y": -10.4808
+          },
+          {
+            "x": 8.1903,
+            "y": -10.4569
+          },
+          {
+            "x": 8.2827,
+            "y": -10.4239
+          },
+          {
+            "x": 8.3714,
+            "y": -10.3819
+          },
+          {
+            "x": 8.4556,
+            "y": -10.3315
+          },
+          {
+            "x": 8.5344,
+            "y": -10.273
+          },
+          {
+            "x": 8.6071,
+            "y": -10.2071
+          },
+          {
+            "x": 8.673,
+            "y": -10.1344
+          },
+          {
+            "x": 8.7315,
+            "y": -10.0556
+          },
+          {
+            "x": 8.7819,
+            "y": -9.9714
+          },
+          {
+            "x": 8.8239,
+            "y": -9.8827
+          },
+          {
+            "x": 8.8569,
+            "y": -9.7903
+          },
+          {
+            "x": 8.8808,
+            "y": -9.6951
+          },
+          {
+            "x": 8.8952,
+            "y": -9.598
+          },
+          {
+            "x": 8.9,
+            "y": -9.5
+          },
+          {
+            "x": 8.9,
+            "y": 9.5
+          },
+          {
+            "x": 8.8952,
+            "y": 9.598
+          },
+          {
+            "x": 8.8808,
+            "y": 9.6951
+          },
+          {
+            "x": 8.8569,
+            "y": 9.7903
+          },
+          {
+            "x": 8.8239,
+            "y": 9.8827
+          },
+          {
+            "x": 8.7819,
+            "y": 9.9714
+          },
+          {
+            "x": 8.7315,
+            "y": 10.0556
+          },
+          {
+            "x": 8.673,
+            "y": 10.1344
+          },
+          {
+            "x": 8.6071,
+            "y": 10.2071
+          },
+          {
+            "x": 8.5344,
+            "y": 10.273
+          },
+          {
+            "x": 8.4556,
+            "y": 10.3315
+          },
+          {
+            "x": 8.3714,
+            "y": 10.3819
+          },
+          {
+            "x": 8.2827,
+            "y": 10.4239
+          },
+          {
+            "x": 8.1903,
+            "y": 10.4569
+          },
+          {
+            "x": 8.0951,
+            "y": 10.4808
+          },
+          {
+            "x": 7.998,
+            "y": 10.4952
+          },
+          {
+            "x": 7.9,
+            "y": 10.5
+          },
+          {
+            "x": -7.9,
+            "y": 10.5
+          },
+          {
+            "x": -7.998,
+            "y": 10.4952
+          },
+          {
+            "x": -8.0951,
+            "y": 10.4808
+          },
+          {
+            "x": -8.1903,
+            "y": 10.4569
+          },
+          {
+            "x": -8.2827,
+            "y": 10.4239
+          },
+          {
+            "x": -8.3714,
+            "y": 10.3819
+          },
+          {
+            "x": -8.4556,
+            "y": 10.3315
+          },
+          {
+            "x": -8.5344,
+            "y": 10.273
+          },
+          {
+            "x": -8.6071,
+            "y": 10.2071
+          },
+          {
+            "x": -8.673,
+            "y": 10.1344
+          },
+          {
+            "x": -8.7315,
+            "y": 10.0556
+          },
+          {
+            "x": -8.7819,
+            "y": 9.9714
+          },
+          {
+            "x": -8.8239,
+            "y": 9.8827
+          },
+          {
+            "x": -8.8569,
+            "y": 9.7903
+          },
+          {
+            "x": -8.8808,
+            "y": 9.6951
+          },
+          {
+            "x": -8.8952,
+            "y": 9.598
+          },
+          {
+            "x": -8.9,
+            "y": 9.5
+          },
+          {
+            "x": -8.9,
+            "y": -9.5
+          },
+          {
+            "x": -8.8952,
+            "y": -9.598
+          },
+          {
+            "x": -8.8808,
+            "y": -9.6951
+          },
+          {
+            "x": -8.8569,
+            "y": -9.7903
+          },
+          {
+            "x": -8.8239,
+            "y": -9.8827
+          },
+          {
+            "x": -8.7819,
+            "y": -9.9714
+          },
+          {
+            "x": -8.7315,
+            "y": -10.0556
+          },
+          {
+            "x": -8.673,
+            "y": -10.1344
+          },
+          {
+            "x": -8.6071,
+            "y": -10.2071
+          },
+          {
+            "x": -8.5344,
+            "y": -10.273
+          },
+          {
+            "x": -8.4556,
+            "y": -10.3315
+          },
+          {
+            "x": -8.3714,
+            "y": -10.3819
+          },
+          {
+            "x": -8.2827,
+            "y": -10.4239
+          },
+          {
+            "x": -8.1903,
+            "y": -10.4569
+          },
+          {
+            "x": -8.0951,
+            "y": -10.4808
+          },
+          {
+            "x": -7.998,
+            "y": -10.4952
+          },
+          {
+            "x": -7.9,
+            "y": -10.5
+          }
+        ],
+        "holePattern": [],
+        "geometryStatus": "nominal-review-required",
+        "sourceDate": "2026-09-17"
+      },
+      "label": {
+        "x": 0,
+        "y": 0,
+        "size": 1.3,
+        "visible": false
+      },
+      "carrier": {
+        "schema": 1,
+        "revision": 1,
+        "model": "Seeed XIAO RP2040 · original",
+        "source": [
+          "https://wiki.seeedstudio.com/XIAO-RP2040/",
+          "https://wiki.seeedstudio.com/PCB_Design_XIAO/"
+        ],
+        "sourceDate": "2026-09-18",
+        "usbEdge": "top",
+        "vertical": true,
+        "wireless": "none",
+        "showClearances": true,
+        "enforceAntenna": true,
+        "overrideReason": "",
+        "stackGap": 8.5,
+        "regions": [
+          {
+            "id": "usb",
+            "name": "USB-C cable access",
+            "kind": "access",
+            "x": -6,
+            "y": -20.5,
+            "w": 12,
+            "h": 12
+          }
+        ]
+      },
+      "libraryId": "platform-xiao-rp2040-carrier",
+      "x": 18.9,
+      "y": 20.5,
+      "rotation": 0,
+      "side": "top",
+      "locked": true
+    }
+  ],
+  "nets": [],
+  "traces": [],
+  "vias": [],
+  "holes": [],
+  "cutouts": [],
+  "keepouts": [],
+  "zones": [],
+  "art": [],
+  "assets": [],
+  "profile": {
+    "id": "oshpark-2l",
+    "name": "OSH Park · 2 layer",
+    "verified": "2026-09-17",
+    "revision": 1,
+    "source": "https://docs.oshpark.com/services/two-layer/",
+    "minTrace": 0.1524,
+    "clearance": 0.1524,
+    "edge": 0.381,
+    "minDrill": 0.254,
+    "minRing": 0.127,
+    "minSlot": 0.508,
+    "minMaskWeb": 0.1016,
+    "minSilk": 0.127,
+    "maskExpansion": 0.075,
+    "minHoleGap": 0.127,
+    "minCutout": 1.01,
+    "minWidth": 6.35,
+    "minHeight": 6.35,
+    "maxWidth": 406.4,
+    "maxHeight": 558.8
+  },
+  "settings": {
+    "grid": 1.27,
+    "traceWidth": 0.4,
+    "viaDiameter": 0.9,
+    "viaDrill": 0.4,
+    "viaTented": false,
+    "zoneStep": 0.25,
+    "autoPlanes": true
+  },
+  "assumptions": [
+    {
+      "id": "xiao-rp2040-carrier-assume-002",
+      "text": "Two copper layers; through vias only. This layout does not verify circuit function.",
+      "status": "open"
+    },
+    {
+      "id": "xiao-rp2040-carrier-a-004",
+      "text": "3.3 V I/O. 5V/VBUS is not a 5 V GPIO. Pin labels identify this exact variant; review power direction and boot pins.",
+      "status": "open"
+    },
+    {
+      "id": "xiao-rp2040-carrier-a-005",
+      "text": "Original 14-contact host, two 7-way rows on a nominal 15.24 mm span. Centered header offsets in a 17.8 × 21 mm reference envelope require physical review. No mounting holes. Not XIAO Plus or other XIAO variants.",
+      "status": "open"
+    },
+    {
+      "id": "xiao-rp2040-carrier-a-006",
+      "text": "Header mounting only: no castellated reflow pads, underside USB/battery/test contacts or debug connector are included.",
+      "status": "open"
+    },
+    {
+      "id": "xiao-rp2040-carrier-a-007",
+      "text": "Nominal 1.0 mm connector drills / 1.8 mm pads are defaults. Check the actual mating connector, assembly tolerance and engagement length.",
+      "status": "open"
+    },
+    {
+      "id": "xiao-rp2040-carrier-a-008",
+      "text": "Pin captions do not join nets. Confirm power direction, voltage and current limits; no supporting power circuitry is inserted.",
+      "status": "open"
+    },
+    {
+      "id": "xiao-rp2040-carrier-a-009",
+      "text": "The host envelope and access areas are 2D references, not a collision-checked mechanical model. Print at 1:1 and verify against the purchased board before ordering.",
+      "status": "open"
+    },
+    {
+      "id": "xiao-rp2040-carrier-a-010",
+      "text": "Contact IDs follow the printed D0–D10 and power labels. USB-up top view; no battery/debug pads on the underside are added.",
+      "status": "open"
+    },
+    {
+      "id": "xiao-rp2040-carrier-a-012",
+      "text": "8.5 mm underside stack gap is an editable planning assumption, not a measured connector specification. RF/access rectangles are suggested 2D references requiring review.",
+      "status": "open"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "xiao-rp2040-carrier-e-011",
+      "text": "Nominal mating geometry transcribed from published pinouts/dimensioned references; no physical fit or manufacturer acceptance verified.",
+      "source": "https://wiki.seeedstudio.com/XIAO-RP2040/\nhttps://wiki.seeedstudio.com/PCB_Design_XIAO/"
+    },
+    {
+      "id": "xiao-rp2040-carrier-e-013",
+      "text": "v1.5 controller interface: header pinout and nominal geometry source-referenced; physical fit, electrical function and manufacturing acceptance NOT verified.",
+      "source": "https://wiki.seeedstudio.com/XIAO-RP2040/\nhttps://wiki.seeedstudio.com/PCB_Design_XIAO/"
+    }
+  ],
+  "baseline": null,
+  "platformTemplate": {
+    "schema": 1,
+    "family": "xiao-rp2040",
+    "revision": 1,
+    "role": "carrier",
+    "margin": 10
+  }
+}

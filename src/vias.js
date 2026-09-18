@@ -28,7 +28,7 @@ V.propose=function(d,point,options={},ignoreId=null){
  for(const layer of ['top','bottom']){
   const items=copper.filter(o=>!managed.has(o.owner)&&(!v.net||o.net!==v.net)&&G.layerMatch(o.layer,layer));
   for(const h of G.holes(d).filter(h=>!h.plated)){const[a,b]=G.holeEndpoints(h);items.push(G.primitive('hole','both',null,h.id,G.capsule(a,b,h.drill)));}
-  for(const k of d.keepouts)if(G.layerMatch(k.layer,layer))items.push(G.primitive('keepout',k.layer,null,k.id,k.points));
+  for(const k of C.keepouts(d))if(G.layerMatch(k.layer,layer))items.push(G.primitive('keepout',k.layer,null,k.id,k.points));
   const result=G.pathClear(d,[v,v],v.diameter,v.net,layer,{items,index:new G.Spatial(items)});
   if(!result.ok)return{ok:false,code:'via-clearance',reason:`${layer==='top'?'Top':'Bottom'} face: ${result.reason}. No via was placed.`,owner:result.owner};
  }

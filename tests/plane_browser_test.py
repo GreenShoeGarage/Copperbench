@@ -114,7 +114,7 @@ with sync_playwright() as pw:
   page.check('#showPlanes');page.locator('[data-plane-view=bottom]').click();check(page.evaluate('CBAPP.state.side==="bottom" && CBAPP.state.view==="copper"'))
  test('Hide-fill and face-view controls do not alter manufacturing copper',display)
  def backup():
-  reset();preview();accept();act('save');raw=page.evaluate('async()=>await __exports.at(-1).blob.text()');d=json.loads(raw);check(d['schema']==3 and d['zones'][0]['boardPlane'] and d['vias'])
+  reset();preview();accept();act('save');raw=page.evaluate('async()=>await __exports.at(-1).blob.text()');d=json.loads(raw);check(d['schema']==5 and d['zones'][0]['boardPlane'] and d['vias'])
   page.locator('#fileInput').set_input_files({'name':'planes.json','mimeType':'application/json','buffer':raw.encode()});page.get_by_role('button',name='Open this board',exact=True).click();stable()
   check(page.evaluate('CB.Planes.list(CBAPP.state.doc).length===1 && CBAPP.state.planeReport[0].connected===2'))
  test('Schema-3 backup and actual file-input import retain planes and verified attachments',backup)
@@ -124,7 +124,7 @@ with sync_playwright() as pw:
  test('Per-face thermal settings persist and trigger a new fill',settings)
  def captured():
   reset('CB.example()');act('ground-plane');stable();preview(53,32)
-  page.evaluate("document.getElementById('toast').hidden=true;document.getElementById('tooltip').hidden=true;document.getElementById('welcomeCard').hidden=true")
+  page.evaluate("document.getElementById('toast').hidden=true;document.getElementById('tooltip').hidden=true;")
   page.mouse.move(1590,1030);page.screenshot(path=str(IMAGES/'plane-connection.png'));accept();page.locator('[data-view=bench]').click()
   page.evaluate("document.getElementById('toast').hidden=true;document.getElementById('tooltip').hidden=true")
   page.screenshot(path=str(IMAGES/'planes-bench.png'));page.locator('[data-plane-view=bottom]').click();page.screenshot(path=str(IMAGES/'planes-copper.png'))

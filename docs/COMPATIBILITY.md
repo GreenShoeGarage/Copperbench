@@ -1,12 +1,44 @@
-# COPPERBENCH 1.3.1 — file compatibility and limits
+# COPPERBENCH 1.6.0 — file compatibility and limits
 
 ## Native project
 
-`app: "COPPERBENCH"`, `schema: 3`, `version: "1.3.1"`. JSON retains board geometry, placed footprint definitions, representative bodies, nets, copper, drills, artwork, embedded raster source images, fabrication rules, settings, assumptions, evidence and the optional baseline. A project ZIP wraps this same `project.json`; it is not a different data model.
+`app: "COPPERBENCH"`, `schema: 5`, `version: "1.6.0"`. JSON retains board geometry, placed footprint definitions, representative bodies, nets, copper, drills, artwork, embedded raster source images, fabrication rules, settings, assumptions, evidence and the optional baseline. A project ZIP wraps this same `project.json`; it is not a different data model.
 
-Newer/unknown schemas, nonfinite dimensions, duplicate object identities, unsupported geometry and missing nets are rejected before replacement. Imports are reviewed; replacing a board is undoable. Schema-1/2 projects are migrated on read. v1.0–v1.2 readers reject new schema-3 files, preventing silent loss of managed-plane behavior. Copper fills are deliberately invalidated on import and must be recalculated. Browser camera/drawer state is workspace state, not manufacturing geometry.
+Newer/unknown schemas, nonfinite dimensions, duplicate object identities, unsupported geometry and missing nets are rejected before replacement. Imports are reviewed; replacing a board is undoable. Schema-1/2/3/4 projects are migrated on read. Earlier editors reject new schema-5 files, preventing silent loss of module/block metadata and attached carrier constraints. Copper fills are deliberately invalidated on import and must be recalculated. Browser camera/drawer state is workspace state, not manufacturing geometry.
 
 The UI currently caps import files at 25 MB; imported KiCad source at 20 MB; common geometry collections at 10,000 entries; pads per component at 256; raster source data at 16 MB. These bounds protect the browser; they are not performance guarantees. Large copper fills and dense designs can still be slow.
+
+## Module interfaces and circuit blocks (schema 5)
+
+`part.module` holds the exact model/product, CAD URL/blob reference, notes, nominal
+stack gap, body visibility, review status and optional mounting-hole pattern.
+`blockInstances` records groups of ordinary component/trace/via IDs, a transform
+anchor, external-port net IDs and review notes. `blockLibrary` embeds project-local
+circuit templates. There is no live dependency on a server or future library version.
+
+Standalone `COPPERBENCH-BLOCK` schema-1 JSON carries components, traces, vias, nets
+and ports. Input validates identities, limits and references before mutation. New
+insertions remap object and net IDs; only explicit external-port mappings reuse an
+existing net. Capture rejects unsupported standalone geometry rather than silently
+dropping it. See [Modules and blocks](MODULES_AND_BLOCKS.md).
+
+KiCad exchange keeps supported ordinary geometry and nets but omits module identity,
+fit assumptions, group records, personal templates and editor-only illustrations.
+The export dialog warns about this loss; native JSON is the lossless master.
+
+## Attached controller constraints (schema 4)
+
+The carrier extension introduced in v1.5 reads old schemas 1–3 without rewriting embedded footprint geometry. New
+saves now use schema 5 so older editors cannot silently ignore the constraints.
+Part field `carrier` has its own schema 1, model/source/date, USB direction,
+wireless type, display flag, enforcement flag, required override reason when
+disabled, assumed `stackGap`, and bounded local rectangular `regions`.
+A region's `kind` is `antenna` or `access`. Effective enforced copper keepouts are
+derived through `CB.keepouts(document)` from part transforms; they are not stored
+as independently movable document keepouts. Editing constraints invalidates pours.
+KiCad exports active guards as ordinary per-face keepout zones without linkage.
+Reference appearance, access zones, gap assumptions and host metadata do not
+survive that exchange. See [CARRIERS.md](CARRIERS.md).
 
 ## Polarity metadata and automatic markings
 
@@ -18,7 +50,7 @@ legacy inference. No rule infers roles from a net name or changes a pin number.
 
 Optional part field `polaritySilk` holds `visible`, `size`, `gap`, `x` and `y`.
 Defaults print 1.2 mm symbols, 0.7 mm beyond the body/pad bounds, with zero local
-offsets. Native schema remains 3 and v1.3.1 reads all earlier supported projects.
+offsets. Native schema is now 5; v1.6 reads all earlier supported projects.
 An older app may retain unfamiliar fields but does not implement automatic printed
 polarity marks; keep v1.3.1 for further editing/export. Save a backup first.
 
@@ -103,7 +135,7 @@ BOM CSV, editable native JSON, and an HTML design-review report are generated lo
 
 Native JSON includes each placed interface’s signal labels, local pads,
 reference outline, optional local mounting holes, review status and display
-options. Old schema-1 projects remain readable. v1.3 writes schema 3.
+options. Old schema-1/2/3 projects remain readable; v1.6 writes schema 5.
 
 Gerber/Excellon exports include only real PCB manufacturing geometry: connector
 pads, requested NPTH holes and the user’s board/circuit. Reference host chips,
@@ -117,3 +149,7 @@ metadata is not round-tripped. Use native JSON as the lossless master.
 Pin-map CSV is documentation, not a schematic/netlist import. Compound headers
 appear as one assembly row in the existing BOM; select actual connector SKUs and
 quantities separately. See [form factors](FORM_FACTORS.md) for coverage limits.
+
+## v1.4 maker library and ICSP metadata
+
+See [Maker Parts](MAKER_PARTS.md). Native schema 5 retains the schema-3 support for embedded variant/source/pin metadata and optional ICSP contacts. Older versions do not apply the new internal-terminal conflict checks or ICSP edit rules. KiCad geometry export does not preserve catalog identity, named-pin captions, internal-group checks or compound ICSP behavior; its dialog warns before export. Generic/reference body models are not mechanical collision checks, and named parts are not complete electrical reference circuits.

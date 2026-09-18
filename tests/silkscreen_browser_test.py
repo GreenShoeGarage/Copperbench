@@ -25,7 +25,7 @@ with sync_playwright() as pw:
  def reset(doc=DOC):
   close();page.keyboard.press('Escape');page.evaluate('d=>CBAPP.load(d)',doc);page.keyboard.press('Escape')
   page.locator('[data-view=bench]').click();page.locator('[data-side=top]').click();stable()
-  page.evaluate("document.getElementById('welcomeCard').hidden=true")
+  page.evaluate("")
  def point(x,y):
   q=page.evaluate('p=>{const r=CBAPP.renderer;r.setup();const q=r.project(p),b=r.canvas.getBoundingClientRect();return{x:q.x+b.left,y:q.y+b.top};}',{'x':x,'y':y})
   page.mouse.click(q['x'],q['y']);return q
@@ -73,7 +73,7 @@ with sync_playwright() as pw:
  def dimensions():
   reset();dialog();page.fill('#polaritySize','1.8');page.fill('#polarityGap','1.1');page.fill('#polarityX','.5');page.fill('#polarityY','1.5');apply()
   o=page.evaluate('CBAPP.state.doc.parts[0].polaritySilk');check(o=={'visible':True,'size':1.8,'gap':1.1,'x':.5,'y':1.5});act('save')
-  raw=page.evaluate('async()=>await __exports.at(-1).blob.text()');d=json.loads(raw);check(d['schema']==3 and d['parts'][0]['polaritySilk']==o)
+  raw=page.evaluate('async()=>await __exports.at(-1).blob.text()');d=json.loads(raw);check(d['schema']==5 and d['parts'][0]['polaritySilk']==o)
   page.locator('#fileInput').set_input_files({'name':'polarized.json','mimeType':'application/json','buffer':raw.encode()});page.get_by_role('button',name='Open this board',exact=True).click();stable()
   check(page.evaluate('CBAPP.state.doc.parts[0].polaritySilk')==o)
  test('Printable size/gap/offsets survive real JSON download and file-input import',dimensions)

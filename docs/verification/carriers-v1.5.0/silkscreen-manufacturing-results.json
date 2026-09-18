@@ -1,0 +1,76 @@
+{
+  "date": "2026-09-18T12:25:28.331118+00:00",
+  "passed": 17,
+  "total": 17,
+  "scope": "Independent-language geometry checks against Gerber UNION semantics. No third-party CAM or fabrication validation.",
+  "results": [
+    {
+      "name": "Standard UNION reader reproduces total ink erasure from the old clear frame",
+      "pass": true
+    },
+    {
+      "name": "Oppositely wound nested contours fill the entire outer region, not a donut",
+      "pass": true
+    },
+    {
+      "name": "rect / top: exact retained substrate, pad masks, slots, cutout and via tenting",
+      "pass": true
+    },
+    {
+      "name": "rect / bottom: exact retained substrate, pad masks, slots, cutout and via tenting",
+      "pass": true
+    },
+    {
+      "name": "rounded / top: exact retained substrate, pad masks, slots, cutout and via tenting",
+      "pass": true
+    },
+    {
+      "name": "rounded / bottom: exact retained substrate, pad masks, slots, cutout and via tenting",
+      "pass": true
+    },
+    {
+      "name": "circle / top: exact retained substrate, pad masks, slots, cutout and via tenting",
+      "pass": true
+    },
+    {
+      "name": "circle / bottom: exact retained substrate, pad masks, slots, cutout and via tenting",
+      "pass": true
+    },
+    {
+      "name": "concave / top: exact retained substrate, pad masks, slots, cutout and via tenting",
+      "pass": true
+    },
+    {
+      "name": "concave / bottom: exact retained substrate, pad masks, slots, cutout and via tenting",
+      "pass": true
+    },
+    {
+      "name": "reversed / top: exact retained substrate, pad masks, slots, cutout and via tenting",
+      "pass": true
+    },
+    {
+      "name": "reversed / bottom: exact retained substrate, pad masks, slots, cutout and via tenting",
+      "pass": true
+    },
+    {
+      "name": "offset / top: exact retained substrate, pad masks, slots, cutout and via tenting",
+      "pass": true
+    },
+    {
+      "name": "offset / bottom: exact retained substrate, pad masks, slots, cutout and via tenting",
+      "pass": true
+    },
+    {
+      "name": "top text, references, polarity and drawing geometry survive actual Gerber compositing",
+      "pass": true
+    },
+    {
+      "name": "bottom text, references, polarity and drawing geometry survive actual Gerber compositing",
+      "pass": true
+    },
+    {
+      "name": "Generated legend regions do not depend on nested-hole fill semantics",
+      "pass": true
+    }
+  ]
+}

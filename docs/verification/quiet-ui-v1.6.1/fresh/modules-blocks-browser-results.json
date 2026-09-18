@@ -1,0 +1,151 @@
+{
+  "passed": 29,
+  "total": 29,
+  "results": [
+    {
+      "name": "Module and block pickers expose exact variants and isolated-port defaults",
+      "pass": true,
+      "ms": 1438
+    },
+    {
+      "name": "All five module starters create locked, routable, correctly named interfaces",
+      "pass": true,
+      "ms": 3562
+    },
+    {
+      "name": "Module placement retains the existing board, optional holes and entered stack gap",
+      "pass": true,
+      "ms": 1769
+    },
+    {
+      "name": "Module fit notes are visible and body visibility is undoable without changing Gerbers",
+      "pass": true,
+      "ms": 1183
+    },
+    {
+      "name": "Module pin-map CSV is downloadable through the real inspector control",
+      "pass": true,
+      "ms": 913
+    },
+    {
+      "name": "All six starters insert actual routed geometry and worker connectivity reports no open net",
+      "pass": true,
+      "ms": 8387
+    },
+    {
+      "name": "Block insertion and all of its nets/parts/copper are one undoable action",
+      "pass": true,
+      "ms": 2244
+    },
+    {
+      "name": "Two UI insertions have isolated nets and fresh ordinary reference designators",
+      "pass": true,
+      "ms": 1998
+    },
+    {
+      "name": "Explicit port mapping shares only the chosen existing project net",
+      "pass": true,
+      "ms": 1592
+    },
+    {
+      "name": "Mapping distinct ports to one net is blocked without a partial edit",
+      "pass": true,
+      "ms": 1299
+    },
+    {
+      "name": "Value edits and copper omission retain ordinary parts and visible unrouted intent",
+      "pass": true,
+      "ms": 1494
+    },
+    {
+      "name": "Board-click ghost placement supports rotation, side flip and connected copper",
+      "pass": true,
+      "ms": 1555
+    },
+    {
+      "name": "Esc cancels pending block placement without touching the project",
+      "pass": true,
+      "ms": 1377
+    },
+    {
+      "name": "Preflight blocks overlapping different-net copper rather than committing a short",
+      "pass": true,
+      "ms": 1653
+    },
+    {
+      "name": "Whole-block R/F transform every component, trace and via together",
+      "pass": true,
+      "ms": 1951
+    },
+    {
+      "name": "Dragging a selected whole block moves the copper and keeps connectivity intact",
+      "pass": true,
+      "ms": 1244
+    },
+    {
+      "name": "Block-copy control places a new editable circuit with fresh internal and external nets",
+      "pass": true,
+      "ms": 2301
+    },
+    {
+      "name": "Capture selection stores components and selected copper in the project library",
+      "pass": true,
+      "ms": 449
+    },
+    {
+      "name": "Block export downloads the actual edited geometry as a reusable JSON file",
+      "pass": true,
+      "ms": 269
+    },
+    {
+      "name": "File-input block import asks for confirmation and adds a library copy without replacing the board",
+      "pass": true,
+      "ms": 553
+    },
+    {
+      "name": "Invalid block file input leaves project data unchanged",
+      "pass": true,
+      "ms": 183
+    },
+    {
+      "name": "Native schema-5 backup contains placed groups and personal library entries",
+      "pass": true,
+      "ms": 65
+    },
+    {
+      "name": "Detach removes only group metadata, with exact Gerber/drill equality and undo",
+      "pass": true,
+      "ms": 1050
+    },
+    {
+      "name": "On-board block manager selects a group and supports precise anchor movement",
+      "pass": true,
+      "ms": 891
+    },
+    {
+      "name": "Fabrication view reads actual exported block reference and polarity silkscreen",
+      "pass": true,
+      "ms": 2006
+    },
+    {
+      "name": "Module sampler renders five distinct representative board bodies",
+      "pass": true,
+      "ms": 1334
+    },
+    {
+      "name": "Circuit sampler renders six complete editable block layouts",
+      "pass": true,
+      "ms": 1141
+    },
+    {
+      "name": "Phone-sized layout keeps the block picker usable without page-width overflow",
+      "pass": true,
+      "ms": 538
+    },
+    {
+      "name": "New workflows produce no uncaught exceptions or external runtime asset requests",
+      "pass": true,
+      "ms": 0
+    }
+  ]
+}

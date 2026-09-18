@@ -1,0 +1,168 @@
+{
+  "date": "2026-09-18T11:44:53.959Z",
+  "node": "v22.16.0",
+  "passed": 32,
+  "total": 32,
+  "results": [
+    {
+      "name": "Native current-schema JSON round-trip preserves an entire document",
+      "pass": true,
+      "ms": 3
+    },
+    {
+      "name": "All library footprints pass schema validation",
+      "pass": true,
+      "ms": 3
+    },
+    {
+      "name": "Malformed geometry, unknown schema, and duplicate identities stop import",
+      "pass": true,
+      "ms": 2
+    },
+    {
+      "name": "Circular pads cannot silently stretch or turn into incorrect circles",
+      "pass": true,
+      "ms": 0
+    },
+    {
+      "name": "Four rotations and two face flips preserve every pin identity and coordinate",
+      "pass": true,
+      "ms": 0
+    },
+    {
+      "name": "Bottom flip reflects physical pin position without changing pin numbering",
+      "pass": true,
+      "ms": 1
+    },
+    {
+      "name": "Board resizing does not resize footprints",
+      "pass": true,
+      "ms": 0
+    },
+    {
+      "name": "Net merges require explicit consent and update copper consistently",
+      "pass": true,
+      "ms": 0
+    },
+    {
+      "name": "Deleting copper does not erase intended electrical connectivity",
+      "pass": true,
+      "ms": 2
+    },
+    {
+      "name": "A real microscopic break is not considered a completed connection",
+      "pass": true,
+      "ms": 4
+    },
+    {
+      "name": "Different layers stay electrically separate until a through via is added",
+      "pass": true,
+      "ms": 1
+    },
+    {
+      "name": "Crossed distinct nets are blocking shorts; undersized traces are blocked",
+      "pass": true,
+      "ms": 3
+    },
+    {
+      "name": "Exact route checks reject board edges, cutouts, holes and keepouts",
+      "pass": true,
+      "ms": 2
+    },
+    {
+      "name": "Direct selected-pin autorouting creates verified copper",
+      "pass": true,
+      "ms": 3
+    },
+    {
+      "name": "Obstacle-aware A* takes a different path without illegal copper",
+      "pass": true,
+      "ms": 20
+    },
+    {
+      "name": "Blocked autorouting reports failure and never mutates its input",
+      "pass": true,
+      "ms": 50
+    },
+    {
+      "name": "Two-sided autorouting inserts a real through-via transition",
+      "pass": true,
+      "ms": 7
+    },
+    {
+      "name": "Multi-pin autowiring produces one physically connected net",
+      "pass": true,
+      "ms": 9
+    },
+    {
+      "name": "Autowiring already connected pins does not add redundant copper",
+      "pass": true,
+      "ms": 0
+    },
+    {
+      "name": "Filled zones are actual copper and isolated islands are removed",
+      "pass": true,
+      "ms": 8
+    },
+    {
+      "name": "Thermal relief pours connect pads while respecting a different-net obstacle",
+      "pass": true,
+      "ms": 25
+    },
+    {
+      "name": "Stale copper pours block manufacturing generation",
+      "pass": true,
+      "ms": 1
+    },
+    {
+      "name": "Excellon plated/non-plated files preserve slot endpoints and tool diameter",
+      "pass": true,
+      "ms": 1
+    },
+    {
+      "name": "Gerber copper, mask, silk, outline and optional paste all reparse",
+      "pass": true,
+      "ms": 5
+    },
+    {
+      "name": "Bottom manufacturing layers are not mirrored",
+      "pass": true,
+      "ms": 1
+    },
+    {
+      "name": "Gerber compatibility export drops attributes but not geometry",
+      "pass": true,
+      "ms": 7
+    },
+    {
+      "name": "Filled silkscreen polygons stay filled after KiCad interchange",
+      "pass": true,
+      "ms": 2
+    },
+    {
+      "name": "KiCad subset round-trip preserves flipped/rotated pad and drill coordinates",
+      "pass": true,
+      "ms": 5
+    },
+    {
+      "name": "KiCad inner layers, custom pads and explicit manufacturing graphics are rejected",
+      "pass": true,
+      "ms": 2
+    },
+    {
+      "name": "Manufacturing reader rejects unsupported/incomplete input rather than inventing geometry",
+      "pass": true,
+      "ms": 0
+    },
+    {
+      "name": "Baseline comparison records added, changed, and removed objects",
+      "pass": true,
+      "ms": 1
+    },
+    {
+      "name": "Golden two-layer coupon has no blocking geometry findings",
+      "pass": true,
+      "ms": 10
+    }
+  ]
+}

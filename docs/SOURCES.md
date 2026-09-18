@@ -33,3 +33,27 @@ this rule; see [the fix record](POLARITY_AND_SILKSCREEN.md).
 identification for that diode; [Kingbright WP7113ID](https://www.kingbrightusa.com/images/catalog/SPEC/WP7113ID.pdf)
 provides a specific LED package orientation example. Generic application models
 are not manufacturer-certified footprints. Always verify the purchased part.
+
+
+## v1.4 everyday maker parts
+
+References for the new catalog were consulted on **18 September 2026**. See
+[the maker guide](MAKER_PARTS.md) for exact USB/ICSP source identities, numerical
+adaptations and qualification boundaries, and [the full catalog](MAKER_CATALOG.md)
+for source links by family. The placed part's **Part reference, notes & pin-map
+CSV** action also retains its specific references offline as metadata. External
+pages open only at the user's request; none is a runtime dependency.
+
+The catalog distinguishes source-referenced device pin maps from generic nominal
+land patterns. A source URL is not a claim of complete source-drawing verification,
+physical fit, voltage/current suitability or electrical design correctness.
+
+
+## v1.5 controller carrier references
+
+See [Controller carriers](CARRIERS.md) for the nine new host selections, exact
+scope, primary source links, nominal dimensions, antenna projections and
+mechanical qualifications. All 18 new header patterns and reference drawings
+are embedded in projects; no external runtime model downloads are required.
+Native schema 4 preserves attached guards. These are not direct-solder
+castellated footprints or physically qualified assemblies.

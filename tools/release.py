@@ -19,11 +19,11 @@ SOURCE_FILES = (
     '.gitignore', '.gitattributes', '.editorconfig', '.nvmrc', '.python-version', '.nojekyll',
     'index.html', 'styles.css', 'icon.svg', 'manifest.webmanifest', 'sw.js',
     'COPPERBENCH-portable.html', 'package.json', 'package-lock.json', 'requirements-dev.txt',
-    'README.md', 'LICENSE', 'THIRD_PARTY_NOTICES.md', 'CONTRIBUTING.md', 'SECURITY.md', 'CHANGELOG.md'
+    'README.md', 'LICENSE', 'MODULE-NOTICES.txt', 'THIRD_PARTY_NOTICES.md', 'CONTRIBUTING.md', 'SECURITY.md', 'CHANGELOG.md'
 )
 SOURCE_DIRS = ('.github', 'src', 'vendor', 'docs', 'examples', 'tests', 'tools')
 SITE_FILES = ('index.html', 'styles.css', 'icon.svg', 'manifest.webmanifest', 'sw.js', '.nojekyll',
-              'COPPERBENCH-portable.html', 'LICENSE', 'THIRD_PARTY_NOTICES.md')
+              'COPPERBENCH-portable.html', 'LICENSE', 'MODULE-NOTICES.txt', 'THIRD_PARTY_NOTICES.md')
 SITE_DIRS = ('src', 'vendor', 'examples')
 
 

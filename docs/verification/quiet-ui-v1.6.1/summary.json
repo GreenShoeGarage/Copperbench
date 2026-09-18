@@ -1,0 +1,112 @@
+{
+  "version": "1.6.1",
+  "passed": 547,
+  "total": 547,
+  "packaging": {
+    "passed": 13,
+    "total": 13
+  },
+  "suites": {
+    "browser-results.json": {
+      "passed": 20,
+      "total": 20
+    },
+    "carrier-browser-results.json": {
+      "passed": 17,
+      "total": 17
+    },
+    "carrier-independent-results.json": {
+      "passed": 21,
+      "total": 21
+    },
+    "carriers-results.json": {
+      "passed": 32,
+      "total": 32
+    },
+    "core-results.json": {
+      "passed": 32,
+      "total": 32
+    },
+    "maker-browser-results.json": {
+      "passed": 17,
+      "total": 17
+    },
+    "maker-manufacturing-results.json": {
+      "passed": 10,
+      "total": 10
+    },
+    "maker-results.json": {
+      "passed": 28,
+      "total": 28
+    },
+    "manufacturing-results.json": {
+      "passed": 12,
+      "total": 12
+    },
+    "modules-blocks-browser-results.json": {
+      "passed": 29,
+      "total": 29
+    },
+    "modules-blocks-independent-results.json": {
+      "passed": 16,
+      "total": 16
+    },
+    "modules-blocks-results.json": {
+      "passed": 47,
+      "total": 47
+    },
+    "plane-browser-results.json": {
+      "passed": 23,
+      "total": 23
+    },
+    "plane-core-results.json": {
+      "passed": 31,
+      "total": 31
+    },
+    "plane-manufacturing-results.json": {
+      "passed": 15,
+      "total": 15
+    },
+    "platform-browser-results.json": {
+      "passed": 13,
+      "total": 13
+    },
+    "platform-manufacturing-results.json": {
+      "passed": 12,
+      "total": 12
+    },
+    "platform-results.json": {
+      "passed": 23,
+      "total": 23
+    },
+    "quiet-ui-browser-results.json": {
+      "passed": 18,
+      "total": 18
+    },
+    "silkscreen-browser-results.json": {
+      "passed": 16,
+      "total": 16
+    },
+    "silkscreen-manufacturing-results.json": {
+      "passed": 17,
+      "total": 17
+    },
+    "silkscreen-results.json": {
+      "passed": 30,
+      "total": 30
+    },
+    "via-browser-results.json": {
+      "passed": 21,
+      "total": 21
+    },
+    "via-manufacturing-results.json": {
+      "passed": 7,
+      "total": 7
+    },
+    "via-results.json": {
+      "passed": 27,
+      "total": 27
+    }
+  },
+  "scope": "Retained full suite plus the final 18-case quiet UI suite; storage and download doubles in Chromium."
+}

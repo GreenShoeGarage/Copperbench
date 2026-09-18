@@ -1,0 +1,297 @@
+{
+  "app": "COPPERBENCH-BLOCK",
+  "schema": 1,
+  "id": "block-rc-filter",
+  "revision": 1,
+  "name": "RC input filter",
+  "description": "A series 1 kΩ resistor and a 100 nF shunt capacitor, with INPUT / OUTPUT / GND ports.",
+  "notes": [
+    "Starting values only. Check bandwidth, source impedance, ADC acquisition time, input protection and the load; this is not an anti-aliasing certification.",
+    "The PCB layout does not simulate the signal or infer its voltage. Adjust the values and placement for the real receiving circuit."
+  ],
+  "parts": [
+    {
+      "id": "p-catalog-93",
+      "name": "Header · 1 × 3",
+      "category": "Connectors",
+      "body": {
+        "kind": "header",
+        "w": 7.62,
+        "h": 2.54,
+        "z": 5
+      },
+      "pads": [
+        {
+          "number": "1",
+          "x": -2.54,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "both",
+          "net": "n-catalog-96"
+        },
+        {
+          "number": "2",
+          "x": 0,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n-catalog-97"
+        },
+        {
+          "number": "3",
+          "x": 2.54,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n-catalog-98"
+        }
+      ],
+      "ref": "J1",
+      "value": "INPUT / OUTPUT / GND",
+      "source": "Parametric geometry; check against the selected component datasheet.",
+      "verified": false,
+      "libraryId": "header3",
+      "x": -10,
+      "y": 0,
+      "rotation": 90,
+      "side": "top",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 2.4699999999999998,
+        "size": 1,
+        "visible": true
+      }
+    },
+    {
+      "id": "p-catalog-94",
+      "name": "R · 0805",
+      "category": "Surface-mount",
+      "body": {
+        "kind": "smd-resistor",
+        "w": 2,
+        "h": 1.25,
+        "z": 0.7
+      },
+      "pads": [
+        {
+          "number": "1",
+          "x": -0.95,
+          "y": 0,
+          "w": 1,
+          "h": 1.4,
+          "drill": 0,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "top",
+          "net": "n-catalog-96"
+        },
+        {
+          "number": "2",
+          "x": 0.95,
+          "y": 0,
+          "w": 1,
+          "h": 1.4,
+          "drill": 0,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "top",
+          "net": "n-catalog-97"
+        }
+      ],
+      "ref": "R1",
+      "value": "1k",
+      "source": "Parametric geometry; check against the selected component datasheet.",
+      "verified": false,
+      "libraryId": "R0805",
+      "x": 0,
+      "y": -4,
+      "rotation": 0,
+      "side": "top",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 1.825,
+        "size": 1,
+        "visible": true
+      }
+    },
+    {
+      "id": "p-catalog-95",
+      "name": "C · 0805",
+      "category": "Surface-mount",
+      "body": {
+        "kind": "smd-cap",
+        "w": 2,
+        "h": 1.25,
+        "z": 0.7
+      },
+      "pads": [
+        {
+          "number": "1",
+          "x": -0.95,
+          "y": 0,
+          "w": 1,
+          "h": 1.4,
+          "drill": 0,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "top",
+          "net": "n-catalog-97"
+        },
+        {
+          "number": "2",
+          "x": 0.95,
+          "y": 0,
+          "w": 1,
+          "h": 1.4,
+          "drill": 0,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "top",
+          "net": "n-catalog-98"
+        }
+      ],
+      "ref": "C1",
+      "value": "100nF",
+      "source": "Parametric geometry; check against the selected component datasheet.",
+      "verified": false,
+      "libraryId": "C0805",
+      "x": 4,
+      "y": 3,
+      "rotation": 90,
+      "side": "top",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 1.825,
+        "size": 1,
+        "visible": true
+      }
+    }
+  ],
+  "traces": [
+    {
+      "id": "t-catalog-99",
+      "net": "n-catalog-96",
+      "layer": "top",
+      "width": 0.4,
+      "points": [
+        {
+          "x": -10,
+          "y": -2.54
+        },
+        {
+          "x": -0.95,
+          "y": -4
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t-catalog-100",
+      "net": "n-catalog-97",
+      "layer": "top",
+      "width": 0.4,
+      "points": [
+        {
+          "x": -10,
+          "y": 0
+        },
+        {
+          "x": -3.05,
+          "y": 0
+        },
+        {
+          "x": 0.95,
+          "y": -4
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t-catalog-101",
+      "net": "n-catalog-97",
+      "layer": "top",
+      "width": 0.4,
+      "points": [
+        {
+          "x": 0.95,
+          "y": -4
+        },
+        {
+          "x": 4,
+          "y": 2.05
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t-catalog-102",
+      "net": "n-catalog-98",
+      "layer": "top",
+      "width": 0.4,
+      "points": [
+        {
+          "x": -10,
+          "y": 2.54
+        },
+        {
+          "x": 4,
+          "y": 3.95
+        }
+      ],
+      "locked": false
+    }
+  ],
+  "vias": [],
+  "nets": [
+    {
+      "id": "n-catalog-96",
+      "name": "INPUT",
+      "width": 0.4
+    },
+    {
+      "id": "n-catalog-97",
+      "name": "OUTPUT",
+      "width": 0.4
+    },
+    {
+      "id": "n-catalog-98",
+      "name": "GND",
+      "width": 0.4
+    }
+  ],
+  "ports": [
+    {
+      "key": "INPUT",
+      "name": "INPUT",
+      "net": "n-catalog-96",
+      "kind": "signal"
+    },
+    {
+      "key": "OUTPUT",
+      "name": "OUTPUT",
+      "net": "n-catalog-97",
+      "kind": "signal"
+    },
+    {
+      "key": "GND",
+      "name": "GND",
+      "net": "n-catalog-98",
+      "kind": "ground"
+    }
+  ]
+}

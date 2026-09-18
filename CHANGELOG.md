@@ -1,5 +1,56 @@
 # Changelog
 
+## 1.6.1 — 2026-09-18 · Quieter workbench
+
+- Removed welcome-card and canvas slogans, repeated introductory paragraphs, and duplicate empty-inspector statistics.
+- Put parts search and category selection first, with compact catalog buttons and a keyboard-operable Library tools disclosure.
+- Added on-demand tool help; show short hints only during active workflows. Removed duplicate part/block placement instruction toasts.
+- Kept polarity, storage errors, live design findings, clearance checks, and manufacturing export gates visible.
+- Preserved native schema 5, all 193 part entries, six block templates, and the routing/manufacturing engine.
+- Added 18 Chromium interface regressions; updated legacy tests only for the new category control, disclosure and removed introductory overlay.
+
+
+## 1.6.0 — Module interfaces and reusable circuit blocks
+
+- Added five specific, source-referenced Adafruit module mating interfaces with
+  pin names, optional mounting holes, representative bodies and fit/source inspector.
+- Added six routed circuit-block starters and explicit per-port mapping. New IDs
+  and nets prevent accidental joins between copies; no GND name-based auto-merge.
+- Added reversible insertion, checked placement, whole-group move/rotate/flip/nudge,
+  isolated-net copies, detach, project-local capture/library, and block JSON exchange.
+- Added export-template controls, two samplers and editable module/board examples.
+- Native schema 5 reads schemas 1–4 and preserves new group/library metadata.
+- KiCad export warns that module metadata and reusable grouping do not survive.
+- Preserved per-component footprint geometry, all v1.5 controllers, vias, planes,
+  polarity markings and corrected Gerber silkscreen clipping.
+- Updated expected current-schema/count regressions and added module, block,
+  independent manufacturing-coordinate and actual-browser tests.
+- Adapted module coordinate data is CC BY-SA 3.0; retained notices accompany the
+  source, static and portable editions. Engine and original blocks remain MIT.
+
+
+## 1.5.0 — 2026-09-18
+
+- Added 18 header-mounted controller interfaces across nine host selections: Pico/Pico 2 and wireless variants, classic Nano, ESP32-DevKitC V4 WROOM-32E, common Feather/FeatherWing, original XIAO RP2040 and XIAO ESP32C3. All 170 prior library entries are retained.
+- Added controller-first selection, 18 native starters, functional contact maps and nominal host/cable references. No-hole hosts receive no invented mounting drills.
+- Added attached, editable antenna guards enforced by routing, vias, fill and geometry checks on both faces. Move/rotate/flip/duplicate/delete preserve the attachment; hiding an overlay never disables enforcement.
+- Added editable access regions, advisory stack-gap/body-overlap checks and source cautions. RF guard overrides require a saved reason and remain findings. Defaults are suggested projections, not qualified RF envelopes.
+- Bumped native JSON to schema 4 so older apps reject unknown attached-guard semantics. Schemas 1–3 still open without library-driven footprint replacement. KiCad exports active guards as independent keepout zones with an explicit loss-of-linkage warning.
+- Added carrier engine, separate-language manufacturing and real Chromium workflow regression suites. Existing Uno ICSP, vias, planes, polarity and corrected silkscreen export remain covered.
+
+
+## 1.4.0 — 2026-09-18
+
+- Added 134 maker variants in 17 families, retaining all 36 existing entries.
+- Added family-first selection, searchable names/manufacturers/functions, and representative bodies for new part types.
+- Added functional pin-name editing, editor-only selected-part captions, per-part source/caution/review dialogs and pin-map CSV.
+- Added internal-common-terminal conflict findings without automatic net joins or invisible copper.
+- Added optional Uno R3 ICSP as six appended contacts; existing pads/indices/nets and default templates remain unchanged. Assigned or copper-touched ICSP cannot be silently removed.
+- Added Everyday Maker sampler and Uno ICSP example, schema-3 metadata preservation, and an explicit KiCad metadata-loss warning.
+- Kept prior polarity and Gerber-silkscreen fixes, vias, planes and host-platform support.
+- Added targeted engine, independent-language manufacturing and Chromium UI regressions. See current verification record for executed results and limitations.
+
+
 ## 1.3.1 — Polarity labels and repaired silkscreen export — 2026-09-17
 
 Fixed the nested clear-region frame that could erase the complete top/bottom

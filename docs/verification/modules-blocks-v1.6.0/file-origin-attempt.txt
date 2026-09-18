@@ -1,0 +1,4 @@
+An additional unmocked Chromium file:// launch was attempted during release verification.
+The managed browser rejected navigation with ERR_BLOCKED_BY_ADMINISTRATOR before application startup.
+No policy change or bypass was attempted. Real-origin persistence and native download navigation remain unverified.
+This environment-blocked attempt is not included as a passing regression test.

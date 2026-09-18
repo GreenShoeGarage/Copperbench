@@ -1,0 +1,139 @@
+{
+  "date": "2026-09-18T18:55:23.553815+00:00",
+  "environment": "Chromium, about:blank embedded portable HTML. Storage test double and intercepted download blobs; no real-origin persistence or service-worker validation in this suite.",
+  "passed": 20,
+  "total": 20,
+  "results": [
+    {
+      "name": "Boot renders 3D parts and embedded worker completes design checks",
+      "pass": true,
+      "ms": 27
+    },
+    {
+      "name": "Click-to-place, rotate, flip, undo and redo use the real controls",
+      "pass": true,
+      "ms": 2252
+    },
+    {
+      "name": "Manual lead-to-lead trace honors selected width",
+      "pass": true,
+      "ms": 1696
+    },
+    {
+      "name": "Three picked leads preview and commit an actual connected route",
+      "pass": true,
+      "ms": 2289
+    },
+    {
+      "name": "Starter board routes all three nets without blocking geometry findings",
+      "pass": true,
+      "ms": 2281
+    },
+    {
+      "name": "Native JSON export blob and reviewed file-input import round-trip",
+      "pass": true,
+      "ms": 297
+    },
+    {
+      "name": "Unsupported native import leaves the existing board unchanged",
+      "pass": true,
+      "ms": 227
+    },
+    {
+      "name": "Fabrication reads actual files and produces a complete manufacturing ZIP blob",
+      "pass": true,
+      "ms": 1120
+    },
+    {
+      "name": "Unrouted boards require explicit diagnostic-export override",
+      "pass": true,
+      "ms": 566
+    },
+    {
+      "name": "Board size and polygon tools edit boundaries without scaling footprints",
+      "pass": true,
+      "ms": 860
+    },
+    {
+      "name": "Silkscreen text and drag-drawn shapes create editable manufacturing geometry",
+      "pass": true,
+      "ms": 961
+    },
+    {
+      "name": "Image conversion embeds its original and emits real silkscreen rectangles",
+      "pass": true,
+      "ms": 358
+    },
+    {
+      "name": "Executable SVG is rejected before image conversion",
+      "pass": true,
+      "ms": 219
+    },
+    {
+      "name": "Custom footprint wizard produces a placeable self-contained part",
+      "pass": true,
+      "ms": 1009
+    },
+    {
+      "name": "Copper-zone drawing invokes worker fill and establishes physical connectivity",
+      "pass": true,
+      "ms": 1173
+    },
+    {
+      "name": "Searchable pin table provides an alternative to picking small pads",
+      "pass": true,
+      "ms": 690
+    },
+    {
+      "name": "Baseline comparison and downloadable review report work",
+      "pass": true,
+      "ms": 566
+    },
+    {
+      "name": "Autosave/reload and quota-failure recovery work with the storage test double",
+      "pass": true,
+      "ms": 2080
+    },
+    {
+      "name": "Dark/high-contrast themes and narrow responsive layout avoid page overflow",
+      "pass": true,
+      "ms": 1537
+    },
+    {
+      "name": "No external asset requests or uncaught application exceptions",
+      "pass": true,
+      "ms": 0
+    }
+  ],
+  "uncaught": [],
+  "network_requests": [
+    "blob:null/1de27eef-69c7-42da-9186-5ac30863d583",
+    "blob:null/89ceee98-691b-4032-a767-159cf9b3a291",
+    "blob:null/4723c382-7bdf-4bed-b36f-74ba13f95de2",
+    "blob:null/fcea2bf9-73c6-4c6a-a5e0-c315eb454ec9",
+    "blob:null/bfd4ecf1-4ba1-4f37-9c82-f160f3fd9efb",
+    "blob:null/1ccbaefb-45a5-41ec-b16a-6b4499de0d56",
+    "blob:null/ebb2f52d-ea54-4351-a70d-843bb3953004",
+    "blob:null/69e4750e-1928-4a6c-84d6-2d5fe3d3b815",
+    "blob:null/423fe8f3-2a83-4fa0-85f0-042ea41381b3",
+    "blob:null/1d05f6d3-f292-4efe-a0e6-496dc865dd80",
+    "blob:null/40490c83-a004-41ea-9f81-f30df6cec558",
+    "blob:null/520c8101-fa37-41d9-bb62-de2d285e8925",
+    "blob:null/f9575dc0-c82f-4fba-9862-4a50886f030a",
+    "blob:null/e936308a-f3bc-4077-8e3f-05481ca425f1",
+    "blob:null/e72eec77-25c6-4fb1-8930-fc7edec411f5",
+    "blob:null/7ab713e3-3ab1-4dd4-a10e-4363a7033944",
+    "blob:null/ee830112-7ac5-40a9-bf4c-a4e499e68eee",
+    "blob:null/6fcdfe2f-c973-43ff-877a-58094a58f861",
+    "blob:null/f0dc55b2-9df3-439a-9421-61cd03d56a89",
+    "blob:null/635c5eeb-f08c-4bea-9122-a3bd165a0a52",
+    "blob:null/1ad9e7c0-62cf-4729-a916-2adb6e07ee7e",
+    "blob:null/30b02ace-69e1-4e3c-b25b-ca24bd200107",
+    "blob:null/7dab338d-f0ef-4066-98b1-61383c5c947c",
+    "blob:null/d330256e-e64e-45f2-b25c-96b70d490e34",
+    "blob:null/4cb1d31b-66ce-4a20-85bd-7213d0f5e78f",
+    "blob:null/0f245bfa-e334-4466-8f3d-cf5d9940c49c",
+    "blob:null/8d9981b9-b114-4583-afda-8bb03dbe9c4a",
+    "blob:null/bb8ab64e-b542-496b-86f3-48379e1e24e3"
+  ]
+}

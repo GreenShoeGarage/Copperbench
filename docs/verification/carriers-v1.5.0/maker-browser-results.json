@@ -1,0 +1,93 @@
+{
+  "version": "1.5.0",
+  "passed": 17,
+  "total": 17,
+  "scope": "Real Chromium controls and software-3D canvas; simulated storage and captured download blobs.",
+  "results": [
+    {
+      "name": "Family-first drawer groups 134 new variants without replacing legacy parts",
+      "pass": true,
+      "ms": 1258
+    },
+    {
+      "name": "Native family/search/variant controls place the selected package through the canvas",
+      "pass": true,
+      "ms": 1885
+    },
+    {
+      "name": "Drawer search finds Qwiic directly and placement does not create a power net",
+      "pass": true,
+      "ms": 1763
+    },
+    {
+      "name": "Functional pin-label edits are one undoable metadata operation",
+      "pass": true,
+      "ms": 3168
+    },
+    {
+      "name": "Source notes and explicit user review are visible; label edits clear review",
+      "pass": true,
+      "ms": 2828
+    },
+    {
+      "name": "Part-reference dialog exports the actual functional pin map CSV",
+      "pass": true,
+      "ms": 796
+    },
+    {
+      "name": "Editor-only functional captions never leak into manufacturing artwork",
+      "pass": true,
+      "ms": 2849
+    },
+    {
+      "name": "Worker findings and normal export block conflicting nets on an internally common tab",
+      "pass": true,
+      "ms": 2619
+    },
+    {
+      "name": "Uno template checkbox adds six real ICSP contacts while default templates stay unchanged",
+      "pass": true,
+      "ms": 2978
+    },
+    {
+      "name": "ICSP removal is undoable and is refused when a pin is still assigned",
+      "pass": true,
+      "ms": 4525
+    },
+    {
+      "name": "ICSP-enabled headers can be placed on the current board with a normal reference",
+      "pass": true,
+      "ms": 2524
+    },
+    {
+      "name": "Advanced pad renumbering keeps internal-terminal group references aligned",
+      "pass": true,
+      "ms": 2591
+    },
+    {
+      "name": "Actual JSON download blob and file-input import retain embedded catalog and signals",
+      "pass": true,
+      "ms": 2263
+    },
+    {
+      "name": "KiCad exchange warns that functional labels and catalog behavior are not preserved",
+      "pass": true,
+      "ms": 363
+    },
+    {
+      "name": "A real 3D workbench renders new connector, control, driver and debugging bodies",
+      "pass": true,
+      "ms": 3220
+    },
+    {
+      "name": "Narrow-screen picker remains reachable without page-level horizontal overflow",
+      "pass": true,
+      "ms": 964
+    },
+    {
+      "name": "No uncaught exceptions or external runtime requests during maker workflows",
+      "pass": true,
+      "ms": 0
+    }
+  ]
+}

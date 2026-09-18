@@ -1,0 +1,69 @@
+{
+  "version": "1.6.0",
+  "date": "2026-09-18T15:18:23.988355+00:00",
+  "passed": 15,
+  "total": 15,
+  "scope": "Independent Python/Shapely Gerber and Excellon parsing. No external CAM certification, manufacturer acceptance, fabrication or electrical-function testing.",
+  "results": [
+    {
+      "name": "Power/ground fixture has exactly three plated drills at literal expected centers",
+      "pass": true
+    },
+    {
+      "name": "Bottom ground plane actually joins the through-hole lead and attachment via",
+      "pass": true
+    },
+    {
+      "name": "Top SMT stub actually reaches the same via without touching the power plane",
+      "pass": true
+    },
+    {
+      "name": "Power copper and ground copper remain separated on both faces",
+      "pass": true
+    },
+    {
+      "name": "Top power plane and SMT ground stub meet the explicit clearance",
+      "pass": true
+    },
+    {
+      "name": "Via copper diameter and annular ring survive both Gerber layers",
+      "pass": true
+    },
+    {
+      "name": "Untented attachment via has mask openings, but the plane itself stays masked",
+      "pass": true
+    },
+    {
+      "name": "All fixture copper stays inside the 0.381 mm board-edge margin",
+      "pass": true
+    },
+    {
+      "name": "Split fixture has exactly two actual bottom-copper regions",
+      "pass": true
+    },
+    {
+      "name": "Same-net pads on opposite sides of a keepout are not physically connected",
+      "pass": true
+    },
+    {
+      "name": "The full-height copper keepout has no exported plane copper",
+      "pass": true
+    },
+    {
+      "name": "Non-plated mounting hole and its copper clearance agree in separate outputs",
+      "pass": true
+    },
+    {
+      "name": "Internal cutout keeps copper at the required routed-edge clearance",
+      "pass": true
+    },
+    {
+      "name": "Every filled native rectangle is retained by independently parsed Gerber geometry",
+      "pass": true
+    },
+    {
+      "name": "Thermal-gap artwork leaves a real copper path from pad into its plane",
+      "pass": true
+    }
+  ]
+}

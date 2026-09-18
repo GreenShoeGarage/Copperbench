@@ -1,0 +1,140 @@
+COPPERBENCH v1.6 MODULE INTERFACE ATTRIBUTION
+
+The header and mounting-center data in src/modules.js are adapted from the
+Adafruit Industries Eagle board files identified by URL and blob hash in that
+file and docs/MODULES_AND_BLOCKS.md. This adapted interface data is distributed
+under Creative Commons Attribution-ShareAlike 3.0 Unported:
+https://creativecommons.org/licenses/by-sa/3.0/
+https://creativecommons.org/licenses/by-sa/3.0/legalcode
+
+Changes: extracted header/hole centers and terminal signals; centered coordinates;
+converted Eagle Y-up to board Y-down; reflected OLED X for display-face-up mounting;
+selected nominal carrier pad/drill sizes; added original representative rendering
+and application metadata. This is NOT a redistribution of a complete Adafruit
+board design and is NOT endorsed, certified or fit-tested by Adafruit.
+Original application code and circuit-block examples remain MIT licensed.
+The supplier text below is retained for attribution, not an engineering assurance
+or current performance claim by COPPERBENCH. Refer to the current vendor guide.
+No supplier photos or logos are bundled. HTML image references below are text only.
+
+--- Original supplier README: Adafruit-BME280-Breakout-PCB ---
+## Adafruit BME280 Breakout PCB
+
+<a href="http://www.adafruit.com/products/2652"><img src="assets/image.jpg?raw=true" width="500px"><br/>
+Click here to purchase one from the Adafruit shop</a>
+
+PCB files for the Adafruit BME280 Breakout. Format is EagleCAD schematic and board layout
+* https://www.adafruit.com/product/2652
+
+### Description
+
+Bosch has stepped up their game with their new BME280 sensor, an environmental sensor with temperature, barometric pressure and humidity! This sensor is great for all sorts of weather/environmental sensing and can even be used in both I2C and SPI!
+
+This precision sensor from Bosch is the best low-cost sensing solution for measuring humidity with ±3% accuracy, barometric pressure with ±1 hPa absolute accuraccy, and temperature with ±1.0°C accuracy. Because pressure changes with altitude, and the pressure measurements are so good, you can also use it as an altimeter with  ±1 meter or better accuracy!
+
+The BME280 is the next-generation of sensors from Bosch, and is the upgrade to the BMP085/BMP180/BMP183 - with a low altitude noise of 0.25m and the same fast conversion time. It has the same specifications, but can use either I2C or SPI. For simple easy wiring, go with I2C. If you want to connect a bunch of sensors without worrying about I2C address collisions, go with SPI.
+
+### License
+
+Adafruit invests time and resources providing this open source design, please support Adafruit and open-source hardware by purchasing products from [Adafruit](https://www.adafruit.com)!
+
+Designed by Limor Fried/Ladyada for Adafruit Industries.
+
+Creative Commons Attribution/Share-Alike, all text above must be included in any redistribution. See license.txt for additional details.
+
+--- Original supplier README: Adafruit-DS3231-Precision-RTC-Breakout-PCB ---
+## Adafruit DS3231 Precision RTC Breakout PCB
+<a href="http://www.adafruit.com/products/5188"><img src="assets/5188.jpg?raw=true" width="500px"><br/>
+Click here to purchase one from the Adafruit shop</a><br/>
+<a href="http://www.adafruit.com/products/3013"><img src="assets/image.jpg?raw=true" width="500px"><br/>
+Click here to purchase one from the Adafruit shop</a>
+
+The datasheet for the DS3231 explains that this part is an "Extremely Accurate I²C-Integrated RTC/TCXO/Crystal". And, hey, it does exactly what it says on the tin! This Real Time Clock (RTC) is the most precise you can get in a small, low power package.
+
+Most RTCs use an external 32kHz timing crystal that is used to keep time with low current draw. And that's all well and good, but those crystals have slight drift, particularly when the temperature changes (the temperature changes the oscillation frequency very very very slightly but it does add up!) This RTC is in a beefy package because the crystal is inside the chip! And right next to the integrated crystal is a temperature sensor. That sensor compensates for the frequency changes by adding or removing clock ticks so that the timekeeping stays on schedule.
+
+This is the finest RTC you can get, and now we have it in a compact, breadboard-friendly breakout. With a coin cell plugged into the back, you can get years of precision timekeeping, even when main power is lost. Great for datalogging and clocks, or anything where you need to really know the time.
+
+PCB files for the Adafruit DS3231 Precision RTC Breakout. The format is EagleCAD schematic and board layout
+- https://www.adafruit.com/products/3013
+
+### License
+
+Adafruit invests time and resources providing this open source design, please support Adafruit and open-source hardware by purchasing products from [Adafruit](https://www.adafruit.com)!
+
+All text above must be included in any redistribution
+
+Designed by Limor Fried/Ladyada for Adafruit Industries.
+Creative Commons Attribution/Share-Alike, all text above must be included in any redistribution. 
+See license.txt for additional information.
+
+--- Original supplier README: Adafruit-TB6612-Motor-Driver-Breakout-PCB ---
+## Adafruit TB6612 Motor Driver Breakout PCB
+
+<a href="http://www.adafruit.com/products/2448"><img src="assets/image.jpg?raw=true" width="500px"><br/>
+Click here to purchase one from the Adafruit shop</a>
+
+PCB files for the Adafruit TB6612 Motor Driver Breakout. Format is EagleCAD schematic and board layout
+* https://www.adafruit.com/product/2448
+
+### DESCRIPTION
+Spin two DC motors, step one bi-polar or uni-polar stepper, or fire off two solenoids with 1.2A per channel using the TB6612. These are perhaps better known as "the drivers in our assembled Adafruit Motorshield or Motor HAT." We really like these dual H-bridges, so if you want to control motors without a shield or HAT these are easy to include on any solderless breadboard or perma-proto.
+
+We solder on TB6612 onto a breakout board for you here, with a polarity protection FET on the motor voltage input and a pullup on the "standby" enable pin. Each breakout chip contains two full H-bridges (four half H-bridges). That means you can drive 2-4 solenoids (only two can be active at a time, on opposite bridges), two DC motors bi-directionally, or one stepper motor. Just make sure they're good for 1.2 Amp or less of current, since that's the limit of this chip. They do handle a peak of 3A but that's just for a short amount of time, like 20 milliseconds. What we like most about this particular driver is that it comes with built in kick-back diodes internally so you don't have to worry about the inductive kick damaging your project or driver!
+
+There's two digital inputs per H-bridge (one for each half of the bridge) as well as a PWM input per driver so you can control motor speed. Runs at 2.7V-5V logic. The motor voltage is separate from the logic voltage. Good for motor voltages from 4.5V up to 13.5V! This wont work well for 3V motors.
+
+### License
+
+Adafruit invests time and resources providing this open source design, please support Adafruit and open-source hardware by purchasing products from [Adafruit.com](https://www.adafruit.com)!
+
+Creative Commons Attribution, Share-Alike license, check license.txt for more information All text above must be included in any redistribution - 
+See license.txt for more information.
+
+--- Original supplier README: Adafruit-MPM3610-PCB ---
+## Adafruit MPM3610 3.3V & 5V Buck Converter Breakout PCB
+
+<a href="http://www.adafruit.com/products/4683"><img src="assets/4683.jpg?raw=true" width="500px"><br/>
+Click here to purchase one from the Adafruit shop</a>
+
+PCB files for the Adafruit MPM3610 3.3V & 5V Buck Converter Breakout.
+
+Format is EagleCAD schematic and board layout
+* https://www.adafruit.com/product/4683
+* https://www.adafruit.com/product/4739
+
+### Description
+
+Adafruit MPM3610 3.3V and 5V Buck Converter Breakout. The files for both are the same, the only difference is on the 5V version, R1 & R2 are 100K and R3 is 18.7K and on the 3.3V version, R1 & R2 are 75 and R3 is 24K
+
+### License
+
+Adafruit invests time and resources providing this open source design, please support Adafruit and open-source hardware by purchasing products from [Adafruit](https://www.adafruit.com)!
+
+Designed by Limor Fried/Ladyada for Adafruit Industries.
+
+Creative Commons Attribution/Share-Alike, all text above must be included in any redistribution.
+See license.txt for additional details.
+
+--- Original supplier README: Adafruit-128x64-Monochrome-OLED-PCB ---
+## Adafruit 128x64 Monochrome OLED PCB
+<a href="http://www.adafruit.com/products/326"><img src="assets/326.jpg?raw=true" width="500px"><br/>
+<a href="http://www.adafruit.com/products/326"><img src="assets/image.jpg?raw=true" width="500px"><br/>
+Click here to purchase one from the Adafruit shop</a>
+
+These displays are small, only about 1" diagonal, but very readable due to the high contrast of an OLED display. This display is made of 128x64 individual white OLED pixels, each one is turned on or off by the controller chip. Because the display makes its own light, no backlight is required. This reduces the power required to run the OLED and is why the display has such high contrast; we really like this miniature display for its crispness!
+
+This breakout can be used with either an SPI or I2C interface - selectable by soldering two jumpers on the back. The design is completely 5V-ready, with an onboard regulator and built in boost converter. It's easier than ever to connect directly to your 3V or 5V microcontroller without needing any kind of level shifter!
+
+This is the PCB for the Adafruit 128x64 I2C/SPI/Parallel OLED breakout board. The format is EagleCAD schematic and board layout
+- http://www.adafruit.com/products/326
+
+### License
+
+Adafruit invests time and resources providing this open source design, please support Adafruit and open-source hardware by purchasing products from [Adafruit](https://www.adafruit.com)!
+
+All text above must be included in any redistribution
+
+Designed by Limor Fried/Ladyada for Adafruit Industries.
+Creative Commons Attribution/Share-Alike, all text above must be included in any redistribution. 
+See license.txt for additional information.

@@ -1,0 +1,70 @@
+{
+  "date": "2026-09-18T12:25:20.828801+00:00",
+  "python": "3.13.5",
+  "shapely": "2.1.2",
+  "passed": 12,
+  "total": 12,
+  "scope": "Separate Python/Shapely golden-coupon regression; not third-party CAM or physical validation.",
+  "results": [
+    {
+      "name": "All nine generated Gerbers parse independently into valid geometries",
+      "pass": true,
+      "ms": 0
+    },
+    {
+      "name": "Outline centerline is a closed 40 by 30 mm rectangle",
+      "pass": true,
+      "ms": 0
+    },
+    {
+      "name": "Top exported copper matches independently constructed native geometry",
+      "pass": true,
+      "ms": 19
+    },
+    {
+      "name": "Bottom exported copper matches independently constructed native geometry",
+      "pass": true,
+      "ms": 18
+    },
+    {
+      "name": "Bottom copper shares the physical origin and is not mirrored",
+      "pass": true,
+      "ms": 0
+    },
+    {
+      "name": "Plated drills align with both header pads and the through via",
+      "pass": true,
+      "ms": 0
+    },
+    {
+      "name": "Non-plated round hole and G85 slot preserve centers, travel and tool sizes",
+      "pass": true,
+      "ms": 0
+    },
+    {
+      "name": "Mask openings cover the applicable pads on each face",
+      "pass": true,
+      "ms": 4
+    },
+    {
+      "name": "Final silkscreen is nonempty, inside the board and clear of openings",
+      "pass": true,
+      "ms": 2
+    },
+    {
+      "name": "Paste apertures include surface pads, not through-hole pads or vias",
+      "pass": true,
+      "ms": 0
+    },
+    {
+      "name": "All exported coupon copper remains within the configured board-edge clearance",
+      "pass": true,
+      "ms": 0
+    },
+    {
+      "name": "Independent reader rejects unsupported Gerber operations",
+      "pass": true,
+      "ms": 3
+    }
+  ]
+}

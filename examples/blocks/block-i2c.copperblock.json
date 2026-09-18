@@ -1,0 +1,490 @@
+{
+  "app": "COPPERBENCH-BLOCK",
+  "schema": 1,
+  "id": "block-i2c",
+  "revision": 1,
+  "name": "I²C pull-up pair",
+  "description": "Two 4.7 kΩ pull-ups, a 100 nF capacitor, and an explicit VCC / GND / SCL / SDA interface.",
+  "notes": [
+    "Review the combined pull-up resistance of every device on the bus, bus capacitance, speed and voltage before using 4.7 kΩ.",
+    "This is not a voltage level shifter. VCC must suit all connected bus devices; firmware and addressing are outside this layout."
+  ],
+  "parts": [
+    {
+      "id": "p-catalog-34",
+      "name": "Header · 1 × 4",
+      "category": "Connectors",
+      "body": {
+        "kind": "header",
+        "w": 10.16,
+        "h": 2.54,
+        "z": 5
+      },
+      "pads": [
+        {
+          "number": "1",
+          "x": -3.81,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "both",
+          "net": "n-catalog-38"
+        },
+        {
+          "number": "2",
+          "x": -1.27,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n-catalog-39"
+        },
+        {
+          "number": "3",
+          "x": 1.27,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n-catalog-40"
+        },
+        {
+          "number": "4",
+          "x": 3.81,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n-catalog-41"
+        }
+      ],
+      "ref": "J1",
+      "value": "VCC / GND / SCL / SDA",
+      "source": "Parametric geometry; check against the selected component datasheet.",
+      "verified": false,
+      "libraryId": "header4",
+      "x": -9,
+      "y": 0,
+      "rotation": 90,
+      "side": "top",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 2.4699999999999998,
+        "size": 1,
+        "visible": true
+      }
+    },
+    {
+      "id": "p-catalog-35",
+      "name": "R · 0805",
+      "category": "Surface-mount",
+      "body": {
+        "kind": "smd-resistor",
+        "w": 2,
+        "h": 1.25,
+        "z": 0.7
+      },
+      "pads": [
+        {
+          "number": "1",
+          "x": -0.95,
+          "y": 0,
+          "w": 1,
+          "h": 1.4,
+          "drill": 0,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "top",
+          "net": "n-catalog-38"
+        },
+        {
+          "number": "2",
+          "x": 0.95,
+          "y": 0,
+          "w": 1,
+          "h": 1.4,
+          "drill": 0,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "top",
+          "net": "n-catalog-40"
+        }
+      ],
+      "ref": "R1",
+      "value": "4.7k",
+      "source": "Parametric geometry; check against the selected component datasheet.",
+      "verified": false,
+      "libraryId": "R0805",
+      "x": 0,
+      "y": -4,
+      "rotation": 90,
+      "side": "top",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 1.825,
+        "size": 1,
+        "visible": true
+      }
+    },
+    {
+      "id": "p-catalog-36",
+      "name": "R · 0805",
+      "category": "Surface-mount",
+      "body": {
+        "kind": "smd-resistor",
+        "w": 2,
+        "h": 1.25,
+        "z": 0.7
+      },
+      "pads": [
+        {
+          "number": "1",
+          "x": -0.95,
+          "y": 0,
+          "w": 1,
+          "h": 1.4,
+          "drill": 0,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "top",
+          "net": "n-catalog-38"
+        },
+        {
+          "number": "2",
+          "x": 0.95,
+          "y": 0,
+          "w": 1,
+          "h": 1.4,
+          "drill": 0,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "top",
+          "net": "n-catalog-41"
+        }
+      ],
+      "ref": "R2",
+      "value": "4.7k",
+      "source": "Parametric geometry; check against the selected component datasheet.",
+      "verified": false,
+      "libraryId": "R0805",
+      "x": 6,
+      "y": -4,
+      "rotation": 90,
+      "side": "top",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 1.825,
+        "size": 1,
+        "visible": true
+      }
+    },
+    {
+      "id": "p-catalog-37",
+      "name": "C · 0805",
+      "category": "Surface-mount",
+      "body": {
+        "kind": "smd-cap",
+        "w": 2,
+        "h": 1.25,
+        "z": 0.7
+      },
+      "pads": [
+        {
+          "number": "1",
+          "x": -0.95,
+          "y": 0,
+          "w": 1,
+          "h": 1.4,
+          "drill": 0,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "top",
+          "net": "n-catalog-38"
+        },
+        {
+          "number": "2",
+          "x": 0.95,
+          "y": 0,
+          "w": 1,
+          "h": 1.4,
+          "drill": 0,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "top",
+          "net": "n-catalog-39"
+        }
+      ],
+      "ref": "C1",
+      "value": "100nF",
+      "source": "Parametric geometry; check against the selected component datasheet.",
+      "verified": false,
+      "libraryId": "C0805",
+      "x": 6,
+      "y": 4,
+      "rotation": 0,
+      "side": "top",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 1.825,
+        "size": 1,
+        "visible": true
+      }
+    }
+  ],
+  "traces": [
+    {
+      "id": "t-catalog-42",
+      "net": "n-catalog-38",
+      "layer": "top",
+      "width": 0.4,
+      "points": [
+        {
+          "x": -9,
+          "y": -3.81
+        },
+        {
+          "x": 0,
+          "y": -4.95
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t-catalog-43",
+      "net": "n-catalog-38",
+      "layer": "top",
+      "width": 0.4,
+      "points": [
+        {
+          "x": 0,
+          "y": -4.95
+        },
+        {
+          "x": 6,
+          "y": -4.95
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t-catalog-44",
+      "net": "n-catalog-38",
+      "layer": "top",
+      "width": 0.4,
+      "points": [
+        {
+          "x": 6,
+          "y": -4.95
+        },
+        {
+          "x": 4.8,
+          "y": -3.75
+        },
+        {
+          "x": 4.8,
+          "y": 3.45
+        },
+        {
+          "x": 5.05,
+          "y": 4
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t-catalog-45",
+      "net": "n-catalog-39",
+      "layer": "top",
+      "width": 0.4,
+      "points": [
+        {
+          "x": -9,
+          "y": -1.27
+        },
+        {
+          "x": -2.2,
+          "y": -1.27
+        },
+        {
+          "x": 4.2,
+          "y": 5.13
+        },
+        {
+          "x": 5.8,
+          "y": 5.13
+        },
+        {
+          "x": 6.6,
+          "y": 4.33
+        },
+        {
+          "x": 6.95,
+          "y": 4
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t-catalog-46",
+      "net": "n-catalog-40",
+      "layer": "bottom",
+      "width": 0.4,
+      "points": [
+        {
+          "x": -9,
+          "y": 1.27
+        },
+        {
+          "x": -4.6,
+          "y": 1.27
+        },
+        {
+          "x": -0.6,
+          "y": -2.73
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t-catalog-48",
+      "net": "n-catalog-40",
+      "layer": "top",
+      "width": 0.4,
+      "points": [
+        {
+          "x": -0.6,
+          "y": -2.73
+        },
+        {
+          "x": 0,
+          "y": -3.05
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t-catalog-49",
+      "net": "n-catalog-41",
+      "layer": "bottom",
+      "width": 0.4,
+      "points": [
+        {
+          "x": -9,
+          "y": 3.81
+        },
+        {
+          "x": -1,
+          "y": 3.81
+        },
+        {
+          "x": 5.8,
+          "y": -2.99
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t-catalog-51",
+      "net": "n-catalog-41",
+      "layer": "top",
+      "width": 0.4,
+      "points": [
+        {
+          "x": 5.8,
+          "y": -2.99
+        },
+        {
+          "x": 6,
+          "y": -3.05
+        }
+      ],
+      "locked": false
+    }
+  ],
+  "vias": [
+    {
+      "id": "v-catalog-47",
+      "net": "n-catalog-40",
+      "x": -0.6,
+      "y": -2.73,
+      "diameter": 0.9,
+      "drill": 0.4,
+      "tented": false,
+      "locked": false
+    },
+    {
+      "id": "v-catalog-50",
+      "net": "n-catalog-41",
+      "x": 5.8,
+      "y": -2.99,
+      "diameter": 0.9,
+      "drill": 0.4,
+      "tented": false,
+      "locked": false
+    }
+  ],
+  "nets": [
+    {
+      "id": "n-catalog-38",
+      "name": "VCC",
+      "width": 0.4
+    },
+    {
+      "id": "n-catalog-39",
+      "name": "GND",
+      "width": 0.4
+    },
+    {
+      "id": "n-catalog-40",
+      "name": "SCL",
+      "width": 0.4
+    },
+    {
+      "id": "n-catalog-41",
+      "name": "SDA",
+      "width": 0.4
+    }
+  ],
+  "ports": [
+    {
+      "key": "VCC",
+      "name": "VCC",
+      "net": "n-catalog-38",
+      "kind": "power"
+    },
+    {
+      "key": "GND",
+      "name": "GND",
+      "net": "n-catalog-39",
+      "kind": "ground"
+    },
+    {
+      "key": "SCL",
+      "name": "SCL",
+      "net": "n-catalog-40",
+      "kind": "signal"
+    },
+    {
+      "key": "SDA",
+      "name": "SDA",
+      "net": "n-catalog-41",
+      "kind": "signal"
+    }
+  ]
+}

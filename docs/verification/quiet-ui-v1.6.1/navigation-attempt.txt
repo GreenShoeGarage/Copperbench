@@ -1,0 +1,3 @@
+A localhost static-server navigation was attempted in Chromium.
+Result: Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR, before application startup.
+No browser policy was changed. This is not counted as a passing test.

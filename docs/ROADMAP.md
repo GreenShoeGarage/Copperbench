@@ -1,4 +1,22 @@
-# Release roadmap — COPPERBENCH 1.3.0
+# COPPERBENCH v1.6 — delivered expansion
+
+Five vendor/revision-specific module mating interfaces, six routed editable circuit
+starters, isolated-net insertion, explicit port mapping, whole-block transforms,
+fresh-net copy, custom selection capture, project-local templates and standalone
+block JSON exchange are implemented. Source-backed header coordinates and pin
+labels are recorded; physical fit and circuit operation are not certified.
+See [Modules and blocks](MODULES_AND_BLOCKS.md).
+
+# Release roadmap — COPPERBENCH 1.5.0
+
+## Shipped in v1.5
+
+Nine host selections, 18 header interfaces, source-linked nominal mechanical
+references, functional labels, optional mounting holes, independent starter files,
+editable USB/access regions, assumed stack gap and attached two-face antenna
+copper guards. The existing router/planes/vias honor those guards. Schema 4 keeps
+their behavior explicit. Physical fit, full RF qualification and external CAM
+validation remain outstanding. See [CARRIERS.md](CARRIERS.md).
 
 ## Shipped in v1.3
 
@@ -23,8 +41,7 @@ rendering, schema migration and dedicated regression suites.
 
 ## Follow-on candidates, not implemented
 
-Variant-specific Pi port/cooler/PoE and MKR antenna clearance models; a sourced
-Uno ICSP header option; additional board families; explicit stack-height checking;
+Variant-specific Pi port/cooler/PoE and MKR antenna clearance models; further board families; full 3D collision checking;
 editable per-variant mechanical templates; manufacturer/physical coupon validation.
 
 ---
@@ -57,3 +74,11 @@ These steps are explicitly **not completed** in the delivered verification recor
 ## Sensible post-v1 work
 
 Push-and-shove/elastic routing, more extensive exact-geometry and exporter interoperability checks, richer vetted footprint collections, footprint-attached imported artwork, standalone footprint export, improved typography/vector artwork editing, mechanical-model interchange and file exchange with other Field Instruments can follow. Multilayer routing, simulation, cloud collaboration and subscriptions are not prerequisites for this local two-layer workbench.
+
+## Everyday parts releases
+
+- **v1.4 shipped:** family-based maker variants, functional labels, notes, internal-terminal findings and optional Uno ICSP.
+- **v1.5 shipped:** explicitly selected Pico/Pico 2, Nano, ESP32, Feather/XIAO carrier variants, with mechanical/antenna constraints.
+- **v1.6 shipped:** five vendor/revision-specific modules, six editable circuit starters and reusable block workflows. Template review is not physical or electrical qualification.
+
+Physical fit testing and external CAM/manufacturer checks remain release-qualification work, not completed milestones.

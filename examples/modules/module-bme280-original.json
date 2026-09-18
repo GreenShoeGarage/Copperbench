@@ -1,0 +1,248 @@
+{
+  "app": "COPPERBENCH",
+  "schema": 5,
+  "version": "1.6.0",
+  "id": "board_example_00001",
+  "title": "Adafruit BME280 · original non-QT carrier",
+  "created": "2026-09-18T00:00:00.000Z",
+  "updated": "2026-09-18T00:00:00.000Z",
+  "board": {
+    "width": 31.78,
+    "height": 33.05,
+    "thickness": 1.6,
+    "shape": "rounded",
+    "radius": 3,
+    "points": [],
+    "color": "green"
+  },
+  "parts": [
+    {
+      "id": "p_example_00003",
+      "name": "Adafruit BME280 · original non-QT",
+      "category": "Modules",
+      "ref": "M1",
+      "value": "BME280",
+      "verified": false,
+      "defaultSide": "top",
+      "source": "https://github.com/adafruit/Adafruit-BME280-Breakout-PCB/blob/master/Adafruit%20BME280.brd",
+      "body": {
+        "kind": "module",
+        "w": 17.78,
+        "h": 19.05,
+        "z": 10.6
+      },
+      "label": {
+        "x": 0,
+        "y": 11.525,
+        "size": 1.2,
+        "visible": false
+      },
+      "mountingHoles": [],
+      "pads": [
+        {
+          "x": -7.62,
+          "y": 6.985,
+          "number": "JP2.1",
+          "bank": "JP2",
+          "signal": "VIN",
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "both",
+          "net": null
+        },
+        {
+          "x": -5.08,
+          "y": 6.985,
+          "number": "JP2.2",
+          "bank": "JP2",
+          "signal": "3Vo / REGULATOR OUTPUT",
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null
+        },
+        {
+          "x": -2.54,
+          "y": 6.985,
+          "number": "JP2.3",
+          "bank": "JP2",
+          "signal": "GND",
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null
+        },
+        {
+          "x": 0,
+          "y": 6.985,
+          "number": "JP2.4",
+          "bank": "JP2",
+          "signal": "SCK / SCL",
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null
+        },
+        {
+          "x": 2.54,
+          "y": 6.985,
+          "number": "JP2.5",
+          "bank": "JP2",
+          "signal": "SDO / ADDRESS",
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null
+        },
+        {
+          "x": 5.08,
+          "y": 6.985,
+          "number": "JP2.6",
+          "bank": "JP2",
+          "signal": "SDI / SDA",
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null
+        },
+        {
+          "x": 7.62,
+          "y": 6.985,
+          "number": "JP2.7",
+          "bank": "JP2",
+          "signal": "CS",
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null
+        }
+      ],
+      "internalGroups": [],
+      "module": {
+        "schema": 1,
+        "model": "bme280-original",
+        "product": "2652 · original non-QT PCB",
+        "kind": "sensor",
+        "source": {
+          "url": "https://github.com/adafruit/Adafruit-BME280-Breakout-PCB/blob/master/Adafruit%20BME280.brd",
+          "repo": "adafruit/Adafruit-BME280-Breakout-PCB",
+          "file": "Adafruit BME280.brd",
+          "blob": "e8be40064f9f7a22b5dc45d40247c0025515ec48",
+          "license": "CC-BY-SA-3.0",
+          "attribution": "Adafruit Industries; Limor Fried / Ladyada and contributors"
+        },
+        "sourceDate": "2026-09-18",
+        "showBody": true,
+        "stackGap": 6,
+        "componentHeight": 3,
+        "reviewed": false,
+        "geometryStatus": "Source-referenced header centers; nominal mating pad sizes and host envelope. Not physically fit-tested.",
+        "sourceFace": "Source Eagle top/component face",
+        "holePattern": [
+          {
+            "x": -6.35,
+            "y": -6.985,
+            "drill": 2.2,
+            "slot": 0,
+            "rotation": 0
+          },
+          {
+            "x": 6.35,
+            "y": -6.985,
+            "drill": 2.2,
+            "slot": 0,
+            "rotation": 0
+          }
+        ],
+        "notes": [
+          "Original seven-contact board, NOT the later STEMMA QT/BMP280-layout revision.",
+          "3Vo is a regulator output; do not confuse it with VIN. Review I²C/SPI mode, address selection and pull-ups.",
+          "Header centers and mounting centers reference the named CAD file. Mating header drills are a COPPERBENCH choice, not the module manufacturer land pattern."
+        ]
+      },
+      "libraryId": "module-bme280-original",
+      "x": 15.89,
+      "y": 16.525,
+      "rotation": 0,
+      "side": "top",
+      "locked": true
+    }
+  ],
+  "nets": [],
+  "traces": [],
+  "vias": [],
+  "holes": [],
+  "cutouts": [],
+  "keepouts": [],
+  "zones": [],
+  "art": [],
+  "assets": [],
+  "profile": {
+    "id": "oshpark-2l",
+    "name": "OSH Park · 2 layer",
+    "verified": "2026-09-17",
+    "revision": 1,
+    "source": "https://docs.oshpark.com/services/two-layer/",
+    "minTrace": 0.1524,
+    "clearance": 0.1524,
+    "edge": 0.381,
+    "minDrill": 0.254,
+    "minRing": 0.127,
+    "minSlot": 0.508,
+    "minMaskWeb": 0.1016,
+    "minSilk": 0.127,
+    "maskExpansion": 0.075,
+    "minHoleGap": 0.127,
+    "minCutout": 1.01,
+    "minWidth": 6.35,
+    "minHeight": 6.35,
+    "maxWidth": 406.4,
+    "maxHeight": 558.8
+  },
+  "settings": {
+    "grid": 1.27,
+    "traceWidth": 0.4,
+    "viaDiameter": 0.9,
+    "viaDrill": 0.4,
+    "viaTented": false,
+    "zoneStep": 0.25,
+    "autoPlanes": true
+  },
+  "assumptions": [
+    {
+      "id": "assume_example_00002",
+      "text": "Two copper layers; through vias only. This layout does not verify circuit function.",
+      "status": "open"
+    },
+    {
+      "id": "assume_example_00004",
+      "text": "Module is source-referenced, not physically fit-tested. Verify revision, header mating, drills, stack height, component clearance and power requirements.",
+      "status": "open"
+    }
+  ],
+  "evidence": [],
+  "blockInstances": [],
+  "blockLibrary": [],
+  "baseline": null
+}

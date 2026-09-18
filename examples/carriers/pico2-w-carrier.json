@@ -1,0 +1,1127 @@
+{
+  "app": "COPPERBENCH",
+  "schema": 4,
+  "version": "1.5.0",
+  "id": "pico2-w-carrier-board-001",
+  "title": "Raspberry Pi Pico 2 W carrier starter",
+  "created": "2026-09-18T00:00:00.000Z",
+  "updated": "2026-09-18T00:00:00.000Z",
+  "board": {
+    "width": 41,
+    "height": 71,
+    "thickness": 1.6,
+    "shape": "rounded",
+    "radius": 3,
+    "points": [],
+    "color": "blue"
+  },
+  "parts": [
+    {
+      "id": "pico2-w-carrier-p-003",
+      "name": "Raspberry Pi Pico 2 W · Carrier sockets",
+      "category": "Platforms",
+      "ref": "J1",
+      "value": "Raspberry Pi Pico 2 W mating sockets",
+      "verified": false,
+      "source": "https://www.raspberrypi.com/documentation/microcontrollers/pico-series.html\nhttps://pip.raspberrypi.com/documents/RP-008299-DS",
+      "defaultSide": "top",
+      "body": {
+        "kind": "platform",
+        "w": 21,
+        "h": 51,
+        "z": 2.6
+      },
+      "pads": [
+        {
+          "number": "1",
+          "signal": "GP0",
+          "bank": "LEFT",
+          "x": -8.89,
+          "y": -24.13,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "2",
+          "signal": "GP1",
+          "bank": "LEFT",
+          "x": -8.89,
+          "y": -21.59,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "3",
+          "signal": "GND",
+          "bank": "LEFT",
+          "x": -8.89,
+          "y": -19.05,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "ground"
+        },
+        {
+          "number": "4",
+          "signal": "GP2",
+          "bank": "LEFT",
+          "x": -8.89,
+          "y": -16.51,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "5",
+          "signal": "GP3",
+          "bank": "LEFT",
+          "x": -8.89,
+          "y": -13.97,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "6",
+          "signal": "GP4",
+          "bank": "LEFT",
+          "x": -8.89,
+          "y": -11.43,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "7",
+          "signal": "GP5",
+          "bank": "LEFT",
+          "x": -8.89,
+          "y": -8.89,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "8",
+          "signal": "GND",
+          "bank": "LEFT",
+          "x": -8.89,
+          "y": -6.35,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "ground"
+        },
+        {
+          "number": "9",
+          "signal": "GP6",
+          "bank": "LEFT",
+          "x": -8.89,
+          "y": -3.81,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "10",
+          "signal": "GP7",
+          "bank": "LEFT",
+          "x": -8.89,
+          "y": -1.27,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "11",
+          "signal": "GP8",
+          "bank": "LEFT",
+          "x": -8.89,
+          "y": 1.27,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "12",
+          "signal": "GP9",
+          "bank": "LEFT",
+          "x": -8.89,
+          "y": 3.81,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "13",
+          "signal": "GND",
+          "bank": "LEFT",
+          "x": -8.89,
+          "y": 6.35,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "ground"
+        },
+        {
+          "number": "14",
+          "signal": "GP10",
+          "bank": "LEFT",
+          "x": -8.89,
+          "y": 8.89,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "15",
+          "signal": "GP11",
+          "bank": "LEFT",
+          "x": -8.89,
+          "y": 11.43,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "16",
+          "signal": "GP12",
+          "bank": "LEFT",
+          "x": -8.89,
+          "y": 13.97,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "17",
+          "signal": "GP13",
+          "bank": "LEFT",
+          "x": -8.89,
+          "y": 16.51,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "18",
+          "signal": "GND",
+          "bank": "LEFT",
+          "x": -8.89,
+          "y": 19.05,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "ground"
+        },
+        {
+          "number": "19",
+          "signal": "GP14",
+          "bank": "LEFT",
+          "x": -8.89,
+          "y": 21.59,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "20",
+          "signal": "GP15",
+          "bank": "LEFT",
+          "x": -8.89,
+          "y": 24.13,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "21",
+          "signal": "GP16",
+          "bank": "RIGHT",
+          "x": 8.89,
+          "y": 24.13,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "22",
+          "signal": "GP17",
+          "bank": "RIGHT",
+          "x": 8.89,
+          "y": 21.59,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "23",
+          "signal": "GND",
+          "bank": "RIGHT",
+          "x": 8.89,
+          "y": 19.05,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "ground"
+        },
+        {
+          "number": "24",
+          "signal": "GP18",
+          "bank": "RIGHT",
+          "x": 8.89,
+          "y": 16.51,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "25",
+          "signal": "GP19",
+          "bank": "RIGHT",
+          "x": 8.89,
+          "y": 13.97,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "26",
+          "signal": "GP20",
+          "bank": "RIGHT",
+          "x": 8.89,
+          "y": 11.43,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "27",
+          "signal": "GP21",
+          "bank": "RIGHT",
+          "x": 8.89,
+          "y": 8.89,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "28",
+          "signal": "GND",
+          "bank": "RIGHT",
+          "x": 8.89,
+          "y": 6.35,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "ground"
+        },
+        {
+          "number": "29",
+          "signal": "GP22",
+          "bank": "RIGHT",
+          "x": 8.89,
+          "y": 3.81,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "30",
+          "signal": "RUN",
+          "bank": "RIGHT",
+          "x": 8.89,
+          "y": 1.27,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "31",
+          "signal": "GP26 / ADC0",
+          "bank": "RIGHT",
+          "x": 8.89,
+          "y": -1.27,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "32",
+          "signal": "GP27 / ADC1",
+          "bank": "RIGHT",
+          "x": 8.89,
+          "y": -3.81,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "33",
+          "signal": "AGND",
+          "bank": "RIGHT",
+          "x": 8.89,
+          "y": -6.35,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "ground"
+        },
+        {
+          "number": "34",
+          "signal": "GP28 / ADC2",
+          "bank": "RIGHT",
+          "x": 8.89,
+          "y": -8.89,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "35",
+          "signal": "ADC_VREF",
+          "bank": "RIGHT",
+          "x": 8.89,
+          "y": -11.43,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "36",
+          "signal": "3V3_OUT",
+          "bank": "RIGHT",
+          "x": 8.89,
+          "y": -13.97,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "power"
+        },
+        {
+          "number": "37",
+          "signal": "3V3_EN",
+          "bank": "RIGHT",
+          "x": 8.89,
+          "y": -16.51,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "power"
+        },
+        {
+          "number": "38",
+          "signal": "GND",
+          "bank": "RIGHT",
+          "x": 8.89,
+          "y": -19.05,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "ground"
+        },
+        {
+          "number": "39",
+          "signal": "VSYS",
+          "bank": "RIGHT",
+          "x": 8.89,
+          "y": -21.59,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "power"
+        },
+        {
+          "number": "40",
+          "signal": "VBUS",
+          "bank": "RIGHT",
+          "x": 8.89,
+          "y": -24.13,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "power"
+        }
+      ],
+      "mountingHoles": [
+        {
+          "x": -5.7,
+          "y": -23.5,
+          "drill": 2.1
+        },
+        {
+          "x": 5.7,
+          "y": -23.5,
+          "drill": 2.1
+        },
+        {
+          "x": -5.7,
+          "y": 23.5,
+          "drill": 2.1
+        },
+        {
+          "x": 5.7,
+          "y": 23.5,
+          "drill": 2.1
+        }
+      ],
+      "platform": {
+        "schema": 1,
+        "family": "pico2-w",
+        "revision": 1,
+        "role": "carrier",
+        "showHost": true,
+        "showPins": true,
+        "outline": [
+          {
+            "x": 9.5,
+            "y": -25.5
+          },
+          {
+            "x": 9.598,
+            "y": -25.4952
+          },
+          {
+            "x": 9.6951,
+            "y": -25.4808
+          },
+          {
+            "x": 9.7903,
+            "y": -25.4569
+          },
+          {
+            "x": 9.8827,
+            "y": -25.4239
+          },
+          {
+            "x": 9.9714,
+            "y": -25.3819
+          },
+          {
+            "x": 10.0556,
+            "y": -25.3315
+          },
+          {
+            "x": 10.1344,
+            "y": -25.273
+          },
+          {
+            "x": 10.2071,
+            "y": -25.2071
+          },
+          {
+            "x": 10.273,
+            "y": -25.1344
+          },
+          {
+            "x": 10.3315,
+            "y": -25.0556
+          },
+          {
+            "x": 10.3819,
+            "y": -24.9714
+          },
+          {
+            "x": 10.4239,
+            "y": -24.8827
+          },
+          {
+            "x": 10.4569,
+            "y": -24.7903
+          },
+          {
+            "x": 10.4808,
+            "y": -24.6951
+          },
+          {
+            "x": 10.4952,
+            "y": -24.598
+          },
+          {
+            "x": 10.5,
+            "y": -24.5
+          },
+          {
+            "x": 10.5,
+            "y": 24.5
+          },
+          {
+            "x": 10.4952,
+            "y": 24.598
+          },
+          {
+            "x": 10.4808,
+            "y": 24.6951
+          },
+          {
+            "x": 10.4569,
+            "y": 24.7903
+          },
+          {
+            "x": 10.4239,
+            "y": 24.8827
+          },
+          {
+            "x": 10.3819,
+            "y": 24.9714
+          },
+          {
+            "x": 10.3315,
+            "y": 25.0556
+          },
+          {
+            "x": 10.273,
+            "y": 25.1344
+          },
+          {
+            "x": 10.2071,
+            "y": 25.2071
+          },
+          {
+            "x": 10.1344,
+            "y": 25.273
+          },
+          {
+            "x": 10.0556,
+            "y": 25.3315
+          },
+          {
+            "x": 9.9714,
+            "y": 25.3819
+          },
+          {
+            "x": 9.8827,
+            "y": 25.4239
+          },
+          {
+            "x": 9.7903,
+            "y": 25.4569
+          },
+          {
+            "x": 9.6951,
+            "y": 25.4808
+          },
+          {
+            "x": 9.598,
+            "y": 25.4952
+          },
+          {
+            "x": 9.5,
+            "y": 25.5
+          },
+          {
+            "x": -9.5,
+            "y": 25.5
+          },
+          {
+            "x": -9.598,
+            "y": 25.4952
+          },
+          {
+            "x": -9.6951,
+            "y": 25.4808
+          },
+          {
+            "x": -9.7903,
+            "y": 25.4569
+          },
+          {
+            "x": -9.8827,
+            "y": 25.4239
+          },
+          {
+            "x": -9.9714,
+            "y": 25.3819
+          },
+          {
+            "x": -10.0556,
+            "y": 25.3315
+          },
+          {
+            "x": -10.1344,
+            "y": 25.273
+          },
+          {
+            "x": -10.2071,
+            "y": 25.2071
+          },
+          {
+            "x": -10.273,
+            "y": 25.1344
+          },
+          {
+            "x": -10.3315,
+            "y": 25.0556
+          },
+          {
+            "x": -10.3819,
+            "y": 24.9714
+          },
+          {
+            "x": -10.4239,
+            "y": 24.8827
+          },
+          {
+            "x": -10.4569,
+            "y": 24.7903
+          },
+          {
+            "x": -10.4808,
+            "y": 24.6951
+          },
+          {
+            "x": -10.4952,
+            "y": 24.598
+          },
+          {
+            "x": -10.5,
+            "y": 24.5
+          },
+          {
+            "x": -10.5,
+            "y": -24.5
+          },
+          {
+            "x": -10.4952,
+            "y": -24.598
+          },
+          {
+            "x": -10.4808,
+            "y": -24.6951
+          },
+          {
+            "x": -10.4569,
+            "y": -24.7903
+          },
+          {
+            "x": -10.4239,
+            "y": -24.8827
+          },
+          {
+            "x": -10.3819,
+            "y": -24.9714
+          },
+          {
+            "x": -10.3315,
+            "y": -25.0556
+          },
+          {
+            "x": -10.273,
+            "y": -25.1344
+          },
+          {
+            "x": -10.2071,
+            "y": -25.2071
+          },
+          {
+            "x": -10.1344,
+            "y": -25.273
+          },
+          {
+            "x": -10.0556,
+            "y": -25.3315
+          },
+          {
+            "x": -9.9714,
+            "y": -25.3819
+          },
+          {
+            "x": -9.8827,
+            "y": -25.4239
+          },
+          {
+            "x": -9.7903,
+            "y": -25.4569
+          },
+          {
+            "x": -9.6951,
+            "y": -25.4808
+          },
+          {
+            "x": -9.598,
+            "y": -25.4952
+          },
+          {
+            "x": -9.5,
+            "y": -25.5
+          }
+        ],
+        "holePattern": [
+          {
+            "x": -5.7,
+            "y": -23.5,
+            "drill": 2.1
+          },
+          {
+            "x": 5.7,
+            "y": -23.5,
+            "drill": 2.1
+          },
+          {
+            "x": -5.7,
+            "y": 23.5,
+            "drill": 2.1
+          },
+          {
+            "x": 5.7,
+            "y": 23.5,
+            "drill": 2.1
+          }
+        ],
+        "geometryStatus": "nominal-review-required",
+        "sourceDate": "2026-09-17"
+      },
+      "label": {
+        "x": 0,
+        "y": 0,
+        "size": 1.3,
+        "visible": false
+      },
+      "carrier": {
+        "schema": 1,
+        "revision": 1,
+        "model": "Raspberry Pi Pico 2 W",
+        "source": [
+          "https://www.raspberrypi.com/documentation/microcontrollers/pico-series.html",
+          "https://pip.raspberrypi.com/documents/RP-008299-DS"
+        ],
+        "sourceDate": "2026-09-18",
+        "usbEdge": "top",
+        "vertical": true,
+        "wireless": "pcb",
+        "showClearances": true,
+        "enforceAntenna": true,
+        "overrideReason": "",
+        "stackGap": 8.5,
+        "regions": [
+          {
+            "id": "usb",
+            "name": "USB cable access",
+            "kind": "access",
+            "x": -6,
+            "y": -35.5,
+            "w": 12,
+            "h": 12
+          },
+          {
+            "id": "rf",
+            "name": "Suggested antenna guard",
+            "kind": "antenna",
+            "x": -4.5,
+            "y": 17.5,
+            "w": 9,
+            "h": 15
+          }
+        ]
+      },
+      "libraryId": "platform-pico2-w-carrier",
+      "x": 20.5,
+      "y": 35.5,
+      "rotation": 0,
+      "side": "top",
+      "locked": true
+    }
+  ],
+  "nets": [],
+  "traces": [],
+  "vias": [],
+  "holes": [],
+  "cutouts": [],
+  "keepouts": [],
+  "zones": [],
+  "art": [],
+  "assets": [],
+  "profile": {
+    "id": "oshpark-2l",
+    "name": "OSH Park · 2 layer",
+    "verified": "2026-09-17",
+    "revision": 1,
+    "source": "https://docs.oshpark.com/services/two-layer/",
+    "minTrace": 0.1524,
+    "clearance": 0.1524,
+    "edge": 0.381,
+    "minDrill": 0.254,
+    "minRing": 0.127,
+    "minSlot": 0.508,
+    "minMaskWeb": 0.1016,
+    "minSilk": 0.127,
+    "maskExpansion": 0.075,
+    "minHoleGap": 0.127,
+    "minCutout": 1.01,
+    "minWidth": 6.35,
+    "minHeight": 6.35,
+    "maxWidth": 406.4,
+    "maxHeight": 558.8
+  },
+  "settings": {
+    "grid": 1.27,
+    "traceWidth": 0.4,
+    "viaDiameter": 0.9,
+    "viaDrill": 0.4,
+    "viaTented": false,
+    "zoneStep": 0.25,
+    "autoPlanes": true
+  },
+  "assumptions": [
+    {
+      "id": "pico2-w-carrier-assume-002",
+      "text": "Two copper layers; through vias only. This layout does not verify circuit function.",
+      "status": "open"
+    },
+    {
+      "id": "pico2-w-carrier-a-004",
+      "text": "3.3 V GPIO. Review VBUS, VSYS, 3V3_OUT and 3V3_EN separately; AGND is not silently merged with GND.",
+      "status": "open"
+    },
+    {
+      "id": "pico2-w-carrier-a-005",
+      "text": "Two 20-pin rows, 2.54 mm pitch, 17.78 mm apart. USB-up reference. Header span is centered in the nominal 21 × 51 mm envelope; edge offsets and hole fit require review. Wireless host; a suggested under-antenna copper guard is enabled.",
+      "status": "open"
+    },
+    {
+      "id": "pico2-w-carrier-a-006",
+      "text": "Header mounting only: no castellated reflow pads, underside USB/battery/test contacts or debug connector are included.",
+      "status": "open"
+    },
+    {
+      "id": "pico2-w-carrier-a-007",
+      "text": "Nominal 1.0 mm connector drills / 1.8 mm pads are defaults. Check the actual mating connector, assembly tolerance and engagement length.",
+      "status": "open"
+    },
+    {
+      "id": "pico2-w-carrier-a-008",
+      "text": "Pin captions do not join nets. Confirm power direction, voltage and current limits; no supporting power circuitry is inserted.",
+      "status": "open"
+    },
+    {
+      "id": "pico2-w-carrier-a-009",
+      "text": "The host envelope and access areas are 2D references, not a collision-checked mechanical model. Print at 1:1 and verify against the purchased board before ordering.",
+      "status": "open"
+    },
+    {
+      "id": "pico2-w-carrier-a-010",
+      "text": "Do not assume SWD/test-pad placement is shared with other Pico variants.",
+      "status": "open"
+    },
+    {
+      "id": "pico2-w-carrier-a-011",
+      "text": "The editable RF rectangle protects a suggested antenna projection, not a manufacturer-certified antenna exclusion envelope. Review the exact wireless board, nearby metal, enclosure and antenna clearance.",
+      "status": "open"
+    },
+    {
+      "id": "pico2-w-carrier-a-013",
+      "text": "8.5 mm underside stack gap is an editable planning assumption, not a measured connector specification. RF/access rectangles are suggested 2D references requiring review.",
+      "status": "open"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "pico2-w-carrier-e-012",
+      "text": "Nominal mating geometry transcribed from published pinouts/dimensioned references; no physical fit or manufacturer acceptance verified.",
+      "source": "https://www.raspberrypi.com/documentation/microcontrollers/pico-series.html\nhttps://pip.raspberrypi.com/documents/RP-008299-DS"
+    },
+    {
+      "id": "pico2-w-carrier-e-014",
+      "text": "v1.5 controller interface: header pinout and nominal geometry source-referenced; physical fit, electrical function and manufacturing acceptance NOT verified.",
+      "source": "https://www.raspberrypi.com/documentation/microcontrollers/pico-series.html\nhttps://pip.raspberrypi.com/documents/RP-008299-DS"
+    }
+  ],
+  "baseline": null,
+  "platformTemplate": {
+    "schema": 1,
+    "family": "pico2-w",
+    "revision": 1,
+    "role": "carrier",
+    "margin": 10
+  }
+}

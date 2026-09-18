@@ -1,8 +1,8 @@
-# Architecture — v1.3.0
+# Architecture — v1.6.0
 
 ## One model, three views
 
-`src/core.js` owns a schema-3 document, with explicit schema-1/2 migration on read. Coordinates are millimetres quantized to 0.0001 mm, represented as JavaScript numbers. This is a quantized floating-point model, **not** an integer-only exact-geometry kernel. Gerber writing uses a 0.000001 mm output grid; finer output notation does not add information to the native model.
+`src/core.js` owns a schema-5 document, with explicit schema-1/2/3/4 migration on read. Coordinates are millimetres quantized to 0.0001 mm, represented as JavaScript numbers. This is a quantized floating-point model, **not** an integer-only exact-geometry kernel. Gerber writing uses a 0.000001 mm output grid; finer output notation does not add information to the native model.
 
 A component owns its exact local pads and a separate representative body. Position, rotation and face determine world pad geometry. Pin identity does not change on rotation/flip. The renderer never supplies authoritative manufacturing coordinates.
 
@@ -16,6 +16,12 @@ Nets express intention. Pads, traces, vias and filled zones express physical cop
 | `geometry.js` | Contours, distances, copper primitives, spatial indexing, connectivity, findings and routing clearances. |
 | `vias.js` | Pure through-via proposals, net inference, both-face copper/edge/hole validation, guarded add/edit, size presets and trace-center snapping. |
 | `platforms.js` | Nominal platform interface library, template factories, linked mounting holes, signal aliases, metadata validation and review findings. |
+| `maker-parts.js` | Maker catalog, named terminal functions, internal-terminal conflicts and optional Uno ICSP. |
+| `carriers.js` | Controller mating interfaces, attached antenna copper guards, access projections and source metadata. |
+| `modules.js` | Vendor/revision-specific module interfaces, optional mounting holes, reference metadata and nominal gap findings. |
+| `block-catalog.js` | Bundled, reproducibly generated routed starter circuits; no runtime request. |
+| `blocks.js` | Validated reusable templates, fresh-net insertion/copy, explicit ports, group transforms, membership and project-local library. |
+| `modules-renderer.js` | Reference-only 3D module bodies and editable-block placement overlays. |
 | `font.js` | Original geometric stroke alphabet and transformed silkscreen primitives. |
 | `router.js` | Selected-connection routing and conservative connected-cell copper fills. |
 | `planes.js` | Managed per-face zones, outline sync, real-region status/findings and pure all-or-nothing lead attachments. |
@@ -117,3 +123,56 @@ emitting single-contour exterior regions. Gerber region contours combine by unio
 the Canvas interpreter composites each contour accordingly, and the separate
 Python oracle uses union rather than symmetric difference. Negative old-frame
 fixtures guard against reinstating the exporter and reader's former shared bug.
+
+## v1.4 catalog module
+
+`src/maker-parts.js` loads after platforms in both the browser and the embedded worker. It appends immutable-on-placement catalog definitions, validates metadata, adds conservative internal-group conflict findings, exposes label editing and manages optional appended ICSP contacts. Functional captions belong to the renderer, not the manufacturing geometry. `catalog` schema 1 and `platform.icsp` live inside the native schema-3 project; footprint placement deep-copies definitions. All maker data and bodies are bundled locally. No runtime library fetch or cloud catalog is required.
+
+## v1.5 attached carrier geometry
+
+`src/carriers.js` extends the family registry without replacing existing records.
+It runs in both the window and worker. `CB.keepouts(doc)` is the shared accessor
+for ordinary keepouts plus enabled part-local antenna rectangles transformed by
+`CB.world`. Geometry obstacles, DRC, standalone via proposals, zone fill and
+KiCad export use it. Access rectangles remain advisory. JSON schema 4 prevents
+older readers from accepting constraints they do not understand. All placed
+carrier data is embedded; live catalog changes cannot alter it.
+
+
+## v1.6 modules and reusable circuit blocks
+
+The five new module entries are ordinary components: their mating pads and enabled
+mounting holes are manufacturing geometry. The source module's circuit, artwork,
+body, displayed terminal captions and underside-gap illustration are not copied
+to carrier Gerbers. The OLED uses a display-face reference transform rather than
+silently relabeling the supplier's numbered header. Header/drill decisions and
+body envelopes remain nominal and require comparison with the purchased assembly.
+
+The `COPPERBENCH-BLOCK` schema-1 format contains embedded parts, traces, vias,
+net definitions, named external ports and review notes. `blocks.js` stages every
+insertion in a clone, remaps IDs and nets, and validates before changing the
+working document. No net-name matching is performed. Only explicitly selected
+external-port mappings share a project net. Placement preflight rejects new
+physical copper violations; intentionally missing routes remain normal DRC
+findings instead of making copper-free block insertion impossible.
+
+Native schema 5 adds `blockInstances` and `blockLibrary`. Membership records
+reference ordinary objects rather than creating another authoritative geometry
+model. Copies capture current edited geometry and allocate fresh nets. Whole-block
+transforms apply the same translation/rotation/reflection to parts, copper and
+vias; independent edits remain possible. External attached routes are never
+silently stretched. Explicit whole-net merges update port records. Deleted members
+are pruned; detaching membership leaves geometry unchanged.
+
+The standalone exchange subset deliberately rejects standalone artwork, zones,
+board cutouts/holes, keepouts and image assets rather than silently discarding them.
+Part-attached holes/keepouts stay inside embedded components. Personal templates
+are project-local and included in native backups; there is no remote catalog or
+implicit update of saved components. KiCad output keeps supported ordinary
+geometry, but not block grouping, the personal library or module fit metadata.
+
+`tools/build_blocks.js` regenerates the six bundled circuit starters and checks
+routing. It is a development tool, not a runtime dependency. A packaging test
+rebuilds the catalog in a temporary tree and compares bytes. Source/portable and
+worker execution share module and block validation; the renderer extension runs
+only in the UI.

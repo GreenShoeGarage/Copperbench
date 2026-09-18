@@ -1,0 +1,471 @@
+{
+  "app": "COPPERBENCH-BLOCK",
+  "schema": 1,
+  "id": "block-dc-input",
+  "revision": 1,
+  "name": "Fused, series-diode DC input",
+  "description": "A low-voltage DC input template with a resettable fuse, series Schottky diode and bulk capacitor.",
+  "notes": [
+    "Unqualified low-voltage topology template. Select exact fuse, diode and capacitor ratings for supply voltage, fault current, load, temperature and voltage drop.",
+    "Not a mains circuit, surge suppressor, battery charger, regulator, or safety-certified protection design. Trace width is 0.4 mm, NOT a current rating.",
+    "Generic PTC and Schottky footprints require actual-part review before ordering. The diode anode faces the input; its cathode feeds VOUT."
+  ],
+  "parts": [
+    {
+      "id": "p-catalog-73",
+      "name": "Header · 1 × 2",
+      "category": "Connectors",
+      "body": {
+        "kind": "header",
+        "w": 5.08,
+        "h": 2.54,
+        "z": 5
+      },
+      "pads": [
+        {
+          "number": "1",
+          "x": -1.27,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "both",
+          "net": "n-catalog-78"
+        },
+        {
+          "number": "2",
+          "x": 1.27,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n-catalog-81"
+        }
+      ],
+      "ref": "J1",
+      "value": "VIN / RETURN",
+      "source": "Parametric geometry; check against the selected component datasheet.",
+      "verified": false,
+      "libraryId": "header2",
+      "x": -20,
+      "y": 0,
+      "rotation": 90,
+      "side": "top",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 2.4699999999999998,
+        "size": 1,
+        "visible": true
+      }
+    },
+    {
+      "id": "p-catalog-74",
+      "name": "Resettable fuse · radial reference",
+      "category": "Power",
+      "ref": "F1",
+      "value": "Select PTC",
+      "body": {
+        "kind": "disc",
+        "w": 7,
+        "h": 2,
+        "z": 8
+      },
+      "pads": [
+        {
+          "number": "1",
+          "x": -2.54,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "both",
+          "net": "n-catalog-78",
+          "signal": "Pin 1"
+        },
+        {
+          "number": "2",
+          "x": 2.54,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n-catalog-79",
+          "signal": "Pin 2"
+        }
+      ],
+      "verified": false,
+      "source": "COPPERBENCH parametric template. No manufacturer footprint is claimed.",
+      "catalog": {
+        "schema": 1,
+        "family": "Fuses",
+        "variant": "Radial PTC / 5.08 mm pitch",
+        "manufacturer": "",
+        "mpn": "",
+        "sourceDate": "2026-09-18",
+        "sources": [],
+        "notes": [
+          "Nominal parametric pattern, not a universal manufacturer footprint. Match pitch, hole diameter, pin order, body and mating clearance to the actual component.",
+          "No hold/trip current is implied. Verify operating temperature, fault current and voltage."
+        ],
+        "geometryStatus": "parametric-review-required",
+        "pinNamesEdited": false,
+        "reviewed": false
+      },
+      "libraryId": "maker-ptc",
+      "x": -10,
+      "y": -7,
+      "rotation": 0,
+      "side": "top",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 2.2,
+        "size": 1,
+        "visible": true
+      }
+    },
+    {
+      "id": "p-catalog-75",
+      "name": "Schottky diode · axial reference",
+      "category": "Power",
+      "ref": "D1",
+      "value": "Select Schottky",
+      "body": {
+        "kind": "diode",
+        "w": 5.2,
+        "h": 2.7,
+        "z": 2.8
+      },
+      "pads": [
+        {
+          "number": "1",
+          "x": -5.08,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 0.9,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n-catalog-80",
+          "signal": "Cathode",
+          "polarity": "cathode"
+        },
+        {
+          "number": "2",
+          "x": 5.08,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 0.9,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n-catalog-79",
+          "signal": "Anode",
+          "polarity": "anode"
+        }
+      ],
+      "verified": false,
+      "source": "COPPERBENCH parametric template. No manufacturer footprint is claimed.",
+      "catalog": {
+        "schema": 1,
+        "family": "Diodes & protection",
+        "variant": "Schottky diode / 10.16 mm pitch",
+        "manufacturer": "",
+        "mpn": "",
+        "sourceDate": "2026-09-18",
+        "sources": [],
+        "notes": [
+          "Nominal parametric pattern, not a universal manufacturer footprint. Match pitch, hole diameter, pin order, body and mating clearance to the actual component.",
+          "Select and verify the exact diode, voltage, current and thermal requirements. A/K identifies terminals, not fixed supply signs."
+        ],
+        "geometryStatus": "parametric-review-required",
+        "pinNamesEdited": false,
+        "reviewed": false
+      },
+      "libraryId": "maker-schottky",
+      "x": 4,
+      "y": -7,
+      "rotation": 180,
+      "side": "top",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 2.55,
+        "size": 1,
+        "visible": true
+      }
+    },
+    {
+      "id": "p-catalog-76",
+      "name": "Capacitor · radial 2.5",
+      "category": "Through-hole",
+      "body": {
+        "kind": "capacitor",
+        "w": 5,
+        "h": 5,
+        "z": 7.5
+      },
+      "pads": [
+        {
+          "number": "+",
+          "x": -1.25,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 0.9,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n-catalog-80",
+          "polarity": "positive"
+        },
+        {
+          "number": "-",
+          "x": 1.25,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 0.9,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n-catalog-81",
+          "polarity": "negative"
+        }
+      ],
+      "ref": "C1",
+      "value": "10uF",
+      "source": "Parametric geometry; check against the selected component datasheet.",
+      "verified": false,
+      "libraryId": "cap-radial",
+      "x": 10,
+      "y": 4,
+      "rotation": 0,
+      "side": "top",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 3.7,
+        "size": 1,
+        "visible": true
+      }
+    },
+    {
+      "id": "p-catalog-77",
+      "name": "Header · 1 × 2",
+      "category": "Connectors",
+      "body": {
+        "kind": "header",
+        "w": 5.08,
+        "h": 2.54,
+        "z": 5
+      },
+      "pads": [
+        {
+          "number": "1",
+          "x": -1.27,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "both",
+          "net": "n-catalog-80"
+        },
+        {
+          "number": "2",
+          "x": 1.27,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n-catalog-81"
+        }
+      ],
+      "ref": "J2",
+      "value": "VOUT / RETURN",
+      "source": "Parametric geometry; check against the selected component datasheet.",
+      "verified": false,
+      "libraryId": "header2",
+      "x": 19,
+      "y": 0,
+      "rotation": 90,
+      "side": "top",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 2.4699999999999998,
+        "size": 1,
+        "visible": true
+      }
+    }
+  ],
+  "traces": [
+    {
+      "id": "t-catalog-82",
+      "net": "n-catalog-78",
+      "layer": "top",
+      "width": 0.4,
+      "points": [
+        {
+          "x": -20,
+          "y": -1.27
+        },
+        {
+          "x": -12.54,
+          "y": -7
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t-catalog-83",
+      "net": "n-catalog-79",
+      "layer": "top",
+      "width": 0.4,
+      "points": [
+        {
+          "x": -7.46,
+          "y": -7
+        },
+        {
+          "x": -1.08,
+          "y": -7
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t-catalog-84",
+      "net": "n-catalog-80",
+      "layer": "top",
+      "width": 0.4,
+      "points": [
+        {
+          "x": 9.08,
+          "y": -7
+        },
+        {
+          "x": 8.75,
+          "y": 4
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t-catalog-85",
+      "net": "n-catalog-80",
+      "layer": "top",
+      "width": 0.4,
+      "points": [
+        {
+          "x": 9.08,
+          "y": -7
+        },
+        {
+          "x": 19,
+          "y": -1.27
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t-catalog-86",
+      "net": "n-catalog-81",
+      "layer": "bottom",
+      "width": 0.4,
+      "points": [
+        {
+          "x": -20,
+          "y": 1.27
+        },
+        {
+          "x": 8.52,
+          "y": 1.27
+        },
+        {
+          "x": 11.25,
+          "y": 4
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t-catalog-87",
+      "net": "n-catalog-81",
+      "layer": "top",
+      "width": 0.4,
+      "points": [
+        {
+          "x": 11.25,
+          "y": 4
+        },
+        {
+          "x": 19,
+          "y": 1.27
+        }
+      ],
+      "locked": false
+    }
+  ],
+  "vias": [],
+  "nets": [
+    {
+      "id": "n-catalog-78",
+      "name": "VIN",
+      "width": 0.4
+    },
+    {
+      "id": "n-catalog-79",
+      "name": "FUSED",
+      "width": 0.4
+    },
+    {
+      "id": "n-catalog-80",
+      "name": "VOUT",
+      "width": 0.4
+    },
+    {
+      "id": "n-catalog-81",
+      "name": "RETURN",
+      "width": 0.4
+    }
+  ],
+  "ports": [
+    {
+      "key": "VIN",
+      "name": "VIN",
+      "net": "n-catalog-78",
+      "kind": "power"
+    },
+    {
+      "key": "VOUT",
+      "name": "VOUT",
+      "net": "n-catalog-80",
+      "kind": "power"
+    },
+    {
+      "key": "RETURN",
+      "name": "RETURN",
+      "net": "n-catalog-81",
+      "kind": "ground"
+    }
+  ]
+}

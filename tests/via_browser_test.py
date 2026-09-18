@@ -119,7 +119,7 @@ with sync_playwright() as pw:
  def backup():
   reset(VIA_PAIR);point(10,15);page.check('[data-prop=tented]');page.check('[data-prop=locked]');act('save')
   raw=page.evaluate('async()=>await __exports.at(-1).blob.text()');d=json.loads(raw)
-  check(d['vias'][0]['tented'] and d['vias'][0]['locked']);check(d['schema']==3)
+  check(d['vias'][0]['tented'] and d['vias'][0]['locked']);check(d['schema']==5)
   page.locator('#fileInput').set_input_files({'name':'vias.json','mimeType':'application/json','buffer':raw.encode()})
   page.get_by_role('button',name='Open this board',exact=True).click();check(page.evaluate('CBAPP.state.doc.vias[0].tented && CBAPP.state.doc.vias[0].locked'))
  test('JSON backup and actual file-input import retain via details',backup)
@@ -139,7 +139,7 @@ with sync_playwright() as pw:
  def preview_capture():
   reset(PAIR);tool('trace');point(8,10);move(20,10);page.keyboard.press('v');point(32,10)
   page.keyboard.press('Escape');page.locator('[data-side=top]').click();tool('via');page.select_option('#viaPreset','standard');move(23,19)
-  page.evaluate("document.getElementById('toast').hidden=true;document.getElementById('welcomeCard').hidden=true")
+  page.evaluate("document.getElementById('toast').hidden=true;")
   page.wait_for_function('CBAPP.state.checkRevision===CBAPP.state.revision && CBAPP.state.connectivity.unrouted===0');page.screenshot(path=str(IMAGES/'via-placement.png'));check(page.locator('#viaPlacementStatus').is_visible())
   page.keyboard.press('Escape');point(20,10);page.screenshot(path=str(IMAGES/'via-inspector.png'))
   page.locator('[data-view=fabrication]').click();page.wait_for_timeout(100);page.screenshot(path=str(IMAGES/'via-fabrication.png'))

@@ -1,0 +1,116 @@
+{
+  "version": "1.5.0",
+  "date": "2026-09-18T12:25:12.015Z",
+  "passed": 27,
+  "total": 27,
+  "results": [
+    {
+      "name": "Via defaults are present and native JSON uses the current schema",
+      "pass": true
+    },
+    {
+      "name": "All size presets pass the bundled profile",
+      "pass": true
+    },
+    {
+      "name": "Invalid and undersized diameters are rejected before placement",
+      "pass": true
+    },
+    {
+      "name": "Project-specific ring and drill constraints govern proposals",
+      "pass": true
+    },
+    {
+      "name": "Preview is pure and does not add via, net, or artwork",
+      "pass": true
+    },
+    {
+      "name": "An empty-space via can be explicitly unassigned and is flagged by checks",
+      "pass": true
+    },
+    {
+      "name": "Auto net inherits top copper without adding a new electrical net",
+      "pass": true
+    },
+    {
+      "name": "Auto net can inherit bottom copper",
+      "pass": true
+    },
+    {
+      "name": "A via cannot silently bridge different top and bottom nets",
+      "pass": true
+    },
+    {
+      "name": "Explicit net assignment still checks the opposite layer",
+      "pass": true
+    },
+    {
+      "name": "Unassigned copper is not silently treated as one shared net",
+      "pass": true
+    },
+    {
+      "name": "Unknown net IDs stop creation without modifying the board",
+      "pass": true
+    },
+    {
+      "name": "Outer edges and internal cutouts protect via copper",
+      "pass": true
+    },
+    {
+      "name": "Keepouts on either copper face reject a via",
+      "pass": true
+    },
+    {
+      "name": "Non-plated holes and same-net plated drills enforce spacing",
+      "pass": true
+    },
+    {
+      "name": "Duplicate drill at an existing via is rejected",
+      "pass": true
+    },
+    {
+      "name": "A single through via joins actual front and back trace geometry",
+      "pass": true
+    },
+    {
+      "name": "Moving or deleting the via exposes the lost interlayer connection",
+      "pass": true
+    },
+    {
+      "name": "Invalid via edits are rejected atomically; locks protect geometry",
+      "pass": true
+    },
+    {
+      "name": "Native JSON round-trip preserves sizes, net, tenting, lock, position and defaults",
+      "pass": true
+    },
+    {
+      "name": "Earlier schema-2 projects without a tenting default load safely",
+      "pass": true
+    },
+    {
+      "name": "Both copper Gerbers contain the same via center and diameter",
+      "pass": true
+    },
+    {
+      "name": "Via emits one plated Excellon drill and no mounting-hole drill",
+      "pass": true
+    },
+    {
+      "name": "Tenting changes mask openings on both sides without changing copper/drills",
+      "pass": true
+    },
+    {
+      "name": "Trace snapping uses the actual segment rather than the board snap grid",
+      "pass": true
+    },
+    {
+      "name": "KiCad subset preserves via center, dimensions and net geometry",
+      "pass": true
+    },
+    {
+      "name": "KiCad imports explicitly report open-mask and lock simplification",
+      "pass": true
+    }
+  ]
+}

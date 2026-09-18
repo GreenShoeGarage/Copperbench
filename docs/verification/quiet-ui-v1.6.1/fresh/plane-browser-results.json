@@ -1,0 +1,124 @@
+{
+  "version": "1.6.1",
+  "date": "2026-09-18T19:02:39.158943+00:00",
+  "passed": 23,
+  "total": 23,
+  "scope": "Actual Chromium controls/canvas/workers with simulated localStorage and captured download blobs. Not a hosted service-worker or file-origin persistence test.",
+  "results": [
+    {
+      "name": "Bottom-ground preset assigns one face and auto-fills without inventing pin nets or undo steps",
+      "pass": true,
+      "ms": 2243
+    },
+    {
+      "name": "Top-power dropdown creates a separate named net and honestly reports no attached copper",
+      "pass": true,
+      "ms": 1965
+    },
+    {
+      "name": "Through-hole lead accepts a direct plane attachment without an unnecessary via",
+      "pass": true,
+      "ms": 1480
+    },
+    {
+      "name": "Opposite-face SMT lead previews then commits an actual trace and via",
+      "pass": true,
+      "ms": 1486
+    },
+    {
+      "name": "Discarding an attachment leaves the native board unchanged",
+      "pass": true,
+      "ms": 1116
+    },
+    {
+      "name": "One undo or redo handles net assignment, short trace, via and plane state together",
+      "pass": true,
+      "ms": 2319
+    },
+    {
+      "name": "Inspector pin action supports keyboard-based plane attachment",
+      "pass": true,
+      "ms": 1576
+    },
+    {
+      "name": "Two picked leads connect in one checked batch rather than merging every net",
+      "pass": true,
+      "ms": 1647
+    },
+    {
+      "name": "Pad context menu exposes the same explicit plane workflow",
+      "pass": true,
+      "ms": 1091
+    },
+    {
+      "name": "A conflicting assigned pin is rejected without a net merge or partial copper",
+      "pass": true,
+      "ms": 997
+    },
+    {
+      "name": "Cancelling the real connection worker adds no proposed copper",
+      "pass": true,
+      "ms": 1531
+    },
+    {
+      "name": "A worker proposal cannot overwrite a newer board revision",
+      "pass": true,
+      "ms": 1368
+    },
+    {
+      "name": "Board resize refollows and refills the plane without scaling components",
+      "pass": true,
+      "ms": 1872
+    },
+    {
+      "name": "Ground preset preserves existing manual copper zones",
+      "pass": true,
+      "ms": 1344
+    },
+    {
+      "name": "Auto-refill can be disabled; stale fabrication is blocked until a manual refill",
+      "pass": true,
+      "ms": 1917
+    },
+    {
+      "name": "Changing plane assignment requires confirmation and retains existing lead nets",
+      "pass": true,
+      "ms": 1899
+    },
+    {
+      "name": "Connections report exposes real disconnected plane islands, not just matching net names",
+      "pass": true,
+      "ms": 1071
+    },
+    {
+      "name": "Hide-fill and face-view controls do not alter manufacturing copper",
+      "pass": true,
+      "ms": 1018
+    },
+    {
+      "name": "Schema-3 backup and actual file-input import retain planes and verified attachments",
+      "pass": true,
+      "ms": 2548
+    },
+    {
+      "name": "Per-face thermal settings persist and trigger a new fill",
+      "pass": true,
+      "ms": 1998
+    },
+    {
+      "name": "Screenshots show real plane preview, accepted 3D board and copper-face views",
+      "pass": true,
+      "ms": 3806
+    },
+    {
+      "name": "Plane assignment controls remain reachable on a narrow screen",
+      "pass": true,
+      "ms": 1065
+    },
+    {
+      "name": "No external runtime requests or uncaught exceptions in plane workflows",
+      "pass": true,
+      "ms": 0
+    }
+  ]
+}

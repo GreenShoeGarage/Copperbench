@@ -1,0 +1,713 @@
+{
+  "app": "COPPERBENCH",
+  "schema": 4,
+  "version": "1.5.0",
+  "id": "nano-classic-addon-board-001",
+  "title": "Arduino Nano · classic A000005 add-on starter",
+  "created": "2026-09-18T00:00:00.000Z",
+  "updated": "2026-09-18T00:00:00.000Z",
+  "board": {
+    "width": 38,
+    "height": 63.2,
+    "thickness": 1.6,
+    "shape": "rounded",
+    "radius": 3,
+    "points": [],
+    "color": "blue"
+  },
+  "parts": [
+    {
+      "id": "nano-classic-addon-p-003",
+      "name": "Arduino Nano · classic A000005 · Add-on headers",
+      "category": "Platforms",
+      "ref": "J1",
+      "value": "Arduino Nano · classic A000005 mating headers",
+      "verified": false,
+      "source": "https://docs.arduino.cc/hardware/nano/\nhttps://docs.arduino.cc/resources/pinouts/A000005-full-pinout.pdf\nhttps://docs.arduino.cc/resources/datasheets/A000005-datasheet.pdf",
+      "defaultSide": "bottom",
+      "body": {
+        "kind": "platform",
+        "w": 18,
+        "h": 43.2,
+        "z": 2.6
+      },
+      "pads": [
+        {
+          "number": "15",
+          "signal": "D12 / MISO",
+          "bank": "RIGHT",
+          "x": -7.62,
+          "y": -17.78,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "14",
+          "signal": "D11 / MOSI",
+          "bank": "RIGHT",
+          "x": -7.62,
+          "y": -15.24,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "13",
+          "signal": "D10 / SS",
+          "bank": "RIGHT",
+          "x": -7.62,
+          "y": -12.7,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "12",
+          "signal": "D9",
+          "bank": "RIGHT",
+          "x": -7.62,
+          "y": -10.16,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "11",
+          "signal": "D8",
+          "bank": "RIGHT",
+          "x": -7.62,
+          "y": -7.62,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "10",
+          "signal": "D7",
+          "bank": "RIGHT",
+          "x": -7.62,
+          "y": -5.08,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "9",
+          "signal": "D6",
+          "bank": "RIGHT",
+          "x": -7.62,
+          "y": -2.54,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "8",
+          "signal": "D5",
+          "bank": "RIGHT",
+          "x": -7.62,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "7",
+          "signal": "D4",
+          "bank": "RIGHT",
+          "x": -7.62,
+          "y": 2.54,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "6",
+          "signal": "D3",
+          "bank": "RIGHT",
+          "x": -7.62,
+          "y": 5.08,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "5",
+          "signal": "D2",
+          "bank": "RIGHT",
+          "x": -7.62,
+          "y": 7.62,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "4",
+          "signal": "GND",
+          "bank": "RIGHT",
+          "x": -7.62,
+          "y": 10.16,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "ground"
+        },
+        {
+          "number": "3",
+          "signal": "RESET",
+          "bank": "RIGHT",
+          "x": -7.62,
+          "y": 12.7,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "2",
+          "signal": "D0 / RX",
+          "bank": "RIGHT",
+          "x": -7.62,
+          "y": 15.24,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "1",
+          "signal": "D1 / TX",
+          "bank": "RIGHT",
+          "x": -7.62,
+          "y": 17.78,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "16",
+          "signal": "D13 / SCK",
+          "bank": "LEFT",
+          "x": 7.62,
+          "y": -17.78,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "17",
+          "signal": "3V3",
+          "bank": "LEFT",
+          "x": 7.62,
+          "y": -15.24,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "power"
+        },
+        {
+          "number": "18",
+          "signal": "AREF",
+          "bank": "LEFT",
+          "x": 7.62,
+          "y": -12.7,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "19",
+          "signal": "A0 / D14",
+          "bank": "LEFT",
+          "x": 7.62,
+          "y": -10.16,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "20",
+          "signal": "A1 / D15",
+          "bank": "LEFT",
+          "x": 7.62,
+          "y": -7.62,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "21",
+          "signal": "A2 / D16",
+          "bank": "LEFT",
+          "x": 7.62,
+          "y": -5.08,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "22",
+          "signal": "A3 / D17",
+          "bank": "LEFT",
+          "x": 7.62,
+          "y": -2.54,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "23",
+          "signal": "A4 / D18 / SDA",
+          "bank": "LEFT",
+          "x": 7.62,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "24",
+          "signal": "A5 / D19 / SCL",
+          "bank": "LEFT",
+          "x": 7.62,
+          "y": 2.54,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "25",
+          "signal": "A6 / ADC6",
+          "bank": "LEFT",
+          "x": 7.62,
+          "y": 5.08,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "26",
+          "signal": "A7 / ADC7",
+          "bank": "LEFT",
+          "x": 7.62,
+          "y": 7.62,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "27",
+          "signal": "5V",
+          "bank": "LEFT",
+          "x": 7.62,
+          "y": 10.16,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "power"
+        },
+        {
+          "number": "28",
+          "signal": "RESET",
+          "bank": "LEFT",
+          "x": 7.62,
+          "y": 12.7,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "signal"
+        },
+        {
+          "number": "29",
+          "signal": "GND",
+          "bank": "LEFT",
+          "x": 7.62,
+          "y": 15.24,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "ground"
+        },
+        {
+          "number": "30",
+          "signal": "VIN",
+          "bank": "LEFT",
+          "x": 7.62,
+          "y": 17.78,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "pinType": "power"
+        }
+      ],
+      "mountingHoles": [
+        {
+          "x": 7.62,
+          "y": -20.32,
+          "drill": 1.8
+        },
+        {
+          "x": -7.62,
+          "y": -20.32,
+          "drill": 1.8
+        },
+        {
+          "x": 7.62,
+          "y": 20.32,
+          "drill": 1.8
+        },
+        {
+          "x": -7.62,
+          "y": 20.32,
+          "drill": 1.8
+        }
+      ],
+      "platform": {
+        "schema": 1,
+        "family": "nano-classic",
+        "revision": 1,
+        "role": "addon",
+        "showHost": true,
+        "showPins": true,
+        "outline": [
+          {
+            "x": 9,
+            "y": -21.6
+          },
+          {
+            "x": -9,
+            "y": -21.6
+          },
+          {
+            "x": -9,
+            "y": 21.6
+          },
+          {
+            "x": 9,
+            "y": 21.6
+          }
+        ],
+        "holePattern": [
+          {
+            "x": 7.62,
+            "y": -20.32,
+            "drill": 1.8
+          },
+          {
+            "x": -7.62,
+            "y": -20.32,
+            "drill": 1.8
+          },
+          {
+            "x": 7.62,
+            "y": 20.32,
+            "drill": 1.8
+          },
+          {
+            "x": -7.62,
+            "y": 20.32,
+            "drill": 1.8
+          }
+        ],
+        "geometryStatus": "nominal-review-required",
+        "sourceDate": "2026-09-17"
+      },
+      "label": {
+        "x": 0,
+        "y": 0,
+        "size": 1.3,
+        "visible": false
+      },
+      "carrier": {
+        "schema": 1,
+        "revision": 1,
+        "model": "Arduino Nano · classic A000005",
+        "source": [
+          "https://docs.arduino.cc/hardware/nano/",
+          "https://docs.arduino.cc/resources/pinouts/A000005-full-pinout.pdf",
+          "https://docs.arduino.cc/resources/datasheets/A000005-datasheet.pdf"
+        ],
+        "sourceDate": "2026-09-18",
+        "usbEdge": "top",
+        "vertical": true,
+        "wireless": "none",
+        "showClearances": true,
+        "enforceAntenna": true,
+        "overrideReason": "",
+        "stackGap": 8.5,
+        "regions": [
+          {
+            "id": "usb",
+            "name": "Mini-USB cable access",
+            "kind": "access",
+            "x": -6,
+            "y": -32.6,
+            "w": 12,
+            "h": 13
+          }
+        ]
+      },
+      "libraryId": "platform-nano-classic-addon",
+      "x": 19,
+      "y": 31.6,
+      "rotation": 0,
+      "side": "bottom",
+      "locked": true
+    }
+  ],
+  "nets": [],
+  "traces": [],
+  "vias": [],
+  "holes": [],
+  "cutouts": [],
+  "keepouts": [],
+  "zones": [],
+  "art": [],
+  "assets": [],
+  "profile": {
+    "id": "oshpark-2l",
+    "name": "OSH Park · 2 layer",
+    "verified": "2026-09-17",
+    "revision": 1,
+    "source": "https://docs.oshpark.com/services/two-layer/",
+    "minTrace": 0.1524,
+    "clearance": 0.1524,
+    "edge": 0.381,
+    "minDrill": 0.254,
+    "minRing": 0.127,
+    "minSlot": 0.508,
+    "minMaskWeb": 0.1016,
+    "minSilk": 0.127,
+    "maskExpansion": 0.075,
+    "minHoleGap": 0.127,
+    "minCutout": 1.01,
+    "minWidth": 6.35,
+    "minHeight": 6.35,
+    "maxWidth": 406.4,
+    "maxHeight": 558.8
+  },
+  "settings": {
+    "grid": 1.27,
+    "traceWidth": 0.4,
+    "viaDiameter": 0.9,
+    "viaDrill": 0.4,
+    "viaTented": false,
+    "zoneStep": 0.25,
+    "autoPlanes": true
+  },
+  "assumptions": [
+    {
+      "id": "nano-classic-addon-assume-002",
+      "text": "Two copper layers; through vias only. This layout does not verify circuit function.",
+      "status": "open"
+    },
+    {
+      "id": "nano-classic-addon-a-004",
+      "text": "Classic ATmega328P Nano uses 5 V I/O. A6 and A7 are analog inputs, not general digital pins.",
+      "status": "open"
+    },
+    {
+      "id": "nano-classic-addon-a-005",
+      "text": "Classic Nano only, not Nano Every / 33 / ESP32. 15.24 mm row separation. The 43.2 × 18 mm envelope follows the A000005 mechanical drawing, not a marketing-length claim; verify clones separately.",
+      "status": "open"
+    },
+    {
+      "id": "nano-classic-addon-a-006",
+      "text": "Header mounting only: no castellated reflow pads, underside USB/battery/test contacts or debug connector are included.",
+      "status": "open"
+    },
+    {
+      "id": "nano-classic-addon-a-007",
+      "text": "Nominal 1.0 mm connector drills / 1.8 mm pads are defaults. Check the actual mating connector, assembly tolerance and engagement length.",
+      "status": "open"
+    },
+    {
+      "id": "nano-classic-addon-a-008",
+      "text": "Pin captions do not join nets. Confirm power direction, voltage and current limits; no supporting power circuitry is inserted.",
+      "status": "open"
+    },
+    {
+      "id": "nano-classic-addon-a-009",
+      "text": "The host envelope and access areas are 2D references, not a collision-checked mechanical model. Print at 1:1 and verify against the purchased board before ordering.",
+      "status": "open"
+    },
+    {
+      "id": "nano-classic-addon-a-010",
+      "text": "Optional 1.8 mm mounting-hole pattern is nominal; verify screw clearance near the end contacts.",
+      "status": "open"
+    },
+    {
+      "id": "nano-classic-addon-a-011",
+      "text": "ICSP is not included. USB-up orientation; contact 1 is TX at the lower right, contact 16 is D13 at the upper left.",
+      "status": "open"
+    },
+    {
+      "id": "nano-classic-addon-a-013",
+      "text": "8.5 mm underside stack gap is an editable planning assumption, not a measured connector specification. RF/access rectangles are suggested 2D references requiring review.",
+      "status": "open"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "nano-classic-addon-e-012",
+      "text": "Nominal mating geometry transcribed from published pinouts/dimensioned references; no physical fit or manufacturer acceptance verified.",
+      "source": "https://docs.arduino.cc/hardware/nano/\nhttps://docs.arduino.cc/resources/pinouts/A000005-full-pinout.pdf\nhttps://docs.arduino.cc/resources/datasheets/A000005-datasheet.pdf"
+    },
+    {
+      "id": "nano-classic-addon-e-014",
+      "text": "v1.5 controller interface: header pinout and nominal geometry source-referenced; physical fit, electrical function and manufacturing acceptance NOT verified.",
+      "source": "https://docs.arduino.cc/hardware/nano/\nhttps://docs.arduino.cc/resources/pinouts/A000005-full-pinout.pdf\nhttps://docs.arduino.cc/resources/datasheets/A000005-datasheet.pdf"
+    }
+  ],
+  "baseline": null,
+  "platformTemplate": {
+    "schema": 1,
+    "family": "nano-classic",
+    "revision": 1,
+    "role": "addon",
+    "margin": 10
+  }
+}

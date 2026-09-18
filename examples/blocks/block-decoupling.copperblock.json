@@ -1,0 +1,304 @@
+{
+  "app": "COPPERBENCH-BLOCK",
+  "schema": 1,
+  "id": "block-decoupling",
+  "revision": 1,
+  "name": "Supply decoupling pair",
+  "description": "A 100 nF ceramic and a 10 µF polarized capacitor across a two-pin supply interface.",
+  "notes": [
+    "Move the ceramic capacitor close to the actual IC supply pin and keep its return loop short. A prearranged group does not guarantee effective decoupling.",
+    "Select capacitor voltage rating, dielectric, ESR, ripple capability and actual footprint; the radial capacitor is a nominal template."
+  ],
+  "parts": [
+    {
+      "id": "p-catalog-57",
+      "name": "Header · 1 × 2",
+      "category": "Connectors",
+      "body": {
+        "kind": "header",
+        "w": 5.08,
+        "h": 2.54,
+        "z": 5
+      },
+      "pads": [
+        {
+          "number": "1",
+          "x": -1.27,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "both",
+          "net": "n-catalog-60"
+        },
+        {
+          "number": "2",
+          "x": 1.27,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n-catalog-61"
+        }
+      ],
+      "ref": "J1",
+      "value": "VCC / GND",
+      "source": "Parametric geometry; check against the selected component datasheet.",
+      "verified": false,
+      "libraryId": "header2",
+      "x": 0,
+      "y": -7,
+      "rotation": 0,
+      "side": "top",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 2.4699999999999998,
+        "size": 1,
+        "visible": true
+      }
+    },
+    {
+      "id": "p-catalog-58",
+      "name": "C · 0805",
+      "category": "Surface-mount",
+      "body": {
+        "kind": "smd-cap",
+        "w": 2,
+        "h": 1.25,
+        "z": 0.7
+      },
+      "pads": [
+        {
+          "number": "1",
+          "x": -0.95,
+          "y": 0,
+          "w": 1,
+          "h": 1.4,
+          "drill": 0,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "top",
+          "net": "n-catalog-60"
+        },
+        {
+          "number": "2",
+          "x": 0.95,
+          "y": 0,
+          "w": 1,
+          "h": 1.4,
+          "drill": 0,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "top",
+          "net": "n-catalog-61"
+        }
+      ],
+      "ref": "C1",
+      "value": "100nF",
+      "source": "Parametric geometry; check against the selected component datasheet.",
+      "verified": false,
+      "libraryId": "C0805",
+      "x": -5,
+      "y": 0,
+      "rotation": 0,
+      "side": "top",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 1.825,
+        "size": 1,
+        "visible": true
+      }
+    },
+    {
+      "id": "p-catalog-59",
+      "name": "Capacitor · radial 2.5",
+      "category": "Through-hole",
+      "body": {
+        "kind": "capacitor",
+        "w": 5,
+        "h": 5,
+        "z": 7.5
+      },
+      "pads": [
+        {
+          "number": "+",
+          "x": -1.25,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 0.9,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n-catalog-60",
+          "polarity": "positive"
+        },
+        {
+          "number": "-",
+          "x": 1.25,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 0.9,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n-catalog-61",
+          "polarity": "negative"
+        }
+      ],
+      "ref": "C2",
+      "value": "10uF",
+      "source": "Parametric geometry; check against the selected component datasheet.",
+      "verified": false,
+      "libraryId": "cap-radial",
+      "x": 5,
+      "y": 0,
+      "rotation": 0,
+      "side": "top",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 3.7,
+        "size": 1,
+        "visible": true
+      }
+    }
+  ],
+  "traces": [
+    {
+      "id": "t-catalog-62",
+      "net": "n-catalog-60",
+      "layer": "top",
+      "width": 0.4,
+      "points": [
+        {
+          "x": -1.27,
+          "y": -7
+        },
+        {
+          "x": -5.95,
+          "y": 0
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t-catalog-63",
+      "net": "n-catalog-60",
+      "layer": "top",
+      "width": 0.4,
+      "points": [
+        {
+          "x": -1.27,
+          "y": -7
+        },
+        {
+          "x": 3.75,
+          "y": 0
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t-catalog-64",
+      "net": "n-catalog-61",
+      "layer": "top",
+      "width": 0.4,
+      "points": [
+        {
+          "x": 1.27,
+          "y": -7
+        },
+        {
+          "x": 6.25,
+          "y": 0
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t-catalog-65",
+      "net": "n-catalog-61",
+      "layer": "bottom",
+      "width": 0.4,
+      "points": [
+        {
+          "x": 1.27,
+          "y": -7
+        },
+        {
+          "x": -3.93,
+          "y": -1.8
+        },
+        {
+          "x": -3.93,
+          "y": -0.6
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t-catalog-67",
+      "net": "n-catalog-61",
+      "layer": "top",
+      "width": 0.4,
+      "points": [
+        {
+          "x": -3.93,
+          "y": -0.6
+        },
+        {
+          "x": -4.05,
+          "y": 0
+        }
+      ],
+      "locked": false
+    }
+  ],
+  "vias": [
+    {
+      "id": "v-catalog-66",
+      "net": "n-catalog-61",
+      "x": -3.93,
+      "y": -0.6,
+      "diameter": 0.9,
+      "drill": 0.4,
+      "tented": false,
+      "locked": false
+    }
+  ],
+  "nets": [
+    {
+      "id": "n-catalog-60",
+      "name": "VCC",
+      "width": 0.4
+    },
+    {
+      "id": "n-catalog-61",
+      "name": "GND",
+      "width": 0.4
+    }
+  ],
+  "ports": [
+    {
+      "key": "VCC",
+      "name": "VCC",
+      "net": "n-catalog-60",
+      "kind": "power"
+    },
+    {
+      "key": "GND",
+      "name": "GND",
+      "net": "n-catalog-61",
+      "kind": "ground"
+    }
+  ]
+}

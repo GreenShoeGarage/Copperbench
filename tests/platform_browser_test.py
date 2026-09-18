@@ -46,13 +46,13 @@ with sync_playwright() as pw:
     def point(x,y):
         p=world(x,y);page.mouse.click(p['x'],p['y']);page.wait_for_timeout(60)
     def catalogue():
-        reset();page.locator('[data-filter=Platforms]').click()
-        check(page.locator('[data-place]').count()==6)
+        reset();page.select_option('#partCategory','Platforms')
+        check(page.locator('[data-place]').count()==24)
         page.locator('#partSearch').fill('MKR');check(page.locator('[data-place]').count()==2)
         page.locator('#partSearch').fill('');page.screenshot(path=str(IMAGES/'platform-parts.png'))
-    test('Platforms category exposes six searchable add-on/carrier parts',catalogue)
+    test('Platforms category exposes twenty-four searchable add-on/carrier parts',catalogue)
     def chooser():
-        act('platforms');check(page.locator('[data-family-choice]').count()==3)
+        act('platforms');check(page.locator('[data-family-choice]').count()==12)
         page.locator('[data-family-choice="uno-r3"]').click()
         check('4.064' in page.locator('#platformSummary').inner_text())
         check(page.locator('[data-family-choice=\"uno-r3\"]').get_attribute('aria-pressed')=='true')

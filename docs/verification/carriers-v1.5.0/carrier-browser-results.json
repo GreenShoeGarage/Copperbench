@@ -1,0 +1,94 @@
+{
+  "passed": 17,
+  "total": 17,
+  "results": [
+    {
+      "name": "Controller picker is visible, has twelve families, and defaults to Pico 2 carrier",
+      "pass": true,
+      "ms": 1955
+    },
+    {
+      "name": "Every new variant creates a locked, routable, correctly sized header template",
+      "pass": true,
+      "ms": 18973
+    },
+    {
+      "name": "No-hole hosts cannot accidentally enable invented mounting drills",
+      "pass": true,
+      "ms": 988
+    },
+    {
+      "name": "FeatherWing-style add-on exposes the bottom mating face and variant-specific FREE contact",
+      "pass": true,
+      "ms": 2680
+    },
+    {
+      "name": "Place-on-current-board preserves the boundary and adds the selected exact interface",
+      "pass": true,
+      "ms": 2391
+    },
+    {
+      "name": "Inspector shows functional contact labels, source model and editable RF/access regions",
+      "pass": true,
+      "ms": 1872
+    },
+    {
+      "name": "Guard dimensions and stack-gap edits are one undoable operation",
+      "pass": true,
+      "ms": 2614
+    },
+    {
+      "name": "RF override requires a recorded reason; the accepted override remains a warning",
+      "pass": true,
+      "ms": 2658
+    },
+    {
+      "name": "Hiding overlays does not disable guards or alter manufacturing output",
+      "pass": true,
+      "ms": 2200
+    },
+    {
+      "name": "Rotate and flip controls transform the attached guard without changing its two-face protection",
+      "pass": true,
+      "ms": 2341
+    },
+    {
+      "name": "Actual worker refills both plane faces around the attached RF exclusion",
+      "pass": true,
+      "ms": 4520
+    },
+    {
+      "name": "Visible Via tool refuses to place a via inside the RF guard",
+      "pass": true,
+      "ms": 340
+    },
+    {
+      "name": "Saved JSON and project ZIP retain schema 4, host metadata, guards and planes",
+      "pass": true,
+      "ms": 962
+    },
+    {
+      "name": "KiCad export discloses metadata loss and includes two independent keepout zones",
+      "pass": true,
+      "ms": 747
+    },
+    {
+      "name": "Bench and clearance inspector render the controller and its separate reference geometry",
+      "pass": true,
+      "ms": 5580
+    },
+    {
+      "name": "Controller selection and template workflow fit a 390 px viewport",
+      "pass": true,
+      "ms": 1019
+    },
+    {
+      "name": "No uncaught browser errors or external runtime dependencies",
+      "pass": true,
+      "ms": 0
+    }
+  ],
+  "browser": "Chromium",
+  "storage": "simulated",
+  "downloads": "captured blobs"
+}

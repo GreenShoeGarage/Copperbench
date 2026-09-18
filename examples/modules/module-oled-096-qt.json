@@ -1,0 +1,276 @@
+{
+  "app": "COPPERBENCH",
+  "schema": 5,
+  "version": "1.6.0",
+  "id": "board_example_00009",
+  "title": "Adafruit 0.96″ OLED · STEMMA QT carrier",
+  "created": "2026-09-18T00:00:00.000Z",
+  "updated": "2026-09-18T00:00:00.000Z",
+  "board": {
+    "width": 43.21,
+    "height": 45.75,
+    "thickness": 1.6,
+    "shape": "rounded",
+    "radius": 3,
+    "points": [],
+    "color": "green"
+  },
+  "parts": [
+    {
+      "id": "p_example_00011",
+      "name": "Adafruit 0.96″ OLED · STEMMA QT",
+      "category": "Modules",
+      "ref": "M1",
+      "value": "128 × 64 OLED",
+      "verified": false,
+      "defaultSide": "top",
+      "source": "https://github.com/adafruit/Adafruit-128x64-Monochrome-OLED-PCB/blob/master/Adafruit%200.96in%20128x64%20OLED%20STEMMA%20QT.brd",
+      "body": {
+        "kind": "module",
+        "w": 29.21,
+        "h": 31.75,
+        "z": 10.6
+      },
+      "label": {
+        "x": 0,
+        "y": 17.875,
+        "size": 1.2,
+        "visible": false
+      },
+      "mountingHoles": [],
+      "pads": [
+        {
+          "x": -8.89,
+          "y": -13.335,
+          "number": "JP2.1",
+          "bank": "JP2",
+          "signal": "SDA / MOSI",
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "both",
+          "net": null
+        },
+        {
+          "x": -6.35,
+          "y": -13.335,
+          "number": "JP2.2",
+          "bank": "JP2",
+          "signal": "SCL / SCK",
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null
+        },
+        {
+          "x": -3.81,
+          "y": -13.335,
+          "number": "JP2.3",
+          "bank": "JP2",
+          "signal": "DC / SA0",
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null
+        },
+        {
+          "x": -1.27,
+          "y": -13.335,
+          "number": "JP2.4",
+          "bank": "JP2",
+          "signal": "RESET",
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null
+        },
+        {
+          "x": 1.27,
+          "y": -13.335,
+          "number": "JP2.5",
+          "bank": "JP2",
+          "signal": "CS",
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null
+        },
+        {
+          "x": 3.81,
+          "y": -13.335,
+          "number": "JP2.6",
+          "bank": "JP2",
+          "signal": "3V / REGULATOR OUTPUT",
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null
+        },
+        {
+          "x": 6.35,
+          "y": -13.335,
+          "number": "JP2.7",
+          "bank": "JP2",
+          "signal": "VIN",
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null
+        },
+        {
+          "x": 8.89,
+          "y": -13.335,
+          "number": "JP2.8",
+          "bank": "JP2",
+          "signal": "GND",
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null
+        }
+      ],
+      "internalGroups": [],
+      "module": {
+        "schema": 1,
+        "model": "oled-096-qt",
+        "product": "326 · 0.96in 128x64 OLED STEMMA QT PCB",
+        "kind": "display",
+        "source": {
+          "url": "https://github.com/adafruit/Adafruit-128x64-Monochrome-OLED-PCB/blob/master/Adafruit%200.96in%20128x64%20OLED%20STEMMA%20QT.brd",
+          "repo": "adafruit/Adafruit-128x64-Monochrome-OLED-PCB",
+          "file": "Adafruit 0.96in 128x64 OLED STEMMA QT.brd",
+          "blob": "3e15e053ae726248d45ce16f08d1e68f96068661",
+          "license": "CC-BY-SA-3.0",
+          "attribution": "Adafruit Industries; Limor Fried / Ladyada and contributors"
+        },
+        "sourceDate": "2026-09-18",
+        "showBody": true,
+        "stackGap": 6,
+        "componentHeight": 3,
+        "reviewed": false,
+        "geometryStatus": "Source-referenced header centers; nominal mating pad sizes and host envelope. Not physically fit-tested.",
+        "sourceFace": "Display face (source X reflected)",
+        "holePattern": [
+          {
+            "x": 12.065,
+            "y": -13.335,
+            "drill": 2.5,
+            "slot": 0,
+            "rotation": 0
+          },
+          {
+            "x": -12.065,
+            "y": -13.335,
+            "drill": 2.5,
+            "slot": 0,
+            "rotation": 0
+          },
+          {
+            "x": 12.065,
+            "y": 13.335,
+            "drill": 2.5,
+            "slot": 0,
+            "rotation": 0
+          },
+          {
+            "x": -12.065,
+            "y": 13.335,
+            "drill": 2.5,
+            "slot": 0,
+            "rotation": 0
+          }
+        ],
+        "notes": [
+          "Display-face-up interface: source Eagle X is reflected because the display is on the reverse of the source electronics face. Pin identities are retained.",
+          "Eight-pin header only. The two on-module JST-SH sockets are NOT additional mating pads on your carrier. Leave room for cables.",
+          "Review the module solder-jumper settings for I²C or SPI, reset and address. 3V is not the VIN contact."
+        ]
+      },
+      "libraryId": "module-oled-096-qt",
+      "x": 21.605,
+      "y": 22.875,
+      "rotation": 0,
+      "side": "top",
+      "locked": true
+    }
+  ],
+  "nets": [],
+  "traces": [],
+  "vias": [],
+  "holes": [],
+  "cutouts": [],
+  "keepouts": [],
+  "zones": [],
+  "art": [],
+  "assets": [],
+  "profile": {
+    "id": "oshpark-2l",
+    "name": "OSH Park · 2 layer",
+    "verified": "2026-09-17",
+    "revision": 1,
+    "source": "https://docs.oshpark.com/services/two-layer/",
+    "minTrace": 0.1524,
+    "clearance": 0.1524,
+    "edge": 0.381,
+    "minDrill": 0.254,
+    "minRing": 0.127,
+    "minSlot": 0.508,
+    "minMaskWeb": 0.1016,
+    "minSilk": 0.127,
+    "maskExpansion": 0.075,
+    "minHoleGap": 0.127,
+    "minCutout": 1.01,
+    "minWidth": 6.35,
+    "minHeight": 6.35,
+    "maxWidth": 406.4,
+    "maxHeight": 558.8
+  },
+  "settings": {
+    "grid": 1.27,
+    "traceWidth": 0.4,
+    "viaDiameter": 0.9,
+    "viaDrill": 0.4,
+    "viaTented": false,
+    "zoneStep": 0.25,
+    "autoPlanes": true
+  },
+  "assumptions": [
+    {
+      "id": "assume_example_00010",
+      "text": "Two copper layers; through vias only. This layout does not verify circuit function.",
+      "status": "open"
+    },
+    {
+      "id": "assume_example_00012",
+      "text": "Module is source-referenced, not physically fit-tested. Verify revision, header mating, drills, stack height, component clearance and power requirements.",
+      "status": "open"
+    }
+  ],
+  "evidence": [],
+  "blockInstances": [],
+  "blockLibrary": [],
+  "baseline": null
+}

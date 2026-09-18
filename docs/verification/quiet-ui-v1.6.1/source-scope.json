@@ -1,0 +1,49 @@
+{
+  "unchanged_source_modules": [
+    "block-catalog.js",
+    "blocks.js",
+    "carriers.js",
+    "font.js",
+    "geometry.js",
+    "interchange.js",
+    "maker-parts.js",
+    "manufacturing.js",
+    "modules-renderer.js",
+    "modules.js",
+    "planes.js",
+    "platforms.js",
+    "renderer.js",
+    "router.js",
+    "vias.js",
+    "worker-entry.js"
+  ],
+  "changed_source_modules": [
+    "app.js",
+    "core.js",
+    "worker-source.js"
+  ],
+  "core_change": "Version string only; native schema remains 5.",
+  "runtime_sha256": {
+    "index.html": "aebc913403db531d92f999c9c8f0f3812c604adfa6c83cee85a0df8ae6d920a8",
+    "styles.css": "9ae7a3e162e932f96e1e6ffff6d5524286d2cee948ab657e0c145eea8cd2995c",
+    "src/worker-entry.js": "3023b368b26b93e0645a942171a0b5822f60451c66debafd93d7f9db0adf8ca1",
+    "src/planes.js": "caf7eb1a818cde1ac89d84ff332123a628c798a56c639be6d994cd8252cdb01a",
+    "src/blocks.js": "f234fa4dc112977ff9bbac04fead7f0cbb24487427ef5e4cd76343e6759129e1",
+    "src/interchange.js": "084aa905e63cc63e8410613d333481534d58328d57938f3d38fb23298eb97ebb",
+    "src/font.js": "1f616184275da07466fe189f6ebbff11c506044254ce41cba5af5ce82cf50074",
+    "src/geometry.js": "bef1dc59f2bfdbb2900b416f0ba66af5be89a0bd8a8e6075b3fe7a1ca43b89aa",
+    "src/modules-renderer.js": "72f6f46630d73e2e925793e3b89f923b36ee12dfa1320cd3f0ec17607d965265",
+    "src/vias.js": "7efc82536a4e95c016c1204908eeb8994e2f212be2ead0c92d8c24903a71fc6f",
+    "src/platforms.js": "ef875fd54915b5f5fee38c9927b12ff86e115aba50ea4216f6d48176b7d0c50c",
+    "src/carriers.js": "6aab618e4f3a3cf2545af742edc28819767cd9431e3fa06261f12715da93ded4",
+    "src/app.js": "52022da70214db24ee3bebf47d8d5f6ef2254a1d285529bad40b531427127d16",
+    "src/block-catalog.js": "e1e3bc67343eb341764075563df8406b472b41a52bef19f78dca8a77de177143",
+    "src/maker-parts.js": "38056b2e655490883e7427e262bb6cfc8c347a1706d01960d69f707e0be7c397",
+    "src/renderer.js": "0ca01b3a51f5f938f35d42109e7de6388b0cfa967189cfcd586e85294e61189c",
+    "src/router.js": "0dbd2c5e88aa0bf5ddfa08ac93d429f90f503d009792a30b8a38447da307ab7b",
+    "src/manufacturing.js": "53b16e1b25c2607a083e193c5f9663b47c8d74ace2bc8f40d18113c72f443167",
+    "src/worker-source.js": "37cafbe19db41c144830f5c8381d3e36c47132e5336d651b38110217dd35c23c",
+    "src/core.js": "c3547c82f1b04492d64a6bf5d87309054e37fd82d69bc6583d0170c384a70f9c",
+    "src/modules.js": "e4387b291c3c25a1411681c0a0ce73570ce2280f949818350198c3968a80f3c2"
+  }
+}

@@ -2,6 +2,8 @@
 
 These are editable software demonstrations, not manufacturer-approved reference designs.
 
+- `everyday-maker-sampler.json`: unconnected layout of 14 representative v1.4 parts. It is a visual/layout demonstration, not a complete circuit.
+- `uno-r3-shield-icsp.json`: Uno shield interface with six optional main-MCU ICSP contacts appended to the original 32 perimeter contacts. Check the physical host and mating connectors.
 - `polarity-and-silkscreen.json`: visual software proof of diode/LED/capacitor role labels, both-face text, drawings and filled image geometry. It is not a working circuit.
 - `power-ground-planes.json`: small software fixture with top +5V and bottom GND pours, a through-hole ground seed and a surface-mount ground attachment through a short trace and via. Imported pours refill automatically. This is a geometry demonstration, not a powered circuit.
 - `starter.json`: small through-hole learning board with explicit nets to route.

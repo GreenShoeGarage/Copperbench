@@ -1,12 +1,12 @@
 {
   "name": "copperbench",
-  "version": "1.3.1",
+  "version": "1.6.1",
   "private": true,
   "description": "Local-first, tactile two-layer PCB workbench",
   "scripts": {
     "start": "python3 tools/serve.py",
     "serve": "python3 tools/serve.py",
-    "test": "node tests/core.test.js && node tests/platforms.test.js && node tests/vias.test.js && node tests/planes.test.js && node tests/silkscreen.test.js",
+    "test": "node tests/core.test.js && node tests/platforms.test.js && node tests/vias.test.js && node tests/planes.test.js && node tests/silkscreen.test.js && node tests/maker.test.js && node tests/carriers.test.js && node tests/modules-blocks.test.js",
     "test:manufacturing": "python3 tests/verify_manufacturing.py",
     "test:browser": "python3 tests/browser_test.py",
     "test:packaging": "python3 -m unittest discover -s tests -p \"test_packaging.py\"",
@@ -18,7 +18,10 @@
     "test:platforms": "node tests/platforms.test.js",
     "test:vias": "node tests/vias.test.js",
     "test:planes": "node tests/planes.test.js",
-    "test:silkscreen": "node tests/silkscreen.test.js && python3 tests/verify_silkscreen.py"
+    "test:silkscreen": "node tests/silkscreen.test.js && python3 tests/verify_silkscreen.py",
+    "test:maker": "node tests/maker.test.js && python3 tests/verify_maker.py && python3 tests/maker_browser_test.py",
+    "test:modules": "node tests/modules-blocks.test.js && python3 tests/verify_modules_blocks.py && python3 tests/modules_blocks_browser_test.py",
+    "test:ui": "python3 tests/quiet_ui_browser_test.py"
   },
   "license": "MIT",
   "author": "Green Shoe Garage",

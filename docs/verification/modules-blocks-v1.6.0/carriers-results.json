@@ -1,0 +1,167 @@
+{
+  "version": "1.6.0",
+  "passed": 32,
+  "total": 32,
+  "results": [
+    {
+      "name": "Nine controller families add eighteen interfaces: 188 unique entries and old parts retained",
+      "pass": true,
+      "ms": 0
+    },
+    {
+      "name": "Every controller/role validates, has unassigned pins and round-trips embedded geometry",
+      "pass": true,
+      "ms": 24
+    },
+    {
+      "name": "Addon and carrier templates preserve identical top-view pin numbering and coordinates",
+      "pass": true,
+      "ms": 12
+    },
+    {
+      "name": "Four rotations / two flips preserve all embedded pins, holes and guards",
+      "pass": true,
+      "ms": 8
+    },
+    {
+      "name": "Pico and Pico 2 each map all 40 physical contacts with 17.78 mm row separation",
+      "pass": true,
+      "ms": 6
+    },
+    {
+      "name": "Nano physical contact 1 TX, 15 D12, 16 D13, 30 VIN and analog-only A6/A7",
+      "pass": true,
+      "ms": 1
+    },
+    {
+      "name": "ESP DevKitC V4 has exact bank labels, 38 contacts and WROOM GPIO16/17",
+      "pass": true,
+      "ms": 1
+    },
+    {
+      "name": "Feather has 16+12 contacts, correctly offset rows and no invented FREE-pin role",
+      "pass": true,
+      "ms": 1
+    },
+    {
+      "name": "XIAO variants retain distinct GPIO aliases and only the 14 header contacts",
+      "pass": true,
+      "ms": 1
+    },
+    {
+      "name": "Only PCB-antenna variants get default enforced copper guards; external XIAO does not",
+      "pass": true,
+      "ms": 34
+    },
+    {
+      "name": "Guards are attached derived geometry and move with the part, never separate saved objects",
+      "pass": true,
+      "ms": 1
+    },
+    {
+      "name": "Host and clearance display toggles never disable routing protection",
+      "pass": true,
+      "ms": 1
+    },
+    {
+      "name": "Copying a part creates independent constraints; deleting it leaves no orphan",
+      "pass": true,
+      "ms": 1
+    },
+    {
+      "name": "Both top and bottom manual paths reject guard crossings",
+      "pass": true,
+      "ms": 4
+    },
+    {
+      "name": "Via preview rejects both-face guard area even with auto-net disabled",
+      "pass": true,
+      "ms": 1
+    },
+    {
+      "name": "Imported copper under an enforced guard produces blocking DRC",
+      "pass": true,
+      "ms": 56
+    },
+    {
+      "name": "Two-face fills exclude the attached guard, and active seed copper remains",
+      "pass": true,
+      "ms": 1355
+    },
+    {
+      "name": "Guard disable is explicit, has a required reason, and remains a warning",
+      "pass": true,
+      "ms": 49
+    },
+    {
+      "name": "Malformed, oversized and unsupported constraint metadata is rejected",
+      "pass": true,
+      "ms": 8
+    },
+    {
+      "name": "Schema 1/2/3 migrate without inventing host data or changing old pad geometry",
+      "pass": true,
+      "ms": 2
+    },
+    {
+      "name": "Unknown embedded controller remains editable without a live library dependency",
+      "pass": true,
+      "ms": 1
+    },
+    {
+      "name": "All new templates have no initial copper errors and optionally omit mechanical holes",
+      "pass": true,
+      "ms": 319
+    },
+    {
+      "name": "Same-connector-face body conflicts are advisory; opposite face does not falsely collide",
+      "pass": true,
+      "ms": 150
+    },
+    {
+      "name": "USB access projection overlap produces an advisory without corrupting electrical rules",
+      "pass": true,
+      "ms": 54
+    },
+    {
+      "name": "Reserved contact assignment is warned, never silently joined",
+      "pass": true,
+      "ms": 34
+    },
+    {
+      "name": "Pin CSV preserves named contacts and user-net IDs, with spreadsheet escaping",
+      "pass": true,
+      "ms": 1
+    },
+    {
+      "name": "KiCad export flattens the current transformed guard into both copper-face keepouts",
+      "pass": true,
+      "ms": 6
+    },
+    {
+      "name": "Host, overlay and pin-caption visibility do not affect Gerber / drill output",
+      "pass": true,
+      "ms": 5
+    },
+    {
+      "name": "Mounted host drawings add no silkscreen until the user enables a real reference mark",
+      "pass": true,
+      "ms": 1
+    },
+    {
+      "name": "All 18 variants produce readable manufacturing layers and exact plated contact count",
+      "pass": true,
+      "ms": 85
+    },
+    {
+      "name": "Old Uno optional ICSP still appends without altering 32 perimeter contacts",
+      "pass": true,
+      "ms": 1
+    },
+    {
+      "name": "Plane connection helper can attach Pico ground without an unnecessary via",
+      "pass": true,
+      "ms": 692
+    }
+  ]
+}

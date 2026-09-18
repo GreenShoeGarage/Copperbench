@@ -1,22 +1,36 @@
-# Repository verification — COPPERBENCH v1.3.1
+# Repository verification — COPPERBENCH v1.6.1
 
-All **308 / 308** local regressions passed against the patched application:
-245 retained tests and 63 added polarity/silkscreen checks. Generated-runtime,
-source syntax, local-link, version and dependency-integrity checks passed too.
-See [the detailed record](TESTING.md) for exact scopes and frozen test logs.
+**547 / 547 checks passed in the separate extracted source tree:** 250 JavaScript
+engine/catalog checks, 110 separate Python/Shapely geometry checks, 174 Chromium
+workflows and 13 packaging checks. The same suites were exercised in the working
+tree. The final general-browser, syntax/integrity and packaging checks were
+repeated; repeat runs are not added to the count.
 
-The independent Python reader's former XOR bug is explicitly corrected. Previous
-passes do not establish old silkscreen correctness. New negative/positive Gerber
-contracts, independently derived clipping geometry and actual Canvas pixels guard
-against repeating the exporter/reader's shared defect.
+[Detailed record](TESTING.md) · [Fresh summary](verification/quiet-ui-v1.6.1/fresh-summary.json) ·
+[Fresh console](verification/quiet-ui-v1.6.1/fresh-tests.txt)
 
-The source ZIP includes the no-build app, portable edition, source, documentation,
-reviewed screenshots, editable examples, test suites and hidden GitHub workflows.
-The bundled golden Gerbers were regenerated with the corrected exporter. Transient
-outputs, .git directories and local environments do not enter release packages.
-Native schema remains 3. `tools/release.py` supplies SHA-256 checksums and fixed ZIP
-metadata/order for byte-reproducible packages from a fixed source tree.
+The extracted tree's `git status --porcelain` was empty after testing. Tests did
+not rewrite tracked source, examples or documentation images. Final screenshots,
+verification logs and release documentation were then reconciled between both
+trees. All non-documentation release inputs were byte-identical. Generated-file
+integrity and packaging checks were repeated after documentation reconciliation.
 
-No remote repository, Actions run, deployment or board order is claimed. Browser
-storage/downloads are test doubles; external CAM/manufacturer/physical acceptance
-is unverified. [Regenerate prior fabrication ZIPs](POLARITY_AND_SILKSCREEN.md).
+Rebuilding the reconciled source and extracted trees produced **byte-identical
+GitHub repository ZIP, static-site ZIP and portable HTML**. SHA-256 checksums
+accompany the downloads. This is local reproducibility evidence; GitHub Actions
+has not run in the user's account as part of this update.
+
+The source ZIP contains the no-build static app, self-contained portable edition,
+complete source, examples, documentation, screenshots, tests and hidden GitHub
+workflows. Transient test output, virtual environments and `.git` are excluded.
+No runtime dependency was added. Native schema remains 5, with the existing 193
+parts, six circuit blocks, vias, planes, carrier interfaces, polarity labels and
+manufacturing exporters retained. The core module changes only its app version;
+geometry, routing, catalogs and manufacturing modules are unchanged from v1.6.0.
+
+Browser suites use simulated storage and captured download blobs. A localhost
+navigation attempt was blocked by the managed browser before app startup. No
+browser policy was changed. Real-origin storage/downloads and hosted offline
+lifecycle, external CAM, manufacturer acceptance, connector fit, circuit operation
+and physical-board fabrication are not claimed. No remote repository, deployment
+or board order was changed.

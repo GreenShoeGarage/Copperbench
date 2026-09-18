@@ -1,0 +1,136 @@
+{
+  "version": "1.6.0",
+  "passed": 529,
+  "total": 529,
+  "trackedFilesUnchanged": true,
+  "nonDocumentationFilesCompared": 143,
+  "nonDocumentationFilesIdentical": true,
+  "suites": [
+    {
+      "file": "browser-results.json",
+      "passed": 20,
+      "total": 20
+    },
+    {
+      "file": "carrier-browser-results.json",
+      "passed": 17,
+      "total": 17
+    },
+    {
+      "file": "carrier-independent-results.json",
+      "passed": 21,
+      "total": 21
+    },
+    {
+      "file": "carriers-results.json",
+      "passed": 32,
+      "total": 32
+    },
+    {
+      "file": "core-results.json",
+      "passed": 32,
+      "total": 32
+    },
+    {
+      "file": "maker-browser-results.json",
+      "passed": 17,
+      "total": 17
+    },
+    {
+      "file": "maker-manufacturing-results.json",
+      "passed": 10,
+      "total": 10
+    },
+    {
+      "file": "maker-results.json",
+      "passed": 28,
+      "total": 28
+    },
+    {
+      "file": "manufacturing-results.json",
+      "passed": 12,
+      "total": 12
+    },
+    {
+      "file": "modules-blocks-browser-results.json",
+      "passed": 29,
+      "total": 29
+    },
+    {
+      "file": "modules-blocks-independent-results.json",
+      "passed": 16,
+      "total": 16
+    },
+    {
+      "file": "modules-blocks-results.json",
+      "passed": 47,
+      "total": 47
+    },
+    {
+      "file": "plane-browser-results.json",
+      "passed": 23,
+      "total": 23
+    },
+    {
+      "file": "plane-core-results.json",
+      "passed": 31,
+      "total": 31
+    },
+    {
+      "file": "plane-manufacturing-results.json",
+      "passed": 15,
+      "total": 15
+    },
+    {
+      "file": "platform-browser-results.json",
+      "passed": 13,
+      "total": 13
+    },
+    {
+      "file": "platform-manufacturing-results.json",
+      "passed": 12,
+      "total": 12
+    },
+    {
+      "file": "platform-results.json",
+      "passed": 23,
+      "total": 23
+    },
+    {
+      "file": "silkscreen-browser-results.json",
+      "passed": 16,
+      "total": 16
+    },
+    {
+      "file": "silkscreen-manufacturing-results.json",
+      "passed": 17,
+      "total": 17
+    },
+    {
+      "file": "silkscreen-results.json",
+      "passed": 30,
+      "total": 30
+    },
+    {
+      "file": "via-browser-results.json",
+      "passed": 21,
+      "total": 21
+    },
+    {
+      "file": "via-manufacturing-results.json",
+      "passed": 7,
+      "total": 7
+    },
+    {
+      "file": "via-results.json",
+      "passed": 27,
+      "total": 27
+    },
+    {
+      "file": "fresh-tests.txt",
+      "passed": 13,
+      "total": 13
+    }
+  ],
+  "scope": "Complete suite from separately extracted source ZIP. Final documentation and frozen verification records are reconciled afterward; runtime/source/tests/examples remain byte-identical."
+}

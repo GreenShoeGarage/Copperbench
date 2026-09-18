@@ -1,15 +1,142 @@
 # COPPERBENCH
 ### A PCB workbench that feels like a PCB.
 
-**Version 1.3.1 · Green Shoe Garage / Field Instruments · 17 September 2026**
+**Version 1.6.1 · Green Shoe Garage / Field Instruments · 18 September 2026**
 
-[Polarity & silkscreen fix](#polarity-and-silkscreen) · [Power & ground planes](#power-and-ground-planes) · [Create vias](#create-vias) · [HATs & shields](#hats-shields-and-carriers) · [Get started](#start-here) · [Publish to GitHub](docs/GITHUB.md) · [Deploy](docs/DEPLOYMENT.md) · [Verification](docs/TESTING.md) · [Contribute](CONTRIBUTING.md)
+[Quieter workbench](#new-in-v161--quieter-workbench) · [Modules & circuit blocks](#new-in-v16--modules-and-editable-circuits) · [Controller carriers](#controller-carriers) · [Everyday maker parts](#everyday-maker-parts) · [Polarity & silkscreen fix](#polarity-and-silkscreen) · [Power & ground planes](#power-and-ground-planes) · [Create vias](#create-vias) · [HATs & shields](#hats-shields-and-carriers) · [Get started](#start-here) · [Publish to GitHub](docs/GITHUB.md) · [Deploy](docs/DEPLOYMENT.md) · [Verification](docs/TESTING.md) · [Contribute](CONTRIBUTING.md)
 
 Put down a board. Place recognizable parts. Connect their leads. Shape the copper. Add your markings. Inspect the files you will send for fabrication.
 
 COPPERBENCH is a local-first, two-copper-layer PCB layout app with an editable, depth-rendered 3D workbench. **COPPERBENCH is the working title for this release.** The physical bodies are representative; pad geometry and the electrical connection model—not rendered pixels—drive routing, checking and manufacturing export.
 
-![The actual app: a small board routed by clicking component leads](docs/images/routed-bench.png)
+![COPPERBENCH v1.6.1 quiet workbench](docs/images/quiet-workbench.png)
+
+## New in v1.6.1 — quieter workbench
+
+The board is the focus. Removed the welcome overlay, canvas slogans, repeated
+instructions and duplicate empty-inspector statistics. Search is first in the
+parts drawer; a category selector replaces the filter-chip wall, and compact
+catalog buttons replace long promotional labels. Additional block and footprint
+actions live under **Library tools**.
+
+The idle Select tool has no instructional sentence. Active tools display a short
+next-step hint; the **?** beside the tool name opens complete instructions without
+cancelling the operation. Header **?** or **H** opens the full guide and shortcuts.
+Autosave, polarity, error/warning counts, clearance failures, confirmation dialogs
+and fabrication-export gates remain visible and operational. Native schema 5,
+the 193 parts and all six circuit blocks are unchanged.
+
+**Upgrade:** save a JSON backup and replace the complete hosted app folder, or
+replace the standalone HTML. No new schema migration is needed for v1.6 projects.
+See the [interface guide](docs/QUIET_WORKBENCH.md) and [verification record](docs/TESTING.md).
+
+
+## New in v1.6 — modules and editable circuits
+
+**Five specific module interfaces and six reusable circuit starters.** The component
+library now has **193 entries**; circuit blocks are a separate collection of editable
+parts, copper and net intent—not six opaque additional footprints.
+
+| Mount a purchased module | Build and edit a circuit |
+|---|---|
+| Adafruit BME280 original non-QT, DS3231 original eight-pin RTC, 0.96-inch OLED STEMMA QT, TB6612 breakout, and MPM3610 3.3 V module. | LED indicator, button with pull-up, I²C pull-ups, supply decoupling, DC-input topology, and RC signal filter. |
+| Named pins, source CAD/blob references, optional mounting holes, adjustable assumed underside gap, and distinct representative 3D bodies. | Pre-routed internal copper, editable values, explicit external ports, fresh nets per insertion, one-step undo, group transforms and fresh-net copies. |
+
+Open **Parts → Modules** or **Parts → Circuit blocks**. Module templates
+place the mating headers on your carrier; the illustrated host electronics do not
+leak into fabrication files. Block placement checks for new copper conflicts while
+preserving intentionally unrouted connections as design findings.
+
+Select a block member to **select the whole block, move/rotate/flip it with its
+copper, copy it with fresh nets, export it, or detach the grouping**. Save selected
+components/traces/vias to a project-local personal library; import and export
+`.copperblock.json` files for sharing. GND is not silently shared between copies.
+
+![Actual circuit-block placement and port mapping dialog](docs/images/block-picker.png)
+
+**Back up first. Native JSON now writes schema 5**, reading schemas 1–4 without
+replacing existing embedded footprints. Older app versions reject the new format.
+Source-referenced module interfaces and circuit examples are **not physically fit
+tested, simulated or electrically certified**. KiCad retains ordinary supported
+geometry/nets, not module metadata, block grouping or your personal library.
+
+[Module and block guide, source ledger and limits](docs/MODULES_AND_BLOCKS.md) ·
+[Verification](docs/TESTING.md) · [Compatibility](docs/COMPATIBILITY.md)
+
+## Controller carriers
+
+**v1.5 added 18 header-mounted interfaces for nine host selections; all are retained.** Start with **Parts → Controllers** or use
+**Examples → Controller carriers**. Choose Pico, Pico 2, Pico W, Pico 2 W, classic
+Nano A000005, ESP32-DevKitC V4 with WROOM-32E, the classic Feather interface,
+original XIAO RP2040 or XIAO ESP32C3. Each has a carrier and an add-on variant;
+Feather's add-on is a FeatherWing-style mating pattern.
+
+![Actual controller selection dialog](docs/images/carrier-picker.png)
+
+**Carrier clearances & fit** edits the assumed stack gap, USB/access projections,
+and attached two-face antenna guards where applicable. Copper guards affect
+manual routing, vias, automatic routing and plane fills. They follow moves,
+rotations and flips; hiding their overlay never disables them. A guard override
+requires a saved reason and remains a warning. XIAO ESP32C3 uses an external
+antenna reference; generic Feather cannot imply a radio-specific keepout.
+
+The footprint contacts are routable, named and included in manufacturing exports.
+Host drawings and clearance overlays are editor-only. Optional mounting holes
+are real NPTH geometry; ESP32 and XIAO do not receive invented holes. Existing
+parts, optional Uno ICSP, vias, planes, polarity labels and repaired silk exports
+are retained.
+
+**These are nominal source-referenced templates, not fit-tested assemblies.**
+The RF defaults are suggested projections, not complete manufacturer-qualified
+clearances. Header-to-edge offsets, holes, connector drill size, stack gap and
+cable access require actual-board review. The generic Feather entry provides
+common aliases, not universal MCU pin mappings. Direct castellated mounting is
+not included. See the [carrier guide and source/geometry qualifications](docs/CARRIERS.md).
+
+**Native JSON now writes schema 5; older editors will reject it.** Schemas 1–4
+open without silently replacing embedded footprints. Back up before upgrading.
+KiCad exports active RF guards as independent keepouts, not linked constraints;
+retain JSON as the lossless master. [18 starter projects](examples/carriers/) are
+included. These starters are interfaces, not complete functioning circuits.
+
+## Everyday maker parts
+
+**v1.4 adds 134 variants in 17 families, for 170 total library entries at that release.** Choose
+**Parts → Maker parts**, select a family and exact variant, and place it
+on the board. The drawer groups variants instead of listing hundreds of similar
+cards; search finds device names, manufacturers and pin functions directly.
+
+Connectors include header/socket/right-angle variants, screw terminals, JST
+PH/XH/SH, a Qwiic/STEMMA QT preset, and a selected GCT USB4085 USB-C connector.
+Controls include switches, potentiometers and an encoder. Power/assembly entries
+include regulators, protection templates, transistors, a relay, fuses, LEDs,
+jumpers and test loops. Named NE555, LM358, SN74HC595, MCP23017 and ULN2803C package
+entries expose actual pin functions instead of anonymous pad numbers.
+
+![The family and variant picker in the real application](docs/images/maker-picker.png)
+
+**Functional pin names** edits labels without changing pin numbers or nets.
+Selected parts show editor-only captions; existing A/K and +/− polarity symbols
+remain real printed silkscreen. **Part reference, notes & pin-map CSV** exposes
+source links, cautions and review status. Internally common terminals assigned to
+different nets produce a blocking finding—not an automatic merge.
+
+**Arduino Uno R3 now has an optional ICSP 2×3 header.** Enable it in the platform
+chooser or on an existing Uno part. Its six contacts are appended without changing
+the original 32 pins or connections. Existing default templates stay unchanged.
+
+**Important:** 134 variants does not mean 134 physically qualified purchased
+components. Some entries are named-device references; others are explicitly
+nominal parametric templates. Review the exact part, geometry, connector direction,
+pin mapping and drill/slot capability before fabrication. USB connectors and
+regulators are parts, not complete supporting circuits. No physical fit or
+manufacturer approval is claimed.
+
+Try **Examples → Everyday maker sampler**, or open
+[`everyday-maker-sampler.json`](examples/everyday-maker-sampler.json). The example
+is a layout sampler, not an electrically complete circuit. See the
+[Maker Parts guide](docs/MAKER_PARTS.md) and [catalog index](docs/MAKER_CATALOG.md).
+v1.6 uses schema 5 and retains these embedded footprints and checks. Back up before upgrading.
 
 ## Polarity and silkscreen
 
@@ -45,7 +172,7 @@ new tests explicitly reproduce the blank old output and require union semantics.
 The clipping replacement uses individual exterior trapezoids, not another nested
 frame. See the [fix guide](docs/POLARITY_AND_SILKSCREEN.md) and
 [verification record](docs/TESTING.md). **No external CAM acceptance or physical
-fabrication is claimed.** Native schema remains 3; save a JSON backup first.
+fabrication is claimed.** v1.6 writes schema 5; save a JSON backup first.
 
 ## Start here
 
@@ -87,7 +214,7 @@ are preserved. New traces carve clearance through managed pours and may split th
 Thermal pad connections, solid via connections, per-face settings, a view-only
 hide-fill control, manual refill and one-step undo are included. The local helper
 is non-exhaustive and the existing fill engine is conservative/cell-derived.
-**Native saves now use schema 3; back up older projects before upgrading.**
+**Native saves use schema 5 in v1.6; back up older projects before upgrading.**
 
 [Plane workflow and limitations](docs/PLANES.md) · [Verification](docs/TESTING.md)
 
@@ -138,7 +265,7 @@ board is claimed for this release.
 
 ## HATs, shields and carriers
 
-**Parts → HATs, shields & carriers** opens the new form-factor workflow. Select
+**Parts → HATs & shields** opens the new form-factor workflow. Select
 Raspberry Pi 40-pin, Arduino Uno R3, or Arduino MKR 28-pin; choose an add-on above
 the host or a carrier below it. **Start new board** creates an outlined blank
 with the mating pattern and optional mounting holes. **Place headers on current
@@ -155,7 +282,7 @@ from the selected interface's inspector.
 | Family | Included geometry | Important boundary |
 |---|---|---|
 | Raspberry Pi 40-pin | 2×20 connector; physical/BCM aliases; 65×56 mm legacy-style add-on blank; four optional mounts | Not Pico, Compute Module, original 26-pin Pi, or automatic HAT/HAT+ compliance. |
-| Arduino Uno R3 | All 32 perimeter contacts; grouped banks; exact 4.064 mm D8–D7 gap; classic-outline starter | ICSP 2×3 not included. Not a blanket Uno R4 / clone compatibility claim. |
+| Arduino Uno R3 | All 32 perimeter contacts; grouped banks; exact 4.064 mm D8–D7 gap; classic-outline starter | ICSP 2×3 is optional. Not a blanket Uno R4 / clone compatibility claim. |
 | Arduino MKR 28-pin | Two 14-pin rows; 2.54 mm pitch; 20.32 mm row spacing; shield and carrier roles | WiFi 1010 reference envelope/nominal offsets. Check the actual MKR variant, antenna and power pins. |
 
 ![Actual Uno R3 shield starter with named pins](docs/images/uno-shield.png)
@@ -170,8 +297,8 @@ All dimensions are **nominal, review-required**. Check the purchased connector,
 actual host, standoffs, power direction and clearances. See the detailed
 [form-factor reference and source register](docs/FORM_FACTORS.md).
 
-**Project format:** v1.3 reads schema-1/2 projects and writes schema 3. Older apps
-reject the new schema instead of silently dropping automatic plane semantics.
+**Project format:** v1.6 reads schema-1/2/3/4 projects and writes schema 5. Older apps
+reject the new schema instead of silently dropping block records or attached carrier constraints.
 Keep the original JSON backup before upgrading. Native JSON preserves platform
 aliases, linked mounting holes and plane behavior. KiCad subset exchange retains
 supported geometry, not all application metadata.
@@ -187,12 +314,15 @@ supported geometry, not all application metadata.
 
 For easy whole-board pours, use **Planes**. For manual local pours, draw a **Zone** (**Z**), assign its net and refill. Zones use conservative, vectorized cell fills, with optional thermal reliefs and island removal. Copper/board edits and project imports invalidate pours; stale pours block manufacturing export, even when diagnostic export is selected.
 
-## What is in v1.3.1
+## Established workbench features
 
 | Area | Implemented |
 |---|---|
 | Physical workbench | Shaded, depth-buffered representative 3D bodies; tilt, orbit, zoom, pan, top/bottom views, x-ray and pin picking. |
-| Parts | More than 30 generic packages, through-hole and SMD, footprint wizard, exact pad editing in Advanced mode, rotate/flip, duplicate, lock, pin table. |
+| Parts | 193 entries including five module interfaces, 18 controller interfaces and 134 maker variants, named device pins, source notes, optional Uno ICSP, footprint wizard, exact pad editing in Advanced mode, rotate/flip, duplicate, lock, pin table. |
+| Circuit blocks | Six routed starters, explicit external ports, isolated-net insertion/copy, editable members, group transforms, project-local library and standalone block JSON. |
+| Modules | Five source-identified mating interfaces with named pins, optional mounting holes, reference-only 3D bodies and nominal stack-gap review. |
+| Carriers | Nine added host selections, carrier/add-on templates, attached two-face RF guards, access references and editable stack-gap assumptions. |
 | Connection intent | Explicit nets independent of drawn copper, visible unrouted connections, guarded net merges, connector-pair mapping. |
 | Routing | Width-controlled manual polylines, selected two-/multi-pin A* proposals, keep/reject preview, through vias, cancellable worker jobs. |
 | Vias | Visible repeat-placement tool, net inheritance, pad/drill presets and exact sizes, mask tenting, live clearance checks, editable/lockable objects and a management table. |

@@ -1,0 +1,199 @@
+{
+  "app": "COPPERBENCH",
+  "schema": 5,
+  "version": "1.6.0",
+  "id": "board_example_00017",
+  "title": "Adafruit MPM3610 · 3.3 V module carrier",
+  "created": "2026-09-18T00:00:00.000Z",
+  "updated": "2026-09-18T00:00:00.000Z",
+  "board": {
+    "width": 24.16,
+    "height": 31.145,
+    "thickness": 1.6,
+    "shape": "rounded",
+    "radius": 3,
+    "points": [],
+    "color": "green"
+  },
+  "parts": [
+    {
+      "id": "p_example_00019",
+      "name": "Adafruit MPM3610 · 3.3 V module",
+      "category": "Modules",
+      "ref": "M1",
+      "value": "MPM3610 · 3V3",
+      "verified": false,
+      "defaultSide": "top",
+      "source": "https://github.com/adafruit/Adafruit-MPM3610-PCB/blob/master/Adafruit%20MPM3610.brd",
+      "body": {
+        "kind": "module",
+        "w": 10.16,
+        "h": 17.145,
+        "z": 11.6
+      },
+      "label": {
+        "x": 0,
+        "y": 10.5725,
+        "size": 1.2,
+        "visible": false
+      },
+      "mountingHoles": [],
+      "pads": [
+        {
+          "x": 3.81,
+          "y": 6.0325,
+          "number": "JP1.1",
+          "bank": "JP1",
+          "signal": "EN",
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "both",
+          "net": null
+        },
+        {
+          "x": 1.27,
+          "y": 6.0325,
+          "number": "JP1.2",
+          "bank": "JP1",
+          "signal": "VIN",
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null
+        },
+        {
+          "x": -1.27,
+          "y": 6.0325,
+          "number": "JP1.3",
+          "bank": "JP1",
+          "signal": "3V3 / OUTPUT",
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null
+        },
+        {
+          "x": -3.81,
+          "y": 6.0325,
+          "number": "JP1.4",
+          "bank": "JP1",
+          "signal": "GND",
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null
+        }
+      ],
+      "internalGroups": [],
+      "module": {
+        "schema": 1,
+        "model": "mpm3610-33",
+        "product": "4683 · 3.3 V output · revision A PCB",
+        "kind": "converter",
+        "source": {
+          "url": "https://github.com/adafruit/Adafruit-MPM3610-PCB/blob/master/Adafruit%20MPM3610.brd",
+          "repo": "adafruit/Adafruit-MPM3610-PCB",
+          "file": "Adafruit MPM3610.brd",
+          "blob": "3127bb5a8e53b0ef52141bac69a74f3eaf23193d",
+          "license": "CC-BY-SA-3.0",
+          "attribution": "Adafruit Industries; Limor Fried / Ladyada and contributors"
+        },
+        "sourceDate": "2026-09-18",
+        "showBody": true,
+        "stackGap": 6,
+        "componentHeight": 4,
+        "reviewed": false,
+        "geometryStatus": "Source-referenced header centers; nominal mating pad sizes and host envelope. Not physically fit-tested.",
+        "sourceFace": "Source Eagle top/component face",
+        "holePattern": [
+          {
+            "x": 0,
+            "y": -6.0325,
+            "drill": 2.5,
+            "slot": 0,
+            "rotation": 0
+          }
+        ],
+        "notes": [
+          "This entry names the 3.3 V assembled module, not the 5 V feedback-resistor variant and not a bare MPM3610 IC.",
+          "Verify the purchased module output and permitted input range before connecting it. EN is a control input, not a power contact.",
+          "Review cooling, load transients and connector/trace ratings. No simulation or current-carrying guarantee is provided."
+        ]
+      },
+      "libraryId": "module-mpm3610-33",
+      "x": 12.08,
+      "y": 15.5725,
+      "rotation": 0,
+      "side": "top",
+      "locked": true
+    }
+  ],
+  "nets": [],
+  "traces": [],
+  "vias": [],
+  "holes": [],
+  "cutouts": [],
+  "keepouts": [],
+  "zones": [],
+  "art": [],
+  "assets": [],
+  "profile": {
+    "id": "oshpark-2l",
+    "name": "OSH Park · 2 layer",
+    "verified": "2026-09-17",
+    "revision": 1,
+    "source": "https://docs.oshpark.com/services/two-layer/",
+    "minTrace": 0.1524,
+    "clearance": 0.1524,
+    "edge": 0.381,
+    "minDrill": 0.254,
+    "minRing": 0.127,
+    "minSlot": 0.508,
+    "minMaskWeb": 0.1016,
+    "minSilk": 0.127,
+    "maskExpansion": 0.075,
+    "minHoleGap": 0.127,
+    "minCutout": 1.01,
+    "minWidth": 6.35,
+    "minHeight": 6.35,
+    "maxWidth": 406.4,
+    "maxHeight": 558.8
+  },
+  "settings": {
+    "grid": 1.27,
+    "traceWidth": 0.4,
+    "viaDiameter": 0.9,
+    "viaDrill": 0.4,
+    "viaTented": false,
+    "zoneStep": 0.25,
+    "autoPlanes": true
+  },
+  "assumptions": [
+    {
+      "id": "assume_example_00018",
+      "text": "Two copper layers; through vias only. This layout does not verify circuit function.",
+      "status": "open"
+    },
+    {
+      "id": "assume_example_00020",
+      "text": "Module is source-referenced, not physically fit-tested. Verify revision, header mating, drills, stack height, component clearance and power requirements.",
+      "status": "open"
+    }
+  ],
+  "evidence": [],
+  "blockInstances": [],
+  "blockLibrary": [],
+  "baseline": null
+}

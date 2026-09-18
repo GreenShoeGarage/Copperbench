@@ -4,6 +4,7 @@ import json
 import re
 import shutil
 import sys
+import subprocess
 import tempfile
 import unittest
 import zipfile
@@ -34,7 +35,7 @@ class PackagingTests(unittest.TestCase):
     def test_embedded_worker_is_current(self):
         text = builder.generate()['src/worker-source.js'].decode()
         worker = json.loads(text.split('window.CB_WORKER_SOURCE=', 1)[1].strip().rstrip(';'))
-        for name in ['core.js', 'geometry.js', 'font.js', 'platforms.js', 'router.js', 'planes.js', 'worker-entry.js']:
+        for name in ['core.js', 'geometry.js', 'font.js', 'platforms.js', 'maker-parts.js', 'carriers.js', 'router.js', 'planes.js', 'worker-entry.js']:
             self.assertIn((ROOT/'src'/name).read_text(encoding='utf-8'), worker)
 
     def test_cache_revision_tracks_contents(self):
@@ -90,6 +91,40 @@ class PackagingTests(unittest.TestCase):
                     self.assertTrue(name.startswith('copperbench/'))
                     self.assertNotIn('..', Path(name).parts)
                     self.assertFalse(name.startswith('/'))
+
+    def test_v16_source_static_and_portable_include_module_notices(self):
+        self.assertIn('MODULE-NOTICES.txt', release.SOURCE_FILES)
+        self.assertIn('MODULE-NOTICES.txt', release.SITE_FILES)
+        portable=builder.generate()['COPPERBENCH-portable.html'].decode()
+        self.assertIn('Creative Commons Attribution-ShareAlike 3.0', portable)
+        self.assertIn('Original supplier README: Adafruit-MPM3610-PCB', portable)
+
+    def test_v16_runtime_and_worker_load_module_and_block_engines(self):
+        index=(ROOT/'index.html').read_text()
+        for name in ['modules.js','block-catalog.js','blocks.js','modules-renderer.js']:
+            self.assertIn('src/'+name, index)
+        worker=builder.generate()['src/worker-source.js'].decode()
+        for token in ['M.models=', 'CB.BLOCK_CATALOG', 'B.insert=function']:
+            self.assertIn(token, worker)
+        self.assertLess(index.index('src/modules.js'),index.index('src/blocks.js'))
+        self.assertLess(index.index('src/blocks.js'),index.index('src/app.js'))
+
+    def test_v16_examples_have_distinct_board_and_block_file_types(self):
+        blocks=list((ROOT/'examples/blocks').glob('*.copperblock.json'))
+        self.assertEqual(len(blocks),6)
+        for path in blocks:
+            data=json.loads(path.read_text());self.assertEqual(data['app'],'COPPERBENCH-BLOCK')
+            self.assertEqual(data['schema'],1);self.assertGreater(len(data['parts']),0)
+        for path in (ROOT/'examples/modules').glob('*.json'):
+            data=json.loads(path.read_text());self.assertEqual(data['app'],'COPPERBENCH')
+            self.assertEqual(data['schema'],5)
+
+    def test_v16_block_catalog_rebuild_is_byte_identical_in_temporary_tree(self):
+        with tempfile.TemporaryDirectory() as directory:
+            temp=Path(directory);shutil.copytree(ROOT/'src',temp/'src')
+            (temp/'tools').mkdir();shutil.copyfile(ROOT/'tools/build_blocks.js',temp/'tools/build_blocks.js')
+            subprocess.run(['node',str(temp/'tools/build_blocks.js')],check=True,capture_output=True)
+            self.assertEqual((ROOT/'src/block-catalog.js').read_bytes(),(temp/'src/block-catalog.js').read_bytes())
 
 
 if __name__ == '__main__':

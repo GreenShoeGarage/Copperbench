@@ -1,0 +1,37 @@
+{
+  "version": "1.6.1",
+  "date": "2026-09-18T19:00:36.504520+00:00",
+  "passed": 7,
+  "total": 7,
+  "scope": "Independent Python/Shapely parser; literal single-via coordinates and diameters. No manufacturer upload or physical fabrication.",
+  "results": [
+    {
+      "name": "open: one plated drill at the literal expected center",
+      "pass": true
+    },
+    {
+      "name": "open: identical 1.2 mm copper on both faces, no bottom mirror",
+      "pass": true
+    },
+    {
+      "name": "open: mask opening follows tenting on both faces",
+      "pass": true
+    },
+    {
+      "name": "tented: one plated drill at the literal expected center",
+      "pass": true
+    },
+    {
+      "name": "tented: identical 1.2 mm copper on both faces, no bottom mirror",
+      "pass": true
+    },
+    {
+      "name": "tented: mask opening follows tenting on both faces",
+      "pass": true
+    },
+    {
+      "name": "Tenting changes mask only, not copper or plated-drill bytes",
+      "pass": true
+    }
+  ]
+}

@@ -4,14 +4,15 @@
 (function(root){
 'use strict';
 const C=root.CB=root.CB||{};
-C.VERSION='1.3.1'; C.SCHEMA=3; C.EPS=.003;
+C.VERSION='1.6.1'; C.SCHEMA=5; C.EPS=.003;
 C.q=v=>Math.round(Number(v)*10000)/10000;
 C.uid=(prefix='id')=>prefix+'_'+(typeof crypto!=='undefined'&&crypto.randomUUID?crypto.randomUUID().replace(/-/g,'').slice(0,12):Math.random().toString(36).slice(2,14));
 C.clone=o=>JSON.parse(JSON.stringify(o));
 C.clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 C.esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 C.PROFILE={id:'oshpark-2l',name:'OSH Park · 2 layer',verified:'2026-09-17',revision:1,source:'https://docs.oshpark.com/services/two-layer/',minTrace:.1524,clearance:.1524,edge:.381,minDrill:.254,minRing:.127,minSlot:.508,minMaskWeb:.1016,minSilk:.127,maskExpansion:.075,minHoleGap:.127,minCutout:1.01,minWidth:6.35,minHeight:6.35,maxWidth:406.4,maxHeight:558.8};
-C.blank=()=>({app:'COPPERBENCH',schema:C.SCHEMA,version:C.VERSION,id:C.uid('board'),title:'Untitled board',created:new Date().toISOString(),updated:new Date().toISOString(),board:{width:80,height:55,thickness:1.6,shape:'rounded',radius:3,points:[],color:'green'},parts:[],nets:[],traces:[],vias:[],holes:[],cutouts:[],keepouts:[],zones:[],art:[],assets:[],profile:C.clone(C.PROFILE),settings:{grid:1.27,traceWidth:.4,viaDiameter:.9,viaDrill:.4,viaTented:false,zoneStep:.25,autoPlanes:true},assumptions:[{id:C.uid('assume'),text:'Two copper layers; through vias only. This layout does not verify circuit function.',status:'open'}],evidence:[],baseline:null});
+C.keepouts=doc=>doc.keepouts;
+C.blank=()=>({app:'COPPERBENCH',schema:C.SCHEMA,version:C.VERSION,id:C.uid('board'),title:'Untitled board',created:new Date().toISOString(),updated:new Date().toISOString(),board:{width:80,height:55,thickness:1.6,shape:'rounded',radius:3,points:[],color:'green'},parts:[],nets:[],traces:[],vias:[],holes:[],cutouts:[],keepouts:[],zones:[],art:[],assets:[],profile:C.clone(C.PROFILE),settings:{grid:1.27,traceWidth:.4,viaDiameter:.9,viaDrill:.4,viaTented:false,zoneStep:.25,autoPlanes:true},assumptions:[{id:C.uid('assume'),text:'Two copper layers; through vias only. This layout does not verify circuit function.',status:'open'}],evidence:[],blockInstances:[],blockLibrary:[],baseline:null});
 const pad=(n,x,y,w=1.8,h=w,drill=.9,shape='circle')=>({number:String(n),x,y,w,h,drill,slot:0,shape,layers:drill?'both':'top',net:null});
 const foot=(id,name,category,body,pads,extra={})=>({id,name,category,body,pads,ref:'U',value:name,source:'Parametric geometry; check against the selected component datasheet.',verified:false,...extra});
 C.LIB=[];
@@ -67,8 +68,8 @@ C.reference=(doc,id)=>{const p=C.getPad(doc,id);return p?p.ref+'.'+p.pin:id;};
 C.snapshot=doc=>{const s=C.clone(doc);s.baseline=null;return s;};
 C.compare=(doc,base)=>{if(!base)return[];let out=[];for(const key of ['parts','traces','vias','holes','cutouts','keepouts','zones','art','nets']){let a=new Map((base[key]||[]).map(x=>[x.id,JSON.stringify(x)])),b=new Map((doc[key]||[]).map(x=>[x.id,JSON.stringify(x)]));for(let [id,v] of b)if(!a.has(id))out.push({kind:'Added',group:key,id});else if(v!==a.get(id))out.push({kind:'Changed',group:key,id});for(let id of a.keys())if(!b.has(id))out.push({kind:'Removed',group:key,id});}if(JSON.stringify(doc.board)!==JSON.stringify(base.board))out.push({kind:'Changed',group:'board',id:'board'});if(JSON.stringify(doc.profile)!==JSON.stringify(base.profile))out.push({kind:'Changed',group:'rules',id:'profile'});return out;};
 C.validateDoc=function(input){
- const d=C.clone(input);if(!d||d.app!=='COPPERBENCH'||![1,2,3].includes(d.schema))throw Error('Unsupported document. Use a COPPERBENCH schema-1, schema-2 or schema-3 JSON project.');
- d.schema=C.SCHEMA;d.version=C.VERSION; // Older readers must reject schema 3 rather than losing managed board-plane behavior.
+ const d=C.clone(input);if(!d||d.app!=='COPPERBENCH'||![1,2,3,4,5].includes(d.schema))throw Error('Unsupported document. Use a COPPERBENCH schema-1, schema-2, schema-3, schema-4 or schema-5 JSON project.');
+ d.schema=C.SCHEMA;d.version=C.VERSION; // Older readers must reject schema 5 rather than losing circuit-block records and personal libraries.
  const ids=new Set(), checkId=x=>{if(typeof x.id!=='string'||!x.id||ids.has(x.id))throw Error('Missing or duplicate object identity.');ids.add(x.id);};
  const num=(v,a=-10000,b=10000)=>{if(typeof v!=='number'||!Number.isFinite(v)||v<a||v>b)throw Error('Invalid or out-of-range geometry.');};
  const xy=p=>{num(p.x);num(p.y);}; const pts=p=>{if(!Array.isArray(p)||p.length>30000)throw Error('Too many or missing polygon vertices.');p.forEach(xy);};

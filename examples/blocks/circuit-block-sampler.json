@@ -1,0 +1,2361 @@
+{
+  "app": "COPPERBENCH",
+  "schema": 5,
+  "version": "1.6.0",
+  "id": "board_example_00028",
+  "title": "Circuit blocks · six editable starting points",
+  "created": "2026-09-18T00:00:00.000Z",
+  "updated": "2026-09-18T00:00:00.000Z",
+  "board": {
+    "width": 156,
+    "height": 105,
+    "thickness": 1.6,
+    "shape": "rounded",
+    "radius": 3,
+    "points": [],
+    "color": "green",
+    "outline": [
+      {
+        "x": 0,
+        "y": 0
+      },
+      {
+        "x": 156,
+        "y": 0
+      },
+      {
+        "x": 156,
+        "y": 105
+      },
+      {
+        "x": 0,
+        "y": 105
+      }
+    ]
+  },
+  "parts": [
+    {
+      "id": "p_example_00036",
+      "name": "Header · 1 × 2",
+      "category": "Connectors",
+      "body": {
+        "kind": "header",
+        "w": 5.08,
+        "h": 2.54,
+        "z": 5
+      },
+      "pads": [
+        {
+          "number": "1",
+          "x": -1.27,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "both",
+          "net": "n_example_00033"
+        },
+        {
+          "number": "2",
+          "x": 1.27,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n_example_00035"
+        }
+      ],
+      "ref": "J1",
+      "value": "DRIVE / RETURN",
+      "source": "Parametric geometry; check against the selected component datasheet.",
+      "verified": false,
+      "libraryId": "header2",
+      "x": 13,
+      "y": 23,
+      "rotation": 90,
+      "side": "top",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 2.4699999999999998,
+        "size": 1,
+        "visible": true
+      }
+    },
+    {
+      "id": "p_example_00037",
+      "name": "Resistor · axial 7.62",
+      "category": "Through-hole",
+      "body": {
+        "kind": "resistor",
+        "w": 6,
+        "h": 2.4,
+        "z": 2.4
+      },
+      "pads": [
+        {
+          "number": "1",
+          "x": -3.81,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 0.9,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n_example_00033"
+        },
+        {
+          "number": "2",
+          "x": 3.81,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 0.9,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n_example_00034"
+        }
+      ],
+      "ref": "R1",
+      "value": "1k",
+      "source": "Parametric geometry; check against the selected component datasheet.",
+      "verified": false,
+      "libraryId": "r-axial",
+      "x": 23,
+      "y": 17,
+      "rotation": 0,
+      "side": "top",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 2.4,
+        "size": 1,
+        "visible": true
+      }
+    },
+    {
+      "id": "p_example_00038",
+      "name": "LED · 5 mm",
+      "category": "Through-hole",
+      "body": {
+        "kind": "led",
+        "w": 5,
+        "h": 5,
+        "z": 7
+      },
+      "pads": [
+        {
+          "number": "K",
+          "x": -1.27,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 0.9,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n_example_00035",
+          "polarity": "cathode"
+        },
+        {
+          "number": "A",
+          "x": 1.27,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 0.9,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n_example_00034",
+          "polarity": "anode"
+        }
+      ],
+      "ref": "D1",
+      "value": "LED",
+      "source": "Parametric geometry; check against the selected component datasheet.",
+      "verified": false,
+      "appearance": "#f06945",
+      "libraryId": "led5",
+      "x": 34,
+      "y": 26,
+      "rotation": 0,
+      "side": "top",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 3.7,
+        "size": 1,
+        "visible": true
+      }
+    },
+    {
+      "id": "p_example_00048",
+      "name": "Header · 1 × 3",
+      "category": "Connectors",
+      "body": {
+        "kind": "header",
+        "w": 7.62,
+        "h": 2.54,
+        "z": 5
+      },
+      "pads": [
+        {
+          "number": "1",
+          "x": -2.54,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "both",
+          "net": "n_example_00045"
+        },
+        {
+          "number": "2",
+          "x": 0,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n_example_00046"
+        },
+        {
+          "number": "3",
+          "x": 2.54,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n_example_00047"
+        }
+      ],
+      "ref": "J2",
+      "value": "VCC / SIGNAL / GND",
+      "source": "Parametric geometry; check against the selected component datasheet.",
+      "verified": false,
+      "libraryId": "header3",
+      "x": 65,
+      "y": 23,
+      "rotation": 90,
+      "side": "top",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 2.4699999999999998,
+        "size": 1,
+        "visible": true
+      }
+    },
+    {
+      "id": "p_example_00049",
+      "name": "R · 0805",
+      "category": "Surface-mount",
+      "body": {
+        "kind": "smd-resistor",
+        "w": 2,
+        "h": 1.25,
+        "z": 0.7
+      },
+      "pads": [
+        {
+          "number": "1",
+          "x": -0.95,
+          "y": 0,
+          "w": 1,
+          "h": 1.4,
+          "drill": 0,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "top",
+          "net": "n_example_00045"
+        },
+        {
+          "number": "2",
+          "x": 0.95,
+          "y": 0,
+          "w": 1,
+          "h": 1.4,
+          "drill": 0,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "top",
+          "net": "n_example_00046"
+        }
+      ],
+      "ref": "R2",
+      "value": "10k",
+      "source": "Parametric geometry; check against the selected component datasheet.",
+      "verified": false,
+      "libraryId": "R0805",
+      "x": 73,
+      "y": 16,
+      "rotation": 90,
+      "side": "top",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 1.825,
+        "size": 1,
+        "visible": true
+      }
+    },
+    {
+      "id": "p_example_00050",
+      "name": "Pushbutton · 6 mm · 4 leads",
+      "category": "Controls",
+      "ref": "SW1",
+      "value": "Momentary NO",
+      "body": {
+        "kind": "switch",
+        "w": 6,
+        "h": 6,
+        "z": 5
+      },
+      "pads": [
+        {
+          "number": "1",
+          "x": -3.25,
+          "y": -2.25,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 0.9,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n_example_00046",
+          "signal": "Contact A1"
+        },
+        {
+          "number": "2",
+          "x": -3.25,
+          "y": 2.25,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 0.9,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n_example_00046",
+          "signal": "Contact A2"
+        },
+        {
+          "number": "3",
+          "x": 3.25,
+          "y": -2.25,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 0.9,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n_example_00047",
+          "signal": "Contact B1"
+        },
+        {
+          "number": "4",
+          "x": 3.25,
+          "y": 2.25,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 0.9,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n_example_00047",
+          "signal": "Contact B2"
+        }
+      ],
+      "verified": false,
+      "source": "COPPERBENCH parametric template. No manufacturer footprint is claimed.",
+      "catalog": {
+        "schema": 1,
+        "family": "Switches",
+        "variant": "6 mm momentary / 4 leads",
+        "manufacturer": "",
+        "mpn": "",
+        "sourceDate": "2026-09-18",
+        "sources": [],
+        "notes": [
+          "Nominal parametric pattern, not a universal manufacturer footprint. Match pitch, hole diameter, pin order, body and mating clearance to the actual component.",
+          "Assumed common pairs: left pair 1–2, right pair 3–4. Verify actual switch with a continuity meter. A/B is momentary, not automatically joined."
+        ],
+        "geometryStatus": "parametric-review-required",
+        "pinNamesEdited": false,
+        "reviewed": false
+      },
+      "internalGroups": [
+        [
+          "1",
+          "2"
+        ],
+        [
+          "3",
+          "4"
+        ]
+      ],
+      "libraryId": "maker-button-6",
+      "x": 81,
+      "y": 23,
+      "rotation": 0,
+      "side": "top",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 4.2,
+        "size": 1,
+        "visible": true
+      }
+    },
+    {
+      "id": "p_example_00064",
+      "name": "Header · 1 × 4",
+      "category": "Connectors",
+      "body": {
+        "kind": "header",
+        "w": 10.16,
+        "h": 2.54,
+        "z": 5
+      },
+      "pads": [
+        {
+          "number": "1",
+          "x": -3.81,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "both",
+          "net": "n_example_00060"
+        },
+        {
+          "number": "2",
+          "x": -1.27,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n_example_00061"
+        },
+        {
+          "number": "3",
+          "x": 1.27,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n_example_00062"
+        },
+        {
+          "number": "4",
+          "x": 3.81,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n_example_00063"
+        }
+      ],
+      "ref": "J3",
+      "value": "VCC / GND / SCL / SDA",
+      "source": "Parametric geometry; check against the selected component datasheet.",
+      "verified": false,
+      "libraryId": "header4",
+      "x": 119,
+      "y": 23,
+      "rotation": 90,
+      "side": "top",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 2.4699999999999998,
+        "size": 1,
+        "visible": true
+      }
+    },
+    {
+      "id": "p_example_00065",
+      "name": "R · 0805",
+      "category": "Surface-mount",
+      "body": {
+        "kind": "smd-resistor",
+        "w": 2,
+        "h": 1.25,
+        "z": 0.7
+      },
+      "pads": [
+        {
+          "number": "1",
+          "x": -0.95,
+          "y": 0,
+          "w": 1,
+          "h": 1.4,
+          "drill": 0,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "top",
+          "net": "n_example_00060"
+        },
+        {
+          "number": "2",
+          "x": 0.95,
+          "y": 0,
+          "w": 1,
+          "h": 1.4,
+          "drill": 0,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "top",
+          "net": "n_example_00062"
+        }
+      ],
+      "ref": "R3",
+      "value": "4.7k",
+      "source": "Parametric geometry; check against the selected component datasheet.",
+      "verified": false,
+      "libraryId": "R0805",
+      "x": 128,
+      "y": 19,
+      "rotation": 90,
+      "side": "top",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 1.825,
+        "size": 1,
+        "visible": true
+      }
+    },
+    {
+      "id": "p_example_00066",
+      "name": "R · 0805",
+      "category": "Surface-mount",
+      "body": {
+        "kind": "smd-resistor",
+        "w": 2,
+        "h": 1.25,
+        "z": 0.7
+      },
+      "pads": [
+        {
+          "number": "1",
+          "x": -0.95,
+          "y": 0,
+          "w": 1,
+          "h": 1.4,
+          "drill": 0,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "top",
+          "net": "n_example_00060"
+        },
+        {
+          "number": "2",
+          "x": 0.95,
+          "y": 0,
+          "w": 1,
+          "h": 1.4,
+          "drill": 0,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "top",
+          "net": "n_example_00063"
+        }
+      ],
+      "ref": "R4",
+      "value": "4.7k",
+      "source": "Parametric geometry; check against the selected component datasheet.",
+      "verified": false,
+      "libraryId": "R0805",
+      "x": 134,
+      "y": 19,
+      "rotation": 90,
+      "side": "top",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 1.825,
+        "size": 1,
+        "visible": true
+      }
+    },
+    {
+      "id": "p_example_00067",
+      "name": "C · 0805",
+      "category": "Surface-mount",
+      "body": {
+        "kind": "smd-cap",
+        "w": 2,
+        "h": 1.25,
+        "z": 0.7
+      },
+      "pads": [
+        {
+          "number": "1",
+          "x": -0.95,
+          "y": 0,
+          "w": 1,
+          "h": 1.4,
+          "drill": 0,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "top",
+          "net": "n_example_00060"
+        },
+        {
+          "number": "2",
+          "x": 0.95,
+          "y": 0,
+          "w": 1,
+          "h": 1.4,
+          "drill": 0,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "top",
+          "net": "n_example_00061"
+        }
+      ],
+      "ref": "C1",
+      "value": "100nF",
+      "source": "Parametric geometry; check against the selected component datasheet.",
+      "verified": false,
+      "libraryId": "C0805",
+      "x": 134,
+      "y": 27,
+      "rotation": 0,
+      "side": "top",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 1.825,
+        "size": 1,
+        "visible": true
+      }
+    },
+    {
+      "id": "p_example_00083",
+      "name": "Header · 1 × 2",
+      "category": "Connectors",
+      "body": {
+        "kind": "header",
+        "w": 5.08,
+        "h": 2.54,
+        "z": 5
+      },
+      "pads": [
+        {
+          "number": "1",
+          "x": -1.27,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "both",
+          "net": "n_example_00081"
+        },
+        {
+          "number": "2",
+          "x": 1.27,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n_example_00082"
+        }
+      ],
+      "ref": "J4",
+      "value": "VCC / GND",
+      "source": "Parametric geometry; check against the selected component datasheet.",
+      "verified": false,
+      "libraryId": "header2",
+      "x": 25,
+      "y": 68,
+      "rotation": 0,
+      "side": "top",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 2.4699999999999998,
+        "size": 1,
+        "visible": true
+      }
+    },
+    {
+      "id": "p_example_00084",
+      "name": "C · 0805",
+      "category": "Surface-mount",
+      "body": {
+        "kind": "smd-cap",
+        "w": 2,
+        "h": 1.25,
+        "z": 0.7
+      },
+      "pads": [
+        {
+          "number": "1",
+          "x": -0.95,
+          "y": 0,
+          "w": 1,
+          "h": 1.4,
+          "drill": 0,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "top",
+          "net": "n_example_00081"
+        },
+        {
+          "number": "2",
+          "x": 0.95,
+          "y": 0,
+          "w": 1,
+          "h": 1.4,
+          "drill": 0,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "top",
+          "net": "n_example_00082"
+        }
+      ],
+      "ref": "C2",
+      "value": "100nF",
+      "source": "Parametric geometry; check against the selected component datasheet.",
+      "verified": false,
+      "libraryId": "C0805",
+      "x": 20,
+      "y": 75,
+      "rotation": 0,
+      "side": "top",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 1.825,
+        "size": 1,
+        "visible": true
+      }
+    },
+    {
+      "id": "p_example_00085",
+      "name": "Capacitor · radial 2.5",
+      "category": "Through-hole",
+      "body": {
+        "kind": "capacitor",
+        "w": 5,
+        "h": 5,
+        "z": 7.5
+      },
+      "pads": [
+        {
+          "number": "+",
+          "x": -1.25,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 0.9,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n_example_00081",
+          "polarity": "positive"
+        },
+        {
+          "number": "-",
+          "x": 1.25,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 0.9,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n_example_00082",
+          "polarity": "negative"
+        }
+      ],
+      "ref": "C3",
+      "value": "10uF",
+      "source": "Parametric geometry; check against the selected component datasheet.",
+      "verified": false,
+      "libraryId": "cap-radial",
+      "x": 30,
+      "y": 75,
+      "rotation": 0,
+      "side": "top",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 3.7,
+        "size": 1,
+        "visible": true
+      }
+    },
+    {
+      "id": "p_example_00099",
+      "name": "Header · 1 × 2",
+      "category": "Connectors",
+      "body": {
+        "kind": "header",
+        "w": 5.08,
+        "h": 2.54,
+        "z": 5
+      },
+      "pads": [
+        {
+          "number": "1",
+          "x": -1.27,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "both",
+          "net": "n_example_00095"
+        },
+        {
+          "number": "2",
+          "x": 1.27,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n_example_00098"
+        }
+      ],
+      "ref": "J5",
+      "value": "VIN / RETURN",
+      "source": "Parametric geometry; check against the selected component datasheet.",
+      "verified": false,
+      "libraryId": "header2",
+      "x": 58,
+      "y": 75,
+      "rotation": 90,
+      "side": "top",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 2.4699999999999998,
+        "size": 1,
+        "visible": true
+      }
+    },
+    {
+      "id": "p_example_00100",
+      "name": "Resettable fuse · radial reference",
+      "category": "Power",
+      "ref": "F1",
+      "value": "Select PTC",
+      "body": {
+        "kind": "disc",
+        "w": 7,
+        "h": 2,
+        "z": 8
+      },
+      "pads": [
+        {
+          "number": "1",
+          "x": -2.54,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "both",
+          "net": "n_example_00095",
+          "signal": "Pin 1"
+        },
+        {
+          "number": "2",
+          "x": 2.54,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n_example_00096",
+          "signal": "Pin 2"
+        }
+      ],
+      "verified": false,
+      "source": "COPPERBENCH parametric template. No manufacturer footprint is claimed.",
+      "catalog": {
+        "schema": 1,
+        "family": "Fuses",
+        "variant": "Radial PTC / 5.08 mm pitch",
+        "manufacturer": "",
+        "mpn": "",
+        "sourceDate": "2026-09-18",
+        "sources": [],
+        "notes": [
+          "Nominal parametric pattern, not a universal manufacturer footprint. Match pitch, hole diameter, pin order, body and mating clearance to the actual component.",
+          "No hold/trip current is implied. Verify operating temperature, fault current and voltage."
+        ],
+        "geometryStatus": "parametric-review-required",
+        "pinNamesEdited": false,
+        "reviewed": false
+      },
+      "libraryId": "maker-ptc",
+      "x": 68,
+      "y": 68,
+      "rotation": 0,
+      "side": "top",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 2.2,
+        "size": 1,
+        "visible": true
+      }
+    },
+    {
+      "id": "p_example_00101",
+      "name": "Schottky diode · axial reference",
+      "category": "Power",
+      "ref": "D2",
+      "value": "Select Schottky",
+      "body": {
+        "kind": "diode",
+        "w": 5.2,
+        "h": 2.7,
+        "z": 2.8
+      },
+      "pads": [
+        {
+          "number": "1",
+          "x": -5.08,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 0.9,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n_example_00097",
+          "signal": "Cathode",
+          "polarity": "cathode"
+        },
+        {
+          "number": "2",
+          "x": 5.08,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 0.9,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n_example_00096",
+          "signal": "Anode",
+          "polarity": "anode"
+        }
+      ],
+      "verified": false,
+      "source": "COPPERBENCH parametric template. No manufacturer footprint is claimed.",
+      "catalog": {
+        "schema": 1,
+        "family": "Diodes & protection",
+        "variant": "Schottky diode / 10.16 mm pitch",
+        "manufacturer": "",
+        "mpn": "",
+        "sourceDate": "2026-09-18",
+        "sources": [],
+        "notes": [
+          "Nominal parametric pattern, not a universal manufacturer footprint. Match pitch, hole diameter, pin order, body and mating clearance to the actual component.",
+          "Select and verify the exact diode, voltage, current and thermal requirements. A/K identifies terminals, not fixed supply signs."
+        ],
+        "geometryStatus": "parametric-review-required",
+        "pinNamesEdited": false,
+        "reviewed": false
+      },
+      "libraryId": "maker-schottky",
+      "x": 82,
+      "y": 68,
+      "rotation": 180,
+      "side": "top",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 2.55,
+        "size": 1,
+        "visible": true
+      }
+    },
+    {
+      "id": "p_example_00102",
+      "name": "Capacitor · radial 2.5",
+      "category": "Through-hole",
+      "body": {
+        "kind": "capacitor",
+        "w": 5,
+        "h": 5,
+        "z": 7.5
+      },
+      "pads": [
+        {
+          "number": "+",
+          "x": -1.25,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 0.9,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n_example_00097",
+          "polarity": "positive"
+        },
+        {
+          "number": "-",
+          "x": 1.25,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 0.9,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n_example_00098",
+          "polarity": "negative"
+        }
+      ],
+      "ref": "C4",
+      "value": "10uF",
+      "source": "Parametric geometry; check against the selected component datasheet.",
+      "verified": false,
+      "libraryId": "cap-radial",
+      "x": 88,
+      "y": 79,
+      "rotation": 0,
+      "side": "top",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 3.7,
+        "size": 1,
+        "visible": true
+      }
+    },
+    {
+      "id": "p_example_00103",
+      "name": "Header · 1 × 2",
+      "category": "Connectors",
+      "body": {
+        "kind": "header",
+        "w": 5.08,
+        "h": 2.54,
+        "z": 5
+      },
+      "pads": [
+        {
+          "number": "1",
+          "x": -1.27,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "both",
+          "net": "n_example_00097"
+        },
+        {
+          "number": "2",
+          "x": 1.27,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n_example_00098"
+        }
+      ],
+      "ref": "J6",
+      "value": "VOUT / RETURN",
+      "source": "Parametric geometry; check against the selected component datasheet.",
+      "verified": false,
+      "libraryId": "header2",
+      "x": 97,
+      "y": 75,
+      "rotation": 90,
+      "side": "top",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 2.4699999999999998,
+        "size": 1,
+        "visible": true
+      }
+    },
+    {
+      "id": "p_example_00116",
+      "name": "Header · 1 × 3",
+      "category": "Connectors",
+      "body": {
+        "kind": "header",
+        "w": 7.62,
+        "h": 2.54,
+        "z": 5
+      },
+      "pads": [
+        {
+          "number": "1",
+          "x": -2.54,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "both",
+          "net": "n_example_00113"
+        },
+        {
+          "number": "2",
+          "x": 0,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n_example_00114"
+        },
+        {
+          "number": "3",
+          "x": 2.54,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n_example_00115"
+        }
+      ],
+      "ref": "J7",
+      "value": "INPUT / OUTPUT / GND",
+      "source": "Parametric geometry; check against the selected component datasheet.",
+      "verified": false,
+      "libraryId": "header3",
+      "x": 120,
+      "y": 75,
+      "rotation": 90,
+      "side": "top",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 2.4699999999999998,
+        "size": 1,
+        "visible": true
+      }
+    },
+    {
+      "id": "p_example_00117",
+      "name": "R · 0805",
+      "category": "Surface-mount",
+      "body": {
+        "kind": "smd-resistor",
+        "w": 2,
+        "h": 1.25,
+        "z": 0.7
+      },
+      "pads": [
+        {
+          "number": "1",
+          "x": -0.95,
+          "y": 0,
+          "w": 1,
+          "h": 1.4,
+          "drill": 0,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "top",
+          "net": "n_example_00113"
+        },
+        {
+          "number": "2",
+          "x": 0.95,
+          "y": 0,
+          "w": 1,
+          "h": 1.4,
+          "drill": 0,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "top",
+          "net": "n_example_00114"
+        }
+      ],
+      "ref": "R5",
+      "value": "1k",
+      "source": "Parametric geometry; check against the selected component datasheet.",
+      "verified": false,
+      "libraryId": "R0805",
+      "x": 130,
+      "y": 71,
+      "rotation": 0,
+      "side": "top",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 1.825,
+        "size": 1,
+        "visible": true
+      }
+    },
+    {
+      "id": "p_example_00118",
+      "name": "C · 0805",
+      "category": "Surface-mount",
+      "body": {
+        "kind": "smd-cap",
+        "w": 2,
+        "h": 1.25,
+        "z": 0.7
+      },
+      "pads": [
+        {
+          "number": "1",
+          "x": -0.95,
+          "y": 0,
+          "w": 1,
+          "h": 1.4,
+          "drill": 0,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "top",
+          "net": "n_example_00114"
+        },
+        {
+          "number": "2",
+          "x": 0.95,
+          "y": 0,
+          "w": 1,
+          "h": 1.4,
+          "drill": 0,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "top",
+          "net": "n_example_00115"
+        }
+      ],
+      "ref": "C5",
+      "value": "100nF",
+      "source": "Parametric geometry; check against the selected component datasheet.",
+      "verified": false,
+      "libraryId": "C0805",
+      "x": 134,
+      "y": 78,
+      "rotation": 90,
+      "side": "top",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 1.825,
+        "size": 1,
+        "visible": true
+      }
+    }
+  ],
+  "nets": [
+    {
+      "id": "n_example_00033",
+      "name": "B1/DRIVE",
+      "width": 0.4
+    },
+    {
+      "id": "n_example_00034",
+      "name": "B1/LED_A",
+      "width": 0.4
+    },
+    {
+      "id": "n_example_00035",
+      "name": "B1/RETURN",
+      "width": 0.4
+    },
+    {
+      "id": "n_example_00045",
+      "name": "B2/VCC",
+      "width": 0.4
+    },
+    {
+      "id": "n_example_00046",
+      "name": "B2/SIGNAL",
+      "width": 0.4
+    },
+    {
+      "id": "n_example_00047",
+      "name": "B2/GND",
+      "width": 0.4
+    },
+    {
+      "id": "n_example_00060",
+      "name": "B3/VCC",
+      "width": 0.4
+    },
+    {
+      "id": "n_example_00061",
+      "name": "B3/GND",
+      "width": 0.4
+    },
+    {
+      "id": "n_example_00062",
+      "name": "B3/SCL",
+      "width": 0.4
+    },
+    {
+      "id": "n_example_00063",
+      "name": "B3/SDA",
+      "width": 0.4
+    },
+    {
+      "id": "n_example_00081",
+      "name": "B4/VCC",
+      "width": 0.4
+    },
+    {
+      "id": "n_example_00082",
+      "name": "B4/GND",
+      "width": 0.4
+    },
+    {
+      "id": "n_example_00095",
+      "name": "B5/VIN",
+      "width": 0.4
+    },
+    {
+      "id": "n_example_00096",
+      "name": "B5/FUSED",
+      "width": 0.4
+    },
+    {
+      "id": "n_example_00097",
+      "name": "B5/VOUT",
+      "width": 0.4
+    },
+    {
+      "id": "n_example_00098",
+      "name": "B5/RETURN",
+      "width": 0.4
+    },
+    {
+      "id": "n_example_00113",
+      "name": "B6/INPUT",
+      "width": 0.4
+    },
+    {
+      "id": "n_example_00114",
+      "name": "B6/OUTPUT",
+      "width": 0.4
+    },
+    {
+      "id": "n_example_00115",
+      "name": "B6/GND",
+      "width": 0.4
+    }
+  ],
+  "traces": [
+    {
+      "id": "t_example_00039",
+      "net": "n_example_00033",
+      "layer": "top",
+      "width": 0.4,
+      "points": [
+        {
+          "x": 13,
+          "y": 21.73
+        },
+        {
+          "x": 19.19,
+          "y": 17
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t_example_00040",
+      "net": "n_example_00034",
+      "layer": "top",
+      "width": 0.4,
+      "points": [
+        {
+          "x": 26.81,
+          "y": 17
+        },
+        {
+          "x": 35.27,
+          "y": 26
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t_example_00041",
+      "net": "n_example_00035",
+      "layer": "top",
+      "width": 0.4,
+      "points": [
+        {
+          "x": 13,
+          "y": 24.27
+        },
+        {
+          "x": 32.73,
+          "y": 26
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t_example_00051",
+      "net": "n_example_00045",
+      "layer": "top",
+      "width": 0.4,
+      "points": [
+        {
+          "x": 65,
+          "y": 20.46
+        },
+        {
+          "x": 73,
+          "y": 15.05
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t_example_00052",
+      "net": "n_example_00046",
+      "layer": "top",
+      "width": 0.4,
+      "points": [
+        {
+          "x": 65,
+          "y": 23
+        },
+        {
+          "x": 73,
+          "y": 16.95
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t_example_00053",
+      "net": "n_example_00046",
+      "layer": "top",
+      "width": 0.4,
+      "points": [
+        {
+          "x": 73,
+          "y": 16.95
+        },
+        {
+          "x": 77.75,
+          "y": 20.75
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t_example_00054",
+      "net": "n_example_00046",
+      "layer": "top",
+      "width": 0.4,
+      "points": [
+        {
+          "x": 77.75,
+          "y": 20.75
+        },
+        {
+          "x": 77.75,
+          "y": 25.25
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t_example_00055",
+      "net": "n_example_00047",
+      "layer": "top",
+      "width": 0.4,
+      "points": [
+        {
+          "x": 65,
+          "y": 25.54
+        },
+        {
+          "x": 75.8,
+          "y": 25.54
+        },
+        {
+          "x": 77,
+          "y": 26.74
+        },
+        {
+          "x": 82.6,
+          "y": 26.74
+        },
+        {
+          "x": 83.8,
+          "y": 25.54
+        },
+        {
+          "x": 84.25,
+          "y": 25.25
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t_example_00056",
+      "net": "n_example_00047",
+      "layer": "top",
+      "width": 0.4,
+      "points": [
+        {
+          "x": 84.25,
+          "y": 25.25
+        },
+        {
+          "x": 84.25,
+          "y": 20.75
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t_example_00068",
+      "net": "n_example_00060",
+      "layer": "top",
+      "width": 0.4,
+      "points": [
+        {
+          "x": 119,
+          "y": 19.19
+        },
+        {
+          "x": 128,
+          "y": 18.05
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t_example_00069",
+      "net": "n_example_00060",
+      "layer": "top",
+      "width": 0.4,
+      "points": [
+        {
+          "x": 128,
+          "y": 18.05
+        },
+        {
+          "x": 134,
+          "y": 18.05
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t_example_00070",
+      "net": "n_example_00060",
+      "layer": "top",
+      "width": 0.4,
+      "points": [
+        {
+          "x": 134,
+          "y": 18.05
+        },
+        {
+          "x": 132.8,
+          "y": 19.25
+        },
+        {
+          "x": 132.8,
+          "y": 26.45
+        },
+        {
+          "x": 133.05,
+          "y": 27
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t_example_00071",
+      "net": "n_example_00061",
+      "layer": "top",
+      "width": 0.4,
+      "points": [
+        {
+          "x": 119,
+          "y": 21.73
+        },
+        {
+          "x": 125.8,
+          "y": 21.73
+        },
+        {
+          "x": 132.2,
+          "y": 28.13
+        },
+        {
+          "x": 133.8,
+          "y": 28.13
+        },
+        {
+          "x": 134.6,
+          "y": 27.33
+        },
+        {
+          "x": 134.95,
+          "y": 27
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t_example_00072",
+      "net": "n_example_00062",
+      "layer": "bottom",
+      "width": 0.4,
+      "points": [
+        {
+          "x": 119,
+          "y": 24.27
+        },
+        {
+          "x": 123.4,
+          "y": 24.27
+        },
+        {
+          "x": 127.4,
+          "y": 20.27
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t_example_00073",
+      "net": "n_example_00062",
+      "layer": "top",
+      "width": 0.4,
+      "points": [
+        {
+          "x": 127.4,
+          "y": 20.27
+        },
+        {
+          "x": 128,
+          "y": 19.95
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t_example_00074",
+      "net": "n_example_00063",
+      "layer": "bottom",
+      "width": 0.4,
+      "points": [
+        {
+          "x": 119,
+          "y": 26.81
+        },
+        {
+          "x": 127,
+          "y": 26.81
+        },
+        {
+          "x": 133.8,
+          "y": 20.01
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t_example_00075",
+      "net": "n_example_00063",
+      "layer": "top",
+      "width": 0.4,
+      "points": [
+        {
+          "x": 133.8,
+          "y": 20.01
+        },
+        {
+          "x": 134,
+          "y": 19.95
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t_example_00086",
+      "net": "n_example_00081",
+      "layer": "top",
+      "width": 0.4,
+      "points": [
+        {
+          "x": 23.73,
+          "y": 68
+        },
+        {
+          "x": 19.05,
+          "y": 75
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t_example_00087",
+      "net": "n_example_00081",
+      "layer": "top",
+      "width": 0.4,
+      "points": [
+        {
+          "x": 23.73,
+          "y": 68
+        },
+        {
+          "x": 28.75,
+          "y": 75
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t_example_00088",
+      "net": "n_example_00082",
+      "layer": "top",
+      "width": 0.4,
+      "points": [
+        {
+          "x": 26.27,
+          "y": 68
+        },
+        {
+          "x": 31.25,
+          "y": 75
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t_example_00089",
+      "net": "n_example_00082",
+      "layer": "bottom",
+      "width": 0.4,
+      "points": [
+        {
+          "x": 26.27,
+          "y": 68
+        },
+        {
+          "x": 21.07,
+          "y": 73.2
+        },
+        {
+          "x": 21.07,
+          "y": 74.4
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t_example_00090",
+      "net": "n_example_00082",
+      "layer": "top",
+      "width": 0.4,
+      "points": [
+        {
+          "x": 21.07,
+          "y": 74.4
+        },
+        {
+          "x": 20.95,
+          "y": 75
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t_example_00104",
+      "net": "n_example_00095",
+      "layer": "top",
+      "width": 0.4,
+      "points": [
+        {
+          "x": 58,
+          "y": 73.73
+        },
+        {
+          "x": 65.46,
+          "y": 68
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t_example_00105",
+      "net": "n_example_00096",
+      "layer": "top",
+      "width": 0.4,
+      "points": [
+        {
+          "x": 70.54,
+          "y": 68
+        },
+        {
+          "x": 76.92,
+          "y": 68
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t_example_00106",
+      "net": "n_example_00097",
+      "layer": "top",
+      "width": 0.4,
+      "points": [
+        {
+          "x": 87.08,
+          "y": 68
+        },
+        {
+          "x": 86.75,
+          "y": 79
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t_example_00107",
+      "net": "n_example_00097",
+      "layer": "top",
+      "width": 0.4,
+      "points": [
+        {
+          "x": 87.08,
+          "y": 68
+        },
+        {
+          "x": 97,
+          "y": 73.73
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t_example_00108",
+      "net": "n_example_00098",
+      "layer": "bottom",
+      "width": 0.4,
+      "points": [
+        {
+          "x": 58,
+          "y": 76.27
+        },
+        {
+          "x": 86.52,
+          "y": 76.27
+        },
+        {
+          "x": 89.25,
+          "y": 79
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t_example_00109",
+      "net": "n_example_00098",
+      "layer": "top",
+      "width": 0.4,
+      "points": [
+        {
+          "x": 89.25,
+          "y": 79
+        },
+        {
+          "x": 97,
+          "y": 76.27
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t_example_00119",
+      "net": "n_example_00113",
+      "layer": "top",
+      "width": 0.4,
+      "points": [
+        {
+          "x": 120,
+          "y": 72.46
+        },
+        {
+          "x": 129.05,
+          "y": 71
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t_example_00120",
+      "net": "n_example_00114",
+      "layer": "top",
+      "width": 0.4,
+      "points": [
+        {
+          "x": 120,
+          "y": 75
+        },
+        {
+          "x": 126.95,
+          "y": 75
+        },
+        {
+          "x": 130.95,
+          "y": 71
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t_example_00121",
+      "net": "n_example_00114",
+      "layer": "top",
+      "width": 0.4,
+      "points": [
+        {
+          "x": 130.95,
+          "y": 71
+        },
+        {
+          "x": 134,
+          "y": 77.05
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t_example_00122",
+      "net": "n_example_00115",
+      "layer": "top",
+      "width": 0.4,
+      "points": [
+        {
+          "x": 120,
+          "y": 77.54
+        },
+        {
+          "x": 134,
+          "y": 78.95
+        }
+      ],
+      "locked": false
+    }
+  ],
+  "vias": [
+    {
+      "id": "v_example_00076",
+      "net": "n_example_00062",
+      "x": 127.4,
+      "y": 20.27,
+      "diameter": 0.9,
+      "drill": 0.4,
+      "tented": false,
+      "locked": false
+    },
+    {
+      "id": "v_example_00077",
+      "net": "n_example_00063",
+      "x": 133.8,
+      "y": 20.01,
+      "diameter": 0.9,
+      "drill": 0.4,
+      "tented": false,
+      "locked": false
+    },
+    {
+      "id": "v_example_00091",
+      "net": "n_example_00082",
+      "x": 21.07,
+      "y": 74.4,
+      "diameter": 0.9,
+      "drill": 0.4,
+      "tented": false,
+      "locked": false
+    }
+  ],
+  "holes": [],
+  "cutouts": [],
+  "keepouts": [],
+  "zones": [],
+  "art": [],
+  "assets": [],
+  "profile": {
+    "id": "oshpark-2l",
+    "name": "OSH Park · 2 layer",
+    "verified": "2026-09-17",
+    "revision": 1,
+    "source": "https://docs.oshpark.com/services/two-layer/",
+    "minTrace": 0.1524,
+    "clearance": 0.1524,
+    "edge": 0.381,
+    "minDrill": 0.254,
+    "minRing": 0.127,
+    "minSlot": 0.508,
+    "minMaskWeb": 0.1016,
+    "minSilk": 0.127,
+    "maskExpansion": 0.075,
+    "minHoleGap": 0.127,
+    "minCutout": 1.01,
+    "minWidth": 6.35,
+    "minHeight": 6.35,
+    "maxWidth": 406.4,
+    "maxHeight": 558.8
+  },
+  "settings": {
+    "grid": 1.27,
+    "traceWidth": 0.4,
+    "viaDiameter": 0.9,
+    "viaDrill": 0.4,
+    "viaTented": false,
+    "zoneStep": 0.25,
+    "autoPlanes": true
+  },
+  "assumptions": [
+    {
+      "id": "assume_example_00029",
+      "text": "Two copper layers; through vias only. This layout does not verify circuit function.",
+      "status": "open"
+    }
+  ],
+  "evidence": [],
+  "blockInstances": [
+    {
+      "id": "block_example_00032",
+      "label": "B1",
+      "name": "LED indicator",
+      "templateId": "block-led",
+      "templateRevision": 1,
+      "x": 25,
+      "y": 23,
+      "rotation": 0,
+      "flipped": false,
+      "members": [
+        "p_example_00036",
+        "p_example_00037",
+        "p_example_00038",
+        "t_example_00039",
+        "t_example_00040",
+        "t_example_00041"
+      ],
+      "ports": [
+        {
+          "key": "DRIVE",
+          "name": "DRIVE",
+          "net": "n_example_00033",
+          "kind": "signal"
+        },
+        {
+          "key": "RETURN",
+          "name": "RETURN",
+          "net": "n_example_00035",
+          "kind": "ground"
+        }
+      ],
+      "notes": [
+        "Example only: 1 kΩ series resistor and generic LED. Check LED forward voltage, GPIO drive limits and resistor power at the actual supply.",
+        "No supply voltage or safe current is inferred from a net name. Verify the purchased LED polarity and lead pitch."
+      ],
+      "reviewed": false
+    },
+    {
+      "id": "block_example_00044",
+      "label": "B2",
+      "name": "Button with pull-up",
+      "templateId": "block-button",
+      "templateRevision": 1,
+      "x": 77,
+      "y": 23,
+      "rotation": 0,
+      "flipped": false,
+      "members": [
+        "p_example_00048",
+        "p_example_00049",
+        "p_example_00050",
+        "t_example_00051",
+        "t_example_00052",
+        "t_example_00053",
+        "t_example_00054",
+        "t_example_00055",
+        "t_example_00056"
+      ],
+      "ports": [
+        {
+          "key": "VCC",
+          "name": "VCC",
+          "net": "n_example_00045",
+          "kind": "power"
+        },
+        {
+          "key": "SIGNAL",
+          "name": "SIGNAL",
+          "net": "n_example_00046",
+          "kind": "signal"
+        },
+        {
+          "key": "GND",
+          "name": "GND",
+          "net": "n_example_00047",
+          "kind": "ground"
+        }
+      ],
+      "notes": [
+        "10 kΩ is a starting value, not a universal requirement. Verify logic voltage, input thresholds and debounce in the receiving circuit.",
+        "Generic four-lead switch assumes left pair 1–2 and right pair 3–4 are common; verify the actual switch with a meter. Switch state is not simulated."
+      ],
+      "reviewed": false
+    },
+    {
+      "id": "block_example_00059",
+      "label": "B3",
+      "name": "I²C pull-up pair",
+      "templateId": "block-i2c",
+      "templateRevision": 1,
+      "x": 128,
+      "y": 23,
+      "rotation": 0,
+      "flipped": false,
+      "members": [
+        "p_example_00064",
+        "p_example_00065",
+        "p_example_00066",
+        "p_example_00067",
+        "t_example_00068",
+        "t_example_00069",
+        "t_example_00070",
+        "t_example_00071",
+        "t_example_00072",
+        "t_example_00073",
+        "t_example_00074",
+        "t_example_00075",
+        "v_example_00076",
+        "v_example_00077"
+      ],
+      "ports": [
+        {
+          "key": "VCC",
+          "name": "VCC",
+          "net": "n_example_00060",
+          "kind": "power"
+        },
+        {
+          "key": "GND",
+          "name": "GND",
+          "net": "n_example_00061",
+          "kind": "ground"
+        },
+        {
+          "key": "SCL",
+          "name": "SCL",
+          "net": "n_example_00062",
+          "kind": "signal"
+        },
+        {
+          "key": "SDA",
+          "name": "SDA",
+          "net": "n_example_00063",
+          "kind": "signal"
+        }
+      ],
+      "notes": [
+        "Review the combined pull-up resistance of every device on the bus, bus capacitance, speed and voltage before using 4.7 kΩ.",
+        "This is not a voltage level shifter. VCC must suit all connected bus devices; firmware and addressing are outside this layout."
+      ],
+      "reviewed": false
+    },
+    {
+      "id": "block_example_00080",
+      "label": "B4",
+      "name": "Supply decoupling pair",
+      "templateId": "block-decoupling",
+      "templateRevision": 1,
+      "x": 25,
+      "y": 75,
+      "rotation": 0,
+      "flipped": false,
+      "members": [
+        "p_example_00083",
+        "p_example_00084",
+        "p_example_00085",
+        "t_example_00086",
+        "t_example_00087",
+        "t_example_00088",
+        "t_example_00089",
+        "t_example_00090",
+        "v_example_00091"
+      ],
+      "ports": [
+        {
+          "key": "VCC",
+          "name": "VCC",
+          "net": "n_example_00081",
+          "kind": "power"
+        },
+        {
+          "key": "GND",
+          "name": "GND",
+          "net": "n_example_00082",
+          "kind": "ground"
+        }
+      ],
+      "notes": [
+        "Move the ceramic capacitor close to the actual IC supply pin and keep its return loop short. A prearranged group does not guarantee effective decoupling.",
+        "Select capacitor voltage rating, dielectric, ESR, ripple capability and actual footprint; the radial capacitor is a nominal template."
+      ],
+      "reviewed": false
+    },
+    {
+      "id": "block_example_00094",
+      "label": "B5",
+      "name": "Fused, series-diode DC input",
+      "templateId": "block-dc-input",
+      "templateRevision": 1,
+      "x": 78,
+      "y": 75,
+      "rotation": 0,
+      "flipped": false,
+      "members": [
+        "p_example_00099",
+        "p_example_00100",
+        "p_example_00101",
+        "p_example_00102",
+        "p_example_00103",
+        "t_example_00104",
+        "t_example_00105",
+        "t_example_00106",
+        "t_example_00107",
+        "t_example_00108",
+        "t_example_00109"
+      ],
+      "ports": [
+        {
+          "key": "VIN",
+          "name": "VIN",
+          "net": "n_example_00095",
+          "kind": "power"
+        },
+        {
+          "key": "VOUT",
+          "name": "VOUT",
+          "net": "n_example_00097",
+          "kind": "power"
+        },
+        {
+          "key": "RETURN",
+          "name": "RETURN",
+          "net": "n_example_00098",
+          "kind": "ground"
+        }
+      ],
+      "notes": [
+        "Unqualified low-voltage topology template. Select exact fuse, diode and capacitor ratings for supply voltage, fault current, load, temperature and voltage drop.",
+        "Not a mains circuit, surge suppressor, battery charger, regulator, or safety-certified protection design. Trace width is 0.4 mm, NOT a current rating.",
+        "Generic PTC and Schottky footprints require actual-part review before ordering. The diode anode faces the input; its cathode feeds VOUT."
+      ],
+      "reviewed": false
+    },
+    {
+      "id": "block_example_00112",
+      "label": "B6",
+      "name": "RC input filter",
+      "templateId": "block-rc-filter",
+      "templateRevision": 1,
+      "x": 130,
+      "y": 75,
+      "rotation": 0,
+      "flipped": false,
+      "members": [
+        "p_example_00116",
+        "p_example_00117",
+        "p_example_00118",
+        "t_example_00119",
+        "t_example_00120",
+        "t_example_00121",
+        "t_example_00122"
+      ],
+      "ports": [
+        {
+          "key": "INPUT",
+          "name": "INPUT",
+          "net": "n_example_00113",
+          "kind": "signal"
+        },
+        {
+          "key": "OUTPUT",
+          "name": "OUTPUT",
+          "net": "n_example_00114",
+          "kind": "signal"
+        },
+        {
+          "key": "GND",
+          "name": "GND",
+          "net": "n_example_00115",
+          "kind": "ground"
+        }
+      ],
+      "notes": [
+        "Starting values only. Check bandwidth, source impedance, ADC acquisition time, input protection and the load; this is not an anti-aliasing certification.",
+        "The PCB layout does not simulate the signal or infer its voltage. Adjust the values and placement for the real receiving circuit."
+      ],
+      "reviewed": false
+    }
+  ],
+  "blockLibrary": [],
+  "baseline": null
+}

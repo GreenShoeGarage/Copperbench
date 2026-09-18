@@ -1,0 +1,70 @@
+{
+  "passed": 16,
+  "total": 16,
+  "results": [
+    {
+      "name": "module-bme280-original top: literal header drills, both copper faces, optional mounts and no host silk",
+      "pass": true
+    },
+    {
+      "name": "module-bme280-original rotated / bottom: literal header drills, both copper faces, optional mounts and no host silk",
+      "pass": true
+    },
+    {
+      "name": "module-ds3231-original top: literal header drills, both copper faces, optional mounts and no host silk",
+      "pass": true
+    },
+    {
+      "name": "module-ds3231-original rotated / bottom: literal header drills, both copper faces, optional mounts and no host silk",
+      "pass": true
+    },
+    {
+      "name": "module-oled-096-qt top: literal header drills, both copper faces, optional mounts and no host silk",
+      "pass": true
+    },
+    {
+      "name": "module-oled-096-qt rotated / bottom: literal header drills, both copper faces, optional mounts and no host silk",
+      "pass": true
+    },
+    {
+      "name": "module-tb6612 top: literal header drills, both copper faces, optional mounts and no host silk",
+      "pass": true
+    },
+    {
+      "name": "module-tb6612 rotated / bottom: literal header drills, both copper faces, optional mounts and no host silk",
+      "pass": true
+    },
+    {
+      "name": "module-mpm3610-33 top: literal header drills, both copper faces, optional mounts and no host silk",
+      "pass": true
+    },
+    {
+      "name": "module-mpm3610-33 rotated / bottom: literal header drills, both copper faces, optional mounts and no host silk",
+      "pass": true
+    },
+    {
+      "name": "block-led: exported trace centerlines, drilled pins/vias and actual silkscreen",
+      "pass": true
+    },
+    {
+      "name": "block-button: exported trace centerlines, drilled pins/vias and actual silkscreen",
+      "pass": true
+    },
+    {
+      "name": "block-i2c: exported trace centerlines, drilled pins/vias and actual silkscreen",
+      "pass": true
+    },
+    {
+      "name": "block-decoupling: exported trace centerlines, drilled pins/vias and actual silkscreen",
+      "pass": true
+    },
+    {
+      "name": "block-dc-input: exported trace centerlines, drilled pins/vias and actual silkscreen",
+      "pass": true
+    },
+    {
+      "name": "block-rc-filter: exported trace centerlines, drilled pins/vias and actual silkscreen",
+      "pass": true
+    }
+  ]
+}

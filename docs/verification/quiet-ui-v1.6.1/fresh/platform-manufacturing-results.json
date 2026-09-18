@@ -1,0 +1,57 @@
+{
+  "version": "1.6.1",
+  "date": "2026-09-18T19:00:35.864346+00:00",
+  "passed": 12,
+  "total": 12,
+  "scope": "Independent Python/Shapely checks of literal nominal connector geometry, export alignment and mask coverage; not physical fit or third-party CAM certification.",
+  "results": [
+    {
+      "name": "pi40/addon: exact plated and non-plated drill coordinates",
+      "pass": true
+    },
+    {
+      "name": "pi40/addon: copper/NPTH clearance, masks, and no bottom mirror",
+      "pass": true
+    },
+    {
+      "name": "pi40/carrier: exact plated and non-plated drill coordinates",
+      "pass": true
+    },
+    {
+      "name": "pi40/carrier: copper/NPTH clearance, masks, and no bottom mirror",
+      "pass": true
+    },
+    {
+      "name": "uno-r3/addon: exact plated and non-plated drill coordinates",
+      "pass": true
+    },
+    {
+      "name": "uno-r3/addon: copper/NPTH clearance, masks, and no bottom mirror",
+      "pass": true
+    },
+    {
+      "name": "uno-r3/carrier: exact plated and non-plated drill coordinates",
+      "pass": true
+    },
+    {
+      "name": "uno-r3/carrier: copper/NPTH clearance, masks, and no bottom mirror",
+      "pass": true
+    },
+    {
+      "name": "mkr/addon: exact plated and non-plated drill coordinates",
+      "pass": true
+    },
+    {
+      "name": "mkr/addon: copper/NPTH clearance, masks, and no bottom mirror",
+      "pass": true
+    },
+    {
+      "name": "mkr/carrier: exact plated and non-plated drill coordinates",
+      "pass": true
+    },
+    {
+      "name": "mkr/carrier: copper/NPTH clearance, masks, and no bottom mirror",
+      "pass": true
+    }
+  ]
+}

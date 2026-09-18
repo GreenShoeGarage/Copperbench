@@ -1,5 +1,7 @@
 # HATs, shields and carriers — v1.1.0
 
+**v1.6.1 navigation:** catalog buttons are shortened; see the [current interface guide](QUIET_WORKBENCH.md). All workflows described here remain.
+
 ## Workflow
 
 Open **Parts → HATs, shields & carriers**. Pick a family, then choose **HAT /
@@ -155,3 +157,13 @@ pad and hole positions; linked holes become separate footprints, and aliases /
 platform-reference metadata are not reconstructed on reimport. Retain native
 JSON as the authoritative editable project. Six starter JSON files are included
 in `examples/` and can be opened without depending on a remotely updated library.
+
+
+## v1.5 controller carrier references
+
+See [Controller carriers](CARRIERS.md) for the nine new host selections, exact
+scope, primary source links, nominal dimensions, antenna projections and
+mechanical qualifications. All 18 new header patterns and reference drawings
+are embedded in projects; no external runtime model downloads are required.
+Native schema 4 preserves attached guards. These are not direct-solder
+castellated footprints or physically qualified assemblies.

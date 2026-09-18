@@ -1,0 +1,507 @@
+
+> /opt/pyvenv/bin/python tools/check_repo.py
+PASS: repository files, generated assets, source syntax, local links and bundled dependency hashes.
+
+> /opt/pyvenv/bin/python -m unittest discover -s tests -p test_packaging.py
+.........
+----------------------------------------------------------------------
+Ran 9 tests in 0.184s
+
+OK
+
+> /opt/nvm/versions/node/v22.16.0/bin/node tests/core.test.js
+ok 1 - Native current-schema JSON round-trip preserves an entire document
+ok 2 - All library footprints pass schema validation
+ok 3 - Malformed geometry, unknown schema, and duplicate identities stop import
+ok 4 - Circular pads cannot silently stretch or turn into incorrect circles
+ok 5 - Four rotations and two face flips preserve every pin identity and coordinate
+ok 6 - Bottom flip reflects physical pin position without changing pin numbering
+ok 7 - Board resizing does not resize footprints
+ok 8 - Net merges require explicit consent and update copper consistently
+ok 9 - Deleting copper does not erase intended electrical connectivity
+ok 10 - A real microscopic break is not considered a completed connection
+ok 11 - Different layers stay electrically separate until a through via is added
+ok 12 - Crossed distinct nets are blocking shorts; undersized traces are blocked
+ok 13 - Exact route checks reject board edges, cutouts, holes and keepouts
+ok 14 - Direct selected-pin autorouting creates verified copper
+ok 15 - Obstacle-aware A* takes a different path without illegal copper
+ok 16 - Blocked autorouting reports failure and never mutates its input
+ok 17 - Two-sided autorouting inserts a real through-via transition
+ok 18 - Multi-pin autowiring produces one physically connected net
+ok 19 - Autowiring already connected pins does not add redundant copper
+ok 20 - Filled zones are actual copper and isolated islands are removed
+ok 21 - Thermal relief pours connect pads while respecting a different-net obstacle
+ok 22 - Stale copper pours block manufacturing generation
+ok 23 - Excellon plated/non-plated files preserve slot endpoints and tool diameter
+ok 24 - Gerber copper, mask, silk, outline and optional paste all reparse
+ok 25 - Bottom manufacturing layers are not mirrored
+ok 26 - Gerber compatibility export drops attributes but not geometry
+ok 27 - Filled silkscreen polygons stay filled after KiCad interchange
+ok 28 - KiCad subset round-trip preserves flipped/rotated pad and drill coordinates
+ok 29 - KiCad inner layers, custom pads and explicit manufacturing graphics are rejected
+ok 30 - Manufacturing reader rejects unsupported/incomplete input rather than inventing geometry
+ok 31 - Baseline comparison records added, changed, and removed objects
+ok 32 - Golden two-layer coupon has no blocking geometry findings
+
+32/32 tests passed.
+
+> /opt/nvm/versions/node/v22.16.0/bin/node tests/platforms.test.js
+PASS All six mating variants exist and their contact IDs are unique
+PASS Pi 40-pin HAT template uses top-view physical pin 1, GPIO aliases, and four mounts
+PASS Uno R3 preserves the exact 4.064 mm D8–D7 discontinuity
+PASS MKR 28-pin contact mapping and 20.32 mm row separation are preserved
+PASS Add-on and carrier mating variants share the same top-view pattern, not a double mirror
+PASS All template variants pass geometry DRC but retain explicit review warnings
+PASS Schema 1 migrates to the current schema without mutating the source
+PASS Native JSON preserves embedded pin aliases, mounting holes, and display options
+PASS Legacy v1.0 documents load without inventing platform data
+PASS Rotation and flipping move mounting holes with their interface
+PASS Resizing the board does not stretch connector geometry or mounting holes
+PASS Header-only placement does not drill unrequested host mounting holes
+PASS Reference visibility never changes Gerber or drill bytes
+PASS Manufacturing exports exactly the interface drills, not host circuitry
+PASS Mounting holes stay aligned in top/bottom copper and explicit-decimal Excellon
+PASS KiCad subset keeps every connector contact and NPTH coordinate after transforms
+PASS Removing optional mounts changes only NPTH-related outputs, not copper
+PASS Mounting holes enter route obstacles and copper-to-NPTH checks
+PASS Selected-pin router can attach a new test point to a named Pi GPIO
+PASS Unknown metadata versions and malformed mounting coordinates are rejected
+PASS Library-based duplication creates independent metadata and unassigned nets
+PASS Pin-map CSV records physical IDs and signals without creating project nets
+PASS NC-contact review is surfaced without silently removing its user assignment
+23/23 platform tests passed.
+
+> /opt/nvm/versions/node/v22.16.0/bin/node tests/vias.test.js
+PASS Via defaults are present and native JSON uses the current schema
+PASS All size presets pass the bundled profile
+PASS Invalid and undersized diameters are rejected before placement
+PASS Project-specific ring and drill constraints govern proposals
+PASS Preview is pure and does not add via, net, or artwork
+PASS An empty-space via can be explicitly unassigned and is flagged by checks
+PASS Auto net inherits top copper without adding a new electrical net
+PASS Auto net can inherit bottom copper
+PASS A via cannot silently bridge different top and bottom nets
+PASS Explicit net assignment still checks the opposite layer
+PASS Unassigned copper is not silently treated as one shared net
+PASS Unknown net IDs stop creation without modifying the board
+PASS Outer edges and internal cutouts protect via copper
+PASS Keepouts on either copper face reject a via
+PASS Non-plated holes and same-net plated drills enforce spacing
+PASS Duplicate drill at an existing via is rejected
+PASS A single through via joins actual front and back trace geometry
+PASS Moving or deleting the via exposes the lost interlayer connection
+PASS Invalid via edits are rejected atomically; locks protect geometry
+PASS Native JSON round-trip preserves sizes, net, tenting, lock, position and defaults
+PASS Earlier schema-2 projects without a tenting default load safely
+PASS Both copper Gerbers contain the same via center and diameter
+PASS Via emits one plated Excellon drill and no mounting-hole drill
+PASS Tenting changes mask openings on both sides without changing copper/drills
+PASS Trace snapping uses the actual segment rather than the board snap grid
+PASS KiCad subset preserves via center, dimensions and net geometry
+PASS KiCad imports explicitly report open-mask and lock simplification
+27/27 via tests passed.
+
+> /opt/nvm/versions/node/v22.16.0/bin/node tests/planes.test.js
+PASS Each face accepts one explicit net or routing-only without assigning component pins
+PASS Bottom-ground preset preserves manual zones and reuses an existing ground net
+PASS Changing a plane updates the same object, never old pad/trace/via nets
+PASS Removing a managed plane preserves pins, traces and manually placed vias
+PASS Board resize updates full-plane outlines without stretching footprints
+PASS Managed outline follows circles and custom polygon boards
+PASS Native schema 4 preserves planes, settings and actual fill geometry
+PASS Schema 2 migrates with no invented planes and no mutation of the old file
+PASS Duplicate, both-face and malformed managed planes are rejected on import
+PASS Through-hole lead contacts an opposite-face plane without an extra via
+PASS Same-face surface-mount lead makes direct contact after adopting the plane net
+PASS Opposite-face surface-mount attachment is a pure short-trace-plus-via proposal
+PASS Existing different-net copper under a selected lead blocks attachment without mutation
+PASS Net conflicts fail without reassigning pins or adding partial copper
+PASS Repeating a verified plane attachment adds no extra traces or drills
+PASS Nearby plane-connected via is reused instead of drilling another
+PASS Multiple picked leads produce a single all-or-nothing plan
+PASS A conflict anywhere in a multi-lead request leaves every lead untouched
+PASS Blocked local via sites report failure without a fake electrical connection
+PASS Bare plane with no seed copper remains empty, not a fictitious ground region
+PASS A copper keepout splits a nominal net into two detected plane regions
+PASS Same-name planes on opposite faces are not connected without a plated path
+PASS Board-plane assignment survives explicit whole-net merges
+PASS New signal routing can carve managed planes, but existing signal copper still blocks
+PASS Local manual pours keep priority over different-net whole-board copper
+PASS Plane fill clears both internal cutouts and non-plated mounting holes
+PASS Stale fills block manufacturing rather than exporting obsolete planes
+PASS Thermal settings are persistent and settings changes invalidate the fill
+PASS Bad trace and via dimensions cannot be used by the connection helper
+PASS Plane export becomes an ordinary zone in the documented KiCad subset
+PASS Power and ground planes remain isolated when a ground attachment pierces both faces
+31/31 plane engine tests passed.
+
+> /opt/nvm/versions/node/v22.16.0/bin/node tests/silkscreen.test.js
+PASS Diodes and LEDs explicitly identify both anode and cathode
+PASS Polarized capacitors use positive/negative roles, not diode voltage assumptions
+PASS Legacy A/K and +/- built-ins gain labels without changing geometry or net IDs
+PASS No numeric or net-name polarity inference for imported/custom connectors
+PASS User-defined roles work without changing numeric pin identities or nets
+PASS Explicit none suppresses a legacy role instead of re-inferring it
+PASS Silkscreen polarity is independent of reference-label visibility
+PASS Printed polarity stays on the component face, including flipped through-hole parts
+PASS Polarity anchors preserve physical pin identity through flips and arbitrary rotation
+PASS Default printed marks clear their own body and mask openings
+PASS Polarity size, gap and offsets survive native schema-4 JSON
+PASS Invalid roles and polarity marking dimensions are rejected on import
+PASS An on-board drawn line survives the entire exported top silkscreen stack
+PASS On-board bottom artwork survives clipping without mirroring board coordinates
+PASS Old nested-clear-frame reproducer has NO ink under standard Gerber semantics
+PASS Overlapping dark contours are unioned even when winding directions oppose
+PASS Every exported clipping region has one closed contour
+PASS Nested-frame fix retains physical holes and pad-mask clipping
+PASS Cutout clears only its opening, not all surrounding artwork
+PASS X2 and RS-274X compatibility exports contain identical retained artwork
+PASS Export is deterministic and never mutates the project
+PASS KiCad exchange includes the printable polarity strokes
+PASS Gerber reader rejects open contours instead of accepting malformed regions
+PASS Exterior clipping fixture: rect
+PASS Exterior clipping fixture: rounded
+PASS Exterior clipping fixture: circle
+PASS Exterior clipping fixture: concave
+PASS Exterior clipping fixture: reversed
+PASS Exterior clipping fixture: offset
+PASS Text, references, images and all supported drawing tools have export fixtures
+30/30 tests passed.
+
+> /opt/nvm/versions/node/v22.16.0/bin/node tests/maker.test.js
+PASS 134 new variants in 17 families; legacy IDs remain unique and available
+PASS Every new variant validates, retains geometry and metadata through JSON, and exports
+PASS Every new part preserves pin numbers and coordinates after four rotations and two flips
+PASS Placed footprints are snapshots, not live library references
+PASS NE555 and LM358 PDIP and SOIC pin maps agree with numbered reference vectors
+PASS 74HC595 signal and supply pin numbers are retained
+PASS MCP23017 uses narrow SPDIP-28 with pins 11/14 NC and 12/13 I2C
+PASS ULN2803C is DW-20, not an incorrectly substituted 18-pin device
+PASS Named onsemi transistors have E-B-C pin roles and no guessed net
+PASS Regulator pin map and physical tab identity are explicit
+PASS Qwiic labels do not assign or merge electrical nets
+PASS PH, XH and SH remain distinct physical pitches
+PASS USB4085 has 16 unique signal contacts plus four explicitly common shell terminals
+PASS Narrow USB shell slots keep their reference width and obey a stricter manufacturer profile
+PASS Editing names leaves geometry, number, polarity and assigned net unchanged
+PASS Internal-terminal net conflicts are reported as errors, not invisibly merged
+PASS Internal groups do not create invisible PCB copper or satisfy unrouted nets
+PASS Source metadata rejects executable links and malformed terminal references
+PASS NC assignments produce a warning; a functional pin name is not a circuit rule
+PASS User review can acknowledge nominal geometry, but new label edits clear that status
+PASS Uno ICSP appends six pads without touching any of the original 32
+PASS Uno ICSP top-view coordinates are invariant between shield and carrier templates
+PASS Unused ICSP removal restores the exact old pin set; net or copper use prevents removal
+PASS ICSP option rejects unrelated host families
+PASS Encoder mechanical fixing holes follow transforms and remain NPTH
+PASS New polarity is printed independently of editor pin-name visibility
+PASS Pin-map CSV escapes formula-leading user labels
+PASS The catalog can be searched by family, manufacturer and functional pin
+28/28 maker checks passed.
+
+> /opt/nvm/versions/node/v22.16.0/bin/node tests/carriers.test.js
+PASS Nine controller families add eighteen interfaces: 188 unique entries and old parts retained
+PASS Every controller/role validates, has unassigned pins and round-trips embedded geometry
+PASS Addon and carrier templates preserve identical top-view pin numbering and coordinates
+PASS Four rotations / two flips preserve all embedded pins, holes and guards
+PASS Pico and Pico 2 each map all 40 physical contacts with 17.78 mm row separation
+PASS Nano physical contact 1 TX, 15 D12, 16 D13, 30 VIN and analog-only A6/A7
+PASS ESP DevKitC V4 has exact bank labels, 38 contacts and WROOM GPIO16/17
+PASS Feather has 16+12 contacts, correctly offset rows and no invented FREE-pin role
+PASS XIAO variants retain distinct GPIO aliases and only the 14 header contacts
+PASS Only PCB-antenna variants get default enforced copper guards; external XIAO does not
+PASS Guards are attached derived geometry and move with the part, never separate saved objects
+PASS Host and clearance display toggles never disable routing protection
+PASS Copying a part creates independent constraints; deleting it leaves no orphan
+PASS Both top and bottom manual paths reject guard crossings
+PASS Via preview rejects both-face guard area even with auto-net disabled
+PASS Imported copper under an enforced guard produces blocking DRC
+PASS Two-face fills exclude the attached guard, and active seed copper remains
+PASS Guard disable is explicit, has a required reason, and remains a warning
+PASS Malformed, oversized and unsupported constraint metadata is rejected
+PASS Schema 1/2/3 migrate without inventing host data or changing old pad geometry
+PASS Unknown embedded controller remains editable without a live library dependency
+PASS All new templates have no initial copper errors and optionally omit mechanical holes
+PASS Same-connector-face body conflicts are advisory; opposite face does not falsely collide
+PASS USB access projection overlap produces an advisory without corrupting electrical rules
+PASS Reserved contact assignment is warned, never silently joined
+PASS Pin CSV preserves named contacts and user-net IDs, with spreadsheet escaping
+PASS KiCad export flattens the current transformed guard into both copper-face keepouts
+PASS Host, overlay and pin-caption visibility do not affect Gerber / drill output
+PASS Mounted host drawings add no silkscreen until the user enables a real reference mark
+PASS All 18 variants produce readable manufacturing layers and exact plated contact count
+PASS Old Uno optional ICSP still appends without altering 32 perimeter contacts
+PASS Plane connection helper can attach Pico ground without an unnecessary via
+32/32 carrier checks passed.
+
+> /opt/pyvenv/bin/python tests/verify_manufacturing.py
+PASS All nine generated Gerbers parse independently into valid geometries
+PASS Outline centerline is a closed 40 by 30 mm rectangle
+PASS Top exported copper matches independently constructed native geometry
+PASS Bottom exported copper matches independently constructed native geometry
+PASS Bottom copper shares the physical origin and is not mirrored
+PASS Plated drills align with both header pads and the through via
+PASS Non-plated round hole and G85 slot preserve centers, travel and tool sizes
+PASS Mask openings cover the applicable pads on each face
+PASS Final silkscreen is nonempty, inside the board and clear of openings
+PASS Paste apertures include surface pads, not through-hole pads or vias
+PASS All exported coupon copper remains within the configured board-edge clearance
+PASS Independent reader rejects unsupported Gerber operations
+
+12/12 checks passed.
+
+> /opt/pyvenv/bin/python tests/verify_platforms.py
+PASS pi40/addon: exact plated and non-plated drill coordinates
+PASS pi40/addon: copper/NPTH clearance, masks, and no bottom mirror
+PASS pi40/carrier: exact plated and non-plated drill coordinates
+PASS pi40/carrier: copper/NPTH clearance, masks, and no bottom mirror
+PASS uno-r3/addon: exact plated and non-plated drill coordinates
+PASS uno-r3/addon: copper/NPTH clearance, masks, and no bottom mirror
+PASS uno-r3/carrier: exact plated and non-plated drill coordinates
+PASS uno-r3/carrier: copper/NPTH clearance, masks, and no bottom mirror
+PASS mkr/addon: exact plated and non-plated drill coordinates
+PASS mkr/addon: copper/NPTH clearance, masks, and no bottom mirror
+PASS mkr/carrier: exact plated and non-plated drill coordinates
+PASS mkr/carrier: copper/NPTH clearance, masks, and no bottom mirror
+12/12 independent platform checks passed.
+
+> /opt/pyvenv/bin/python tests/verify_vias.py
+PASS open: one plated drill at the literal expected center
+PASS open: identical 1.2 mm copper on both faces, no bottom mirror
+PASS open: mask opening follows tenting on both faces
+PASS tented: one plated drill at the literal expected center
+PASS tented: identical 1.2 mm copper on both faces, no bottom mirror
+PASS tented: mask opening follows tenting on both faces
+PASS Tenting changes mask only, not copper or plated-drill bytes
+7/7 independent via checks passed.
+
+> /opt/pyvenv/bin/python tests/verify_planes.py
+PASS Power/ground fixture has exactly three plated drills at literal expected centers
+PASS Bottom ground plane actually joins the through-hole lead and attachment via
+PASS Top SMT stub actually reaches the same via without touching the power plane
+PASS Power copper and ground copper remain separated on both faces
+PASS Top power plane and SMT ground stub meet the explicit clearance
+PASS Via copper diameter and annular ring survive both Gerber layers
+PASS Untented attachment via has mask openings, but the plane itself stays masked
+PASS All fixture copper stays inside the 0.381 mm board-edge margin
+PASS Split fixture has exactly two actual bottom-copper regions
+PASS Same-net pads on opposite sides of a keepout are not physically connected
+PASS The full-height copper keepout has no exported plane copper
+PASS Non-plated mounting hole and its copper clearance agree in separate outputs
+PASS Internal cutout keeps copper at the required routed-edge clearance
+PASS Every filled native rectangle is retained by independently parsed Gerber geometry
+PASS Thermal-gap artwork leaves a real copper path from pad into its plane
+15/15 independent plane checks passed.
+
+> /opt/pyvenv/bin/python tests/verify_silkscreen.py
+PASS Standard UNION reader reproduces total ink erasure from the old clear frame
+PASS Oppositely wound nested contours fill the entire outer region, not a donut
+PASS rect / top: exact retained substrate, pad masks, slots, cutout and via tenting
+PASS rect / bottom: exact retained substrate, pad masks, slots, cutout and via tenting
+PASS rounded / top: exact retained substrate, pad masks, slots, cutout and via tenting
+PASS rounded / bottom: exact retained substrate, pad masks, slots, cutout and via tenting
+PASS circle / top: exact retained substrate, pad masks, slots, cutout and via tenting
+PASS circle / bottom: exact retained substrate, pad masks, slots, cutout and via tenting
+PASS concave / top: exact retained substrate, pad masks, slots, cutout and via tenting
+PASS concave / bottom: exact retained substrate, pad masks, slots, cutout and via tenting
+PASS reversed / top: exact retained substrate, pad masks, slots, cutout and via tenting
+PASS reversed / bottom: exact retained substrate, pad masks, slots, cutout and via tenting
+PASS offset / top: exact retained substrate, pad masks, slots, cutout and via tenting
+PASS offset / bottom: exact retained substrate, pad masks, slots, cutout and via tenting
+PASS top text, references, polarity and drawing geometry survive actual Gerber compositing
+PASS bottom text, references, polarity and drawing geometry survive actual Gerber compositing
+PASS Generated legend regions do not depend on nested-hole fill semantics
+17/17 checks passed.
+
+> /opt/pyvenv/bin/python tests/verify_maker.py
+PASS NE555 PDIP-8 literal 7.62 mm row spacing, 2.54 mm pitch, drills and both copper faces
+PASS NE555 SOIC-8 is top surface copper with no invented drill or bottom copper
+PASS LM1117 SOT-223 exports three lead lands and the separate output tab
+PASS Qwiic has four 1 mm-pitch signal lands and two mechanical mounting lands
+PASS USB4085 Excellon has 16 literal 0.4 mm signal drills and four vertical shell slots
+PASS USB slots and contact coordinates transform consistently after bottom flip plus 90° rotation
+PASS Uno ICSP adds six drills at the literal reference positions, not mirrored in manufacture
+PASS Encoder fixing holes remain non-plated and follow side/rotation transforms
+PASS led-top: real polarity artwork survives Gerber clearing on its assigned face
+PASS led-bottom: real polarity artwork survives Gerber clearing on its assigned face
+10/10 checks passed.
+
+> /opt/pyvenv/bin/python tests/verify_carriers.py
+PASS pico carrier: literal pitch, bank origins, PTH count and both copper faces
+PASS pico addon: literal pitch, bank origins, PTH count and both copper faces
+PASS pico2 carrier: literal pitch, bank origins, PTH count and both copper faces
+PASS pico2 addon: literal pitch, bank origins, PTH count and both copper faces
+PASS pico-w carrier: literal pitch, bank origins, PTH count and both copper faces
+PASS pico-w addon: literal pitch, bank origins, PTH count and both copper faces
+PASS pico2-w carrier: literal pitch, bank origins, PTH count and both copper faces
+PASS pico2-w addon: literal pitch, bank origins, PTH count and both copper faces
+PASS nano-classic carrier: literal pitch, bank origins, PTH count and both copper faces
+PASS nano-classic addon: literal pitch, bank origins, PTH count and both copper faces
+PASS esp32-devkitc-v4 carrier: literal pitch, bank origins, PTH count and both copper faces
+PASS esp32-devkitc-v4 addon: literal pitch, bank origins, PTH count and both copper faces
+PASS feather-classic carrier: literal pitch, bank origins, PTH count and both copper faces
+PASS feather-classic addon: literal pitch, bank origins, PTH count and both copper faces
+PASS xiao-rp2040 carrier: literal pitch, bank origins, PTH count and both copper faces
+PASS xiao-rp2040 addon: literal pitch, bank origins, PTH count and both copper faces
+PASS xiao-esp32c3 carrier: literal pitch, bank origins, PTH count and both copper faces
+PASS xiao-esp32c3 addon: literal pitch, bank origins, PTH count and both copper faces
+PASS Optional mounting drills are NPTH and no holes are invented for ESP32 / XIAO
+PASS Generated filled Gerbers exclude literal antenna rectangle on both faces
+PASS Host reference drawings, access labels and RF overlays invent no silkscreen or drills
+21/21 independent carrier checks passed.
+
+> /opt/pyvenv/bin/python tests/browser_test.py
+PASS Boot renders 3D parts and embedded worker completes design checks
+PASS Click-to-place, rotate, flip, undo and redo use the real controls
+PASS Manual lead-to-lead trace honors selected width
+PASS Three picked leads preview and commit an actual connected route
+PASS Starter board routes all three nets without blocking geometry findings
+PASS Native JSON export blob and reviewed file-input import round-trip
+PASS Unsupported native import leaves the existing board unchanged
+PASS Fabrication reads actual files and produces a complete manufacturing ZIP blob
+PASS Unrouted boards require explicit diagnostic-export override
+PASS Board size and polygon tools edit boundaries without scaling footprints
+PASS Silkscreen text and drag-drawn shapes create editable manufacturing geometry
+PASS Image conversion embeds its original and emits real silkscreen rectangles
+PASS Executable SVG is rejected before image conversion
+PASS Custom footprint wizard produces a placeable self-contained part
+PASS Copper-zone drawing invokes worker fill and establishes physical connectivity
+PASS Searchable pin table provides an alternative to picking small pads
+PASS Baseline comparison and downloadable review report work
+PASS Autosave/reload and quota-failure recovery work with the storage test double
+PASS Dark/high-contrast themes and narrow responsive layout avoid page overflow
+PASS No external asset requests or uncaught application exceptions
+{
+  "passed": 20,
+  "total": 20
+}
+
+> /opt/pyvenv/bin/python tests/platform_browser_test.py
+PASS Platforms category exposes twenty-four searchable add-on/carrier parts
+PASS Platform chooser renders a preview and explains nominal dimensions
+PASS Every family creates an editable template; MKR carrier applies margin and hole options
+PASS Starting a template is undoable and restores the previous project
+PASS Unlock, rotate and flip controls move the compound header and its mounts
+PASS Reference visibility is manufacturing-neutral; mounting-hole toggle updates real NPTH
+PASS Place-on-current-board leaves the board boundary and existing data intact
+PASS Searchable pin table finds GPIO aliases and selects the actual connector pad
+PASS Locked Pi interface pads can be clicked and routed to a new component
+PASS Pin-map CSV download contains physical IDs, signal names and top-view coordinates
+PASS Native JSON download preserves embedded platform metadata and linked holes
+PASS Platform workflow stays within the narrow-screen viewport
+PASS No uncaught errors or external runtime asset requests
+{
+  "passed": 13,
+  "total": 13
+}
+
+> /opt/pyvenv/bin/python tests/via_browser_test.py
+PASS Visible Via button opens controls and creates an assigned plated via
+PASS Repeated placement uses preset/tenting defaults and supports undo/redo
+PASS Unassigned empty-space vias stay visible to manufacturing checks
+PASS Placing directly on an off-grid trace snaps to its center and inherits net
+PASS Conflicting front/back nets produce a red preview and no board mutation
+PASS Board-edge and mounting-hole clashes block standalone placement
+PASS Bad annular rings and undersized drills do not change placement defaults
+PASS Inspector edits dimensions/tenting and respects the via lock
+PASS V during tracing inserts a via and continues a connected bottom-layer route
+PASS Visible layer-change button commits trace plus via as one undoable edit
+PASS Traces start/end on vias and a via remains selectable over its trace
+PASS Via routes can finish directly on an existing same-net trace
+PASS Blocked routing via leaves the trace, side and board unchanged
+PASS Manage vias table selects objects for duplication and deletion
+PASS Moving an attached via exposes disconnection instead of moving copper silently
+PASS JSON backup and actual file-input import retain via details
+PASS KiCad export explicitly warns about via mask/lock limitations
+PASS A blocked arrow-key via move rolls back without an uncaught exception
+PASS Placement, inspector and generated-file views render the actual via
+PASS Narrow-screen users can reach the visible Via tool without page overflow
+PASS No external asset requests or uncaught exceptions in via workflows
+{"passed": 21, "total": 21}
+
+> /opt/pyvenv/bin/python tests/plane_browser_test.py
+PASS Bottom-ground preset assigns one face and auto-fills without inventing pin nets or undo steps
+PASS Top-power dropdown creates a separate named net and honestly reports no attached copper
+PASS Through-hole lead accepts a direct plane attachment without an unnecessary via
+PASS Opposite-face SMT lead previews then commits an actual trace and via
+PASS Discarding an attachment leaves the native board unchanged
+PASS One undo or redo handles net assignment, short trace, via and plane state together
+PASS Inspector pin action supports keyboard-based plane attachment
+PASS Two picked leads connect in one checked batch rather than merging every net
+PASS Pad context menu exposes the same explicit plane workflow
+PASS A conflicting assigned pin is rejected without a net merge or partial copper
+PASS Cancelling the real connection worker adds no proposed copper
+PASS A worker proposal cannot overwrite a newer board revision
+PASS Board resize refollows and refills the plane without scaling components
+PASS Ground preset preserves existing manual copper zones
+PASS Auto-refill can be disabled; stale fabrication is blocked until a manual refill
+PASS Changing plane assignment requires confirmation and retains existing lead nets
+PASS Connections report exposes real disconnected plane islands, not just matching net names
+PASS Hide-fill and face-view controls do not alter manufacturing copper
+PASS Schema-3 backup and actual file-input import retain planes and verified attachments
+PASS Per-face thermal settings persist and trigger a new fill
+PASS Screenshots show real plane preview, accepted 3D board and copper-face views
+PASS Plane assignment controls remain reachable on a narrow screen
+PASS No external runtime requests or uncaught exceptions in plane workflows
+23/23 plane browser tests passed.
+
+> /opt/pyvenv/bin/python tests/silkscreen_browser_test.py
+PASS Recognizable diode, LED and capacitor terminals have badges and full inspector names
+PASS Hovering the K badge identifies the actual cathode lead rather than a nearby body
+PASS Clicking an A badge in connection mode selects that exact anode pad
+PASS Pin table searches by full electrical role, not just pin number
+PASS Printing can be disabled without losing editor identification; undo and redo work
+PASS Numeric/custom pins gain explicit roles without renumbering or copper/net changes
+PASS Printable size/gap/offsets survive real JSON download and file-input import
+PASS Rotation and side changes retain terminal identity and move printed symbols to the correct face
+PASS Fabrication defaults include silk and expose both silk-only inspection controls
+PASS Final top Gerber visibly retains the on-board line after all clear operations
+PASS Final bottom Gerber retains readable component-side markings in the flipped view
+PASS Viewer now correctly shows the old nested clear-frame reproducer as completely blank
+PASS Viewer unions overlapping dark contours even with reversed winding
+PASS The actual UI-generated ZIP contains the tested top and bottom Gerber text
+PASS Polarity controls remain reachable and labeled on a narrow screen
+PASS No external runtime requests or uncaught exceptions during the new workflows
+16/16 silkscreen browser tests passed.
+
+> /opt/pyvenv/bin/python tests/maker_browser_test.py
+PASS Family-first drawer groups 134 new variants without replacing legacy parts
+PASS Native family/search/variant controls place the selected package through the canvas
+PASS Drawer search finds Qwiic directly and placement does not create a power net
+PASS Functional pin-label edits are one undoable metadata operation
+PASS Source notes and explicit user review are visible; label edits clear review
+PASS Part-reference dialog exports the actual functional pin map CSV
+PASS Editor-only functional captions never leak into manufacturing artwork
+PASS Worker findings and normal export block conflicting nets on an internally common tab
+PASS Uno template checkbox adds six real ICSP contacts while default templates stay unchanged
+PASS ICSP removal is undoable and is refused when a pin is still assigned
+PASS ICSP-enabled headers can be placed on the current board with a normal reference
+PASS Advanced pad renumbering keeps internal-terminal group references aligned
+PASS Actual JSON download blob and file-input import retain embedded catalog and signals
+PASS KiCad exchange warns that functional labels and catalog behavior are not preserved
+PASS A real 3D workbench renders new connector, control, driver and debugging bodies
+PASS Narrow-screen picker remains reachable without page-level horizontal overflow
+PASS No uncaught exceptions or external runtime requests during maker workflows
+17/17 maker browser checks passed.
+
+> /opt/pyvenv/bin/python tests/carrier_browser_test.py
+PASS Controller picker is visible, has twelve families, and defaults to Pico 2 carrier
+PASS Every new variant creates a locked, routable, correctly sized header template
+PASS No-hole hosts cannot accidentally enable invented mounting drills
+PASS FeatherWing-style add-on exposes the bottom mating face and variant-specific FREE contact
+PASS Place-on-current-board preserves the boundary and adds the selected exact interface
+PASS Inspector shows functional contact labels, source model and editable RF/access regions
+PASS Guard dimensions and stack-gap edits are one undoable operation
+PASS RF override requires a recorded reason; the accepted override remains a warning
+PASS Hiding overlays does not disable guards or alter manufacturing output
+PASS Rotate and flip controls transform the attached guard without changing its two-face protection
+PASS Actual worker refills both plane faces around the attached RF exclusion
+PASS Visible Via tool refuses to place a via inside the RF guard
+PASS Saved JSON and project ZIP retain schema 4, host metadata, guards and planes
+PASS KiCad export discloses metadata loss and includes two independent keepout zones
+PASS Bench and clearance inspector render the controller and its separate reference geometry
+PASS Controller selection and template workflow fit a 390 px viewport
+PASS No uncaught browser errors or external runtime dependencies
+17/17 carrier browser checks passed.
+
+All requested suites passed.

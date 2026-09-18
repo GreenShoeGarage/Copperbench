@@ -1,0 +1,141 @@
+{
+  "version": "1.5.0",
+  "recordedUTC": "2026-09-18T12:30:46.883053+00:00",
+  "passed": 433,
+  "total": 433,
+  "suites": [
+    {
+      "suite": "Core JavaScript",
+      "passed": 32,
+      "total": 32,
+      "record": "core-results.json"
+    },
+    {
+      "suite": "Platform JavaScript",
+      "passed": 23,
+      "total": 23,
+      "record": "platform-results.json"
+    },
+    {
+      "suite": "Via JavaScript",
+      "passed": 27,
+      "total": 27,
+      "record": "via-results.json"
+    },
+    {
+      "suite": "Plane JavaScript",
+      "passed": 31,
+      "total": 31,
+      "record": "plane-core-results.json"
+    },
+    {
+      "suite": "Polarity / silkscreen JavaScript",
+      "passed": 30,
+      "total": 30,
+      "record": "silkscreen-results.json"
+    },
+    {
+      "suite": "Maker-library JavaScript",
+      "passed": 28,
+      "total": 28,
+      "record": "maker-results.json"
+    },
+    {
+      "suite": "Carrier JavaScript",
+      "passed": 32,
+      "total": 32,
+      "record": "carriers-results.json"
+    },
+    {
+      "suite": "Separate coupon geometry",
+      "passed": 12,
+      "total": 12,
+      "record": "manufacturing-results.json"
+    },
+    {
+      "suite": "Separate platform geometry",
+      "passed": 12,
+      "total": 12,
+      "record": "platform-manufacturing-results.json"
+    },
+    {
+      "suite": "Separate via geometry",
+      "passed": 7,
+      "total": 7,
+      "record": "via-manufacturing-results.json"
+    },
+    {
+      "suite": "Separate plane geometry",
+      "passed": 15,
+      "total": 15,
+      "record": "plane-manufacturing-results.json"
+    },
+    {
+      "suite": "Separate silkscreen geometry",
+      "passed": 17,
+      "total": 17,
+      "record": "silkscreen-manufacturing-results.json"
+    },
+    {
+      "suite": "Separate maker geometry",
+      "passed": 10,
+      "total": 10,
+      "record": "maker-manufacturing-results.json"
+    },
+    {
+      "suite": "Separate carrier geometry",
+      "passed": 21,
+      "total": 21,
+      "record": "carrier-independent-results.json"
+    },
+    {
+      "suite": "Core Chromium interactions",
+      "passed": 20,
+      "total": 20,
+      "record": "browser-results.json"
+    },
+    {
+      "suite": "Platform Chromium interactions",
+      "passed": 13,
+      "total": 13,
+      "record": "platform-browser-results.json"
+    },
+    {
+      "suite": "Via Chromium interactions",
+      "passed": 21,
+      "total": 21,
+      "record": "via-browser-results.json"
+    },
+    {
+      "suite": "Plane Chromium interactions",
+      "passed": 23,
+      "total": 23,
+      "record": "plane-browser-results.json"
+    },
+    {
+      "suite": "Polarity / silkscreen Chromium interactions",
+      "passed": 16,
+      "total": 16,
+      "record": "silkscreen-browser-results.json"
+    },
+    {
+      "suite": "Maker Chromium interactions",
+      "passed": 17,
+      "total": 17,
+      "record": "maker-browser-results.json"
+    },
+    {
+      "suite": "Carrier Chromium interactions",
+      "passed": 17,
+      "total": 17,
+      "record": "carrier-browser-results.json"
+    },
+    {
+      "suite": "Packaging",
+      "passed": 9,
+      "total": 9,
+      "record": "full-tests.txt"
+    }
+  ],
+  "scope": "Actual Chromium DOM/canvas/workers with simulated storage and captured download blobs. Independent-language checks against literal recorded numerical fixtures. Nominal source-referenced header templates; no physical fit, RF, electrical, external CAM or manufacturer-acceptance qualification."
+}

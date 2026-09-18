@@ -1,0 +1,397 @@
+{
+  "app": "COPPERBENCH-BLOCK",
+  "schema": 1,
+  "id": "block-button",
+  "revision": 1,
+  "name": "Button with pull-up",
+  "description": "An active-low pushbutton with a 10 kΩ pull-up and a three-pin interface.",
+  "notes": [
+    "10 kΩ is a starting value, not a universal requirement. Verify logic voltage, input thresholds and debounce in the receiving circuit.",
+    "Generic four-lead switch assumes left pair 1–2 and right pair 3–4 are common; verify the actual switch with a meter. Switch state is not simulated."
+  ],
+  "parts": [
+    {
+      "id": "p-catalog-17",
+      "name": "Header · 1 × 3",
+      "category": "Connectors",
+      "body": {
+        "kind": "header",
+        "w": 7.62,
+        "h": 2.54,
+        "z": 5
+      },
+      "pads": [
+        {
+          "number": "1",
+          "x": -2.54,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "both",
+          "net": "n-catalog-20"
+        },
+        {
+          "number": "2",
+          "x": 0,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n-catalog-21"
+        },
+        {
+          "number": "3",
+          "x": 2.54,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n-catalog-22"
+        }
+      ],
+      "ref": "J1",
+      "value": "VCC / SIGNAL / GND",
+      "source": "Parametric geometry; check against the selected component datasheet.",
+      "verified": false,
+      "libraryId": "header3",
+      "x": -12,
+      "y": 0,
+      "rotation": 90,
+      "side": "top",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 2.4699999999999998,
+        "size": 1,
+        "visible": true
+      }
+    },
+    {
+      "id": "p-catalog-18",
+      "name": "R · 0805",
+      "category": "Surface-mount",
+      "body": {
+        "kind": "smd-resistor",
+        "w": 2,
+        "h": 1.25,
+        "z": 0.7
+      },
+      "pads": [
+        {
+          "number": "1",
+          "x": -0.95,
+          "y": 0,
+          "w": 1,
+          "h": 1.4,
+          "drill": 0,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "top",
+          "net": "n-catalog-20"
+        },
+        {
+          "number": "2",
+          "x": 0.95,
+          "y": 0,
+          "w": 1,
+          "h": 1.4,
+          "drill": 0,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "top",
+          "net": "n-catalog-21"
+        }
+      ],
+      "ref": "R1",
+      "value": "10k",
+      "source": "Parametric geometry; check against the selected component datasheet.",
+      "verified": false,
+      "libraryId": "R0805",
+      "x": -4,
+      "y": -7,
+      "rotation": 90,
+      "side": "top",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 1.825,
+        "size": 1,
+        "visible": true
+      }
+    },
+    {
+      "id": "p-catalog-19",
+      "name": "Pushbutton · 6 mm · 4 leads",
+      "category": "Controls",
+      "ref": "SW1",
+      "value": "Momentary NO",
+      "body": {
+        "kind": "switch",
+        "w": 6,
+        "h": 6,
+        "z": 5
+      },
+      "pads": [
+        {
+          "number": "1",
+          "x": -3.25,
+          "y": -2.25,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 0.9,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n-catalog-21",
+          "signal": "Contact A1"
+        },
+        {
+          "number": "2",
+          "x": -3.25,
+          "y": 2.25,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 0.9,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n-catalog-21",
+          "signal": "Contact A2"
+        },
+        {
+          "number": "3",
+          "x": 3.25,
+          "y": -2.25,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 0.9,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n-catalog-22",
+          "signal": "Contact B1"
+        },
+        {
+          "number": "4",
+          "x": 3.25,
+          "y": 2.25,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 0.9,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n-catalog-22",
+          "signal": "Contact B2"
+        }
+      ],
+      "verified": false,
+      "source": "COPPERBENCH parametric template. No manufacturer footprint is claimed.",
+      "catalog": {
+        "schema": 1,
+        "family": "Switches",
+        "variant": "6 mm momentary / 4 leads",
+        "manufacturer": "",
+        "mpn": "",
+        "sourceDate": "2026-09-18",
+        "sources": [],
+        "notes": [
+          "Nominal parametric pattern, not a universal manufacturer footprint. Match pitch, hole diameter, pin order, body and mating clearance to the actual component.",
+          "Assumed common pairs: left pair 1–2, right pair 3–4. Verify actual switch with a continuity meter. A/B is momentary, not automatically joined."
+        ],
+        "geometryStatus": "parametric-review-required",
+        "pinNamesEdited": false,
+        "reviewed": false
+      },
+      "internalGroups": [
+        [
+          "1",
+          "2"
+        ],
+        [
+          "3",
+          "4"
+        ]
+      ],
+      "libraryId": "maker-button-6",
+      "x": 4,
+      "y": 0,
+      "rotation": 0,
+      "side": "top",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 4.2,
+        "size": 1,
+        "visible": true
+      }
+    }
+  ],
+  "traces": [
+    {
+      "id": "t-catalog-23",
+      "net": "n-catalog-20",
+      "layer": "top",
+      "width": 0.4,
+      "points": [
+        {
+          "x": -12,
+          "y": -2.54
+        },
+        {
+          "x": -4,
+          "y": -7.95
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t-catalog-24",
+      "net": "n-catalog-21",
+      "layer": "top",
+      "width": 0.4,
+      "points": [
+        {
+          "x": -12,
+          "y": 0
+        },
+        {
+          "x": -4,
+          "y": -6.05
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t-catalog-25",
+      "net": "n-catalog-21",
+      "layer": "top",
+      "width": 0.4,
+      "points": [
+        {
+          "x": -4,
+          "y": -6.05
+        },
+        {
+          "x": 0.75,
+          "y": -2.25
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t-catalog-26",
+      "net": "n-catalog-21",
+      "layer": "top",
+      "width": 0.4,
+      "points": [
+        {
+          "x": 0.75,
+          "y": -2.25
+        },
+        {
+          "x": 0.75,
+          "y": 2.25
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t-catalog-27",
+      "net": "n-catalog-22",
+      "layer": "top",
+      "width": 0.4,
+      "points": [
+        {
+          "x": -12,
+          "y": 2.54
+        },
+        {
+          "x": -1.2,
+          "y": 2.54
+        },
+        {
+          "x": 0,
+          "y": 3.74
+        },
+        {
+          "x": 5.6,
+          "y": 3.74
+        },
+        {
+          "x": 6.8,
+          "y": 2.54
+        },
+        {
+          "x": 7.25,
+          "y": 2.25
+        }
+      ],
+      "locked": false
+    },
+    {
+      "id": "t-catalog-28",
+      "net": "n-catalog-22",
+      "layer": "top",
+      "width": 0.4,
+      "points": [
+        {
+          "x": 7.25,
+          "y": 2.25
+        },
+        {
+          "x": 7.25,
+          "y": -2.25
+        }
+      ],
+      "locked": false
+    }
+  ],
+  "vias": [],
+  "nets": [
+    {
+      "id": "n-catalog-20",
+      "name": "VCC",
+      "width": 0.4
+    },
+    {
+      "id": "n-catalog-21",
+      "name": "SIGNAL",
+      "width": 0.4
+    },
+    {
+      "id": "n-catalog-22",
+      "name": "GND",
+      "width": 0.4
+    }
+  ],
+  "ports": [
+    {
+      "key": "VCC",
+      "name": "VCC",
+      "net": "n-catalog-20",
+      "kind": "power"
+    },
+    {
+      "key": "SIGNAL",
+      "name": "SIGNAL",
+      "net": "n-catalog-21",
+      "kind": "signal"
+    },
+    {
+      "key": "GND",
+      "name": "GND",
+      "net": "n-catalog-22",
+      "kind": "ground"
+    }
+  ]
+}

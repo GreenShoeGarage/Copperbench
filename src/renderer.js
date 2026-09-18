@@ -37,7 +37,7 @@ class Renderer{
   c.restore();
   if(s.airwires&&s.connectivity){for(const a of s.connectivity.air){let high=s.highlightNet===a.net;this.line([a.a,a.b],high?'#ffdfa0':bench?'#c9d2a5ae':'#a0af86',high?.12:.08,[3,5],.07);}}
   if(bench){for(const p of d.parts.filter(p=>p.side===active||p.platform))this.component(p,s.xray||['trace','connect','via','plane-connect'].includes(s.tool)?.25:1);this.flush();}else this.partOutlines();
-  this.platformLabels();this.polarityLabels();this.overlays();
+  this.carrierClearances();this.platformLabels();this.functionalLabels();this.polarityLabels();this.overlays();
  }
  polarityLabels(){
   const c=this.ctx,s=this.state;this.polarityHitLabels=[];
@@ -73,7 +73,8 @@ class Renderer{
    this.extrude(p,p.platform.outline,-.28,-.07,f?.color||'#39775b',alpha*.22);
    for(let i=0;i<p.platform.outline.length;i++)this.surfaceLine(p,p.platform.outline[i],p.platform.outline[(i+1)%p.platform.outline.length],.08,.2,'#b7d3c0',alpha*.8);
    const rb=(x,y,bw,bh,color)=>{const a=ref(x,y);this.box(p,a.x-(sign<0?bw:0),a.y,bw,bh,.1,.75,color,alpha*.24);};
-   if(p.platform.family==='pi40'){rb(22,18,13,13,'#263c31');rb(46,19,12,15,'#a8b6b1');rb(43,38,15,10,'#a8b6b1');rb(6,39,8,7,'#a8b6b1');}
+   if(p.carrier){const edge=p.carrier.usbEdge;if(edge==='top')rb(w/2-4,-1,8,6,'#bfcac8');else if(edge==='bottom')rb(w/2-4,h-5,8,6,'#bfcac8');else rb(-1,h/2-4,6,8,'#bfcac8');rb(w*.32,h*.34,w*.36,h*.24,'#202e2a');if(p.carrier.wireless==='pcb'){const rr=p.carrier.regions.find(r=>r.kind==='antenna');if(rr)for(let i=0;i<4;i++)this.surfaceLine(p,{x:rr.x+1,y:rr.y+rr.h-2-i},{x:rr.x+rr.w-1,y:rr.y+rr.h-2-i},.2,.22,'#d7b574',alpha*.5);}const name=f?.short||'CONTROLLER';this.text(p,name,-w*.35,0,.9,Math.min(1.2,w/Math.max(10,name.length)), '#e4efcf',alpha*.85);}
+   else if(p.platform.family==='pi40'){rb(22,18,13,13,'#263c31');rb(46,19,12,15,'#a8b6b1');rb(43,38,15,10,'#a8b6b1');rb(6,39,8,7,'#a8b6b1');}
    else {rb(0,h/2-4,7,8,'#bfcac8');rb(w*.35,h*.38,w*.22,h*.25,'#2b3836');if(p.platform.family==='mkr')rb(w-14,6,11,12,'#aebcba');else rb(0,h-15,9,8,'#303c3b');}
   }
   const groups={};for(const a of p.pads)(groups[a.bank||'HEADER']??=[]).push(a);
@@ -85,6 +86,7 @@ class Renderer{
   if(this.scale<5||this.state.view==='fabrication')return;
   const c=this.ctx;c.save();c.font='9px ui-monospace,monospace';c.textAlign='center';c.fillStyle='#f3edce';
   for(const p of this.doc.parts.filter(p=>p.platform?.showPins))for(const a of p.pads){
+   if(p.carrier?.vertical){const name=(a.signal||a.number).split(' / ')[0].replace('GPIO','G').replace('3V3_OUT','3V3').replace('3V3_EN','3EN');const local={x:a.x+(a.x<0?2.3:-2.3),y:a.y},v=this.project(C.world(p,local),.05),pin=this.project(C.world(p,a),.05);c.textAlign=v.x>pin.x?'left':'right';if(name.length<9||this.scale>8)c.fillText(name,v.x,v.y+3);c.textAlign='center';continue;}
    const n=p.platform.family==='pi40'?a.number:(a.signal||a.number).split(' / ')[0];
    const q=C.world(p,a),insideY=a.y<0?a.y+2.6:a.y-2.6;
    // Pi has two tightly-spaced rows: captions sit on opposite sides of the header.
@@ -94,8 +96,54 @@ class Renderer{
   }c.restore();
  }
 
+ carrierClearances(){
+  if(!C.Carriers||this.state.view==='fabrication')return;const c=this.ctx;
+  for(const p of this.doc.parts.filter(p=>p.carrier?.showClearances))for(const r of C.Carriers.regions(p)){
+   const col=r.enforced?'#ffbd9c':'#e4c789';c.save();c.globalAlpha=.07;this.polygon(r.points,col);c.globalAlpha=.9;this.line([...r.points,r.points[0]],col,.12,[5,4],.1);
+   const q=this.project(r.points[0],.12);c.font='600 10px system-ui';c.fillStyle=col;c.textAlign='left';c.fillText(r.kind==='antenna'?(r.enforced?'RF · copper guard':'RF · guard disabled'):r.name,q.x+3,q.y-5);c.restore();
+  }
+ }
+
+ makerComponent(p,alpha=1){
+  const {kind:k,w,h,z}=p.body,box=(x,y,bw,bh,a,b,color)=>this.box(p,x,y,bw,bh,a,b,color,alpha),cyl=(x,y,r,a,b,color)=>this.cylinder(p,x,y,r,a,b,color,alpha),line=(a,b,zz,ww,color)=>this.surfaceLine(p,a,b,zz,ww,color,alpha);
+  const label=(txt,zz=z+.08,size=Math.min(1.1,w/8))=>this.text(p,txt,-w*.35,0,zz,size,'#e9eadb',alpha);
+  if(['socket','shrouded','rightangle','jst'].includes(k)){
+   const white=k==='jst',col=white?'#e5e0cb':'#2c3734';box(-w/2,-h/2,w,h,.1,k==='rightangle'?2.5:z,col);
+   if(k==='jst'||k==='shrouded'){box(-w/2+.5,-h/2+.5,w-1,h-1,z,z+.05,white?'#6f7d74':'#121d18');box(-w/2,-h/2,w,.55,z,z+.6,col);box(-w/2,-h/2,.55,h,z,z+.6,col);box(w/2-.55,-h/2,.55,h,z,z+.6,col);box(-w/2,h/2-.55,Math.max(.4,w*.34),.55,z,z+.6,col);box(w*.16,h/2-.55,Math.max(.4,w*.34),.55,z,z+.6,col);}
+   for(const a of p.pads.filter(a=>!String(a.number).startsWith('MP'))){if(k==='rightangle'){line({x:a.x,y:a.y},{x:a.x,y:h/2+1},3,.62,'#cfb467');}else{box(a.x-.43,a.y-.43,.86,.86,z+.1,z+.16,k==='socket'?'#bba05a':'#cbb368');if(k==='socket')box(a.x-.25,a.y-.25,.5,.5,z+.17,z+.18,'#07100e');}}
+   const a=p.pads[0];if(a)this.text(p,'1',a.x-.35,a.y-.85,z+.8,.8,white?'#394b3c':'#f1d997',alpha);return true;
+  }
+  if(k==='usb'){box(-w/2,-h/2,w,h,.1,z,'#bfc9c9');box(-w/2+.4,h/2-.08,w-.8,.10,.55,z-.35,'#253132');box(-w*.3,h/2-.15,w*.6,.11,1.25,1.65,'#b8b6a1');line({x:-w*.3,y:0},{x:w*.3,y:0},z+.06,.15,'#7e908c');return true;}
+  if(k==='barrel'){box(-w/2,-h/2,w,h,.3,z,'#253b35');box(-w/2+.7,h/2-.05,w-1.4,.1,1,z-1,'#080f0c');box(-.5,h/2-.08,1,.15,3,7,'#bea66a');return true;}
+  if(k==='dipswitch'){box(-w/2,-h/2,w,h,.3,z,'#a9433c');for(let i=0;i<p.pads.length/2;i++){const x=(i-(p.pads.length/2-1)/2)*2.54;box(x-.8,-h*.33,1.6,h*.66,z,z+.04,'#482a28');box(x-.62,-h*.24,1.24,h*.3,z+.06,z+.5,'#e9e3d1');this.text(p,String(i+1),x-.3,h*.36,z+.08,.7,'#fff5e0',alpha);}return true;}
+  if(k==='slide'){box(-w/2,-h/2,w,h,.2,z*.5,'#aebcba');box(-w*.3,-h*.25,w*.6,h*.5,z*.5,z*.51,'#1e2b25');box(-w*.22,-h*.2,w*.22,h*.4,z*.51,z,'#26332b');return true;}
+  if(['trimmer','pot','encoder'].includes(k)){box(-w/2,-h/2,w,h,.2,k==='trimmer'?z-1:6,k==='trimmer'?'#336d95':'#aabbb6');cyl(0,0,k==='trimmer'?w*.3:3,k==='trimmer'?z-1:6,z,k==='trimmer'?'#c8b170':'#d1d3c6');line({x:-w*.22,y:0},{x:w*.22,y:0},z+.06,.35,'#526159');return true;}
+  if(k==='to220'){box(-w/2,-h/2,w,h,.8,z*.62,'#303b34');box(-w/2+.4,-.7,w-.8,1.4,z*.62,z,'#afbcb5');box(-1,-.73,2,1.5,z-4,z-2,'#233b32');label(p.value,z*.62+.1,.85);return true;}
+  if(k==='sot223'){box(-w/2,-h/2,w,h,.3,z,'#293b31');label('1117');return true;}
+  if(k==='relay'){box(-w/2,-h/2,w,h,.4,z,'#336ea0');label('SPDT',z+.07,1.6);return true;}
+  if(k==='fuse'){box(-w/2,-h/2,w,h,.3,2.2,'#283c2e');this.axial(p,-10,10,2.5,5.5,'#9ebbb0',alpha);for(const x of [-11.5,8]){this.axial(p,x,x+3.5,2.7,5.5,'#c9d2c9',alpha);box(x,-3,3.5,6,2,5,'#b9c7c0');}return true;}
+  if(k==='loop'){const xs=p.pads.map(a=>a.x),a={x:Math.min(...xs),y:0},b={x:Math.max(...xs),y:0};line(a,b,z,.8,'#d2b368');for(const v of [a,b]){const q0=this.local(p,v,.4),q1=this.local(p,v,z);this.queue.push({line:[q0,q1],color:'#c8b169',alpha,width:.8,depth:this.project(q1,z).depth});}return true;}
+  if(k==='jumper'){return true;}
+  if(k==='smd-diode'){box(-w/2,-h/2,w,h,.15,z,'#354238');box(-w*.4,-h/2,.35,h,z,z+.04,'#ddd4ac');return true;}
+  if(k==='smdled'||k==='rgbled'){box(-w/2,-h/2,w,h,.1,z,'#e1dfc7');cyl(0,0,Math.min(w,h)*.32,z,z+.05,k==='smdled'?'#e2bf64':'#aaa887');if(k==='rgbled'){for(const [x,y,col]of[[-.4,-.3,'#bd5746'],[.4,-.3,'#53856b'],[0,.4,'#526fa0']])box(x-.18,y-.18,.36,.36,z+.08,z+.14,col);label('>',z+.15,.9);}return true;}
+  return false;
+ }
+ functionalLabels(){
+  const s=this.state,c=this.ctx;if(s.view==='fabrication'||this.scale<4)return;
+  for(const p of this.doc.parts){if(p.platform||p.pinNamesVisible===false||!s.selection?.includes(p.id)||p.side!==s.side&&!p.pads.some(a=>a.drill))continue;
+   const occupied=[];for(let i=0;i<p.pads.length;i++){const a=p.pads[i];if(!a.signal||C.polarityRole(p,a))continue;
+    const pin=this.project(C.world(p,a),.08),edge={x:a.x,y:a.y};
+    if(Math.abs(a.x)/Math.max(.1,p.body.w)>Math.abs(a.y)/Math.max(.1,p.body.h)){edge.x=Math.sign(a.x||1)*(p.body.w/2+2.2);}else{edge.y=Math.sign(a.y||1)*(p.body.h/2+2.2);}
+    const q=this.project(C.world(p,edge),.08),text=a.number+' · '+a.signal;c.save();c.font='600 10px system-ui,sans-serif';const w=Math.min(210,c.measureText(text).width+10),h=17;
+    let x=q.x,y=q.y;const right=q.x>=pin.x;x+=(right?1:-1)*w/2;
+    for(let tries=0;tries<50&&occupied.some(b=>Math.abs(b.x-x)<(b.w+w)/2+2&&Math.abs(b.y-y)<h+2);tries++)y+=19;
+    occupied.push({x,y,w});c.strokeStyle='#c9dcb8';c.lineWidth=.8;c.beginPath();c.moveTo(pin.x,pin.y);c.lineTo(x+(right?-1:1)*w/2,y);c.stroke();c.fillStyle='#162d24';c.fillRect(x-w/2,y-h/2,w,h);c.fillStyle='#f5efdb';c.textAlign='center';c.textBaseline='middle';c.fillText(text,x,y,w-8);c.restore();
+   }
+  }
+ }
  component(p,alpha=1){if(p.platform&&p.body.kind==='platform'){this.platformComponent(p,alpha);return;}const b=p.body,w=b.w,h=b.h,z=b.z,kind=b.kind;let leads=p.pads;
   for(const a of leads){let v={x:a.x,y:a.y};if(kind==='header'||kind==='terminal')continue;let inner={x:C.clamp(a.x,-w/2,w/2),y:C.clamp(a.y,-h/2,h/2)},wi=Math.min(a.h,.65);this.surfaceLine(p,v,inner,.55,wi,'#bac6c7',alpha);this.surfaceLine(p,{x:v.x,y:v.y+.06},{x:inner.x,y:inner.y+.06},.62,wi*.28,'#ffffff',alpha);}
+  if(this.makerComponent(p,alpha))return;
   if(kind==='resistor'||kind==='diode'){this.axial(p,-w/2,w/2,h/2,1.6,kind==='resistor'?'#c2a173':'#c47f48',alpha);const bands=kind==='resistor'?['#754826','#372c27','#ac492e','#bd9a42']:['#24211e'];bands.forEach((c,i)=>{let x=kind==='resistor'?-w*.32+i*w*.19:((p.pads.find(a=>C.polarityRole(p,a)==='cathode')?.x??-1)<0?-w*.36:w*.36-.4);this.axial(p,x,x+.4,h/2+.015,1.6,c,alpha);});for(const a of leads)this.surfaceLine(p,{x:a.x,y:a.y},{x:Math.sign(a.x)*w/2,y:0},1.55,.38,'#d5dcda',alpha);}
   else if(kind==='led'){this.cylinder(p,0,0,w/2+.2,.25,1,'#dba242',alpha);let rings=[[1,w/2],[z*.7,w/2],[z*.88,w*.39],[z*.98,w*.2],[z,0]],n=24;for(let r=0;r<rings.length-1;r++){let [za,ra]=rings[r],[zb,rb]=rings[r+1];for(let i=0;i<n;i++){let a=i/n*Math.PI*2,b=(i+1)/n*Math.PI*2;this.face([this.local(p,{x:Math.cos(a)*ra,y:Math.sin(a)*ra},za),this.local(p,{x:Math.cos(b)*ra,y:Math.sin(b)*ra},za),this.local(p,{x:Math.cos(b)*rb,y:Math.sin(b)*rb},zb),this.local(p,{x:Math.cos(a)*rb,y:Math.sin(a)*rb},zb)],shade(p.appearance||'#ec733a',.75+.38*Math.cos(a-.6)),alpha);}}this.surfaceLine(p,{x:-.9,y:-.4},{x:-.9,y:.4},z*.91,.3,'#fff2c5',alpha);}
   else if(kind==='capacitor'){this.cylinder(p,0,0,w/2,.35,z,'#274b62',alpha,32);this.cylinder(p,0,0,w*.455,z,z+.09,'#b9c5c8',alpha,32);this.surfaceLine(p,{x:-w*.26,y:0},{x:w*.26,y:0},z+.12,.10,'#697b80',alpha);this.surfaceLine(p,{x:0,y:-w*.26},{x:0,y:w*.26},z+.12,.10,'#697b80',alpha);const negative=p.pads.find(a=>C.polarityRole(p,a)==='negative'),stripe=(negative?.x??1)<0?-w*.31-.5:w*.31;this.box(p,stripe,-.4,.5,.8,.9,z-.25,'#bfd0cb',alpha);}

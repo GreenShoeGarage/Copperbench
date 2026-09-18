@@ -1,0 +1,126 @@
+{
+  "passed": 30,
+  "total": 30,
+  "results": [
+    {
+      "name": "Diodes and LEDs explicitly identify both anode and cathode",
+      "pass": true
+    },
+    {
+      "name": "Polarized capacitors use positive/negative roles, not diode voltage assumptions",
+      "pass": true
+    },
+    {
+      "name": "Legacy A/K and +/- built-ins gain labels without changing geometry or net IDs",
+      "pass": true
+    },
+    {
+      "name": "No numeric or net-name polarity inference for imported/custom connectors",
+      "pass": true
+    },
+    {
+      "name": "User-defined roles work without changing numeric pin identities or nets",
+      "pass": true
+    },
+    {
+      "name": "Explicit none suppresses a legacy role instead of re-inferring it",
+      "pass": true
+    },
+    {
+      "name": "Silkscreen polarity is independent of reference-label visibility",
+      "pass": true
+    },
+    {
+      "name": "Printed polarity stays on the component face, including flipped through-hole parts",
+      "pass": true
+    },
+    {
+      "name": "Polarity anchors preserve physical pin identity through flips and arbitrary rotation",
+      "pass": true
+    },
+    {
+      "name": "Default printed marks clear their own body and mask openings",
+      "pass": true
+    },
+    {
+      "name": "Polarity size, gap and offsets survive native schema-4 JSON",
+      "pass": true
+    },
+    {
+      "name": "Invalid roles and polarity marking dimensions are rejected on import",
+      "pass": true
+    },
+    {
+      "name": "An on-board drawn line survives the entire exported top silkscreen stack",
+      "pass": true
+    },
+    {
+      "name": "On-board bottom artwork survives clipping without mirroring board coordinates",
+      "pass": true
+    },
+    {
+      "name": "Old nested-clear-frame reproducer has NO ink under standard Gerber semantics",
+      "pass": true
+    },
+    {
+      "name": "Overlapping dark contours are unioned even when winding directions oppose",
+      "pass": true
+    },
+    {
+      "name": "Every exported clipping region has one closed contour",
+      "pass": true
+    },
+    {
+      "name": "Nested-frame fix retains physical holes and pad-mask clipping",
+      "pass": true
+    },
+    {
+      "name": "Cutout clears only its opening, not all surrounding artwork",
+      "pass": true
+    },
+    {
+      "name": "X2 and RS-274X compatibility exports contain identical retained artwork",
+      "pass": true
+    },
+    {
+      "name": "Export is deterministic and never mutates the project",
+      "pass": true
+    },
+    {
+      "name": "KiCad exchange includes the printable polarity strokes",
+      "pass": true
+    },
+    {
+      "name": "Gerber reader rejects open contours instead of accepting malformed regions",
+      "pass": true
+    },
+    {
+      "name": "Exterior clipping fixture: rect",
+      "pass": true
+    },
+    {
+      "name": "Exterior clipping fixture: rounded",
+      "pass": true
+    },
+    {
+      "name": "Exterior clipping fixture: circle",
+      "pass": true
+    },
+    {
+      "name": "Exterior clipping fixture: concave",
+      "pass": true
+    },
+    {
+      "name": "Exterior clipping fixture: reversed",
+      "pass": true
+    },
+    {
+      "name": "Exterior clipping fixture: offset",
+      "pass": true
+    },
+    {
+      "name": "Text, references, images and all supported drawing tools have export fixtures",
+      "pass": true
+    }
+  ]
+}
