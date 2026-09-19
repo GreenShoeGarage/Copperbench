@@ -1,13 +1,41 @@
 # COPPERBENCH
 ### A PCB workbench that feels like a PCB.
 
-**Version 1.7.0 · Green Shoe Garage / Field Instruments · 18 September 2026**
+**Version 1.7.1 · Green Shoe Garage / Field Instruments · 18 September 2026**
 
-[Editing and export review](docs/EDITING.md) · [Pan the view](#new-in-v163--pan-the-view) · [Compact polarity](#new-in-v162--compact-polarity-markings) · [Quieter workbench](#new-in-v161--quieter-workbench) · [Modules & circuit blocks](#new-in-v16--modules-and-editable-circuits) · [Controller carriers](#controller-carriers) · [Everyday maker parts](#everyday-maker-parts) · [Polarity & silkscreen fix](#polarity-and-silkscreen) · [Power & ground planes](#power-and-ground-planes) · [Create vias](#create-vias) · [HATs & shields](#hats-shields-and-carriers) · [Get started](#start-here) · [Publish to GitHub](docs/GITHUB.md) · [Deploy](docs/DEPLOYMENT.md) · [Verification](docs/TESTING.md) · [Contribute](CONTRIBUTING.md)
+[CaseBench export](docs/CASEBENCH-EXPORT.md) · [Editing and export review](docs/EDITING.md) · [Pan the view](#new-in-v163--pan-the-view) · [Compact polarity](#new-in-v162--compact-polarity-markings) · [Quieter workbench](#new-in-v161--quieter-workbench) · [Modules & circuit blocks](#new-in-v16--modules-and-editable-circuits) · [Controller carriers](#controller-carriers) · [Everyday maker parts](#everyday-maker-parts) · [Polarity & silkscreen fix](#polarity-and-silkscreen) · [Power & ground planes](#power-and-ground-planes) · [Create vias](#create-vias) · [HATs & shields](#hats-shields-and-carriers) · [Get started](#start-here) · [Publish to GitHub](docs/GITHUB.md) · [Deploy](docs/DEPLOYMENT.md) · [Verification](docs/TESTING.md) · [Contribute](CONTRIBUTING.md)
 
 Put down a board. Place recognizable parts. Connect their leads. Shape the copper. Add your markings. Inspect the files you will send for fabrication.
 
 COPPERBENCH is a local-first, two-copper-layer PCB layout app with an editable, depth-rendered 3D workbench. **COPPERBENCH is the working title for this release.** The physical bodies are representative; pad geometry and the electrical connection model—not rendered pixels—drive routing, checking and manufacturing export.
+
+## New in v1.7.1 — CaseBench board JSON
+
+Click the **▾ beside Export board → CaseBench JSON**, or use **Board →
+CaseBench JSON**. Review the dimensions and component/hole counts, then choose
+**Download CaseBench JSON**. In CaseBench, import it as a CopperBench board.
+No upload or service is involved.
+
+![The actual CaseBench JSON export dialog](docs/images/casebench-export.png)
+
+The download uses native **`app: "COPPERBENCH"`, schema 5, `units: "mm"`**.
+Board shape/thickness, both-side components, local pads, active mounting holes,
+slots, cutouts, vias, module/carrier metadata and placed block records are retained.
+It does not flatten, move, mirror or rescale the geometry; the CaseBench importer
+owns the conversion into enclosure coordinates. Representative module body height
+already includes its modeled stack and is not increased again.
+
+The default board snapshot omits artwork, image assets, saved baseline and unused
+circuit-block templates. **File contents & options → Include project extras**
+retains those too. Keep **Save JSON** for complete editable-project backups.
+Unrouted nets or stale copper fills do not block this enclosure handoff. Pending
+placement/edit proposals and changes after review do block downloading an obsolete
+snapshot. File size and known CaseBench native-adapter bounds are preflighted.
+
+No project-format migration or new runtime dependency. The target CaseBench app
+was not available locally for an end-to-end import test; the native contract and
+geometry preservation are tested, not physical enclosure fit. See the
+[handoff guide](docs/CASEBENCH-EXPORT.md) and [verification record](docs/TESTING.md).
 
 ## New in v1.7 — editing and export review
 

@@ -42,7 +42,7 @@ with sync_playwright() as pw:
   except Exception as e:RESULTS.append({'name':name,'pass':False,'error':str(e)});print('FAIL',name,str(e),flush=True);traceback.print_exc();page.screenshot(path=str(OUT/f'editing-failure-{len(RESULTS)}.png'))
  def trace_select():page.select_option('#selectionFilter','copper');click(27,10)
  boot()
- test('v1.7 boots with 193 parts, schema 5 and focused selection controls',lambda:check(page.evaluate('CB.VERSION==="1.7.0" && CB.LIB.length===193 && CBAPP.state.doc.schema===5') and page.locator('#selectionFilter').is_visible()))
+ test('v1.7 boots with 193 parts, schema 5 and focused selection controls',lambda:check(page.evaluate('version=>CB.VERSION===version && CB.LIB.length===193 && CBAPP.state.doc.schema===5', json.loads((ROOT/'package.json').read_text())['version']) and page.locator('#selectionFilter').is_visible()))
  def filters():
   reset();page.select_option('#selectionFilter','parts');click(27,10);check(page.evaluate('CBAPP.state.selection.length===0'))
   page.select_option('#selectionFilter','copper');click(27,10);check(page.evaluate('CBAPP.state.selection[0]==="route1"'));check(page.locator('#editSegment').is_visible())

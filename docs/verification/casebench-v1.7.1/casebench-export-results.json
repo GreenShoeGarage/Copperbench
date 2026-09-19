@@ -1,0 +1,131 @@
+{
+  "passed": 31,
+  "total": 31,
+  "exampleCount": 43,
+  "results": [
+    {
+      "name": "Native CopperBench schema 5 with explicit mm; no new mechanical wrapper",
+      "pass": true
+    },
+    {
+      "name": "Source document, dates and editable geometry are not mutated",
+      "pass": true
+    },
+    {
+      "name": "Filename is JSON, useful, bounded and safe for paths",
+      "pass": true
+    },
+    {
+      "name": "Every supported outline remains native rather than flattened",
+      "pass": true
+    },
+    {
+      "name": "Custom outline summary uses actual extents without shifting its origin",
+      "pass": true
+    },
+    {
+      "name": "Bottom parts keep local pads: mirror X then rotate exactly once",
+      "pass": true
+    },
+    {
+      "name": "Active linked mounting holes are retained locally and never duplicated at root",
+      "pass": true
+    },
+    {
+      "name": "Disabled module mounting pattern is reference-only, not a set of new bores",
+      "pass": true
+    },
+    {
+      "name": "Module envelope height is not increased by stack gap a second time",
+      "pass": true
+    },
+    {
+      "name": "Carrier and platform references and attached keepouts survive export",
+      "pass": true
+    },
+    {
+      "name": "Every library variant exports its embedded footprint without catalog substitution",
+      "pass": true
+    },
+    {
+      "name": "Board slots, plated pad slots and vias retain their dimensions and identities",
+      "pass": true
+    },
+    {
+      "name": "Cutouts are kept as independent native polygons",
+      "pass": true
+    },
+    {
+      "name": "Copper design errors and unrouted nets do not block a mechanical handoff",
+      "pass": true
+    },
+    {
+      "name": "Unfilled planes are preserved and do not block enclosure export",
+      "pass": true
+    },
+    {
+      "name": "Board-only handoff omits artwork, images, baseline and unused library",
+      "pass": true
+    },
+    {
+      "name": "Project extras option retains the complete project data",
+      "pass": true
+    },
+    {
+      "name": "Export reopens in CopperBench as native schema 5",
+      "pass": true
+    },
+    {
+      "name": "Future native schema is rejected, not relabelled as 5",
+      "pass": true
+    },
+    {
+      "name": "Wrong units and non-project JSON fail with actionable errors",
+      "pass": true
+    },
+    {
+      "name": "Blank board works and reports that component envelopes are absent",
+      "pass": true
+    },
+    {
+      "name": "Self-intersecting board and cutout boundaries fail safely",
+      "pass": true
+    },
+    {
+      "name": "Out-of-board parts warn but are not moved or silently dropped",
+      "pass": true
+    },
+    {
+      "name": "CaseBench native adapter component limit is preflighted",
+      "pass": true
+    },
+    {
+      "name": "CaseBench polygon limit is preflighted without simplification",
+      "pass": true
+    },
+    {
+      "name": "Oversized contours are refused before expensive boundary validation",
+      "pass": true
+    },
+    {
+      "name": "CaseBench cutout count limit is preflighted",
+      "pass": true
+    },
+    {
+      "name": "CaseBench JSON limit counts UTF-8 bytes and does not truncate the file",
+      "pass": true
+    },
+    {
+      "name": "Snapshot is deterministic for an unchanged design, with stable IDs",
+      "pass": true
+    },
+    {
+      "name": "Both board-face stored envelope maxima are summarized without changing bodies",
+      "pass": true
+    },
+    {
+      "name": "All shipped native starter projects keep their placed geometry and block members",
+      "pass": true
+    }
+  ]
+}

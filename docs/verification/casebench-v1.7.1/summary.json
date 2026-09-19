@@ -1,0 +1,159 @@
+{
+  "version": "1.7.1",
+  "passed": 741,
+  "total": 741,
+  "categories": {
+    "engine": 348,
+    "manufacturing": 118,
+    "browser": 262,
+    "packaging": 13
+  },
+  "nativeCases": {
+    "passed": 0,
+    "blocked": 2
+  },
+  "targetCaseBenchImporterExecuted": false,
+  "sourceRuntimeUnchanged": true,
+  "results": {
+    "core-results": {
+      "passed": 32,
+      "total": 32
+    },
+    "platform-results": {
+      "passed": 23,
+      "total": 23
+    },
+    "via-results": {
+      "passed": 27,
+      "total": 27
+    },
+    "plane-core-results": {
+      "passed": 31,
+      "total": 31
+    },
+    "silkscreen-results": {
+      "passed": 30,
+      "total": 30
+    },
+    "maker-results": {
+      "passed": 28,
+      "total": 28
+    },
+    "carriers-results": {
+      "passed": 32,
+      "total": 32
+    },
+    "modules-blocks-results": {
+      "passed": 47,
+      "total": 47
+    },
+    "compact-polarity-results": {
+      "passed": 10,
+      "total": 10
+    },
+    "editing-results": {
+      "passed": 39,
+      "total": 39
+    },
+    "export-review-results": {
+      "passed": 18,
+      "total": 18
+    },
+    "casebench-export-results": {
+      "passed": 31,
+      "total": 31
+    },
+    "manufacturing-results": {
+      "passed": 12,
+      "total": 12
+    },
+    "platform-manufacturing-results": {
+      "passed": 12,
+      "total": 12
+    },
+    "via-manufacturing-results": {
+      "passed": 7,
+      "total": 7
+    },
+    "plane-manufacturing-results": {
+      "passed": 15,
+      "total": 15
+    },
+    "silkscreen-manufacturing-results": {
+      "passed": 17,
+      "total": 17
+    },
+    "maker-manufacturing-results": {
+      "passed": 10,
+      "total": 10
+    },
+    "carrier-independent-results": {
+      "passed": 21,
+      "total": 21
+    },
+    "modules-blocks-independent-results": {
+      "passed": 16,
+      "total": 16
+    },
+    "compact-polarity-manufacturing-results": {
+      "passed": 2,
+      "total": 2
+    },
+    "editing-manufacturing-results": {
+      "passed": 6,
+      "total": 6
+    },
+    "browser-results": {
+      "passed": 20,
+      "total": 20
+    },
+    "platform-browser-results": {
+      "passed": 13,
+      "total": 13
+    },
+    "via-browser-results": {
+      "passed": 21,
+      "total": 21
+    },
+    "plane-browser-results": {
+      "passed": 23,
+      "total": 23
+    },
+    "silkscreen-browser-results": {
+      "passed": 16,
+      "total": 16
+    },
+    "maker-browser-results": {
+      "passed": 17,
+      "total": 17
+    },
+    "carrier-browser-results": {
+      "passed": 17,
+      "total": 17
+    },
+    "modules-blocks-browser-results": {
+      "passed": 29,
+      "total": 29
+    },
+    "quiet-ui-browser-results": {
+      "passed": 18,
+      "total": 18
+    },
+    "compact-polarity-browser-results": {
+      "passed": 15,
+      "total": 15
+    },
+    "pan-browser-results": {
+      "passed": 29,
+      "total": 29
+    },
+    "editing-browser-results": {
+      "passed": 29,
+      "total": 29
+    },
+    "casebench-browser-results": {
+      "passed": 15,
+      "total": 15
+    }
+  }
+}

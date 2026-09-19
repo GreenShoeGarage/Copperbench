@@ -1,0 +1,98 @@
+{
+  "environment": "Chromium embedded portable HTML; simulated storage; captured download blobs.",
+  "passed": 18,
+  "total": 18,
+  "results": [
+    {
+      "name": "Fresh startup has no slogans, welcome overlay or idle instructions",
+      "pass": true,
+      "ms": 73
+    },
+    {
+      "name": "Search and six compact catalog controls expose the parts grid above the fold",
+      "pass": true,
+      "ms": 259
+    },
+    {
+      "name": "Category selection and named-part search retain module/controller discovery",
+      "pass": true,
+      "ms": 797
+    },
+    {
+      "name": "Every compact library button opens its complete existing workflow",
+      "pass": true,
+      "ms": 1827
+    },
+    {
+      "name": "Library tools is keyboard-operable and keeps its state through inspector refresh",
+      "pass": true,
+      "ms": 855
+    },
+    {
+      "name": "Active trace guidance is concise; tool help does not change the board or tool",
+      "pass": true,
+      "ms": 849
+    },
+    {
+      "name": "Via tool retains net/placement cautions and its complete on-demand instructions",
+      "pass": true,
+      "ms": 606
+    },
+    {
+      "name": "Part placement uses one context hint rather than a second instructional toast",
+      "pass": true,
+      "ms": 2327
+    },
+    {
+      "name": "Keyboard and touch-accessible help retains displaced instructions and limitations",
+      "pass": true,
+      "ms": 1017
+    },
+    {
+      "name": "Legacy welcome preferences do not restore clutter or discard saved UI settings",
+      "pass": true,
+      "ms": 1322
+    },
+    {
+      "name": "Live error/warning counts and the fabrication export gate remain visible",
+      "pass": true,
+      "ms": 1942
+    },
+    {
+      "name": "Autosave failures still display an explicit warning and JSON backup remains available",
+      "pass": true,
+      "ms": 1017
+    },
+    {
+      "name": "Plain panel headings retain board fabrication limits and the active silkscreen face",
+      "pass": true,
+      "ms": 3298
+    },
+    {
+      "name": "Fabrication retains exported-layer selection, CAM caution and identical file bytes",
+      "pass": true,
+      "ms": 2636
+    },
+    {
+      "name": "Compact and active-tool layouts remain usable from 360 to 900 pixels wide",
+      "pass": true,
+      "ms": 4227
+    },
+    {
+      "name": "Dark and high-contrast themes retain readable controls and status indicators",
+      "pass": true,
+      "ms": 2747
+    },
+    {
+      "name": "The 193-part library and schema-5 native round trip remain unchanged",
+      "pass": true,
+      "ms": 58
+    },
+    {
+      "name": "Quiet-workbench interactions need no external requests and raise no uncaught errors",
+      "pass": true,
+      "ms": 0
+    }
+  ],
+  "uncaught": []
+}

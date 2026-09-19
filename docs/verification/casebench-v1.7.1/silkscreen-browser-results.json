@@ -1,0 +1,89 @@
+{
+  "version": "1.7.1",
+  "date": "2026-09-19T01:04:27.338174+00:00",
+  "passed": 16,
+  "total": 16,
+  "scope": "Actual Chromium UI/canvas/workers, simulated localStorage, captured download blobs. Not external CAM, hosted offline behavior or manufacturer acceptance.",
+  "results": [
+    {
+      "name": "Diode, LED and capacitor terminals have printed marks and full inspector names, without idle badges",
+      "pass": true,
+      "ms": 1892
+    },
+    {
+      "name": "Hovering the K badge identifies the actual cathode lead rather than a nearby body",
+      "pass": true,
+      "ms": 1609
+    },
+    {
+      "name": "Clicking an A badge in connection mode selects that exact anode pad",
+      "pass": true,
+      "ms": 1752
+    },
+    {
+      "name": "Pin table searches by full electrical role, not just pin number",
+      "pass": true,
+      "ms": 1901
+    },
+    {
+      "name": "Printing can be disabled without losing editor identification; undo and redo work",
+      "pass": true,
+      "ms": 2088
+    },
+    {
+      "name": "Numeric/custom pins gain explicit roles without renumbering or copper/net changes",
+      "pass": true,
+      "ms": 1070
+    },
+    {
+      "name": "Printable size/gap/offsets survive real JSON download and file-input import",
+      "pass": true,
+      "ms": 1808
+    },
+    {
+      "name": "Rotation and side changes retain terminal identity and move printed symbols to the correct face",
+      "pass": true,
+      "ms": 1059
+    },
+    {
+      "name": "Fabrication defaults include silk and expose both silk-only inspection controls",
+      "pass": true,
+      "ms": 652
+    },
+    {
+      "name": "Final top Gerber visibly retains the on-board line after all clear operations",
+      "pass": true,
+      "ms": 734
+    },
+    {
+      "name": "Final bottom Gerber retains readable component-side markings in the flipped view",
+      "pass": true,
+      "ms": 725
+    },
+    {
+      "name": "Viewer now correctly shows the old nested clear-frame reproducer as completely blank",
+      "pass": true,
+      "ms": 609
+    },
+    {
+      "name": "Viewer unions overlapping dark contours even with reversed winding",
+      "pass": true,
+      "ms": 563
+    },
+    {
+      "name": "The actual UI-generated ZIP contains the tested top and bottom Gerber text",
+      "pass": true,
+      "ms": 759
+    },
+    {
+      "name": "Polarity controls remain reachable and labeled on a narrow screen",
+      "pass": true,
+      "ms": 1021
+    },
+    {
+      "name": "No external runtime requests or uncaught exceptions during the new workflows",
+      "pass": true,
+      "ms": 0
+    }
+  ]
+}

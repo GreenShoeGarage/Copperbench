@@ -1,0 +1,68 @@
+{
+  "environment": "Chromium controls/canvas/workers; simulated storage and captured download blobs; CaseBench target importer not executed.",
+  "passed": 15,
+  "total": 15,
+  "results": [
+    {
+      "name": "Compact export arrow opens a dedicated CaseBench option with collapsed details",
+      "pass": true
+    },
+    {
+      "name": "Download captures a valid native schema-5 board without modifying the editor",
+      "pass": true
+    },
+    {
+      "name": "Bottom view, pan and mil display never transform or rescale exported coordinates",
+      "pass": true
+    },
+    {
+      "name": "Optional project extras include original artwork without changing geometry",
+      "pass": true
+    },
+    {
+      "name": "Uncommitted trace, connected edit, block placement and autowire previews block handoff",
+      "pass": true
+    },
+    {
+      "name": "A changed revision cannot download the previously reviewed board",
+      "pass": true
+    },
+    {
+      "name": "Unrouted boards and unfilled planes can be exported for enclosure work",
+      "pass": true
+    },
+    {
+      "name": "Board panel provides a direct CaseBench export independent of fabrication",
+      "pass": true
+    },
+    {
+      "name": "Oversized full project is blocked; compact board-only export remains available",
+      "pass": true
+    },
+    {
+      "name": "Rotated bottom module keeps active local holes and existing stacked body height",
+      "pass": true
+    },
+    {
+      "name": "Downloaded handoff reopens through the real CopperBench JSON import controls",
+      "pass": true
+    },
+    {
+      "name": "Desktop export summary remains compact and readable",
+      "pass": true
+    },
+    {
+      "name": "Mobile export menu and project files both reach the handoff without horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "Project title is escaped in the export summary",
+      "pass": true
+    },
+    {
+      "name": "Handoff controls produce no uncaught JavaScript errors or external requests",
+      "pass": true
+    }
+  ],
+  "uncaught": []
+}

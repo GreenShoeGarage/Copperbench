@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.7.1 — 2026-09-18 · CaseBench board export
+
+- Added compact export-format access and a dedicated CaseBench JSON handoff in the export menu, Board panel, manufacturing dialog and mobile Project files.
+- Export retains native schema 5 with explicit millimetres, embedded part geometry, active holes, slots/cutouts, both-side placement, module/carrier metadata and circuit-block records.
+- Board-only default omits artwork/assets, saved baseline and unused circuit-block templates; optional project extras preserve them. Save JSON remains the full backup.
+- Added preflight for known native-adapter limits and malformed boundaries, reviewed-revision guards and pending-edit protection without blocking unrouted boards or unfilled planes.
+- Added geometry-preservation regressions across all 193 library entries and the native example projects, plus desktop/mobile download UI coverage.
+- CaseBench importer execution and physical fit remain unverified; no unit guessing, double transform or second stack-height addition.
+
 ## 1.7.0 — 2026-09-18 · Editing and export review
 
 - Added selection filters and overlap cycling without permanent instruction banners.

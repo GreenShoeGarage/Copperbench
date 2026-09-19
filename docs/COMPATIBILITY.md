@@ -167,3 +167,15 @@ The two-copy storage-recovery bundle is likewise an archive envelope; extract
 its `currentBoard` value as JSON to import that board. `storedRaw` retains the
 other record without guessing how to repair invalid data. New browser controls
 do not change the existing restricted KiCad/footprint interchange boundaries.
+
+## CaseBench JSON (v1.7.1)
+
+Dedicated export emits native CopperBench schema 5 with explicit millimetres,
+not a newly invented mechanical schema. Existing schema-5-capable CaseBench
+imports are the target. The exported snapshot retains raw local footprints and
+world part placements so the target importer performs its transform exactly once.
+Early CaseBench builds that reject schema 5 must be updated; do not edit the schema
+number by hand. Export preflight follows the retrieved adapter 2.0.1 bounds:
+8 MiB JSON, 512 placed parts, 8192 pads, 1024 standalone holes, 128 cutouts,
+512 vertices per custom outline/cutout. These are known bounds, not a substitute
+for the target's full validation. End-to-end target execution is unverified.

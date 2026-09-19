@@ -1,0 +1,81 @@
+{
+  "total": 15,
+  "passed": 15,
+  "results": [
+    {
+      "name": "Idle bench uses the printable symbols without floating A/K billboards",
+      "pass": true,
+      "ms": 2090
+    },
+    {
+      "name": "Selecting a tall LED shows only 9-pixel A/K tags, never expanded full-name badges",
+      "pass": true,
+      "ms": 1857
+    },
+    {
+      "name": "Tags avoid all projected component bodies at twelve tilt/orbit combinations",
+      "pass": true,
+      "ms": 1882
+    },
+    {
+      "name": "Large custom print settings cannot enlarge editor tags",
+      "pass": true,
+      "ms": 2382
+    },
+    {
+      "name": "Zooming never scales up the screen-space tag typography",
+      "pass": true,
+      "ms": 1722
+    },
+    {
+      "name": "Direct silkscreen checkbox changes printing only and supports undo/redo",
+      "pass": true,
+      "ms": 4192
+    },
+    {
+      "name": "Compact print defaults restores small enabled marks without reassigning roles",
+      "pass": true,
+      "ms": 2525
+    },
+    {
+      "name": "Full cathode identity stays in the tooltip without expanding its board label",
+      "pass": true,
+      "ms": 1777
+    },
+    {
+      "name": "Small tags remain clickable targets for the exact electrical pad",
+      "pass": true,
+      "ms": 2038
+    },
+    {
+      "name": "Fabrication reads actual small role glyphs with no editor overlays or camera-induced file changes",
+      "pass": true,
+      "ms": 2647
+    },
+    {
+      "name": "Flipping the component moves the printable marks to the bottom Gerber",
+      "pass": true,
+      "ms": 3325
+    },
+    {
+      "name": "Four-terminal RGB LEDs receive separate compact labels, not overlapping A/K pairs",
+      "pass": true,
+      "ms": 1990
+    },
+    {
+      "name": "Narrow-screen routing retains bounded labels without page overflow",
+      "pass": true,
+      "ms": 1838
+    },
+    {
+      "name": "Compact labels remain present in high-contrast and dark themes",
+      "pass": true,
+      "ms": 2868
+    },
+    {
+      "name": "No uncaught browser errors or remote runtime requests",
+      "pass": true,
+      "ms": 0
+    }
+  ]
+}

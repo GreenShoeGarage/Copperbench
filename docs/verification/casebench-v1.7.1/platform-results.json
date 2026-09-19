@@ -1,0 +1,100 @@
+{
+  "version": "1.7.1",
+  "date": "2026-09-19T01:03:39.761Z",
+  "passed": 23,
+  "total": 23,
+  "results": [
+    {
+      "name": "All six mating variants exist and their contact IDs are unique",
+      "pass": true
+    },
+    {
+      "name": "Pi 40-pin HAT template uses top-view physical pin 1, GPIO aliases, and four mounts",
+      "pass": true
+    },
+    {
+      "name": "Uno R3 preserves the exact 4.064 mm D8\u2013D7 discontinuity",
+      "pass": true
+    },
+    {
+      "name": "MKR 28-pin contact mapping and 20.32 mm row separation are preserved",
+      "pass": true
+    },
+    {
+      "name": "Add-on and carrier mating variants share the same top-view pattern, not a double mirror",
+      "pass": true
+    },
+    {
+      "name": "All template variants pass geometry DRC but retain explicit review warnings",
+      "pass": true
+    },
+    {
+      "name": "Schema 1 migrates to the current schema without mutating the source",
+      "pass": true
+    },
+    {
+      "name": "Native JSON preserves embedded pin aliases, mounting holes, and display options",
+      "pass": true
+    },
+    {
+      "name": "Legacy v1.0 documents load without inventing platform data",
+      "pass": true
+    },
+    {
+      "name": "Rotation and flipping move mounting holes with their interface",
+      "pass": true
+    },
+    {
+      "name": "Resizing the board does not stretch connector geometry or mounting holes",
+      "pass": true
+    },
+    {
+      "name": "Header-only placement does not drill unrequested host mounting holes",
+      "pass": true
+    },
+    {
+      "name": "Reference visibility never changes Gerber or drill bytes",
+      "pass": true
+    },
+    {
+      "name": "Manufacturing exports exactly the interface drills, not host circuitry",
+      "pass": true
+    },
+    {
+      "name": "Mounting holes stay aligned in top/bottom copper and explicit-decimal Excellon",
+      "pass": true
+    },
+    {
+      "name": "KiCad subset keeps every connector contact and NPTH coordinate after transforms",
+      "pass": true
+    },
+    {
+      "name": "Removing optional mounts changes only NPTH-related outputs, not copper",
+      "pass": true
+    },
+    {
+      "name": "Mounting holes enter route obstacles and copper-to-NPTH checks",
+      "pass": true
+    },
+    {
+      "name": "Selected-pin router can attach a new test point to a named Pi GPIO",
+      "pass": true
+    },
+    {
+      "name": "Unknown metadata versions and malformed mounting coordinates are rejected",
+      "pass": true
+    },
+    {
+      "name": "Library-based duplication creates independent metadata and unassigned nets",
+      "pass": true
+    },
+    {
+      "name": "Pin-map CSV records physical IDs and signals without creating project nets",
+      "pass": true
+    },
+    {
+      "name": "NC-contact review is surfaced without silently removing its user assignment",
+      "pass": true
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+
+> /opt/pyvenv/bin/python tests/platform_browser_test.py
+PASS Platforms category exposes twenty-four searchable add-on/carrier parts
+PASS Platform chooser renders a preview and explains nominal dimensions
+PASS Every family creates an editable template; MKR carrier applies margin and hole options
+PASS Starting a template is undoable and restores the previous project
+PASS Unlock, rotate and flip controls move the compound header and its mounts
+PASS Reference visibility is manufacturing-neutral; mounting-hole toggle updates real NPTH
+PASS Place-on-current-board leaves the board boundary and existing data intact
+PASS Searchable pin table finds GPIO aliases and selects the actual connector pad
+PASS Locked Pi interface pads can be clicked and routed to a new component
+PASS Pin-map CSV download contains physical IDs, signal names and top-view coordinates
+PASS Native JSON download preserves embedded platform metadata and linked holes
+PASS Platform workflow stays within the narrow-screen viewport
+PASS No uncaught errors or external runtime asset requests
+{
+  "passed": 13,
+  "total": 13
+}
+
+> /opt/pyvenv/bin/python tests/maker_browser_test.py
+PASS Family-first drawer groups 134 new variants without replacing legacy parts
+PASS Native family/search/variant controls place the selected package through the canvas
+PASS Drawer search finds Qwiic directly and placement does not create a power net
+PASS Functional pin-label edits are one undoable metadata operation
+PASS Source notes and explicit user review are visible; label edits clear review
+PASS Part-reference dialog exports the actual functional pin map CSV
+PASS Editor-only functional captions never leak into manufacturing artwork
+PASS Worker findings and normal export block conflicting nets on an internally common tab
+PASS Uno template checkbox adds six real ICSP contacts while default templates stay unchanged
+PASS ICSP removal is undoable and is refused when a pin is still assigned
+PASS ICSP-enabled headers can be placed on the current board with a normal reference
+PASS Advanced pad renumbering keeps internal-terminal group references aligned
+PASS Actual JSON download blob and file-input import retain embedded catalog and signals
+PASS KiCad exchange warns that functional labels and catalog behavior are not preserved
+PASS A real 3D workbench renders new connector, control, driver and debugging bodies
+PASS Narrow-screen picker remains reachable without page-level horizontal overflow
+PASS No uncaught exceptions or external runtime requests during maker workflows
+17/17 maker browser checks passed.
+
+> /opt/pyvenv/bin/python tests/compact_polarity_browser_test.py
+PASS Idle bench uses the printable symbols without floating A/K billboards
+PASS Selecting a tall LED shows only 9-pixel A/K tags, never expanded full-name badges
+PASS Tags avoid all projected component bodies at twelve tilt/orbit combinations
+PASS Large custom print settings cannot enlarge editor tags
+PASS Zooming never scales up the screen-space tag typography
+PASS Direct silkscreen checkbox changes printing only and supports undo/redo
+PASS Compact print defaults restores small enabled marks without reassigning roles
+PASS Full cathode identity stays in the tooltip without expanding its board label
+PASS Small tags remain clickable targets for the exact electrical pad
+PASS Fabrication reads actual small role glyphs with no editor overlays or camera-induced file changes
+PASS Flipping the component moves the printable marks to the bottom Gerber
+PASS Four-terminal RGB LEDs receive separate compact labels, not overlapping A/K pairs
+PASS Narrow-screen routing retains bounded labels without page overflow
+PASS Compact labels remain present in high-contrast and dark themes
+PASS No uncaught browser errors or remote runtime requests
+15/15 browser checks passed.

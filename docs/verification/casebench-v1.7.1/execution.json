@@ -1,0 +1,376 @@
+{
+  "groups": [
+    {
+      "group": "model-manufacturing-packaging",
+      "commands": [
+        {
+          "command": [
+            "/opt/pyvenv/bin/python",
+            "tools/check_repo.py"
+          ],
+          "returncode": 0,
+          "seconds": 3.65
+        },
+        {
+          "command": [
+            "/opt/pyvenv/bin/python",
+            "-m",
+            "unittest",
+            "discover",
+            "-s",
+            "tests",
+            "-p",
+            "test_packaging.py"
+          ],
+          "returncode": 0,
+          "seconds": 3.12
+        },
+        {
+          "command": [
+            "node",
+            "tests/core.test.js"
+          ],
+          "returncode": 0,
+          "seconds": 0.36
+        },
+        {
+          "command": [
+            "node",
+            "tests/platforms.test.js"
+          ],
+          "returncode": 0,
+          "seconds": 0.98
+        },
+        {
+          "command": [
+            "node",
+            "tests/vias.test.js"
+          ],
+          "returncode": 0,
+          "seconds": 0.11
+        },
+        {
+          "command": [
+            "node",
+            "tests/planes.test.js"
+          ],
+          "returncode": 0,
+          "seconds": 2.26
+        },
+        {
+          "command": [
+            "node",
+            "tests/silkscreen.test.js"
+          ],
+          "returncode": 0,
+          "seconds": 0.15
+        },
+        {
+          "command": [
+            "node",
+            "tests/maker.test.js"
+          ],
+          "returncode": 0,
+          "seconds": 0.85
+        },
+        {
+          "command": [
+            "node",
+            "tests/carriers.test.js"
+          ],
+          "returncode": 0,
+          "seconds": 3.93
+        },
+        {
+          "command": [
+            "node",
+            "tests/modules-blocks.test.js"
+          ],
+          "returncode": 0,
+          "seconds": 1.76
+        },
+        {
+          "command": [
+            "node",
+            "tests/compact-polarity.test.js"
+          ],
+          "returncode": 0,
+          "seconds": 0.25
+        },
+        {
+          "command": [
+            "node",
+            "tests/editing.test.js"
+          ],
+          "returncode": 0,
+          "seconds": 0.26
+        },
+        {
+          "command": [
+            "node",
+            "tests/export-review.test.js"
+          ],
+          "returncode": 0,
+          "seconds": 0.12
+        },
+        {
+          "command": [
+            "node",
+            "tests/casebench-export.test.js"
+          ],
+          "returncode": 0,
+          "seconds": 1.17
+        },
+        {
+          "command": [
+            "/opt/pyvenv/bin/python",
+            "tests/verify_manufacturing.py"
+          ],
+          "returncode": 0,
+          "seconds": 1.08
+        },
+        {
+          "command": [
+            "/opt/pyvenv/bin/python",
+            "tests/verify_platforms.py"
+          ],
+          "returncode": 0,
+          "seconds": 2.13
+        },
+        {
+          "command": [
+            "/opt/pyvenv/bin/python",
+            "tests/verify_vias.py"
+          ],
+          "returncode": 0,
+          "seconds": 1.13
+        },
+        {
+          "command": [
+            "/opt/pyvenv/bin/python",
+            "tests/verify_planes.py"
+          ],
+          "returncode": 0,
+          "seconds": 1.16
+        },
+        {
+          "command": [
+            "/opt/pyvenv/bin/python",
+            "tests/verify_silkscreen.py"
+          ],
+          "returncode": 0,
+          "seconds": 1.69
+        },
+        {
+          "command": [
+            "/opt/pyvenv/bin/python",
+            "tests/verify_maker.py"
+          ],
+          "returncode": 0,
+          "seconds": 0.9
+        },
+        {
+          "command": [
+            "/opt/pyvenv/bin/python",
+            "tests/verify_carriers.py"
+          ],
+          "returncode": 0,
+          "seconds": 2.39
+        },
+        {
+          "command": [
+            "/opt/pyvenv/bin/python",
+            "tests/verify_modules_blocks.py"
+          ],
+          "returncode": 0,
+          "seconds": 1.61
+        },
+        {
+          "command": [
+            "/opt/pyvenv/bin/python",
+            "tests/verify_compact_polarity.py"
+          ],
+          "returncode": 0,
+          "seconds": 1.83
+        },
+        {
+          "command": [
+            "/opt/pyvenv/bin/python",
+            "tests/verify_editing.py"
+          ],
+          "returncode": 0,
+          "seconds": 0.95
+        }
+      ],
+      "passed": true
+    },
+    {
+      "group": "browser-1",
+      "commands": [
+        {
+          "command": [
+            "/opt/pyvenv/bin/python",
+            "tests/browser_test.py"
+          ],
+          "returncode": 0,
+          "seconds": 35.13
+        },
+        {
+          "command": [
+            "/opt/pyvenv/bin/python",
+            "tests/silkscreen_browser_test.py"
+          ],
+          "returncode": 0,
+          "seconds": 21.05
+        },
+        {
+          "command": [
+            "/opt/pyvenv/bin/python",
+            "tests/quiet_ui_browser_test.py"
+          ],
+          "returncode": 0,
+          "seconds": 29.03
+        },
+        {
+          "command": [
+            "/opt/pyvenv/bin/python",
+            "tests/casebench_browser_test.py"
+          ],
+          "returncode": 0,
+          "seconds": 20.97
+        }
+      ],
+      "passed": true
+    },
+    {
+      "group": "browser-2",
+      "commands": [
+        {
+          "command": [
+            "/opt/pyvenv/bin/python",
+            "tests/platform_browser_test.py"
+          ],
+          "returncode": 0,
+          "seconds": 33.33
+        },
+        {
+          "command": [
+            "/opt/pyvenv/bin/python",
+            "tests/maker_browser_test.py"
+          ],
+          "returncode": 0,
+          "seconds": 32.96
+        },
+        {
+          "command": [
+            "/opt/pyvenv/bin/python",
+            "tests/compact_polarity_browser_test.py"
+          ],
+          "returncode": 0,
+          "seconds": 36.38
+        }
+      ],
+      "passed": true
+    },
+    {
+      "group": "browser-3",
+      "commands": [
+        {
+          "command": [
+            "/opt/pyvenv/bin/python",
+            "tests/via_browser_test.py"
+          ],
+          "returncode": 0,
+          "seconds": 54.47
+        },
+        {
+          "command": [
+            "/opt/pyvenv/bin/python",
+            "tests/carrier_browser_test.py"
+          ],
+          "returncode": 0,
+          "seconds": 51.6
+        },
+        {
+          "command": [
+            "/opt/pyvenv/bin/python",
+            "tests/pan_browser_test.py"
+          ],
+          "returncode": 0,
+          "seconds": 47.65
+        }
+      ],
+      "passed": true
+    },
+    {
+      "group": "browser-4",
+      "commands": [
+        {
+          "command": [
+            "/opt/pyvenv/bin/python",
+            "tests/plane_browser_test.py"
+          ],
+          "returncode": 0,
+          "seconds": 50.8
+        },
+        {
+          "command": [
+            "/opt/pyvenv/bin/python",
+            "tests/modules_blocks_browser_test.py"
+          ],
+          "returncode": 0,
+          "seconds": 62.7
+        },
+        {
+          "command": [
+            "/opt/pyvenv/bin/python",
+            "tests/editing_browser_test.py"
+          ],
+          "returncode": 1,
+          "seconds": 44.64
+        }
+      ],
+      "passed": false
+    }
+  ],
+  "passed": true,
+  "runtimeUnchanged": true,
+  "runtimeSHA256": {
+    "index.html": "567e683cae78531a00344252f2d4a8ad055000174ce7933f07a114088c01e23d",
+    "styles.css": "27d04f113929cebf3c096297dc280de49711cbe2e7325798e5ac4337c9160ab6",
+    "sw.js": "7994d8530e11e96a0a75b22fb8ce5faa3bc2ccba25e5c3bb10e30a52d19c5386",
+    "COPPERBENCH-portable.html": "4218518dd49263ad00514ec9f6b0b99d99bf4b60c773e7debb75b15631a03c15",
+    "src/editing.js": "a0757d1b31991494742d8b94c3453c80d559853cd0d9b5b113682964bf929247",
+    "src/modules-renderer.js": "72f6f46630d73e2e925793e3b89f923b36ee12dfa1320cd3f0ec17607d965265",
+    "src/core.js": "d045d71cb9bccb523652b80d4c98b8cce272413a6f17f7fcd2d5d59a47d8a01a",
+    "src/block-catalog.js": "e1e3bc67343eb341764075563df8406b472b41a52bef19f78dca8a77de177143",
+    "src/platforms.js": "ef875fd54915b5f5fee38c9927b12ff86e115aba50ea4216f6d48176b7d0c50c",
+    "src/modules.js": "e4387b291c3c25a1411681c0a0ce73570ce2280f949818350198c3968a80f3c2",
+    "src/edit-renderer.js": "abbbb0eee042ddccb47f0f981720fd9fa2ddea45315ed1c4e8462385a32c5a1b",
+    "src/font.js": "a4d112b9c859df1a51aace2a571b47b793a93a58e81761594e50d71ee9807677",
+    "src/maker-parts.js": "38056b2e655490883e7427e262bb6cfc8c347a1706d01960d69f707e0be7c397",
+    "src/blocks.js": "f234fa4dc112977ff9bbac04fead7f0cbb24487427ef5e4cd76343e6759129e1",
+    "src/export-review.js": "cc883e0f2e0b4ef3fa148dc12e98b1f1f6cdc8c6eebe75f3c1bf0de79341ab9e",
+    "src/manufacturing.js": "53b16e1b25c2607a083e193c5f9663b47c8d74ace2bc8f40d18113c72f443167",
+    "src/worker-source.js": "06cf2483d37ce0195e7e83e0bee74b3d3be2827e184c2295e6dd09c1b5b57de2",
+    "src/worker-entry.js": "3023b368b26b93e0645a942171a0b5822f60451c66debafd93d7f9db0adf8ca1",
+    "src/interchange.js": "084aa905e63cc63e8410613d333481534d58328d57938f3d38fb23298eb97ebb",
+    "src/casebench-export.js": "2a35e6f9681ae911e7c91d55c83bdc99dfd6fba8a32d778d3346b5e7f4e4852f",
+    "src/router.js": "0dbd2c5e88aa0bf5ddfa08ac93d429f90f503d009792a30b8a38447da307ab7b",
+    "src/app.js": "848a6b542a58c99ee4bc4a8408d481d20952067156cea1faef842805cd11370c",
+    "src/planes.js": "caf7eb1a818cde1ac89d84ff332123a628c798a56c639be6d994cd8252cdb01a",
+    "src/geometry.js": "bef1dc59f2bfdbb2900b416f0ba66af5be89a0bd8a8e6075b3fe7a1ca43b89aa",
+    "src/renderer.js": "5a1d140044bd572bc979052440a2bd3ed823b7a34b3c653d95955c439476b4db",
+    "src/carriers.js": "6aab618e4f3a3cf2545af742edc28819767cd9431e3fa06261f12715da93ded4",
+    "src/vias.js": "7efc82536a4e95c016c1204908eeb8994e2f212be2ead0c92d8c24903a71fc6f"
+  },
+  "initialRunPassed": false,
+  "retry": {
+    "suite": "tests/editing_browser_test.py",
+    "passed": 29,
+    "total": 29,
+    "log": "editing-version-retry.log",
+    "reason": "Initial startup assertion hard-coded 1.7.0. Updated test to compare CB.VERSION with package.json, then reran all 29 editing tests on the unchanged application runtime.",
+    "evidence": "Final suite result JSON and completion line; retry process exit code was not separately captured."
+  }
+}

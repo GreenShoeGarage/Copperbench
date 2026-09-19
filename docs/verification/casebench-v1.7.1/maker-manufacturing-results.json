@@ -1,0 +1,47 @@
+{
+  "version": "1.7.1",
+  "passed": 10,
+  "total": 10,
+  "results": [
+    {
+      "name": "NE555 PDIP-8 literal 7.62 mm row spacing, 2.54 mm pitch, drills and both copper faces",
+      "pass": true
+    },
+    {
+      "name": "NE555 SOIC-8 is top surface copper with no invented drill or bottom copper",
+      "pass": true
+    },
+    {
+      "name": "LM1117 SOT-223 exports three lead lands and the separate output tab",
+      "pass": true
+    },
+    {
+      "name": "Qwiic has four 1 mm-pitch signal lands and two mechanical mounting lands",
+      "pass": true
+    },
+    {
+      "name": "USB4085 Excellon has 16 literal 0.4 mm signal drills and four vertical shell slots",
+      "pass": true
+    },
+    {
+      "name": "USB slots and contact coordinates transform consistently after bottom flip plus 90\u00b0 rotation",
+      "pass": true
+    },
+    {
+      "name": "Uno ICSP adds six drills at the literal reference positions, not mirrored in manufacture",
+      "pass": true
+    },
+    {
+      "name": "Encoder fixing holes remain non-plated and follow side/rotation transforms",
+      "pass": true
+    },
+    {
+      "name": "led-top: real polarity artwork survives Gerber clearing on its assigned face",
+      "pass": true
+    },
+    {
+      "name": "led-bottom: real polarity artwork survives Gerber clearing on its assigned face",
+      "pass": true
+    }
+  ]
+}

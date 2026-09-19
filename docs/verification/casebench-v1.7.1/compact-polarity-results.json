@@ -1,0 +1,47 @@
+{
+  "version": "1.7.1",
+  "passed": 10,
+  "total": 10,
+  "results": [
+    {
+      "name": "Default polarity prints at 0.9 mm with a 0.16 mm stroke, independent of reference text",
+      "pass": true
+    },
+    {
+      "name": "Existing explicit print dimensions, offsets and opt-out survive without being reset",
+      "pass": true
+    },
+    {
+      "name": "All polarized library variants have separate role glyphs, not just editor labels",
+      "pass": true
+    },
+    {
+      "name": "All default glyphs clear their own body and every solder opening on either face",
+      "pass": true
+    },
+    {
+      "name": "RGB anode/cathode variants use four ordered glyph positions rather than overprinting",
+      "pass": true
+    },
+    {
+      "name": "Increasing print size spaces adjacent RGB labels without changing pads or nets",
+      "pass": true
+    },
+    {
+      "name": "An equivalent vertical multi-terminal footprint gets separated aligned column labels",
+      "pass": true
+    },
+    {
+      "name": "Printing remains strictly component-side through every rotation and flip",
+      "pass": true
+    },
+    {
+      "name": "Native schema 5 preserves roles and gives identical regenerated print geometry",
+      "pass": true
+    },
+    {
+      "name": "X2, legacy Gerber, KiCad and SVG all include printable role glyphs",
+      "pass": true
+    }
+  ]
+}

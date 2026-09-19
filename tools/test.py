@@ -31,6 +31,7 @@ def main() -> int:
         [node, 'tests/compact-polarity.test.js'],
         [node, 'tests/editing.test.js'],
         [node, 'tests/export-review.test.js'],
+        [node, 'tests/casebench-export.test.js'],
         [sys.executable, 'tests/verify_manufacturing.py'],
         [sys.executable, 'tests/verify_platforms.py'],
         [sys.executable, 'tests/verify_vias.py'],
@@ -55,6 +56,7 @@ def main() -> int:
         commands.append([sys.executable, 'tests/compact_polarity_browser_test.py'])
         commands.append([sys.executable, 'tests/pan_browser_test.py'])
         commands.append([sys.executable, 'tests/editing_browser_test.py'])
+        commands.append([sys.executable, 'tests/casebench_browser_test.py'])
     try:
         for command in commands:
             print('\n> ' + ' '.join(command), flush=True)

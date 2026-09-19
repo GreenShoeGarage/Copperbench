@@ -1,0 +1,30 @@
+PASS v1.7 boots with 193 parts, schema 5 and focused selection controls
+PASS Parts filter ignores traces; Copper filter selects a trace
+PASS Overlap cycling reaches a trace beneath its pad using ]
+PASS Drag segment previews doglegs without mutation, then commits as one undo
+PASS Escape cancels preview without altering source copper
+PASS Width scope dialog stages and applies a validated width
+PASS Selected-segment width preserves widths of neighbouring sections
+PASS Insert, drag and remove an interior corner using canvas and controls
+PASS Replace-section dialog preserves fixed endpoints and inserts waypoints
+PASS Cleanup proposals remove redundant collinear points, not user intent
+PASS Drag-connected toggle moves a part and its attachment as one transaction
+PASS Exact-coordinate connected move is available in component inspector
+PASS Unsupported off-centre attachment explains rejection without moving board objects
+PASS Connected via move updates attachments on both copper layers
+PASS Dragging printed polarity changes only print geometry, not physical pins
+PASS Compact print inspector supports size and visibility without pin-role changes
+PASS Fabrication ZIP contains revision-bound generated-file review manifest
+PASS Export refuses a design changed after its review dialog opened
+PASS Fabrication readback is not an accidental geometry-editing surface
+PASS Narrow workbench keeps editing tools reachable without horizontal page overflow
+PASS Autosave detects changed stored data and preserves it; JSON backup still works
+PASS Explicit recovery exports both copies before enabling replacement autosave
+PASS Unreadable startup autosave is not overwritten by later edits
+PASS Quota errors keep previous autosave and allow independent JSON backup
+PASS Undo during a preview-only drag cancels it without restoring the wrong revision
+PASS A concurrent command safely cancels connected dragging without losing the command
+PASS Cancelling with Escape or Cancel resumes paused managed-plane refill
+PASS Manufacturing ZIP with its JSON manifest reopens as CAM reference, not native project
+PASS Editing uses no external runtime requests or uncaught browser errors
+29/29 editing browser checks passed

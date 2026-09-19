@@ -1,0 +1,278 @@
+{
+  "app": "COPPERBENCH",
+  "schema": 5,
+  "version": "1.7.1",
+  "id": "board_000022",
+  "title": "RTC enclosure carrier sample",
+  "created": "2026-09-18T16:00:00.000Z",
+  "updated": "2026-09-18T16:00:00.000Z",
+  "board": {
+    "width": 36.86,
+    "height": 31.78,
+    "thickness": 1.6,
+    "shape": "rounded",
+    "radius": 3,
+    "points": [],
+    "color": "green"
+  },
+  "parts": [
+    {
+      "id": "p_000024",
+      "name": "Adafruit DS3231 RTC · original",
+      "category": "Modules",
+      "ref": "M1",
+      "value": "DS3231",
+      "verified": false,
+      "defaultSide": "top",
+      "source": "https://github.com/adafruit/Adafruit-DS3231-Precision-RTC-Breakout-PCB/blob/master/Adafruit%20DS3231%20RTC%20Breakout.brd",
+      "body": {
+        "kind": "module",
+        "w": 22.86,
+        "h": 17.78,
+        "z": 11.6
+      },
+      "label": {
+        "x": 0,
+        "y": 10.89,
+        "size": 1.2,
+        "visible": false
+      },
+      "mountingHoles": [
+        {
+          "x": -8.89,
+          "y": -6.35,
+          "drill": 2.5,
+          "slot": 0,
+          "rotation": 0
+        },
+        {
+          "x": 8.89,
+          "y": -6.35,
+          "drill": 2.5,
+          "slot": 0,
+          "rotation": 0
+        }
+      ],
+      "pads": [
+        {
+          "x": -8.89,
+          "y": 6.35,
+          "number": "JP1.1",
+          "bank": "JP1",
+          "signal": "VIN / VCC",
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "both",
+          "net": null
+        },
+        {
+          "x": -6.35,
+          "y": 6.35,
+          "number": "JP1.2",
+          "bank": "JP1",
+          "signal": "GND",
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null
+        },
+        {
+          "x": -3.81,
+          "y": 6.35,
+          "number": "JP1.3",
+          "bank": "JP1",
+          "signal": "SCL",
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null
+        },
+        {
+          "x": -1.27,
+          "y": 6.35,
+          "number": "JP1.4",
+          "bank": "JP1",
+          "signal": "SDA",
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null
+        },
+        {
+          "x": 1.27,
+          "y": 6.35,
+          "number": "JP1.5",
+          "bank": "JP1",
+          "signal": "VBAT",
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null
+        },
+        {
+          "x": 3.81,
+          "y": 6.35,
+          "number": "JP1.6",
+          "bank": "JP1",
+          "signal": "32KHZ",
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null
+        },
+        {
+          "x": 6.35,
+          "y": 6.35,
+          "number": "JP1.7",
+          "bank": "JP1",
+          "signal": "SQW",
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null
+        },
+        {
+          "x": 8.89,
+          "y": 6.35,
+          "number": "JP1.8",
+          "bank": "JP1",
+          "signal": "RESET",
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 1,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null
+        }
+      ],
+      "internalGroups": [],
+      "module": {
+        "schema": 1,
+        "model": "ds3231-original",
+        "product": "3013 · original eight-pin PCB, revision A",
+        "kind": "rtc",
+        "source": {
+          "url": "https://github.com/adafruit/Adafruit-DS3231-Precision-RTC-Breakout-PCB/blob/master/Adafruit%20DS3231%20RTC%20Breakout.brd",
+          "repo": "adafruit/Adafruit-DS3231-Precision-RTC-Breakout-PCB",
+          "file": "Adafruit DS3231 RTC Breakout.brd",
+          "blob": "7f3413130a6e2a703acb3a75ffbb69ada47d840a",
+          "license": "CC-BY-SA-3.0",
+          "attribution": "Adafruit Industries; Limor Fried / Ladyada and contributors"
+        },
+        "sourceDate": "2026-09-18",
+        "showBody": true,
+        "stackGap": 6,
+        "componentHeight": 4,
+        "reviewed": false,
+        "geometryStatus": "Source-referenced header centers; nominal mating pad sizes and host envelope. Not physically fit-tested.",
+        "sourceFace": "Source Eagle top/component face",
+        "holePattern": [
+          {
+            "x": -8.89,
+            "y": -6.35,
+            "drill": 2.5,
+            "slot": 0,
+            "rotation": 0
+          },
+          {
+            "x": 8.89,
+            "y": -6.35,
+            "drill": 2.5,
+            "slot": 0,
+            "rotation": 0
+          }
+        ],
+        "notes": [
+          "Original eight-contact board, NOT the later STEMMA QT revision.",
+          "The CR1220 holder is on the reverse of this PCB. Verify underside space and battery access; the drawing is not a collision model.",
+          "VBAT is a backup-battery connection, not a charging output. Review the vendor power and backup-battery guidance."
+        ]
+      },
+      "libraryId": "module-ds3231-original",
+      "x": 18.43,
+      "y": 15.89,
+      "rotation": 180,
+      "side": "bottom",
+      "locked": true
+    }
+  ],
+  "nets": [],
+  "traces": [],
+  "vias": [],
+  "holes": [],
+  "cutouts": [],
+  "keepouts": [],
+  "zones": [],
+  "art": [],
+  "assets": [],
+  "profile": {
+    "id": "oshpark-2l",
+    "name": "OSH Park · 2 layer",
+    "verified": "2026-09-17",
+    "revision": 1,
+    "source": "https://docs.oshpark.com/services/two-layer/",
+    "minTrace": 0.1524,
+    "clearance": 0.1524,
+    "edge": 0.381,
+    "minDrill": 0.254,
+    "minRing": 0.127,
+    "minSlot": 0.508,
+    "minMaskWeb": 0.1016,
+    "minSilk": 0.127,
+    "maskExpansion": 0.075,
+    "minHoleGap": 0.127,
+    "minCutout": 1.01,
+    "minWidth": 6.35,
+    "minHeight": 6.35,
+    "maxWidth": 406.4,
+    "maxHeight": 558.8
+  },
+  "settings": {
+    "grid": 1.27,
+    "traceWidth": 0.4,
+    "viaDiameter": 0.9,
+    "viaDrill": 0.4,
+    "viaTented": false,
+    "zoneStep": 0.25,
+    "autoPlanes": true
+  },
+  "assumptions": [
+    {
+      "id": "assume_000023",
+      "text": "Two copper layers; through vias only. This layout does not verify circuit function.",
+      "status": "open"
+    },
+    {
+      "id": "assume_000025",
+      "text": "Module is source-referenced, not physically fit-tested. Verify revision, header mating, drills, stack height, component clearance and power requirements.",
+      "status": "open"
+    }
+  ],
+  "evidence": [],
+  "blockInstances": [],
+  "blockLibrary": [],
+  "baseline": null,
+  "units": "mm"
+}

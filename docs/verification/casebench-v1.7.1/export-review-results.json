@@ -1,0 +1,78 @@
+{
+  "passed": 18,
+  "total": 18,
+  "results": [
+    {
+      "name": "Empty silk on an undecorated board is not a false missing-art error",
+      "pass": true
+    },
+    {
+      "name": "Top and bottom silk text survives actual text readback",
+      "pass": true
+    },
+    {
+      "name": "Each required generated layer is checked independently",
+      "pass": true
+    },
+    {
+      "name": "Malformed Gerber is reported without pretending it was inspected",
+      "pass": true
+    },
+    {
+      "name": "Print-enabled source with dark output removed triggers invariant failure",
+      "pass": true
+    },
+    {
+      "name": "All-ink-erasing clear rectangle triggers a prominent sampled warning",
+      "pass": true
+    },
+    {
+      "name": "Printed text entirely outside board is flagged as zero retained samples",
+      "pass": true
+    },
+    {
+      "name": "Some clipped strokes do not incorrectly label the entire layer empty",
+      "pass": true
+    },
+    {
+      "name": "Via drills and NPTH slots are compared by coordinates and diameter",
+      "pass": true
+    },
+    {
+      "name": "Missing drill file cannot be exported as matching the design",
+      "pass": true
+    },
+    {
+      "name": "Same drill count with shifted coordinates is rejected",
+      "pass": true
+    },
+    {
+      "name": "Changed drill diameter is rejected",
+      "pass": true
+    },
+    {
+      "name": "Changed outline bounds are rejected",
+      "pass": true
+    },
+    {
+      "name": "Gerber region contours use UNION even with nested or reversed paths",
+      "pass": true
+    },
+    {
+      "name": "Later dark geometry can restore ink removed by a clear operation",
+      "pass": true
+    },
+    {
+      "name": "Review works for compatibility Gerber and optional paste files",
+      "pass": true
+    },
+    {
+      "name": "Report is tied to the design identity and explicitly not CAM approval",
+      "pass": true
+    },
+    {
+      "name": "Inspection leaves source document and generated text unchanged",
+      "pass": true
+    }
+  ]
+}

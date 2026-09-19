@@ -4,7 +4,7 @@
 (function(root){
 'use strict';
 const C=root.CB=root.CB||{};
-C.VERSION='1.7.0'; C.SCHEMA=5; C.EPS=.003;
+C.VERSION='1.7.1'; C.SCHEMA=5; C.EPS=.003;
 C.q=v=>Math.round(Number(v)*10000)/10000;
 C.uid=(prefix='id')=>prefix+'_'+(typeof crypto!=='undefined'&&crypto.randomUUID?crypto.randomUUID().replace(/-/g,'').slice(0,12):Math.random().toString(36).slice(2,14));
 C.clone=o=>JSON.parse(JSON.stringify(o));

@@ -211,3 +211,20 @@ distinguishes that manifest from a native project. Local saving adds a raw-recor
 comparison and explicit resolution, not a transactional storage engine.
 
 [Implementation behavior and limits](EDITING.md) · [Qualification](QUALIFICATION.md)
+
+## v1.7.1 native CaseBench handoff
+
+`src/casebench-export.js` prepares a validated clone of the native project. The
+output root remains `COPPERBENCH` schema 5, with explicit `units: "mm"`;
+`CASEBENCH-MECHANICAL` is **not** the output format. Part pads and mounting holes
+stay local, and part x/y/rotation/side remain unchanged. Placed circuit-block
+members are not transformed again. No derived body/envelope replaces the native
+body, and module stackGap is not added to body.z.
+
+Geometry-derived summary counts are UI-only. The export does not append flattened
+holes or a second components list to the file. Board-only mode clears art/assets,
+baseline and the unused block library; project-extras mode retains the full native
+snapshot. `Save JSON` is unchanged. Export neither mutates the editor nor writes
+its autosave. UI guards block pending geometry and a changed revision at download.
+Native schema/units and mechanical limits are preflighted; fabrication DRC is not
+an enclosure-export gate. The CaseBench importer itself remains external.

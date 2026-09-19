@@ -1,12 +1,12 @@
 {
   "name": "copperbench",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "private": true,
   "description": "Local-first, tactile two-layer PCB workbench",
   "scripts": {
     "start": "python3 tools/serve.py",
     "serve": "python3 tools/serve.py",
-    "test": "node tests/core.test.js && node tests/platforms.test.js && node tests/vias.test.js && node tests/planes.test.js && node tests/silkscreen.test.js && node tests/maker.test.js && node tests/carriers.test.js && node tests/modules-blocks.test.js && node tests/compact-polarity.test.js && node tests/editing.test.js && node tests/export-review.test.js",
+    "test": "node tests/core.test.js && node tests/platforms.test.js && node tests/vias.test.js && node tests/planes.test.js && node tests/silkscreen.test.js && node tests/maker.test.js && node tests/carriers.test.js && node tests/modules-blocks.test.js && node tests/compact-polarity.test.js && node tests/editing.test.js && node tests/export-review.test.js && node tests/casebench-export.test.js",
     "test:manufacturing": "python3 tests/verify_manufacturing.py",
     "test:browser": "python3 tests/browser_test.py",
     "test:packaging": "python3 -m unittest discover -s tests -p \"test_packaging.py\"",
@@ -26,7 +26,8 @@
     "test:pan": "python3 tests/pan_browser_test.py",
     "test:editing": "node tests/editing.test.js && node tests/export-review.test.js && python3 tests/verify_editing.py && python3 tests/editing_browser_test.py",
     "test:native": "python3 tests/native_browser_test.py",
-    "test:cam": "python3 tests/external_cam_check.py"
+    "test:cam": "python3 tests/external_cam_check.py",
+    "test:casebench": "node tests/casebench-export.test.js && python3 tests/casebench_browser_test.py"
   },
   "license": "MIT",
   "author": "Green Shoe Garage",

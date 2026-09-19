@@ -1,0 +1,101 @@
+
+> /opt/pyvenv/bin/python tests/plane_browser_test.py
+PASS Bottom-ground preset assigns one face and auto-fills without inventing pin nets or undo steps
+PASS Top-power dropdown creates a separate named net and honestly reports no attached copper
+PASS Through-hole lead accepts a direct plane attachment without an unnecessary via
+PASS Opposite-face SMT lead previews then commits an actual trace and via
+PASS Discarding an attachment leaves the native board unchanged
+PASS One undo or redo handles net assignment, short trace, via and plane state together
+PASS Inspector pin action supports keyboard-based plane attachment
+PASS Two picked leads connect in one checked batch rather than merging every net
+PASS Pad context menu exposes the same explicit plane workflow
+PASS A conflicting assigned pin is rejected without a net merge or partial copper
+PASS Cancelling the real connection worker adds no proposed copper
+PASS A worker proposal cannot overwrite a newer board revision
+PASS Board resize refollows and refills the plane without scaling components
+PASS Ground preset preserves existing manual copper zones
+PASS Auto-refill can be disabled; stale fabrication is blocked until a manual refill
+PASS Changing plane assignment requires confirmation and retains existing lead nets
+PASS Connections report exposes real disconnected plane islands, not just matching net names
+PASS Hide-fill and face-view controls do not alter manufacturing copper
+PASS Schema-3 backup and actual file-input import retain planes and verified attachments
+PASS Per-face thermal settings persist and trigger a new fill
+PASS Screenshots show real plane preview, accepted 3D board and copper-face views
+PASS Plane assignment controls remain reachable on a narrow screen
+PASS No external runtime requests or uncaught exceptions in plane workflows
+23/23 plane browser tests passed.
+
+> /opt/pyvenv/bin/python tests/modules_blocks_browser_test.py
+PASS Module and block pickers expose exact variants and isolated-port defaults
+PASS All five module starters create locked, routable, correctly named interfaces
+PASS Module placement retains the existing board, optional holes and entered stack gap
+PASS Module fit notes are visible and body visibility is undoable without changing Gerbers
+PASS Module pin-map CSV is downloadable through the real inspector control
+PASS All six starters insert actual routed geometry and worker connectivity reports no open net
+PASS Block insertion and all of its nets/parts/copper are one undoable action
+PASS Two UI insertions have isolated nets and fresh ordinary reference designators
+PASS Explicit port mapping shares only the chosen existing project net
+PASS Mapping distinct ports to one net is blocked without a partial edit
+PASS Value edits and copper omission retain ordinary parts and visible unrouted intent
+PASS Board-click ghost placement supports rotation, side flip and connected copper
+PASS Esc cancels pending block placement without touching the project
+PASS Preflight blocks overlapping different-net copper rather than committing a short
+PASS Whole-block R/F transform every component, trace and via together
+PASS Dragging a selected whole block moves the copper and keeps connectivity intact
+PASS Block-copy control places a new editable circuit with fresh internal and external nets
+PASS Capture selection stores components and selected copper in the project library
+PASS Block export downloads the actual edited geometry as a reusable JSON file
+PASS File-input block import asks for confirmation and adds a library copy without replacing the board
+PASS Invalid block file input leaves project data unchanged
+PASS Native schema-5 backup contains placed groups and personal library entries
+PASS Detach removes only group metadata, with exact Gerber/drill equality and undo
+PASS On-board block manager selects a group and supports precise anchor movement
+PASS Fabrication view reads actual exported block reference and polarity silkscreen
+PASS Module sampler renders five distinct representative board bodies
+PASS Circuit sampler renders six complete editable block layouts
+PASS Phone-sized layout keeps the block picker usable without page-width overflow
+PASS New workflows produce no uncaught exceptions or external runtime asset requests
+29/29 module/block browser checks passed.
+
+> /opt/pyvenv/bin/python tests/editing_browser_test.py
+FAIL v1.7 boots with 193 parts, schema 5 and focused selection controls Assertion failed
+Traceback (most recent call last):
+  File "/mnt/data/work-casebench/copperbench/tests/editing_browser_test.py", line 41, in test
+    try:fn();RESULTS.append({'name':name,'pass':True,'ms':round((time.perf_counter()-t)*1000)});print('PASS',name,flush=True)
+        ~~^^
+  File "/mnt/data/work-casebench/copperbench/tests/editing_browser_test.py", line 45, in <lambda>
+    test('v1.7 boots with 193 parts, schema 5 and focused selection controls',lambda:check(page.evaluate('CB.VERSION==="1.7.0" && CB.LIB.length===193 && CBAPP.state.doc.schema===5') and page.locator('#selectionFilter').is_visible()))
+                                                                                     ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/work-casebench/copperbench/tests/editing_browser_test.py", line 36, in check
+    if not c:raise AssertionError(msg)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Assertion failed
+PASS Parts filter ignores traces; Copper filter selects a trace
+PASS Overlap cycling reaches a trace beneath its pad using ]
+PASS Drag segment previews doglegs without mutation, then commits as one undo
+PASS Escape cancels preview without altering source copper
+PASS Width scope dialog stages and applies a validated width
+PASS Selected-segment width preserves widths of neighbouring sections
+PASS Insert, drag and remove an interior corner using canvas and controls
+PASS Replace-section dialog preserves fixed endpoints and inserts waypoints
+PASS Cleanup proposals remove redundant collinear points, not user intent
+PASS Drag-connected toggle moves a part and its attachment as one transaction
+PASS Exact-coordinate connected move is available in component inspector
+PASS Unsupported off-centre attachment explains rejection without moving board objects
+PASS Connected via move updates attachments on both copper layers
+PASS Dragging printed polarity changes only print geometry, not physical pins
+PASS Compact print inspector supports size and visibility without pin-role changes
+PASS Fabrication ZIP contains revision-bound generated-file review manifest
+PASS Export refuses a design changed after its review dialog opened
+PASS Fabrication readback is not an accidental geometry-editing surface
+PASS Narrow workbench keeps editing tools reachable without horizontal page overflow
+PASS Autosave detects changed stored data and preserves it; JSON backup still works
+PASS Explicit recovery exports both copies before enabling replacement autosave
+PASS Unreadable startup autosave is not overwritten by later edits
+PASS Quota errors keep previous autosave and allow independent JSON backup
+PASS Undo during a preview-only drag cancels it without restoring the wrong revision
+PASS A concurrent command safely cancels connected dragging without losing the command
+PASS Cancelling with Escape or Cancel resumes paused managed-plane refill
+PASS Manufacturing ZIP with its JSON manifest reopens as CAM reference, not native project
+PASS Editing uses no external runtime requests or uncaught browser errors
+28/29 editing browser checks passed

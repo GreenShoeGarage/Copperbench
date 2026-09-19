@@ -1,0 +1,593 @@
+{
+  "app": "COPPERBENCH",
+  "schema": 5,
+  "version": "1.7.1",
+  "id": "board_000001",
+  "title": "Two-sided enclosure handoff sample",
+  "created": "2026-09-18T16:00:00.000Z",
+  "updated": "2026-09-18T16:00:00.000Z",
+  "board": {
+    "width": 82,
+    "height": 56,
+    "thickness": 1.6,
+    "shape": "rounded",
+    "radius": 3,
+    "points": [],
+    "color": "green"
+  },
+  "parts": [
+    {
+      "id": "p_000003",
+      "name": "Terminal · 2 pin / 5.08",
+      "category": "Connectors",
+      "body": {
+        "kind": "terminal",
+        "w": 10.16,
+        "h": 7.4,
+        "z": 8
+      },
+      "pads": [
+        {
+          "number": "1",
+          "x": -2.54,
+          "y": 0,
+          "w": 2.6,
+          "h": 2.6,
+          "drill": 1.2,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "both",
+          "net": "n_000008"
+        },
+        {
+          "number": "2",
+          "x": 2.54,
+          "y": 0,
+          "w": 2.6,
+          "h": 2.6,
+          "drill": 1.2,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n_000010"
+        }
+      ],
+      "ref": "J1",
+      "value": "5V IN",
+      "source": "Parametric geometry; check against the selected component datasheet.",
+      "verified": false,
+      "libraryId": "terminal2",
+      "x": 12,
+      "y": 23,
+      "rotation": 37,
+      "side": "bottom",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 5.7,
+        "size": 1.3,
+        "visible": true
+      }
+    },
+    {
+      "id": "p_000004",
+      "name": "Resistor · axial 7.62",
+      "category": "Through-hole",
+      "body": {
+        "kind": "resistor",
+        "w": 6,
+        "h": 2.4,
+        "z": 2.4
+      },
+      "pads": [
+        {
+          "number": "1",
+          "x": -3.81,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 0.9,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n_000008"
+        },
+        {
+          "number": "2",
+          "x": 3.81,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 0.9,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n_000009"
+        }
+      ],
+      "ref": "R1",
+      "value": "330R",
+      "source": "Parametric geometry; check against the selected component datasheet.",
+      "verified": false,
+      "libraryId": "r-axial",
+      "x": 31,
+      "y": 13,
+      "rotation": 0,
+      "side": "top",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 3.2,
+        "size": 1.3,
+        "visible": true
+      }
+    },
+    {
+      "id": "p_000005",
+      "name": "LED · 5 mm",
+      "category": "Through-hole",
+      "body": {
+        "kind": "led",
+        "w": 5,
+        "h": 5,
+        "z": 7
+      },
+      "pads": [
+        {
+          "number": "K",
+          "x": -1.27,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 0.9,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n_000010",
+          "polarity": "cathode"
+        },
+        {
+          "number": "A",
+          "x": 1.27,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 0.9,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n_000009",
+          "polarity": "anode"
+        }
+      ],
+      "ref": "D1",
+      "value": "AMBER",
+      "source": "Parametric geometry; check against the selected component datasheet.",
+      "verified": false,
+      "appearance": "#f06945",
+      "libraryId": "led5",
+      "x": 49,
+      "y": 16,
+      "rotation": 90,
+      "side": "top",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 4.5,
+        "size": 1.3,
+        "visible": true
+      }
+    },
+    {
+      "id": "p_000006",
+      "name": "Capacitor · radial 2.5",
+      "category": "Through-hole",
+      "body": {
+        "kind": "capacitor",
+        "w": 5,
+        "h": 5,
+        "z": 7.5
+      },
+      "pads": [
+        {
+          "number": "+",
+          "x": -1.25,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 0.9,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n_000008",
+          "polarity": "positive"
+        },
+        {
+          "number": "-",
+          "x": 1.25,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 0.9,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n_000010",
+          "polarity": "negative"
+        }
+      ],
+      "ref": "C1",
+      "value": "10uF",
+      "source": "Parametric geometry; check against the selected component datasheet.",
+      "verified": false,
+      "libraryId": "cap-radial",
+      "x": 31,
+      "y": 30,
+      "rotation": 0,
+      "side": "top",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 4.5,
+        "size": 1.3,
+        "visible": true
+      }
+    },
+    {
+      "id": "p_000007",
+      "name": "Test point · 2 mm",
+      "category": "Utility",
+      "body": {
+        "kind": "testpoint",
+        "w": 1.2,
+        "h": 1.2,
+        "z": 1.5
+      },
+      "pads": [
+        {
+          "number": "1",
+          "x": 0,
+          "y": 0,
+          "w": 2,
+          "h": 2,
+          "drill": 0,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "top",
+          "net": "n_000010"
+        }
+      ],
+      "ref": "TP1",
+      "value": "GND",
+      "source": "Parametric geometry; check against the selected component datasheet.",
+      "verified": false,
+      "libraryId": "testpoint",
+      "x": 53,
+      "y": 32,
+      "rotation": 0,
+      "side": "top",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 2.6,
+        "size": 1.3,
+        "visible": true
+      }
+    },
+    {
+      "id": "p_000017",
+      "name": "DIP-8 · 7.62 mm",
+      "category": "Integrated circuits",
+      "body": {
+        "kind": "ic",
+        "w": 6.6,
+        "h": 11.16,
+        "z": 3.6
+      },
+      "pads": [
+        {
+          "number": "1",
+          "x": -3.81,
+          "y": -3.81,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 0.9,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": "n_000019"
+        },
+        {
+          "number": "2",
+          "x": -3.81,
+          "y": -1.27,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 0.9,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null
+        },
+        {
+          "number": "3",
+          "x": -3.81,
+          "y": 1.27,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 0.9,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null
+        },
+        {
+          "number": "4",
+          "x": -3.81,
+          "y": 3.81,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 0.9,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null
+        },
+        {
+          "number": "5",
+          "x": 3.81,
+          "y": 3.81,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 0.9,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null
+        },
+        {
+          "number": "6",
+          "x": 3.81,
+          "y": 1.27,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 0.9,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null
+        },
+        {
+          "number": "7",
+          "x": 3.81,
+          "y": -1.27,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 0.9,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null
+        },
+        {
+          "number": "8",
+          "x": 3.81,
+          "y": -3.81,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 0.9,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null
+        }
+      ],
+      "ref": "U1",
+      "value": "SOCKET",
+      "source": "Parametric geometry; check against the selected component datasheet.",
+      "verified": false,
+      "libraryId": "dip8",
+      "x": 65,
+      "y": 24,
+      "rotation": 0,
+      "side": "top",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 7.58,
+        "size": 1.3,
+        "visible": true
+      }
+    },
+    {
+      "id": "p_000018",
+      "name": "R · 1206",
+      "category": "Surface-mount",
+      "body": {
+        "kind": "smd-resistor",
+        "w": 3.2,
+        "h": 1.6,
+        "z": 0.7
+      },
+      "pads": [
+        {
+          "number": "1",
+          "x": -1.55,
+          "y": 0,
+          "w": 1.2,
+          "h": 1.8,
+          "drill": 0,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "top",
+          "net": "n_000019"
+        },
+        {
+          "number": "2",
+          "x": 1.55,
+          "y": 0,
+          "w": 1.2,
+          "h": 1.8,
+          "drill": 0,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "top",
+          "net": null
+        }
+      ],
+      "ref": "R2",
+      "value": "10k",
+      "source": "Parametric geometry; check against the selected component datasheet.",
+      "verified": false,
+      "libraryId": "R1206",
+      "x": 58,
+      "y": 42,
+      "rotation": 0,
+      "side": "bottom",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 2.8,
+        "size": 1.3,
+        "visible": true
+      }
+    }
+  ],
+  "nets": [
+    {
+      "id": "n_000008",
+      "name": "+5V",
+      "width": 0.4
+    },
+    {
+      "id": "n_000009",
+      "name": "LED_A",
+      "width": 0.4
+    },
+    {
+      "id": "n_000010",
+      "name": "GND",
+      "width": 0.4
+    },
+    {
+      "id": "n_000019",
+      "name": "SENSE",
+      "width": 0.4
+    }
+  ],
+  "traces": [],
+  "vias": [],
+  "holes": [
+    {
+      "id": "h_000011",
+      "x": 4,
+      "y": 4,
+      "drill": 3.2,
+      "slot": 0,
+      "rotation": 0,
+      "plated": false
+    },
+    {
+      "id": "h_000012",
+      "x": 78,
+      "y": 4,
+      "drill": 3.2,
+      "slot": 0,
+      "rotation": 0,
+      "plated": false
+    },
+    {
+      "id": "h_000013",
+      "x": 4,
+      "y": 52,
+      "drill": 3.2,
+      "slot": 0,
+      "rotation": 0,
+      "plated": false
+    },
+    {
+      "id": "h_000014",
+      "x": 78,
+      "y": 52,
+      "drill": 3.2,
+      "slot": 0,
+      "rotation": 0,
+      "plated": false
+    }
+  ],
+  "cutouts": [
+    {
+      "id": "cutout_reference",
+      "points": [
+        {
+          "x": 6,
+          "y": 37
+        },
+        {
+          "x": 16,
+          "y": 37
+        },
+        {
+          "x": 16,
+          "y": 41
+        },
+        {
+          "x": 6,
+          "y": 41
+        }
+      ]
+    }
+  ],
+  "keepouts": [],
+  "zones": [],
+  "art": [],
+  "assets": [],
+  "profile": {
+    "id": "oshpark-2l",
+    "name": "OSH Park · 2 layer",
+    "verified": "2026-09-17",
+    "revision": 1,
+    "source": "https://docs.oshpark.com/services/two-layer/",
+    "minTrace": 0.1524,
+    "clearance": 0.1524,
+    "edge": 0.381,
+    "minDrill": 0.254,
+    "minRing": 0.127,
+    "minSlot": 0.508,
+    "minMaskWeb": 0.1016,
+    "minSilk": 0.127,
+    "maskExpansion": 0.075,
+    "minHoleGap": 0.127,
+    "minCutout": 1.01,
+    "minWidth": 6.35,
+    "minHeight": 6.35,
+    "maxWidth": 406.4,
+    "maxHeight": 558.8
+  },
+  "settings": {
+    "grid": 1.27,
+    "traceWidth": 0.4,
+    "viaDiameter": 0.9,
+    "viaDrill": 0.4,
+    "viaTented": false,
+    "zoneStep": 0.25,
+    "autoPlanes": true
+  },
+  "assumptions": [
+    {
+      "id": "assume_000002",
+      "text": "Two copper layers; through vias only. This layout does not verify circuit function.",
+      "status": "open"
+    },
+    {
+      "id": "assume_000021",
+      "text": "Demonstration only. Library geometries and pin functions must be checked against purchased parts.",
+      "status": "open"
+    }
+  ],
+  "evidence": [],
+  "blockInstances": [],
+  "blockLibrary": [],
+  "baseline": null,
+  "units": "mm"
+}

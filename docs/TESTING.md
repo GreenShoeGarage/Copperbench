@@ -1,90 +1,48 @@
-# Verification record — COPPERBENCH v1.7.0
+# Verification record — COPPERBENCH v1.7.1
 
-## Executed standard regression suite
+This release adds a dedicated CaseBench native-JSON export without changing schema 5.
 
-**695 / 695 regression checks passed**: **317 engine/model**, **118 separate-language
-manufacturing**, **247 Chromium interaction**, and **13 packaging** checks.
-The complete standard suite ran in the working source tree. Browser suites were
-partitioned across three concurrent groups; `python3 tools/test.py` runs the same
-suites sequentially. No failing regression was omitted from the final run.
+**741 / 741 automated regression checks passed**: 348 engine/model,
+118 separate-language manufacturing, 262 Chromium interaction and
+13 packaging checks. The complete retained suite plus both new suites ran
+against the final v1.7.1 runtime, with unchanged runtime hashes before/after.
+Browser tests were split across four concurrent groups; the supplied
+`python3 tools/test.py` runs the same commands sequentially.
 
-The tested runtime, portable app, styles, index and service-worker hashes were
-unchanged by that run. Frozen logs, results, dependency versions and hashes are
-in [the execution record](verification/editing-v1.7.0/summary.json).
-Final extracted-archive checks and deterministic rebuild are a separate packaging
-step; the full 695-check run is not represented as a second full execution there.
+The new tests comprise **31 engine checks and 15 browser checks**. They cover all
+**193 library variants** and **43 shipped native example projects**, exact raw
+placement/pad/active-hole preservation, bottom-side rotations, module heights,
+block records, both output modes, file/geometry limits, native reimport, pending
+edits and revision guards, camera/unit independence, and mobile access.
 
-## New coverage: 92 checks
+[Execution summary](verification/casebench-v1.7.1/summary.json) ·
+[Commands and runtime SHA-256](verification/casebench-v1.7.1/execution.json)
 
-**39 engine checks** exercise trace/segment/corner editing, cleaned point geometry,
-width scopes and splitting, block membership, connection-preserving validation,
-locked objects, endpoint/junction preservation, supported component/via movement,
-rotation/bottom-side transforms, blocked moves and physical marking offsets.
+One retained browser startup assertion initially expected the literal version
+1.7.0. It was corrected to compare the application version against package.json;
+all 29 editing interaction tests were rerun and passed on the unchanged runtime.
+The initial log and retry log are both retained in the execution record.
 
-**18 export-review checks** cover required files, parsed copper/silkscreen, outline
-bounds, plated and non-plated drill counts/positions/diameters/slots, blank versus
-missing silk, complete and partial clipping, Gerber contour union and clear/dark
-paint order, formats, snapshot identity and qualification metadata.
+Extracted-archive smoke tests and reproducible rebuilding are recorded separately
+in the accompanying release verification record. They are not another complete
+741-check run.
 
-**Six Python/Shapely checks** independently recompute the connected-edit coupon's
-expected pad/trace geometry, physical contact, drill positions, board outline and
-silkscreen presence. The parser is maintained in this repository; “separate
-language” does not mean independently developed CAM software.
+## Scope
 
-**29 browser checks** operate the actual filter/cycle controls, trace slides and
-handles, width and replacement dialogs, Keep/Cancel and undo, connected moves on
-both faces, printed marks, file manifest, stale-export rejection, manufactured-ZIP
-readback, narrow layout, failed storage, other-tab conflicts and explicit recovery.
-They also cover cancelling a preview-only drag during undo/a concurrent command
-and resuming managed-plane refill after either cancellation method.
+The export uses the native CopperBench contract accepted by the retrieved
+CaseBench native-adapter definition (adapter 2.0.1, retained in CaseBench v2.3.0).
+The complete CaseBench application was not available in the working environment.
+No copy of its importer is embedded or claimed to have run. Geometry-preservation
+and native CopperBench round-trip tests are **not** an end-to-end CaseBench test.
 
-Earlier library, carrier/module, circuit-block, routing, via, plane, polarity,
-silkscreen, quiet-UI and pan suites remain in the final run. The project format
-remains **schema 5**, with **193 parts and six circuit blocks**.
+Browser regression tests use real Chromium controls, canvas and workers with an
+injected storage double and captured download blobs. The native HTTP and portable
+file tests were attempted separately: both returned ERR_BLOCKED_BY_ADMINISTRATOR,
+so save/reopen/download/offline qualification could not execute. No policy was
+altered and blocked cases are not counted as passes.
 
-## Qualification boundaries
+Component envelopes and stack gaps remain representative, not physically measured
+assemblies. No physical enclosure fit, manufacturing acceptance, electrical operation,
+independent CAM validation, Safari or Firefox qualification is claimed.
 
-Chromium checks use real DOM/canvas/events/workers, **injected local storage** and
-**captured download blobs**. They do not establish native persistence/downloads.
-Touch input is emulated, not a physical touchscreen/trackpad test. Safari and
-Firefox have not been tested in this release environment.
-
-The additional native-browser script was actually attempted for ordinary local
-HTTP and portable-file navigation. Both returned **ERR_BLOCKED_BY_ADMINISTRATOR**;
-there were **zero native passes and two blocked cases**. No policy was altered.
-Its normal save/reopen/download/offline checks could not be reached.
-
-The optional **Gerbonara third-party parser/rendering gate** is also **blocked**:
-the dependency is absent and the attempted installation could not resolve the
-package host. No successful third-party execution is claimed. The supplied manual
-GitHub workflow has not run in the user's account. Manufacturer preview acceptance,
-electrical function, physical fit/print quality and fabrication remain unverified.
-See [QUALIFICATION.md](QUALIFICATION.md) for reproducible gates and boundaries.
-
-Generated-file silk sampling is a diagnostic, not exact ink-area/minimum-width
-analysis or independent CAM approval. Connected dragging is bounded and deliberately
-excludes pour-net, interior/off-centre and locked attachments; it is not push-and-shove.
-
-## Reproduce
-
-```sh
-python3 -m pip install -r requirements-dev.txt
-python3 -m playwright install chromium
-python3 tools/test.py
-# Editing-specific checks:
-npm run test:editing
-# Optional native and third-party gates:
-python3 tests/native_browser_test.py
-python3 -m pip install gerbonara==1.6.3
-python3 tests/external_cam_check.py
-# Integrity and packaging:
-python3 tools/check_repo.py
-python3 tools/release.py
-```
-
-The app is already built; test dependencies are not runtime requirements.
-`CHROMIUM_EXECUTABLE` can select an installed browser. Transient results go to
-ignored `tests/output/`; the source and user examples are not regenerated by tests.
-
-[Editing guide](EDITING.md) · [Frozen results](verification/editing-v1.7.0/summary.json) ·
-[Repository verification](REPOSITORY_VERIFICATION.md)
+See [v1.7.0 verification](TESTING-v1.7.0.md) for the retained earlier test history.

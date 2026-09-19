@@ -1,0 +1,195 @@
+{
+  "version": "1.7.1",
+  "passed": 47,
+  "total": 47,
+  "results": [
+    {
+      "name": "Five specific modules extend all 188 existing parts to 193 unique identities",
+      "pass": true
+    },
+    {
+      "name": "Module starters have editable embedded source, unassigned pins and no default mounting drills",
+      "pass": true
+    },
+    {
+      "name": "BME original header preserves 2.54 mm pitch and regulator output identity",
+      "pass": true
+    },
+    {
+      "name": "Original DS3231 has all eight named contacts including battery, 32 kHz, SQW and RESET",
+      "pass": true
+    },
+    {
+      "name": "OLED display-face reflection retains pin identities, VIN7 and GND8",
+      "pass": true
+    },
+    {
+      "name": "TB6612 keeps motor and logic input apart and labels all sixteen contacts",
+      "pass": true
+    },
+    {
+      "name": "MPM3610 3.3 V header preserves source R180 order: EN,VIN,OUT,GND",
+      "pass": true
+    },
+    {
+      "name": "Optional module mounting holes follow rotation and bottom-side transforms",
+      "pass": true
+    },
+    {
+      "name": "Showing or hiding module bodies is neutral to manufacturing output",
+      "pass": true
+    },
+    {
+      "name": "Module bodies and editor captions produce no silkscreen without explicit ref enable",
+      "pass": true
+    },
+    {
+      "name": "Conflicting nets on module internally common GND contacts are errors",
+      "pass": true
+    },
+    {
+      "name": "Nominal underside interference remains advisory and source-review flag is explicit",
+      "pass": true
+    },
+    {
+      "name": "Malformed module sources, flags and non-finite dimensions are rejected",
+      "pass": true
+    },
+    {
+      "name": "Unknown user module identity remains losslessly editable without registry lookup",
+      "pass": true
+    },
+    {
+      "name": "Module pin CSV applies spreadsheet-escape protection",
+      "pass": true
+    },
+    {
+      "name": "Six built-in blocks are valid self-contained schema-1 templates",
+      "pass": true
+    },
+    {
+      "name": "All six saved-copper starters have no unrouted connection or copper errors",
+      "pass": true
+    },
+    {
+      "name": "Each insertion allocates fresh refs and retains source footprint identity",
+      "pass": true
+    },
+    {
+      "name": "Repeated blocks have disjoint net and object identities, including RETURN/GND",
+      "pass": true
+    },
+    {
+      "name": "Explicit port mapping shares only that selected existing net",
+      "pass": true
+    },
+    {
+      "name": "Non-port mapping, missing target and accidental port short are atomic failures",
+      "pass": true
+    },
+    {
+      "name": "Every template supports moving, rotating and flipping complete copper coherently",
+      "pass": true
+    },
+    {
+      "name": "Transforming forward and backward preserves part/pad/trace/via geometry",
+      "pass": true
+    },
+    {
+      "name": "Locked block members reject a group transform without partial mutation",
+      "pass": true
+    },
+    {
+      "name": "Individual edits remain normal objects, not library-linked replacements",
+      "pass": true
+    },
+    {
+      "name": "Copying a modified block preserves edits, removes double-scoping and allocates fresh nets",
+      "pass": true
+    },
+    {
+      "name": "Project JSON round-trip preserves block instances and personal templates",
+      "pass": true
+    },
+    {
+      "name": "Capturing a selection without copper preserves net intent but is unrouted on insertion",
+      "pass": true
+    },
+    {
+      "name": "Capturing standalone silk/holes/zones is rejected instead of silently dropping them",
+      "pass": true
+    },
+    {
+      "name": "Attaching mounting-hole and RF keepout metadata survives block capture and insertion",
+      "pass": true
+    },
+    {
+      "name": "Block export captures actual current geometry, not the original library seed",
+      "pass": true
+    },
+    {
+      "name": "Document imports reject orphan, repeated or double-owned block members",
+      "pass": true
+    },
+    {
+      "name": "Deleting a member prunes the group; deleting all members removes the empty record",
+      "pass": true
+    },
+    {
+      "name": "Detaching a block never changes parts, copper, nets or manufacturing output",
+      "pass": true
+    },
+    {
+      "name": "Schema 1/2/3/4 migration adds empty block containers without changing geometry",
+      "pass": true
+    },
+    {
+      "name": "Unsupported project and block schemas fail rather than lose metadata",
+      "pass": true
+    },
+    {
+      "name": "Malformed, oversized or empty block payloads are rejected",
+      "pass": true
+    },
+    {
+      "name": "Duplicate personal library IDs and built-in ID overrides are rejected",
+      "pass": true
+    },
+    {
+      "name": "Placement preflight rejects new shorts against existing differently assigned copper",
+      "pass": true
+    },
+    {
+      "name": "Placement preflight rejects outside-board copper with no destination mutation",
+      "pass": true
+    },
+    {
+      "name": "Preflight permits unrouted intent and remote explicit port mapping without ignoring physical shorts",
+      "pass": true
+    },
+    {
+      "name": "Review findings distinguish topology examples from verified electrical operation",
+      "pass": true
+    },
+    {
+      "name": "Explicit whole-net merge updates group port records and remains exportable",
+      "pass": true
+    },
+    {
+      "name": "Explicit merging of two former ports exports one combined net rather than corrupting a block",
+      "pass": true
+    },
+    {
+      "name": "KiCad output retains ordinary copper/net geometry while omitting group metadata",
+      "pass": true
+    },
+    {
+      "name": "Module ground lead can connect to an assigned bottom plane through its plated pad",
+      "pass": true
+    },
+    {
+      "name": "Both samplers validate and contain no initial copper error",
+      "pass": true
+    }
+  ]
+}

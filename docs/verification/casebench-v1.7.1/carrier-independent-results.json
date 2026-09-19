@@ -1,0 +1,90 @@
+{
+  "passed": 21,
+  "total": 21,
+  "results": [
+    {
+      "name": "pico carrier: literal pitch, bank origins, PTH count and both copper faces",
+      "pass": true
+    },
+    {
+      "name": "pico addon: literal pitch, bank origins, PTH count and both copper faces",
+      "pass": true
+    },
+    {
+      "name": "pico2 carrier: literal pitch, bank origins, PTH count and both copper faces",
+      "pass": true
+    },
+    {
+      "name": "pico2 addon: literal pitch, bank origins, PTH count and both copper faces",
+      "pass": true
+    },
+    {
+      "name": "pico-w carrier: literal pitch, bank origins, PTH count and both copper faces",
+      "pass": true
+    },
+    {
+      "name": "pico-w addon: literal pitch, bank origins, PTH count and both copper faces",
+      "pass": true
+    },
+    {
+      "name": "pico2-w carrier: literal pitch, bank origins, PTH count and both copper faces",
+      "pass": true
+    },
+    {
+      "name": "pico2-w addon: literal pitch, bank origins, PTH count and both copper faces",
+      "pass": true
+    },
+    {
+      "name": "nano-classic carrier: literal pitch, bank origins, PTH count and both copper faces",
+      "pass": true
+    },
+    {
+      "name": "nano-classic addon: literal pitch, bank origins, PTH count and both copper faces",
+      "pass": true
+    },
+    {
+      "name": "esp32-devkitc-v4 carrier: literal pitch, bank origins, PTH count and both copper faces",
+      "pass": true
+    },
+    {
+      "name": "esp32-devkitc-v4 addon: literal pitch, bank origins, PTH count and both copper faces",
+      "pass": true
+    },
+    {
+      "name": "feather-classic carrier: literal pitch, bank origins, PTH count and both copper faces",
+      "pass": true
+    },
+    {
+      "name": "feather-classic addon: literal pitch, bank origins, PTH count and both copper faces",
+      "pass": true
+    },
+    {
+      "name": "xiao-rp2040 carrier: literal pitch, bank origins, PTH count and both copper faces",
+      "pass": true
+    },
+    {
+      "name": "xiao-rp2040 addon: literal pitch, bank origins, PTH count and both copper faces",
+      "pass": true
+    },
+    {
+      "name": "xiao-esp32c3 carrier: literal pitch, bank origins, PTH count and both copper faces",
+      "pass": true
+    },
+    {
+      "name": "xiao-esp32c3 addon: literal pitch, bank origins, PTH count and both copper faces",
+      "pass": true
+    },
+    {
+      "name": "Optional mounting drills are NPTH and no holes are invented for ESP32 / XIAO",
+      "pass": true
+    },
+    {
+      "name": "Generated filled Gerbers exclude literal antenna rectangle on both faces",
+      "pass": true
+    },
+    {
+      "name": "Host reference drawings, access labels and RF overlays invent no silkscreen or drills",
+      "pass": true
+    }
+  ]
+}

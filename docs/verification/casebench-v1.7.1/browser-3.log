@@ -1,0 +1,76 @@
+
+> /opt/pyvenv/bin/python tests/via_browser_test.py
+PASS Visible Via button opens controls and creates an assigned plated via
+PASS Repeated placement uses preset/tenting defaults and supports undo/redo
+PASS Unassigned empty-space vias stay visible to manufacturing checks
+PASS Placing directly on an off-grid trace snaps to its center and inherits net
+PASS Conflicting front/back nets produce a red preview and no board mutation
+PASS Board-edge and mounting-hole clashes block standalone placement
+PASS Bad annular rings and undersized drills do not change placement defaults
+PASS Inspector edits dimensions/tenting and respects the via lock
+PASS V during tracing inserts a via and continues a connected bottom-layer route
+PASS Visible layer-change button commits trace plus via as one undoable edit
+PASS Traces start/end on vias and a via remains selectable over its trace
+PASS Via routes can finish directly on an existing same-net trace
+PASS Blocked routing via leaves the trace, side and board unchanged
+PASS Manage vias table selects objects for duplication and deletion
+PASS Moving an attached via exposes disconnection instead of moving copper silently
+PASS JSON backup and actual file-input import retain via details
+PASS KiCad export explicitly warns about via mask/lock limitations
+PASS A blocked arrow-key via move rolls back without an uncaught exception
+PASS Placement, inspector and generated-file views render the actual via
+PASS Narrow-screen users can reach the visible Via tool without page overflow
+PASS No external asset requests or uncaught exceptions in via workflows
+{"passed": 21, "total": 21}
+
+> /opt/pyvenv/bin/python tests/carrier_browser_test.py
+PASS Controller picker is visible, has twelve families, and defaults to Pico 2 carrier
+PASS Every new variant creates a locked, routable, correctly sized header template
+PASS No-hole hosts cannot accidentally enable invented mounting drills
+PASS FeatherWing-style add-on exposes the bottom mating face and variant-specific FREE contact
+PASS Place-on-current-board preserves the boundary and adds the selected exact interface
+PASS Inspector shows functional contact labels, source model and editable RF/access regions
+PASS Guard dimensions and stack-gap edits are one undoable operation
+PASS RF override requires a recorded reason; the accepted override remains a warning
+PASS Hiding overlays does not disable guards or alter manufacturing output
+PASS Rotate and flip controls transform the attached guard without changing its two-face protection
+PASS Actual worker refills both plane faces around the attached RF exclusion
+PASS Visible Via tool refuses to place a via inside the RF guard
+PASS Saved JSON and project ZIP retain schema 5, host metadata, guards and planes
+PASS KiCad export discloses metadata loss and includes two independent keepout zones
+PASS Bench and clearance inspector render the controller and its separate reference geometry
+PASS Controller selection and template workflow fit a 390 px viewport
+PASS No uncaught browser errors or external runtime dependencies
+17/17 carrier browser checks passed.
+
+> /opt/pyvenv/bin/python tests/pan_browser_test.py
+PASS Labelled Pan control is keyboard-operable with pressed and grab states
+PASS Pan moves only the camera in bench, top face, even over a component
+PASS Pan moves only the camera in bench, bottom face, even over a component
+PASS Pan moves only the camera in copper, top face, even over a component
+PASS Pan moves only the camera in copper, bottom face, even over a component
+PASS Pan moves only the camera in fabrication, top face, even over a component
+PASS Pan moves only the camera in fabrication, bottom face, even over a component
+PASS Middle-button drag pans without selecting or moving a part
+PASS Space-drag preserves a pending part and permits subsequent placement
+PASS Pan can suspend and resume a live trace with no added waypoint or net
+PASS Fit and Home recover the board after moving it away from the centre
+PASS Arrows pan in Pan mode without nudging, rotating, flipping or deleting selection
+PASS Scroll pans in Pan mode; Ctrl-scroll still zooms rather than translating
+PASS Shift-scroll pans horizontally while the ordinary Select wheel retains zoom
+PASS Line and page wheel units are normalised, not assumed to be pixels
+PASS Typing and browser shortcuts are not hijacked; on-demand Pan help stays available
+PASS Pointer capture keeps panning when the pointer crosses the canvas edge
+PASS Focus and pointer-capture loss cannot leave a stuck dragging cursor
+PASS One-finger drag in Pan moves the view, not the touched component
+PASS Two-finger translation pans in Select and ignores the remaining lifted finger
+PASS Touch pinch zoom stays anchored beneath the translating gesture centre
+PASS Two-finger gestures cannot drop parts, add holes/vias, or start a trace
+PASS A second finger rolls back an uncommitted component drag before navigating
+PASS Normal mouse and single-touch editing still move parts and remain undoable
+PASS Pan stays labelled and reachable at narrow screen widths without page overflow
+PASS Pan has visible active state in light, dark and high-contrast views
+PASS Loading a document cancels the old tentative drag without restoring it over the new board
+PASS Scrolling refreshes the board coordinate of a stationary routing cursor
+PASS Navigation produces no uncaught errors or external runtime requests
+29 / 29 pan browser checks passed.
