@@ -1,0 +1,109 @@
+{
+  "version": "1.6.3",
+  "passed": 603,
+  "total": 603,
+  "engineChecks": 260,
+  "manufacturingChecks": 112,
+  "browserChecks": 218,
+  "packagingChecks": 13,
+  "newNavigationChecks": 29,
+  "sourceUnchangedByTests": true,
+  "seconds": 198.62,
+  "suites": [
+    {
+      "name": "browser_test",
+      "exit": 0,
+      "seconds": 23.92
+    },
+    {
+      "name": "platform_browser_test",
+      "exit": 0,
+      "seconds": 21.47
+    },
+    {
+      "name": "via_browser_test",
+      "exit": 0,
+      "seconds": 36.17
+    },
+    {
+      "name": "plane_browser_test",
+      "exit": 0,
+      "seconds": 40.38
+    },
+    {
+      "name": "silkscreen_browser_test",
+      "exit": 0,
+      "seconds": 17.45
+    },
+    {
+      "name": "maker_browser_test",
+      "exit": 0,
+      "seconds": 24.93
+    },
+    {
+      "name": "carrier_browser_test",
+      "exit": 0,
+      "seconds": 38.48
+    },
+    {
+      "name": "modules_blocks_browser_test",
+      "exit": 0,
+      "seconds": 47.57
+    },
+    {
+      "name": "quiet_ui_browser_test",
+      "exit": 0,
+      "seconds": 20.68
+    },
+    {
+      "name": "compact_polarity_browser_test",
+      "exit": 0,
+      "seconds": 28.0
+    },
+    {
+      "name": "pan_browser_test",
+      "exit": 0,
+      "seconds": 42.3
+    }
+  ],
+  "runtimeSHA256": {
+    "index.html": "b68aeb7d41bf7757a87c229a82a83f704e89d5969828560632dc6d9377746bc3",
+    "styles.css": "3f70b04940411acb7f475f5116a6e43eea66095b882d72cdbfe6bfc9cdea71ef",
+    "sw.js": "f96d0703e15192a96e646f019fe73a155cd4945bf7062b3cc770ab05db06d452",
+    "COPPERBENCH-portable.html": "4ba3739f5a97d3a55d11242603630ce17f0fca785119fa06de02c65f96d33f61",
+    "src/app.js": "370347192eaed8870c0b90e8b7ef4eb943962952ea1b6d3eab4be7d839828a13",
+    "src/block-catalog.js": "e1e3bc67343eb341764075563df8406b472b41a52bef19f78dca8a77de177143",
+    "src/blocks.js": "f234fa4dc112977ff9bbac04fead7f0cbb24487427ef5e4cd76343e6759129e1",
+    "src/carriers.js": "6aab618e4f3a3cf2545af742edc28819767cd9431e3fa06261f12715da93ded4",
+    "src/core.js": "715286f68cb2aa2ffdb448b5d99fd0914a420fa6564cad3e61f45c2c518f0fce",
+    "src/font.js": "a4d112b9c859df1a51aace2a571b47b793a93a58e81761594e50d71ee9807677",
+    "src/geometry.js": "bef1dc59f2bfdbb2900b416f0ba66af5be89a0bd8a8e6075b3fe7a1ca43b89aa",
+    "src/interchange.js": "084aa905e63cc63e8410613d333481534d58328d57938f3d38fb23298eb97ebb",
+    "src/maker-parts.js": "38056b2e655490883e7427e262bb6cfc8c347a1706d01960d69f707e0be7c397",
+    "src/manufacturing.js": "53b16e1b25c2607a083e193c5f9663b47c8d74ace2bc8f40d18113c72f443167",
+    "src/modules-renderer.js": "72f6f46630d73e2e925793e3b89f923b36ee12dfa1320cd3f0ec17607d965265",
+    "src/modules.js": "e4387b291c3c25a1411681c0a0ce73570ce2280f949818350198c3968a80f3c2",
+    "src/planes.js": "caf7eb1a818cde1ac89d84ff332123a628c798a56c639be6d994cd8252cdb01a",
+    "src/platforms.js": "ef875fd54915b5f5fee38c9927b12ff86e115aba50ea4216f6d48176b7d0c50c",
+    "src/renderer.js": "5a1d140044bd572bc979052440a2bd3ed823b7a34b3c653d95955c439476b4db",
+    "src/router.js": "0dbd2c5e88aa0bf5ddfa08ac93d429f90f503d009792a30b8a38447da307ab7b",
+    "src/vias.js": "7efc82536a4e95c016c1204908eeb8994e2f212be2ead0c92d8c24903a71fc6f",
+    "src/worker-entry.js": "3023b368b26b93e0645a942171a0b5822f60451c66debafd93d7f9db0adf8ca1",
+    "src/worker-source.js": "e66d8078eb50a42c96c1af1392914417bb75a03c925c234060ccb1c40833c1df"
+  },
+  "environment": {
+    "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+    "node": "v22.16.0",
+    "browser": "Chromium 144.0.7559.96 built on Debian GNU/Linux 13 (trixie)",
+    "playwright": "1.57.0",
+    "shapely": "2.1.2",
+    "Pillow": "12.3.0"
+  },
+  "limits": [
+    "Browser suites use about:blank injected local Storage and captured download blobs.",
+    "Touch input uses Chromium DevTools protocol, not physical touchscreen hardware.",
+    "Both file: and local HTTP navigation attempts were blocked by administrator policy; no policy was changed.",
+    "Safari, Firefox, physical trackpad/touchscreen input, origin persistence and service worker offline behavior remain unverified.",
+    "No manufacturer acceptance or physical fabrication is claimed."
+  ]
+}

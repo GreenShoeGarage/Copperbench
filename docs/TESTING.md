@@ -1,95 +1,90 @@
-# Verification record — COPPERBENCH v1.6.1
+# Verification record — COPPERBENCH v1.7.0
 
-**547 / 547 local regression checks passed.** The retained 529 checks are joined
-by 18 focused Chromium tests for the quieter interface. Detailed results and logs
-are frozen in `docs/verification/quiet-ui-v1.6.1/`.
+## Executed standard regression suite
 
-| Test group | Result |
-|---|---:|
-| JavaScript engine and catalog checks — eight suites | 250 / 250 |
-| Separate Python/Shapely geometry checks — eight suites | 110 / 110 |
-| Chromium workflows — nine suites | 174 / 174 |
-| Packaging and deterministic rebuild checks | 13 / 13 |
-| **Total** | **547 / 547** |
+**695 / 695 regression checks passed**: **317 engine/model**, **118 separate-language
+manufacturing**, **247 Chromium interaction**, and **13 packaging** checks.
+The complete standard suite ran in the working source tree. Browser suites were
+partitioned across three concurrent groups; `python3 tools/test.py` runs the same
+suites sequentially. No failing regression was omitted from the final run.
 
-`tools/check_repo.py` additionally verifies source syntax, generated portable,
-worker and offline-cache assets, visible/runtime/package versions, documentation
-links and bundled dependency hashes. These integrity checks are not added to the
-547-test total.
+The tested runtime, portable app, styles, index and service-worker hashes were
+unchanged by that run. Frozen logs, results, dependency versions and hashes are
+in [the execution record](verification/editing-v1.7.0/summary.json).
+Final extracted-archive checks and deterministic rebuild are a separate packaging
+step; the full 695-check run is not represented as a second full execution there.
 
-## Interface coverage
+## New coverage: 92 checks
 
-Fresh and previously saved preferences have no welcome/canvas slogans. Search and
-catalog controls sit ahead of the part grid, with all six launchers reachable.
-The category dropdown retains module/controller discovery. Exceptional plane states (including a required refill) remain visible on the board rather than being hidden in tooltips. Library tools is
-keyboard-operable and remains open across current-panel refreshes. Modal tool help
-preserves the active tool and document. Only active tools show a short hint;
-placement no longer adds a second instructional toast.
+**39 engine checks** exercise trace/segment/corner editing, cleaned point geometry,
+width scopes and splitting, block membership, connection-preserving validation,
+locked objects, endpoint/junction preservation, supported component/via movement,
+rotation/bottom-side transforms, blocked moves and physical marking offsets.
 
-The complete guide retains displaced instructions, keyboard commands and
-manufacturing limits. Live error/warning counts, unassigned-via cautions, autosave
-failure messages and blocked fabrication export remain visible. Fabrication layer
-selection and its independent-CAM caution remain. View changes do not change
-manufacturing-file bytes. Native schema-5 JSON and all 193 parts are retained.
-The dark/contrast active-tool foregrounds are explicit and tested. Layouts at
-360, 390, 430, 700 and 900 pixels are checked for page-level overflow; actual
-screenshots include desktop, mobile, dark, contrast and silkscreen views.
+**18 export-review checks** cover required files, parsed copper/silkscreen, outline
+bounds, plated and non-plated drill counts/positions/diameters/slots, blank versus
+missing silk, complete and partial clipping, Gerber contour union and clear/dark
+paint order, formats, snapshot identity and qualification metadata.
 
-Only application UI code, markup/styles, the core app version and generated assets
-change at runtime. Geometry, routing, via, plane, manufacturing, interchange,
-component catalogs and rendering modules are unchanged from v1.6.0. The source
-comparison is recorded in `source-scope.json`. Existing regression suites still
-exercise carrier keepouts, modules, reusable blocks, connection intent, polarity,
-and exported silkscreen clipping.
+**Six Python/Shapely checks** independently recompute the connected-edit coupon's
+expected pad/trace geometry, physical contact, drill positions, board outline and
+silkscreen presence. The parser is maintained in this repository; “separate
+language” does not mean independently developed CAM software.
 
-## Reproduction
+**29 browser checks** operate the actual filter/cycle controls, trace slides and
+handles, width and replacement dialogs, Keep/Cancel and undo, connected moves on
+both faces, printed marks, file manifest, stale-export rejection, manufactured-ZIP
+readback, narrow layout, failed storage, other-tab conflicts and explicit recovery.
+They also cover cancelling a preview-only drag during undo/a concurrent command
+and resuming managed-plane refill after either cancellation method.
 
-The app runs without a build. Developer verification uses the pinned development
-dependencies; it writes results to ignored `tests/output/`, not checked-in source,
-examples or documentation images.
+Earlier library, carrier/module, circuit-block, routing, via, plane, polarity,
+silkscreen, quiet-UI and pan suites remain in the final run. The project format
+remains **schema 5**, with **193 parts and six circuit blocks**.
+
+## Qualification boundaries
+
+Chromium checks use real DOM/canvas/events/workers, **injected local storage** and
+**captured download blobs**. They do not establish native persistence/downloads.
+Touch input is emulated, not a physical touchscreen/trackpad test. Safari and
+Firefox have not been tested in this release environment.
+
+The additional native-browser script was actually attempted for ordinary local
+HTTP and portable-file navigation. Both returned **ERR_BLOCKED_BY_ADMINISTRATOR**;
+there were **zero native passes and two blocked cases**. No policy was altered.
+Its normal save/reopen/download/offline checks could not be reached.
+
+The optional **Gerbonara third-party parser/rendering gate** is also **blocked**:
+the dependency is absent and the attempted installation could not resolve the
+package host. No successful third-party execution is claimed. The supplied manual
+GitHub workflow has not run in the user's account. Manufacturer preview acceptance,
+electrical function, physical fit/print quality and fabrication remain unverified.
+See [QUALIFICATION.md](QUALIFICATION.md) for reproducible gates and boundaries.
+
+Generated-file silk sampling is a diagnostic, not exact ink-area/minimum-width
+analysis or independent CAM approval. Connected dragging is bounded and deliberately
+excludes pour-net, interior/off-centre and locked attachments; it is not push-and-shove.
+
+## Reproduce
 
 ```sh
-python3 -m venv .venv
-. .venv/bin/activate
 python3 -m pip install -r requirements-dev.txt
 python3 -m playwright install chromium
-python3 tools/package.py
 python3 tools/test.py
-```
-
-On Windows use `py -3` and `.venv\Scripts\Activate.ps1`. Set
-`CHROMIUM_EXECUTABLE` to an existing Chromium executable when needed.
-
-```sh
-python3 tests/quiet_ui_browser_test.py
+# Editing-specific checks:
+npm run test:editing
+# Optional native and third-party gates:
+python3 tests/native_browser_test.py
+python3 -m pip install gerbonara==1.6.3
+python3 tests/external_cam_check.py
+# Integrity and packaging:
 python3 tools/check_repo.py
 python3 tools/release.py
 ```
 
-[Repository verification](REPOSITORY_VERIFICATION.md) records the separate
-extraction run and final byte comparison. Source/static ZIPs use sorted paths,
-fixed timestamps and allowlisted input. Transient outputs, virtual environments
-and `.git` are excluded. Local reproduction is not a GitHub Actions execution.
+The app is already built; test dependencies are not runtime requirements.
+`CHROMIUM_EXECUTABLE` can select an installed browser. Transient results go to
+ignored `tests/output/`; the source and user examples are not regenerated by tests.
 
-## Environment and limits
-
-Node 22.16.0, Python 3.13.5, Chromium 144.0.7559.96, Playwright 1.57.0,
-Shapely 2.1.2 and Pillow 12.3.0 were used.
-
-Browser suites execute real DOM, canvas and workers in embedded portable HTML,
-using a local-storage test double and intercepted export blobs. A localhost
-navigation attempt was blocked with ERR_BLOCKED_BY_ADMINISTRATOR before startup;
-no browser policy was changed. It is not counted as a passing test. Real-origin
-storage/downloads, hosted offline installation/update, Safari/Firefox and actual
-mobile devices remain unverified.
-
-External CAM, manufacturer acceptance, physical fabrication, connector fit, RF
-performance and circuit operation were not validated. The independent parser
-covers the emitted subset, not arbitrary Gerber. Bodies/clearance envelopes and
-library footprints retain their documented qualifications. Circuit blocks remain
-editable starting topologies, not electrically certified or rated protection
-circuits. No remote repository, deployment or board order was changed.
-
-[Interface guide](QUIET_WORKBENCH.md) · [Compatibility](COMPATIBILITY.md) ·
-[Results](verification/quiet-ui-v1.6.1/summary.json) · [Fresh extraction](verification/quiet-ui-v1.6.1/fresh-summary.json) ·
-[Quiet UI tests](verification/quiet-ui-v1.6.1/quiet-ui-browser-results.json)
+[Editing guide](EDITING.md) · [Frozen results](verification/editing-v1.7.0/summary.json) ·
+[Repository verification](REPOSITORY_VERIFICATION.md)

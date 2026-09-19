@@ -77,7 +77,7 @@ with sync_playwright() as pw:
         text=page.locator('body').inner_text()
         for phrase in ['Make a connection.', 'A little more', 'Your bench. Your files.', 'Real-looking bodies.', 'Start with a part.']:
             check(phrase not in text, phrase)
-        check(page.locator('.version').inner_text()=='v1.6.1')
+        check(page.locator('.version').inner_text()=='v'+page.evaluate('CB.VERSION'))
         check(page.locator('#saveState').is_visible())
         check(not page.locator('#toolHint').is_visible())
     test('Fresh startup has no slogans, welcome overlay or idle instructions', initial)
@@ -163,7 +163,7 @@ with sync_playwright() as pw:
         text=page.locator('#modalBody').inner_text()
         for phrase in ['Deleting copper leaves the net intact', 'Same-net copper', 'Independent CAM review', 'Silkscreen is clipped', 'Library tools', 'KEYBOARD']:
             check(phrase in text,phrase)
-        check('V1.6.1' in page.locator('#modalEyebrow').inner_text());close()
+        check('V'+page.evaluate('CB.VERSION') in page.locator('#modalEyebrow').inner_text());close()
         page.locator('#toolHelp').focus();page.keyboard.press('Enter')
         check(page.locator('#modalTitle').inner_text()=='Select tool')
         page.get_by_role('button',name='Full guide',exact=True).click()

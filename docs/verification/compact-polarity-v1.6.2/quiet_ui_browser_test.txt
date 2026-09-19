@@ -1,0 +1,19 @@
+PASS Fresh startup has no slogans, welcome overlay or idle instructions
+PASS Search and six compact catalog controls expose the parts grid above the fold
+PASS Category selection and named-part search retain module/controller discovery
+PASS Every compact library button opens its complete existing workflow
+PASS Library tools is keyboard-operable and keeps its state through inspector refresh
+PASS Active trace guidance is concise; tool help does not change the board or tool
+PASS Via tool retains net/placement cautions and its complete on-demand instructions
+PASS Part placement uses one context hint rather than a second instructional toast
+PASS Keyboard and touch-accessible help retains displaced instructions and limitations
+PASS Legacy welcome preferences do not restore clutter or discard saved UI settings
+PASS Live error/warning counts and the fabrication export gate remain visible
+PASS Autosave failures still display an explicit warning and JSON backup remains available
+PASS Plain panel headings retain board fabrication limits and the active silkscreen face
+PASS Fabrication retains exported-layer selection, CAM caution and identical file bytes
+PASS Compact and active-tool layouts remain usable from 360 to 900 pixels wide
+PASS Dark and high-contrast themes retain readable controls and status indicators
+PASS The 193-part library and schema-5 native round trip remain unchanged
+PASS Quiet-workbench interactions need no external requests and raise no uncaught errors
+18 / 18 quiet UI checks passed.

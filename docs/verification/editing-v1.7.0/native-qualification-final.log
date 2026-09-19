@@ -1,0 +1,8 @@
+BLOCKED HTTP static app Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at http://127.0.0.1:33685/
+Call log:
+  - navigating to "http://127.0.0.1:33685/", waiting until "load"
+
+BLOCKED Portable file Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/work-v17/copperbench/COPPERBENCH-portable.html
+Call log:
+  - navigating to "file:///mnt/data/work-v17/copperbench/COPPERBENCH-portable.html", waiting until "load"
+

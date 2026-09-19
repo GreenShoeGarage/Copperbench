@@ -49,10 +49,11 @@ imported and custom roles require explicit assignment. `none` suppresses that
 legacy inference. No rule infers roles from a net name or changes a pin number.
 
 Optional part field `polaritySilk` holds `visible`, `size`, `gap`, `x` and `y`.
-Defaults print 1.2 mm symbols, 0.7 mm beyond the body/pad bounds, with zero local
-offsets. Native schema is now 5; v1.6 reads all earlier supported projects.
-An older app may retain unfamiliar fields but does not implement automatic printed
-polarity marks; keep v1.3.1 for further editing/export. Save a backup first.
+v1.6.2 defaults print 0.9 mm symbols with 0.16 mm strokes, 0.7 mm beyond the
+body/pad bounds, with zero local offsets. Explicit existing settings are preserved.
+Four-terminal rows are spaced to avoid overlapping glyphs. Native schema is 5;
+v1.6.2 reads all earlier supported projects. Older releases may render automatic
+labels differently; use v1.6.2 to reproduce these marks. Save a backup first.
 
 Gerber contains the resulting vector strokes. KiCad/SVG exchange receives geometry,
 not editable electrical-role or automatic-label metadata. Imported KiCad markings
@@ -153,3 +154,16 @@ quantities separately. See [form factors](FORM_FACTORS.md) for coverage limits.
 ## v1.4 maker library and ICSP metadata
 
 See [Maker Parts](MAKER_PARTS.md). Native schema 5 retains the schema-3 support for embedded variant/source/pin metadata and optional ICSP contacts. Older versions do not apply the new internal-terminal conflict checks or ICSP edit rules. KiCad geometry export does not preserve catalog identity, named-pin captions, internal-group checks or compound ICSP behavior; its dialog warns before export. Generic/reference body models are not mechanical collision checks, and named parts are not complete electrical reference circuits.
+
+
+## v1.7 additions
+
+Project schema remains 5. Selection filters, edit ghosts and navigation do not
+serialize. Accepted edits serialize as ordinary parts, traces, vias and mark
+properties; supported KiCad geometry export continues using those objects.
+`manufacturing-manifest.json` is review metadata, not an editable PCB file. It is
+ignored as a native-project candidate when opening a Gerber/drill ZIP.
+The two-copy storage-recovery bundle is likewise an archive envelope; extract
+its `currentBoard` value as JSON to import that board. `storedRaw` retains the
+other record without guessing how to repair invalid data. New browser controls
+do not change the existing restricted KiCad/footprint interchange boundaries.

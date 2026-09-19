@@ -1,0 +1,103 @@
+
+> python tests/quiet_ui_browser_test.py
+PASS Fresh startup has no slogans, welcome overlay or idle instructions
+PASS Search and six compact catalog controls expose the parts grid above the fold
+PASS Category selection and named-part search retain module/controller discovery
+PASS Every compact library button opens its complete existing workflow
+PASS Library tools is keyboard-operable and keeps its state through inspector refresh
+PASS Active trace guidance is concise; tool help does not change the board or tool
+PASS Via tool retains net/placement cautions and its complete on-demand instructions
+PASS Part placement uses one context hint rather than a second instructional toast
+PASS Keyboard and touch-accessible help retains displaced instructions and limitations
+PASS Legacy welcome preferences do not restore clutter or discard saved UI settings
+PASS Live error/warning counts and the fabrication export gate remain visible
+PASS Autosave failures still display an explicit warning and JSON backup remains available
+PASS Plain panel headings retain board fabrication limits and the active silkscreen face
+PASS Fabrication retains exported-layer selection, CAM caution and identical file bytes
+PASS Compact and active-tool layouts remain usable from 360 to 900 pixels wide
+PASS Dark and high-contrast themes retain readable controls and status indicators
+PASS The 193-part library and schema-5 native round trip remain unchanged
+PASS Quiet-workbench interactions need no external requests and raise no uncaught errors
+18 / 18 quiet UI checks passed.
+
+> python tests/compact_polarity_browser_test.py
+PASS Idle bench uses the printable symbols without floating A/K billboards
+PASS Selecting a tall LED shows only 9-pixel A/K tags, never expanded full-name badges
+PASS Tags avoid all projected component bodies at twelve tilt/orbit combinations
+PASS Large custom print settings cannot enlarge editor tags
+PASS Zooming never scales up the screen-space tag typography
+PASS Direct silkscreen checkbox changes printing only and supports undo/redo
+PASS Compact print defaults restores small enabled marks without reassigning roles
+PASS Full cathode identity stays in the tooltip without expanding its board label
+PASS Small tags remain clickable targets for the exact electrical pad
+PASS Fabrication reads actual small role glyphs with no editor overlays or camera-induced file changes
+PASS Flipping the component moves the printable marks to the bottom Gerber
+PASS Four-terminal RGB LEDs receive separate compact labels, not overlapping A/K pairs
+PASS Narrow-screen routing retains bounded labels without page overflow
+PASS Compact labels remain present in high-contrast and dark themes
+PASS No uncaught browser errors or remote runtime requests
+15/15 browser checks passed.
+
+> python tests/pan_browser_test.py
+PASS Labelled Pan control is keyboard-operable with pressed and grab states
+PASS Pan moves only the camera in bench, top face, even over a component
+PASS Pan moves only the camera in bench, bottom face, even over a component
+PASS Pan moves only the camera in copper, top face, even over a component
+PASS Pan moves only the camera in copper, bottom face, even over a component
+PASS Pan moves only the camera in fabrication, top face, even over a component
+PASS Pan moves only the camera in fabrication, bottom face, even over a component
+PASS Middle-button drag pans without selecting or moving a part
+PASS Space-drag preserves a pending part and permits subsequent placement
+PASS Pan can suspend and resume a live trace with no added waypoint or net
+PASS Fit and Home recover the board after moving it away from the centre
+PASS Arrows pan in Pan mode without nudging, rotating, flipping or deleting selection
+PASS Scroll pans in Pan mode; Ctrl-scroll still zooms rather than translating
+PASS Shift-scroll pans horizontally while the ordinary Select wheel retains zoom
+PASS Line and page wheel units are normalised, not assumed to be pixels
+PASS Typing and browser shortcuts are not hijacked; on-demand Pan help stays available
+PASS Pointer capture keeps panning when the pointer crosses the canvas edge
+PASS Focus and pointer-capture loss cannot leave a stuck dragging cursor
+PASS One-finger drag in Pan moves the view, not the touched component
+PASS Two-finger translation pans in Select and ignores the remaining lifted finger
+PASS Touch pinch zoom stays anchored beneath the translating gesture centre
+PASS Two-finger gestures cannot drop parts, add holes/vias, or start a trace
+PASS A second finger rolls back an uncommitted component drag before navigating
+PASS Normal mouse and single-touch editing still move parts and remain undoable
+PASS Pan stays labelled and reachable at narrow screen widths without page overflow
+PASS Pan has visible active state in light, dark and high-contrast views
+PASS Loading a document cancels the old tentative drag without restoring it over the new board
+PASS Scrolling refreshes the board coordinate of a stationary routing cursor
+PASS Navigation produces no uncaught errors or external runtime requests
+29 / 29 pan browser checks passed.
+
+> python tests/editing_browser_test.py
+PASS v1.7 boots with 193 parts, schema 5 and focused selection controls
+PASS Parts filter ignores traces; Copper filter selects a trace
+PASS Overlap cycling reaches a trace beneath its pad using ]
+PASS Drag segment previews doglegs without mutation, then commits as one undo
+PASS Escape cancels preview without altering source copper
+PASS Width scope dialog stages and applies a validated width
+PASS Selected-segment width preserves widths of neighbouring sections
+PASS Insert, drag and remove an interior corner using canvas and controls
+PASS Replace-section dialog preserves fixed endpoints and inserts waypoints
+PASS Cleanup proposals remove redundant collinear points, not user intent
+PASS Drag-connected toggle moves a part and its attachment as one transaction
+PASS Exact-coordinate connected move is available in component inspector
+PASS Unsupported off-centre attachment explains rejection without moving board objects
+PASS Connected via move updates attachments on both copper layers
+PASS Dragging printed polarity changes only print geometry, not physical pins
+PASS Compact print inspector supports size and visibility without pin-role changes
+PASS Fabrication ZIP contains revision-bound generated-file review manifest
+PASS Export refuses a design changed after its review dialog opened
+PASS Fabrication readback is not an accidental geometry-editing surface
+PASS Narrow workbench keeps editing tools reachable without horizontal page overflow
+PASS Autosave detects changed stored data and preserves it; JSON backup still works
+PASS Explicit recovery exports both copies before enabling replacement autosave
+PASS Unreadable startup autosave is not overwritten by later edits
+PASS Quota errors keep previous autosave and allow independent JSON backup
+PASS Undo during a preview-only drag cancels it without restoring the wrong revision
+PASS A concurrent command safely cancels connected dragging without losing the command
+PASS Cancelling with Escape or Cancel resumes paused managed-plane refill
+PASS Manufacturing ZIP with its JSON manifest reopens as CAM reference, not native project
+PASS Editing uses no external runtime requests or uncaught browser errors
+29/29 editing browser checks passed

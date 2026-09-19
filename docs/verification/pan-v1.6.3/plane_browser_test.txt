@@ -1,0 +1,24 @@
+PASS Bottom-ground preset assigns one face and auto-fills without inventing pin nets or undo steps
+PASS Top-power dropdown creates a separate named net and honestly reports no attached copper
+PASS Through-hole lead accepts a direct plane attachment without an unnecessary via
+PASS Opposite-face SMT lead previews then commits an actual trace and via
+PASS Discarding an attachment leaves the native board unchanged
+PASS One undo or redo handles net assignment, short trace, via and plane state together
+PASS Inspector pin action supports keyboard-based plane attachment
+PASS Two picked leads connect in one checked batch rather than merging every net
+PASS Pad context menu exposes the same explicit plane workflow
+PASS A conflicting assigned pin is rejected without a net merge or partial copper
+PASS Cancelling the real connection worker adds no proposed copper
+PASS A worker proposal cannot overwrite a newer board revision
+PASS Board resize refollows and refills the plane without scaling components
+PASS Ground preset preserves existing manual copper zones
+PASS Auto-refill can be disabled; stale fabrication is blocked until a manual refill
+PASS Changing plane assignment requires confirmation and retains existing lead nets
+PASS Connections report exposes real disconnected plane islands, not just matching net names
+PASS Hide-fill and face-view controls do not alter manufacturing copper
+PASS Schema-3 backup and actual file-input import retain planes and verified attachments
+PASS Per-face thermal settings persist and trigger a new fill
+PASS Screenshots show real plane preview, accepted 3D board and copper-face views
+PASS Plane assignment controls remain reachable on a narrow screen
+PASS No external runtime requests or uncaught exceptions in plane workflows
+23/23 plane browser tests passed.

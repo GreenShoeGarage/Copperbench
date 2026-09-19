@@ -85,3 +85,23 @@
 summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:3px}
 
 .board-state .plane-indicator.has-warning{color:var(--danger);border-color:var(--danger);font-weight:600}
+
+/* Navigation is a view operation, with a persistent, labelled control. */
+.view-controls .pan-button{display:inline-flex;align-items:center;justify-content:center;gap:4px;min-height:32px;border:1px solid var(--line);border-radius:6px;flex-shrink:0}
+.pan-button svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.view-controls .pan-button.active{background:var(--green);color:#fff;border-color:var(--green)}
+@media(max-width:700px){.viewbar{height:auto;min-height:48px;flex-wrap:wrap;padding:5px 6px;gap:4px}.view-controls{margin-left:auto;flex-shrink:0}.view-controls .pan-button{padding:5px;min-width:42px;min-height:36px}.pan-button svg{width:14px;height:14px}}
+
+/* Focused editing: one small tool group; details stay in the inspector. */
+.selection-tools{display:flex;align-items:center;gap:4px;min-width:0}
+.selection-tools select{width:92px;min-height:30px;padding:4px 6px;font-size:11px}
+.selection-tools button{white-space:nowrap;font-size:11px;padding:6px 8px;min-height:30px}
+.selection-tools[hidden]{display:none}
+.edit-advanced{margin-top:14px;border-top:1px solid var(--line);padding-top:10px}
+.edit-advanced summary{cursor:pointer;font-size:12px;padding-bottom:8px}
+.export-review-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:14px 0}
+.export-review-card{border:1px solid var(--line);border-radius:8px;padding:10px;font-size:12px}
+.export-review-card strong{display:block;margin-bottom:5px}
+.export-review-card.warning{border-color:#ac6d23}
+@media(max-width:1000px){.selection-tools button{padding:5px}.selection-tools select{width:77px}}
+@media(max-width:640px){.selection-tools{order:4;flex-basis:100%;justify-content:flex-start}.contextbar{flex-wrap:wrap}.export-review-grid{grid-template-columns:1fr}}

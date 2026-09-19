@@ -1,0 +1,31 @@
+{
+  "passed": 6,
+  "total": 6,
+  "scope": "Separate Python/Shapely parser, not independent third-party CAM",
+  "results": [
+    {
+      "name": "top edited copper equals independent pad and trace construction",
+      "pass": true
+    },
+    {
+      "name": "bottom edited copper equals independent pad and trace construction",
+      "pass": true
+    },
+    {
+      "name": "Edited trace and both terminal pads form one physical copper region",
+      "pass": true
+    },
+    {
+      "name": "Top printed references survive after connected movement",
+      "pass": true
+    },
+    {
+      "name": "No bottom-side artwork was spuriously generated",
+      "pass": true
+    },
+    {
+      "name": "Outline path bounds remain the original substrate dimensions",
+      "pass": true
+    }
+  ]
+}

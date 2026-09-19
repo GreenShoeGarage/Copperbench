@@ -1,0 +1,17 @@
+PASS Diode, LED and capacitor terminals have printed marks and full inspector names, without idle badges
+PASS Hovering the K badge identifies the actual cathode lead rather than a nearby body
+PASS Clicking an A badge in connection mode selects that exact anode pad
+PASS Pin table searches by full electrical role, not just pin number
+PASS Printing can be disabled without losing editor identification; undo and redo work
+PASS Numeric/custom pins gain explicit roles without renumbering or copper/net changes
+PASS Printable size/gap/offsets survive real JSON download and file-input import
+PASS Rotation and side changes retain terminal identity and move printed symbols to the correct face
+PASS Fabrication defaults include silk and expose both silk-only inspection controls
+PASS Final top Gerber visibly retains the on-board line after all clear operations
+PASS Final bottom Gerber retains readable component-side markings in the flipped view
+PASS Viewer now correctly shows the old nested clear-frame reproducer as completely blank
+PASS Viewer unions overlapping dark contours even with reversed winding
+PASS The actual UI-generated ZIP contains the tested top and bottom Gerber text
+PASS Polarity controls remain reachable and labeled on a narrow screen
+PASS No external runtime requests or uncaught exceptions during the new workflows
+16/16 silkscreen browser tests passed.

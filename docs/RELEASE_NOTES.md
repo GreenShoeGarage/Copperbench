@@ -1,24 +1,18 @@
-# Release notes — v1.6.1
+# COPPERBENCH v1.7 — editing and export review
 
-## Quieter workbench
+Selection filters and overlapping-object cycling; validated trace/width proposals;
+limited connected part/via moves; printed-reference/polarity positioning; generated
+file consistency and sampled silkscreen review; safer paused-autosave recovery.
 
-Removed welcome overlays, canvas slogans and redundant introductory copy. The
-parts drawer now leads with search and a category selector, followed by compact
-catalog buttons. Additional block/footprint actions are under **Library tools**.
-The empty inspector no longer repeats the board statistics or view descriptions.
+All 193 parts and six blocks are retained. Native JSON remains schema 5. No new
+runtime dependency, account, telemetry or build step is required.
 
-Active tools have brief context hints and a **?** for full instructions. Select
-mode has no idle how-to sentence. Header **?** and **H** still open the complete
-guide. Keyboard activation works for the native Library tools disclosure.
+Back up JSON, replace the complete static application folder or portable HTML,
+review existing projects and regenerate manufacturing files after edits.
 
-This is a presentation update: the same 193 parts, six circuit blocks, carrier
-interfaces, vias, planes, polarity labeling and corrected silkscreen export remain.
-Source/manufacturing cautions, autosave failures, DRC findings and export gates
-have not been hidden. Native schema stays at **5**; v1.6 projects need no migration.
+Connected dragging excludes pour-net moves, locked attachments and off-centre or
+interior terminal junctions. There is no push-and-shove. Ink survival is sampled,
+not a physical printing guarantee. Native-browser navigation and the optional
+independent CAM parser could not be qualified in the release environment.
 
-Back up your JSON first. Replace all hosted application files, not only index.html,
-or use the replacement self-contained portable file. No new runtime dependency,
-network requirement or telemetry was added. No remote repository was modified.
-
-[Interface guide](QUIET_WORKBENCH.md) · [Verification](TESTING.md) ·
-[Compatibility](COMPATIBILITY.md) · [Earlier changes](../CHANGELOG.md)
+[Editing guide](EDITING.md) · [Verification](TESTING.md) · [Qualification](QUALIFICATION.md)

@@ -1,0 +1,232 @@
+{
+  "version": "1.7.0",
+  "schema": 5,
+  "recordedUTC": "2026-09-19T00:31:49.594522+00:00",
+  "passed": 695,
+  "total": 695,
+  "categories": {
+    "engine": 317,
+    "manufacturing": 118,
+    "browser": 247,
+    "packaging": 13
+  },
+  "newRegressionChecks": 92,
+  "execution": "Complete standard suite in working source tree; browser suites partitioned across three concurrent groups; public tools/test.py runs them sequentially.",
+  "runtimeUnchangedByTests": true,
+  "sourceQualification": "Final extracted-archive integrity and reproducible rebuild checks are separate from this full regression run.",
+  "environment": {
+    "python": "3.13.5",
+    "node": "v22.16.0",
+    "chromium": "Chromium 144.0.7559.96 built on Debian GNU/Linux 13 (trixie)",
+    "playwright": "1.57.0",
+    "shapely": "2.1.2",
+    "Pillow": "12.3.0"
+  },
+  "suites": [
+    {
+      "file": "core-results.json",
+      "category": "engine",
+      "passed": 32,
+      "total": 32
+    },
+    {
+      "file": "platform-results.json",
+      "category": "engine",
+      "passed": 23,
+      "total": 23
+    },
+    {
+      "file": "via-results.json",
+      "category": "engine",
+      "passed": 27,
+      "total": 27
+    },
+    {
+      "file": "plane-core-results.json",
+      "category": "engine",
+      "passed": 31,
+      "total": 31
+    },
+    {
+      "file": "silkscreen-results.json",
+      "category": "engine",
+      "passed": 30,
+      "total": 30
+    },
+    {
+      "file": "maker-results.json",
+      "category": "engine",
+      "passed": 28,
+      "total": 28
+    },
+    {
+      "file": "carriers-results.json",
+      "category": "engine",
+      "passed": 32,
+      "total": 32
+    },
+    {
+      "file": "modules-blocks-results.json",
+      "category": "engine",
+      "passed": 47,
+      "total": 47
+    },
+    {
+      "file": "compact-polarity-results.json",
+      "category": "engine",
+      "passed": 10,
+      "total": 10
+    },
+    {
+      "file": "editing-results.json",
+      "category": "engine",
+      "passed": 39,
+      "total": 39
+    },
+    {
+      "file": "export-review-results.json",
+      "category": "engine",
+      "passed": 18,
+      "total": 18
+    },
+    {
+      "file": "manufacturing-results.json",
+      "category": "manufacturing",
+      "passed": 12,
+      "total": 12
+    },
+    {
+      "file": "platform-manufacturing-results.json",
+      "category": "manufacturing",
+      "passed": 12,
+      "total": 12
+    },
+    {
+      "file": "via-manufacturing-results.json",
+      "category": "manufacturing",
+      "passed": 7,
+      "total": 7
+    },
+    {
+      "file": "plane-manufacturing-results.json",
+      "category": "manufacturing",
+      "passed": 15,
+      "total": 15
+    },
+    {
+      "file": "silkscreen-manufacturing-results.json",
+      "category": "manufacturing",
+      "passed": 17,
+      "total": 17
+    },
+    {
+      "file": "maker-manufacturing-results.json",
+      "category": "manufacturing",
+      "passed": 10,
+      "total": 10
+    },
+    {
+      "file": "carrier-independent-results.json",
+      "category": "manufacturing",
+      "passed": 21,
+      "total": 21
+    },
+    {
+      "file": "modules-blocks-independent-results.json",
+      "category": "manufacturing",
+      "passed": 16,
+      "total": 16
+    },
+    {
+      "file": "compact-polarity-manufacturing-results.json",
+      "category": "manufacturing",
+      "passed": 2,
+      "total": 2
+    },
+    {
+      "file": "editing-manufacturing-results.json",
+      "category": "manufacturing",
+      "passed": 6,
+      "total": 6
+    },
+    {
+      "file": "browser-results.json",
+      "category": "browser",
+      "passed": 20,
+      "total": 20
+    },
+    {
+      "file": "platform-browser-results.json",
+      "category": "browser",
+      "passed": 13,
+      "total": 13
+    },
+    {
+      "file": "via-browser-results.json",
+      "category": "browser",
+      "passed": 21,
+      "total": 21
+    },
+    {
+      "file": "plane-browser-results.json",
+      "category": "browser",
+      "passed": 23,
+      "total": 23
+    },
+    {
+      "file": "silkscreen-browser-results.json",
+      "category": "browser",
+      "passed": 16,
+      "total": 16
+    },
+    {
+      "file": "maker-browser-results.json",
+      "category": "browser",
+      "passed": 17,
+      "total": 17
+    },
+    {
+      "file": "carrier-browser-results.json",
+      "category": "browser",
+      "passed": 17,
+      "total": 17
+    },
+    {
+      "file": "modules-blocks-browser-results.json",
+      "category": "browser",
+      "passed": 29,
+      "total": 29
+    },
+    {
+      "file": "quiet-ui-browser-results.json",
+      "category": "browser",
+      "passed": 18,
+      "total": 18
+    },
+    {
+      "file": "compact-polarity-browser-results.json",
+      "category": "browser",
+      "passed": 15,
+      "total": 15
+    },
+    {
+      "file": "pan-browser-results.json",
+      "category": "browser",
+      "passed": 29,
+      "total": 29
+    },
+    {
+      "file": "editing-browser-results.json",
+      "category": "browser",
+      "passed": 29,
+      "total": 29
+    }
+  ],
+  "additionalGates": {
+    "nativeBrowser": "blocked: local HTTP and file navigation returned ERR_BLOCKED_BY_ADMINISTRATOR; no policy bypass attempted",
+    "thirdPartyCAM": "blocked: Gerbonara dependency unavailable; package host resolution failed",
+    "manufacturerAcceptance": "not verified",
+    "physicalFabrication": "not verified"
+  },
+  "scope": "Real Chromium DOM/canvas/workers with injected storage and captured download blobs. Separate-language manufacturing reader remains part of this repository, not independently developed CAM."
+}

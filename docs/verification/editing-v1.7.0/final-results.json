@@ -1,0 +1,116 @@
+{
+  "engine-manufacturing": [
+    {
+      "command": [
+        "python",
+        "tools/test.py",
+        "--skip-browser"
+      ],
+      "exit": 0,
+      "seconds": 23.58
+    }
+  ],
+  "browser-foundation": [
+    {
+      "command": [
+        "python",
+        "tests/browser_test.py"
+      ],
+      "exit": 0,
+      "seconds": 25.82
+    },
+    {
+      "command": [
+        "python",
+        "tests/platform_browser_test.py"
+      ],
+      "exit": 0,
+      "seconds": 23.1
+    },
+    {
+      "command": [
+        "python",
+        "tests/via_browser_test.py"
+      ],
+      "exit": 0,
+      "seconds": 42.74
+    },
+    {
+      "command": [
+        "python",
+        "tests/plane_browser_test.py"
+      ],
+      "exit": 0,
+      "seconds": 44.18
+    }
+  ],
+  "browser-libraries": [
+    {
+      "command": [
+        "python",
+        "tests/silkscreen_browser_test.py"
+      ],
+      "exit": 0,
+      "seconds": 19.53
+    },
+    {
+      "command": [
+        "python",
+        "tests/maker_browser_test.py"
+      ],
+      "exit": 0,
+      "seconds": 29.28
+    },
+    {
+      "command": [
+        "python",
+        "tests/carrier_browser_test.py"
+      ],
+      "exit": 0,
+      "seconds": 44.09
+    },
+    {
+      "command": [
+        "python",
+        "tests/modules_blocks_browser_test.py"
+      ],
+      "exit": 0,
+      "seconds": 54.01
+    }
+  ],
+  "browser-interface": [
+    {
+      "command": [
+        "python",
+        "tests/quiet_ui_browser_test.py"
+      ],
+      "exit": 0,
+      "seconds": 24.11
+    },
+    {
+      "command": [
+        "python",
+        "tests/compact_polarity_browser_test.py"
+      ],
+      "exit": 0,
+      "seconds": 31.16
+    },
+    {
+      "command": [
+        "python",
+        "tests/pan_browser_test.py"
+      ],
+      "exit": 0,
+      "seconds": 50.14
+    },
+    {
+      "command": [
+        "python",
+        "tests/editing_browser_test.py"
+      ],
+      "exit": 0,
+      "seconds": 42.26
+    }
+  ],
+  "runtimeUnchanged": true
+}

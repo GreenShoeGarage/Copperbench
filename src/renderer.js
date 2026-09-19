@@ -9,13 +9,14 @@ class Renderer{
  fit(){this.resize();this.setup();let d=this.doc,angle=this.tilt;this.scale=Math.max(.3,Math.min((this.w-120)/d.board.width,(this.h-175)/(d.board.height*Math.cos(angle)+7*Math.sin(angle))));this.panX=0;this.panY=0;this.draw();}
  project(p,z=0){const d=this.doc,x=(p.x-d.board.width/2)*this.flip,y=p.y-d.board.height/2,u=x*Math.cos(this.yaw)-y*Math.sin(this.yaw),v=x*Math.sin(this.yaw)+y*Math.cos(this.yaw);return{x:this.cx+u*this.scale,y:this.cy+(v*Math.cos(this.tilt)-z*Math.sin(this.tilt))*this.scale,depth:v*Math.sin(this.tilt)+z*Math.cos(this.tilt)};}
  unproject(x,y){this.setup();let u=(x-this.cx)/this.scale,v=(y-this.cy)/(this.scale*Math.cos(this.tilt)),a=u*Math.cos(this.yaw)+v*Math.sin(this.yaw),b=-u*Math.sin(this.yaw)+v*Math.cos(this.yaw);return{x:a*this.flip+this.doc.board.width/2,y:b+this.doc.board.height/2};}
+ panBy(dx,dy){if(!Number.isFinite(dx)||!Number.isFinite(dy))return;this.panX+=dx;this.panY+=dy;this.request();}
  zoom(f,x=this.w/2,y=this.h/2){let old=this.unproject(x,y);this.scale=C.clamp(this.scale*f,.25,130);this.setup();let now=this.project(old);this.panX+=x-now.x;this.panY+=y-now.y;this.draw();}
  path(points,close=true,z=0,ctx=this.ctx){ctx.beginPath();points.forEach((p,i)=>{let q=this.project(p,p.z??z);if(!i)ctx.moveTo(q.x,q.y);else ctx.lineTo(q.x,q.y);});if(close)ctx.closePath();}
  polygon(points,fill,stroke=null,width=1,z=0,ctx=this.ctx){if(!points.length)return;this.path(points,true,z,ctx);if(fill){ctx.fillStyle=fill;ctx.fill();}if(stroke){ctx.strokeStyle=stroke;ctx.lineWidth=width;ctx.stroke();}}
  line(points,color,width=.2,dash=[],z=.02,ctx=this.ctx){if(points.length<2)return;this.path(points,false,z,ctx);ctx.strokeStyle=color;ctx.lineWidth=Math.max(.5,width*this.scale);ctx.lineCap='round';ctx.lineJoin='round';ctx.setLineDash(dash);ctx.stroke();ctx.setLineDash([]);}
  fillRects(rects,color){const c=this.ctx;c.beginPath();for(const r of rects){const points=G.rect(r.x,r.y,r.w,r.h);points.forEach((p,i)=>{const q=this.project(p);if(i)c.lineTo(q.x,q.y);else c.moveTo(q.x,q.y);});c.closePath();}c.fillStyle=color;c.fill();}
  request(){if(this.pending)return;this.pending=true;requestAnimationFrame(()=>{this.pending=false;this.draw();});}
- draw(){this.resize();if(!this.w||!this.h)return;this.setup();const c=this.ctx,s=this.state,d=this.doc;c.clearRect(0,0,this.w,this.h);c.globalAlpha=1;this.queue=[];
+ draw(){this.resize();if(!this.w||!this.h)return;this.setup();const c=this.ctx,s=this.state,d=this.doc;c.clearRect(0,0,this.w,this.h);c.globalAlpha=1;this.queue=[];this.polarityHitLabels=[];
   if(s.view==='fabrication'){this.fabrication();this.overlays();return;}
   const theme=document.documentElement.dataset.theme,bench=s.view==='bench',colors=d.board.color==='purple'?['#61477b','#453257']:d.board.color==='blue'?['#29587d','#203e58']:['#39775b','#20533e'];
   // Cast board shadow onto the mat, followed by the actual substrate side walls.
@@ -39,21 +40,78 @@ class Renderer{
   if(bench){for(const p of d.parts.filter(p=>p.side===active||p.platform))this.component(p,s.xray||['trace','connect','via','plane-connect'].includes(s.tool)?.25:1);this.flush();}else this.partOutlines();
   this.carrierClearances();this.platformLabels();this.functionalLabels();this.polarityLabels();this.overlays();
  }
+ // Screen-space bounds include the projected height of the component. Keeping
+ // tags outside only the footprint is insufficient when the camera is tilted.
+ polarityBodyBounds(){
+  const s=this.state,bench=s.view==='bench',out=[];
+  for(const p of this.doc.parts){
+   if(p.side!==s.side&&!p.platform)continue;
+   const pts=G.rect(-p.body.w/2,-p.body.h/2,p.body.w,p.body.h);
+   const projected=pts.flatMap(a=>[this.project(C.world(p,a),0),this.project(C.world(p,a),bench?p.body.z+.3:0)]);
+   out.push({...G.bounds(projected),owner:p.id});
+  }
+  return out;
+ }
  polarityLabels(){
   const c=this.ctx,s=this.state;this.polarityHitLabels=[];
+  const bodies=this.polarityBodyBounds(),padBoxes=C.pads(this.doc).filter(p=>G.layerMatch(p.layers,s.side)).map(p=>G.bounds(G.padPoly(p).map(a=>this.project(a,.07)))),occupied=[];
+  const blocked=(x,y,w,h)=>{const box={minX:x-w/2-3,maxX:x+w/2+3,minY:y-h/2-3,maxY:y+h/2+3};return bodies.some(b=>G.boxOverlap(box,b))||padBoxes.some(b=>G.boxOverlap(box,b))||occupied.some(b=>G.boxOverlap(box,b));};
+  const routing=['trace','connect','via','plane-connect'].includes(s.tool);
   for(const p of this.doc.parts){
    if(p.side!==s.side&&!p.pads.some(a=>a.drill))continue;
-   const detailed=s.selection?.includes(p.id)||s.hoverPad?.startsWith(p.id+':');
-   for(const m of C.polarityMarks(p)){
-    const q=this.project(m.center,.07),pin=this.project(m.pad,.07),text=detailed?m.short+' · '+m.label:m.short;
-    c.save();c.font='600 '+(detailed?12:11)+'px system-ui,sans-serif';const w=c.measureText(text).width+12,h=20;
-    // Keep expanded badges outward from the pad instead of covering the body.
-    const dx=q.x-pin.x,dy=q.y-pin.y;let x=q.x,y=q.y;
-    if(detailed&&Math.abs(dx)>Math.abs(dy))x+=Math.sign(dx)*(w/2-8);
-    c.strokeStyle='#ecf4d4';c.lineWidth=1;c.beginPath();c.moveTo(pin.x,pin.y);c.lineTo(x,y);c.stroke();
-    c.fillStyle='#112b23';c.strokeStyle='#d8eac5';c.beginPath();c.roundRect(x-w/2,y-h/2,w,h,4);c.fill();c.stroke();
-    c.fillStyle='#fffbe4';c.textAlign='center';c.textBaseline='middle';c.fillText(text,x,y);
-    this.polarityHitLabels.push({padId:m.padId,role:m.role,label:m.label,x,y,w,h});c.restore();
+   const active=routing||s.selection?.includes(p.id)||s.hoverPad?.startsWith(p.id+':')||s.selectedPads?.some(id=>id.startsWith(p.id+':'));
+   // Idle view contains the real small silkscreen only, not a second label layer.
+   // Its visible, unobscured glyphs remain hoverable/clickable as pin targets.
+   if(!active){
+    if(p.side!==s.side)continue;
+    for(const m of C.polarityMarks(p).filter(m=>m.visible)){
+     const q=this.project(m.center,.07),w=Math.max(8,m.size*this.scale*.67+3),h=Math.max(10,m.size*this.scale*Math.cos(this.tilt)+3);
+     if(!blocked(q.x,q.y,w,h))this.polarityHitLabels.push({padId:m.padId,role:m.role,label:m.label,text:m.short,x:q.x,y:q.y,w,h,mode:'silk'});
+    }
+    continue;
+   }
+   // Do not let a custom print size/offset turn editor tags into billboards.
+   const marks=C.polarityMarks({...p,polaritySilk:C.POLARITY_DEFAULTS});
+   const anchors=marks.map(m=>this.project(m.center,.07));
+   // Fan a multi-terminal row along its tangent instead of stacking badges
+   // farther and farther away from a small RGB LED when zoomed out.
+   if(anchors.length>2){
+    let a=anchors[0],b=anchors.reduce((best,q)=>G.dist(q,a)>G.dist(best,a)?q:best,a),len=G.dist(a,b);
+    if(len>.001){
+     const ux=(b.x-a.x)/len,uy=(b.y-a.y)/len;
+     if(anchors.every(q=>Math.abs((q.x-a.x)*uy-(q.y-a.y)*ux)<.1)){
+      const cx=anchors.reduce((v,q)=>v+q.x,0)/anchors.length,cy=anchors.reduce((v,q)=>v+q.y,0)/anchors.length,sorted=anchors.map((q,i)=>({q,i,t:q.x*ux+q.y*uy})).sort((a,b)=>a.t-b.t),step=Math.max(19,(sorted.at(-1).t-sorted[0].t)/(sorted.length-1));
+      sorted.forEach(({i},j)=>{const t=(j-(sorted.length-1)/2)*step;anchors[i]={x:cx+ux*t,y:cy+uy*t};});
+     }
+    }
+   }
+   for(const [markIndex,m] of marks.entries()){
+    const q=anchors[markIndex],pin=this.project(m.pad,.07),w=14,h=14;
+    let dx=q.x-pin.x,dy=q.y-pin.y,len=Math.hypot(dx,dy)||1;dx/=len;dy/=len;
+    const own=bodies.find(b=>b.owner===p.id);let distance=Math.max(len,12);
+    if(own){
+     const exits=[];
+     if(Math.abs(dx)>.0001)exits.push(((dx>0?own.maxX+w/2+4:own.minX-w/2-4)-pin.x)/dx);
+     if(Math.abs(dy)>.0001)exits.push(((dy>0?own.maxY+h/2+4:own.minY-h/2-4)-pin.y)/dy);
+     const positive=exits.filter(v=>v>=0);if(positive.length)distance=Math.max(distance,Math.min(...positive));
+    }
+    let target=null;
+    for(let extra=0;extra<=42&&!target;extra+=14){
+     const x=pin.x+dx*(distance+extra),y=pin.y+dy*(distance+extra);
+     if(x<9||y<9||x>this.w-9||y>this.h-9||blocked(x,y,w,h))continue;
+     target={x,y};
+    }
+    // A crowded/zoomed-out board must not get labels painted over components.
+    // Pads and the inspector remain available if a safe tag cannot be placed.
+    if(!target)continue;
+    const {x,y}=target;c.save();
+    // Only a short outward stem is drawn: no line through a component body.
+    const stem=Math.min(7,Math.max(0,Math.hypot(x-pin.x,y-pin.y)-w/2));
+    c.strokeStyle='#e4eed5';c.lineWidth=.8;c.beginPath();c.moveTo(x-dx*(w/2+stem),y-dy*(h/2+stem));c.lineTo(x-dx*w/2,y-dy*h/2);c.stroke();
+    c.fillStyle='#183c30e8';c.strokeStyle='#c6d9bca6';c.lineWidth=.6;c.beginPath();c.roundRect(x-6,y-6.5,12,13,3);c.fill();c.stroke();
+    c.font='600 9px system-ui,sans-serif';c.fillStyle='#fffbe4';c.textAlign='center';c.textBaseline='middle';c.fillText(m.short,x,y);
+    occupied.push({minX:x-w/2,maxX:x+w/2,minY:y-h/2,maxY:y+h/2});
+    this.polarityHitLabels.push({padId:m.padId,role:m.role,label:m.label,text:m.short,x,y,w,h,fontSize:9,mode:'tag'});c.restore();
    }
   }
  }
@@ -172,7 +230,7 @@ class Renderer{
    }
   }
   for(const f of texts){let p=this.local(f.p,{x:f.x,y:f.y},f.z),a=this.project(p,f.z),px=this.project(this.local(f.p,{x:f.x+1,y:f.y},f.z),f.z),py=this.project(this.local(f.p,{x:f.x,y:f.y+1},f.z),f.z);c.save();c.globalAlpha=f.alpha??1;c.transform((px.x-a.x)/this.scale,(px.y-a.y)/this.scale,(py.x-a.x)/this.scale,(py.y-a.y)/this.scale,a.x,a.y);c.font=`${Math.max(3,f.size*this.scale)}px ui-monospace,monospace`;c.fillStyle=f.color;c.textAlign='left';c.fillText(f.text,0,0);c.restore();}
-  c.globalAlpha=1;this.queue=[];
+  c.globalAlpha=1;this.queue=[];this.polarityHitLabels=[];
  }
  overlays(){let c=this.ctx,s=this.state,d=this.doc;if(s.marquee){let b=G.bounds([s.marquee.a,s.marquee.b]),p=G.rect(b.minX,b.minY,b.maxX-b.minX,b.maxY-b.minY);c.save();c.globalAlpha=.15;this.polygon(p,'#f8df9b');c.restore();this.line([...p,p[0]],'#ffe6a5',.12,[4,4]);}
   for(const id of s.selection||[]){let p=d.parts.find(p=>p.id===id);if(p){let poly=G.rect(-p.body.w/2-.9,-p.body.h/2-.9,p.body.w+1.8,p.body.h+1.8).map(a=>C.world(p,a));this.line([...poly,poly[0]],'#f4cd7c',.15,[4,3],.1);for(const v of poly){let q=this.project(v);c.fillStyle='#f6deaa';c.fillRect(q.x-2,q.y-2,4,4);}}let t=d.traces.find(t=>t.id===id);if(t){this.line(t.points,'#fff2b3',t.width+.12,[],.03);for(const v of t.points){let q=this.project(v);c.beginPath();c.arc(q.x,q.y,3.5,0,Math.PI*2);c.fillStyle='#194b39';c.fill();c.strokeStyle='#ffdf8f';c.lineWidth=1.5;c.stroke();}}let a=d.art.find(a=>a.id===id);if(a){let ps=a.kind==='text'?C.textPaths(a.text,a.size).flat():a.kind==='image'?(a.rects||[]).flatMap(r=>G.rect(r.x,r.y,r.w,r.h)):a.points||G.rect(0,0,a.w||2,a.h||2),b=G.bounds(ps),poly=G.rect(b.minX-.5,b.minY-.5,b.maxX-b.minX+1,b.maxY-b.minY+1).map(v=>C.artPoint(a,v));this.line([...poly,poly[0]],'#f6df9b',.13,[4,3]);}let sh=[...d.zones,...d.keepouts,...d.cutouts].find(a=>a.id===id);if(sh){this.line([...sh.points,sh.points[0]],'#f5d492',.18,[4,4]);for(const v of sh.points){let q=this.project(v);c.fillStyle='#e5cc93';c.fillRect(q.x-2.5,q.y-2.5,5,5);}}let h=[...d.holes,...d.vias].find(a=>a.id===id);if(h)this.line([...G.circle(h.x,h.y,(h.diameter||h.drill)/2+.6,32),G.circle(h.x,h.y,(h.diameter||h.drill)/2+.6,32)[0]],'#f5d492',.16,[4,3]);}

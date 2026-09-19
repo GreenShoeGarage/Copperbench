@@ -1,0 +1,17 @@
+{
+  "cases": [
+    {
+      "case": "HTTP static app",
+      "status": "blocked",
+      "error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at http://127.0.0.1:33685/\nCall log:\n  - navigating to \"http://127.0.0.1:33685/\", waiting until \"load\"\n"
+    },
+    {
+      "case": "Portable file",
+      "status": "blocked",
+      "error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/work-v17/copperbench/COPPERBENCH-portable.html\nCall log:\n  - navigating to \"file:///mnt/data/work-v17/copperbench/COPPERBENCH-portable.html\", waiting until \"load\"\n"
+    }
+  ],
+  "passed": 0,
+  "blocked": 2,
+  "total": 2
+}

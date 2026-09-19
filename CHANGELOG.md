@@ -1,5 +1,48 @@
 # Changelog
 
+## 1.7.0 — 2026-09-18 · Editing and export review
+
+- Added selection filters and overlap cycling without permanent instruction banners.
+- Added reversible segment/corner edits, section replacement, conservative cleanup,
+  and trace/segment/connected/whole-net width scopes with lock/clearance checks.
+- Added limited connected part/via dragging and exact-position previews; centered
+  endpoint attachments only, no pour-net movement or push-and-shove.
+- Added attached reference/polarity positioning without changing physical pins.
+- Added generated-file review, sampled silk-clipping inspection, drill/outline
+  consistency checks and a revision-bound manufacturing manifest.
+- Added autosave conflict/unreadable-record safeguards and explicit two-copy recovery.
+- Supplied opt-in native-browser and independent-parser qualification scripts and
+  a manual workflow. Release-environment gates remain blocked, not passed.
+- Retained all 193 parts, six blocks, schema 5 and the no-build/offline packaging.
+
+## 1.6.3 — 2026-09-18
+
+- Added a labelled Pan view control and P shortcut across Bench, Copper and
+  Fabrication, with grab/grabbing cursors, keyboard panning and Fit/Home recovery.
+- Space-drag and middle-drag preserve selection and unfinished editing operations.
+  Pan mode scrolls the view; Ctrl/Command-wheel zooms and Shift-wheel pans sideways.
+- Added centroid-anchored two-finger panning/pinch and touch-safe edit deferral.
+  Focus/capture loss and cancelled gestures release navigation safely.
+- Kept all navigation outside document commands, history and manufacturing output.
+  Project schema remains 5; existing component and printed polarity data is retained.
+- Added dedicated Chromium mouse, keyboard, wheel, touch and narrow-screen tests.
+
+
+## 1.6.2 — 2026-09-18 · Compact polarity markings
+
+- Removed always-on polarity overlays and expanding full-name badges. Idle Bench
+  shows the small physical silk; selection/hover/routing uses fixed 9-pixel A/K or
+  +/− tags outside projected bodies and solder pads. Crowded tags are omitted
+  rather than covering a component. Full role names remain in tooltips/inspector.
+- Default printable polarity is 0.9 mm high with 0.16 mm strokes; explicit saved
+  size, gap, offset and opt-out settings are preserved. Added an inspector print
+  checkbox and a compact-defaults action in the existing polarity dialog.
+- Fixed overprinted polarity glyphs on four-lead RGB LEDs by spacing the printed
+  row in pin order. Printable geometry still rotates/flips with its component.
+- Added engine, separate-language Gerber-ink and Chromium regression checks plus
+  a six-component demonstration and desktop/mobile/read-back screenshots.
+- Native schema stays at 5. No runtime dependencies, accounts or telemetry added.
+
 ## 1.6.1 — 2026-09-18 · Quieter workbench
 
 - Removed welcome-card and canvas slogans, repeated introductory paragraphs, and duplicate empty-inspector statistics.

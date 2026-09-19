@@ -1,0 +1,34 @@
+[
+  {
+    "command": [
+      "python",
+      "tests/silkscreen_browser_test.py"
+    ],
+    "exit": 0,
+    "seconds": 19.53
+  },
+  {
+    "command": [
+      "python",
+      "tests/maker_browser_test.py"
+    ],
+    "exit": 0,
+    "seconds": 29.28
+  },
+  {
+    "command": [
+      "python",
+      "tests/carrier_browser_test.py"
+    ],
+    "exit": 0,
+    "seconds": 44.09
+  },
+  {
+    "command": [
+      "python",
+      "tests/modules_blocks_browser_test.py"
+    ],
+    "exit": 0,
+    "seconds": 54.01
+  }
+]

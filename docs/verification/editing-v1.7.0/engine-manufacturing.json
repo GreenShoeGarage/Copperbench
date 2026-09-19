@@ -1,0 +1,11 @@
+[
+  {
+    "command": [
+      "python",
+      "tools/test.py",
+      "--skip-browser"
+    ],
+    "exit": 0,
+    "seconds": 23.58
+  }
+]

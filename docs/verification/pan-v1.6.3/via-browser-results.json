@@ -1,0 +1,114 @@
+{
+  "version": "1.6.3",
+  "date": "2026-09-18T20:37:53.787978+00:00",
+  "passed": 21,
+  "total": 21,
+  "scope": "Real Chromium controls/canvas/workers with simulated localStorage and intercepted download blobs. No file-origin persistence or hosted service-worker certification.",
+  "results": [
+    {
+      "name": "Visible Via button opens controls and creates an assigned plated via",
+      "pass": true,
+      "ms": 2284
+    },
+    {
+      "name": "Repeated placement uses preset/tenting defaults and supports undo/redo",
+      "pass": true,
+      "ms": 2902
+    },
+    {
+      "name": "Unassigned empty-space vias stay visible to manufacturing checks",
+      "pass": true,
+      "ms": 1399
+    },
+    {
+      "name": "Placing directly on an off-grid trace snaps to its center and inherits net",
+      "pass": true,
+      "ms": 1368
+    },
+    {
+      "name": "Conflicting front/back nets produce a red preview and no board mutation",
+      "pass": true,
+      "ms": 1391
+    },
+    {
+      "name": "Board-edge and mounting-hole clashes block standalone placement",
+      "pass": true,
+      "ms": 2268
+    },
+    {
+      "name": "Bad annular rings and undersized drills do not change placement defaults",
+      "pass": true,
+      "ms": 1659
+    },
+    {
+      "name": "Inspector edits dimensions/tenting and respects the via lock",
+      "pass": true,
+      "ms": 2354
+    },
+    {
+      "name": "V during tracing inserts a via and continues a connected bottom-layer route",
+      "pass": true,
+      "ms": 1758
+    },
+    {
+      "name": "Visible layer-change button commits trace plus via as one undoable edit",
+      "pass": true,
+      "ms": 1811
+    },
+    {
+      "name": "Traces start/end on vias and a via remains selectable over its trace",
+      "pass": true,
+      "ms": 2175
+    },
+    {
+      "name": "Via routes can finish directly on an existing same-net trace",
+      "pass": true,
+      "ms": 1304
+    },
+    {
+      "name": "Blocked routing via leaves the trace, side and board unchanged",
+      "pass": true,
+      "ms": 1279
+    },
+    {
+      "name": "Manage vias table selects objects for duplication and deletion",
+      "pass": true,
+      "ms": 1216
+    },
+    {
+      "name": "Moving an attached via exposes disconnection instead of moving copper silently",
+      "pass": true,
+      "ms": 789
+    },
+    {
+      "name": "JSON backup and actual file-input import retain via details",
+      "pass": true,
+      "ms": 707
+    },
+    {
+      "name": "KiCad export explicitly warns about via mask/lock limitations",
+      "pass": true,
+      "ms": 710
+    },
+    {
+      "name": "A blocked arrow-key via move rolls back without an uncaught exception",
+      "pass": true,
+      "ms": 474
+    },
+    {
+      "name": "Placement, inspector and generated-file views render the actual via",
+      "pass": true,
+      "ms": 1780
+    },
+    {
+      "name": "Narrow-screen users can reach the visible Via tool without page overflow",
+      "pass": true,
+      "ms": 4441
+    },
+    {
+      "name": "No external asset requests or uncaught exceptions in via workflows",
+      "pass": true,
+      "ms": 0
+    }
+  ]
+}

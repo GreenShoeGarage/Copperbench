@@ -1,3 +1,33 @@
+# COPPERBENCH v1.7 — editing and confidence
+
+## Delivered
+
+Compact selection filters and overlapping-object cycling; direct trace slides,
+corner insertion/removal, section replacement and cleanup; explicit width scopes;
+limited, validated connected component/via moves; printed reference/polarity
+positioning; generated-file inventory and sampled silkscreen review; revision-bound
+manufacturing manifests; and conservative local-save conflict/recovery handling.
+All changes are built on schema 5, with the existing 193-part library and six
+circuit starters. See [EDITING.md](EDITING.md) for exact scope.
+
+The native-browser and third-party CAM qualification gates have executable scripts
+and a manual CI workflow, but their runs were **blocked** in the release environment.
+They are not completed validation milestones. See [QUALIFICATION.md](QUALIFICATION.md).
+
+## Proposed next releases — not implemented
+
+| Release | Focus |
+| --- | --- |
+| v1.8 | Polygon-based plane geometry, physical-region inspection, improved thermals and checked ground stitching. |
+| v1.9 | Attached imported footprint artwork, broader pad geometry, footprint exchange and fit-review sheets. |
+| v2.0 | Transactional local project management, revision handoff and a maintained enclosure-exchange contract. |
+
+Full push-and-shove, multilayer boards, simulation and cloud collaboration are not
+claimed by v1.7. Actual CAM/manufacturer preview and physical test-board evidence
+remain separate gates, regardless of the version number.
+
+---
+
 # COPPERBENCH v1.6 — delivered expansion
 
 Five vendor/revision-specific module mating interfaces, six routed editable circuit

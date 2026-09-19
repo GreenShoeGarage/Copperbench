@@ -4,7 +4,7 @@
 (function(root){
 'use strict';
 const C=root.CB=root.CB||{};
-C.VERSION='1.6.1'; C.SCHEMA=5; C.EPS=.003;
+C.VERSION='1.7.0'; C.SCHEMA=5; C.EPS=.003;
 C.q=v=>Math.round(Number(v)*10000)/10000;
 C.uid=(prefix='id')=>prefix+'_'+(typeof crypto!=='undefined'&&crypto.randomUUID?crypto.randomUUID().replace(/-/g,'').slice(0,12):Math.random().toString(36).slice(2,14));
 C.clone=o=>JSON.parse(JSON.stringify(o));
@@ -42,18 +42,41 @@ C.polarityRole=(part,a)=>{
  if(id==='cap-radial')return key==='+'?'positive':key==='-'?'negative':null;
  return null;
 };
-C.polarityOptions=p=>({visible:true,size:1.2,gap:.7,x:0,y:0,...p.polaritySilk});
+// Printed geometry is independent of the small, contextual editor pin tags.
+C.POLARITY_DEFAULTS=Object.freeze({visible:true,size:.9,gap:.7,x:0,y:0});
+C.polarityOptions=p=>({...C.POLARITY_DEFAULTS,...p.polaritySilk});
 C.polarityMarks=function(p){
  const o=C.polarityOptions(p),roles=p.pads.map((a,index)=>({a,index,role:C.polarityRole(p,a)})).filter(a=>a.role);
  if(!roles.length)return[];
  const cx=roles.reduce((v,r)=>v+r.a.x,0)/roles.length,cy=roles.reduce((v,r)=>v+r.a.y,0)/roles.length;
- return roles.map(({a,index,role})=>{
+ const span=axis=>Math.max(...roles.map(r=>r.a[axis]))-Math.min(...roles.map(r=>r.a[axis]));
+ const row=roles.length>2&&span('y')<.001,column=roles.length>2&&span('x')<.001;
+ const extent=a=>{const angle=(a.rotation||0)*Math.PI/180;return{x:(Math.abs(Math.cos(angle))*a.w+Math.abs(Math.sin(angle))*a.h)/2,y:(Math.abs(Math.sin(angle))*a.w+Math.abs(Math.cos(angle))*a.h)/2};};
+ const padX=Math.max(p.body.w/2,...p.pads.map(a=>Math.abs(a.x)+extent(a).x)),padY=Math.max(p.body.h/2,...p.pads.map(a=>Math.abs(a.y)+extent(a).y));
+ const positions=roles.map(({a,index,role})=>{
   let dx=a.x-cx,dy=a.y-cy;if(Math.hypot(dx,dy)<.00001)dx=role==='anode'||role==='positive'?1:-1;
-  let x=a.x,y=a.y;const angle=(a.rotation||0)*Math.PI/180,ex=(Math.abs(Math.cos(angle))*a.w+Math.abs(Math.sin(angle))*a.h)/2,ey=(Math.abs(Math.sin(angle))*a.w+Math.abs(Math.cos(angle))*a.h)/2;
-  if(Math.abs(dx)>=Math.abs(dy))x=Math.sign(dx)*(Math.max(p.body.w/2,Math.abs(a.x)+ex)+o.gap+o.size/3);
-  else y=Math.sign(dy)*(Math.max(p.body.h/2,Math.abs(a.y)+ey)+o.gap+o.size/2);
+  let x=a.x,y=a.y,side;
+  // More than two terminals in a row (e.g. RGB LEDs) get one aligned legend
+  // row, not several overprinted A/K glyphs at each end of the body.
+  if(row){side=cy<0?'top':'bottom';y=(cy<0?-1:1)*(padY+o.gap+o.size/2);}
+  else if(column){side=cx<0?'left':'right';x=(cx<0?-1:1)*(padX+o.gap+o.size/3);}
+  else if(Math.abs(dx)>=Math.abs(dy)){side=dx<0?'left':'right';x=Math.sign(dx)*(padX+o.gap+o.size/3);}
+  else{side=dy<0?'top':'bottom';y=Math.sign(dy)*(padY+o.gap+o.size/2);}
+  return{a,index,role,x,y,side};
+ });
+ // Preserve terminal order while keeping separate glyphs apart, including
+ // when the user chooses a large print size. Only silk positions are changed.
+ for(const side of ['left','right','top','bottom']){
+  const axis=['left','right'].includes(side)?'y':'x',gap=(axis==='x'?o.size*2/3:o.size)+.41,items=positions.filter(a=>a.side===side).sort((a,b)=>a[axis]-b[axis]||a.index-b.index);
+  if(items.length<2)continue;
+  const before=items.reduce((v,a)=>v+a[axis],0)/items.length;
+  for(let i=1;i<items.length;i++)items[i][axis]=Math.max(items[i][axis],items[i-1][axis]+gap);
+  const delta=items.reduce((v,a)=>v+a[axis],0)/items.length-before;
+  for(const a of items)a[axis]-=delta;
+ }
+ return positions.map(({a,index,role,x,y})=>{
   const center={x:x+o.x,y:y+o.y},pos=C.world(p,{x:center.x-o.size/3,y:center.y-o.size/2});
-  return {...C.POLARITY[role],role,index,padId:p.id+':'+index,pad:C.world(p,a),center:C.world(p,center),local:center,x:pos.x,y:pos.y,size:o.size,rotation:p.rotation,layer:p.side,owner:p.id,width:.18,visible:o.visible};
+  return {...C.POLARITY[role],role,index,padId:p.id+':'+index,pad:C.world(p,a),center:C.world(p,center),local:center,x:pos.x,y:pos.y,size:o.size,rotation:p.rotation,layer:p.side,owner:p.id,width:.16,visible:o.visible};
  });
 };
 for(const f of C.LIB)for(const a of f.pads){const role=C.polarityRole(f,a);if(role)a.polarity=role;}

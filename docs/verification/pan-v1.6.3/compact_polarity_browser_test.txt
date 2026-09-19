@@ -1,0 +1,16 @@
+PASS Idle bench uses the printable symbols without floating A/K billboards
+PASS Selecting a tall LED shows only 9-pixel A/K tags, never expanded full-name badges
+PASS Tags avoid all projected component bodies at twelve tilt/orbit combinations
+PASS Large custom print settings cannot enlarge editor tags
+PASS Zooming never scales up the screen-space tag typography
+PASS Direct silkscreen checkbox changes printing only and supports undo/redo
+PASS Compact print defaults restores small enabled marks without reassigning roles
+PASS Full cathode identity stays in the tooltip without expanding its board label
+PASS Small tags remain clickable targets for the exact electrical pad
+PASS Fabrication reads actual small role glyphs with no editor overlays or camera-induced file changes
+PASS Flipping the component moves the printable marks to the bottom Gerber
+PASS Four-terminal RGB LEDs receive separate compact labels, not overlapping A/K pairs
+PASS Narrow-screen routing retains bounded labels without page overflow
+PASS Compact labels remain present in high-contrast and dark themes
+PASS No uncaught browser errors or remote runtime requests
+15/15 browser checks passed.

@@ -1,0 +1,34 @@
+[
+  {
+    "command": [
+      "python",
+      "tests/browser_test.py"
+    ],
+    "exit": 0,
+    "seconds": 25.82
+  },
+  {
+    "command": [
+      "python",
+      "tests/platform_browser_test.py"
+    ],
+    "exit": 0,
+    "seconds": 23.1
+  },
+  {
+    "command": [
+      "python",
+      "tests/via_browser_test.py"
+    ],
+    "exit": 0,
+    "seconds": 42.74
+  },
+  {
+    "command": [
+      "python",
+      "tests/plane_browser_test.py"
+    ],
+    "exit": 0,
+    "seconds": 44.18
+  }
+]

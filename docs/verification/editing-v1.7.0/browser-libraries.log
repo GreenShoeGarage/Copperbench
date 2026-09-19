@@ -1,0 +1,91 @@
+
+> python tests/silkscreen_browser_test.py
+PASS Diode, LED and capacitor terminals have printed marks and full inspector names, without idle badges
+PASS Hovering the K badge identifies the actual cathode lead rather than a nearby body
+PASS Clicking an A badge in connection mode selects that exact anode pad
+PASS Pin table searches by full electrical role, not just pin number
+PASS Printing can be disabled without losing editor identification; undo and redo work
+PASS Numeric/custom pins gain explicit roles without renumbering or copper/net changes
+PASS Printable size/gap/offsets survive real JSON download and file-input import
+PASS Rotation and side changes retain terminal identity and move printed symbols to the correct face
+PASS Fabrication defaults include silk and expose both silk-only inspection controls
+PASS Final top Gerber visibly retains the on-board line after all clear operations
+PASS Final bottom Gerber retains readable component-side markings in the flipped view
+PASS Viewer now correctly shows the old nested clear-frame reproducer as completely blank
+PASS Viewer unions overlapping dark contours even with reversed winding
+PASS The actual UI-generated ZIP contains the tested top and bottom Gerber text
+PASS Polarity controls remain reachable and labeled on a narrow screen
+PASS No external runtime requests or uncaught exceptions during the new workflows
+16/16 silkscreen browser tests passed.
+
+> python tests/maker_browser_test.py
+PASS Family-first drawer groups 134 new variants without replacing legacy parts
+PASS Native family/search/variant controls place the selected package through the canvas
+PASS Drawer search finds Qwiic directly and placement does not create a power net
+PASS Functional pin-label edits are one undoable metadata operation
+PASS Source notes and explicit user review are visible; label edits clear review
+PASS Part-reference dialog exports the actual functional pin map CSV
+PASS Editor-only functional captions never leak into manufacturing artwork
+PASS Worker findings and normal export block conflicting nets on an internally common tab
+PASS Uno template checkbox adds six real ICSP contacts while default templates stay unchanged
+PASS ICSP removal is undoable and is refused when a pin is still assigned
+PASS ICSP-enabled headers can be placed on the current board with a normal reference
+PASS Advanced pad renumbering keeps internal-terminal group references aligned
+PASS Actual JSON download blob and file-input import retain embedded catalog and signals
+PASS KiCad exchange warns that functional labels and catalog behavior are not preserved
+PASS A real 3D workbench renders new connector, control, driver and debugging bodies
+PASS Narrow-screen picker remains reachable without page-level horizontal overflow
+PASS No uncaught exceptions or external runtime requests during maker workflows
+17/17 maker browser checks passed.
+
+> python tests/carrier_browser_test.py
+PASS Controller picker is visible, has twelve families, and defaults to Pico 2 carrier
+PASS Every new variant creates a locked, routable, correctly sized header template
+PASS No-hole hosts cannot accidentally enable invented mounting drills
+PASS FeatherWing-style add-on exposes the bottom mating face and variant-specific FREE contact
+PASS Place-on-current-board preserves the boundary and adds the selected exact interface
+PASS Inspector shows functional contact labels, source model and editable RF/access regions
+PASS Guard dimensions and stack-gap edits are one undoable operation
+PASS RF override requires a recorded reason; the accepted override remains a warning
+PASS Hiding overlays does not disable guards or alter manufacturing output
+PASS Rotate and flip controls transform the attached guard without changing its two-face protection
+PASS Actual worker refills both plane faces around the attached RF exclusion
+PASS Visible Via tool refuses to place a via inside the RF guard
+PASS Saved JSON and project ZIP retain schema 5, host metadata, guards and planes
+PASS KiCad export discloses metadata loss and includes two independent keepout zones
+PASS Bench and clearance inspector render the controller and its separate reference geometry
+PASS Controller selection and template workflow fit a 390 px viewport
+PASS No uncaught browser errors or external runtime dependencies
+17/17 carrier browser checks passed.
+
+> python tests/modules_blocks_browser_test.py
+PASS Module and block pickers expose exact variants and isolated-port defaults
+PASS All five module starters create locked, routable, correctly named interfaces
+PASS Module placement retains the existing board, optional holes and entered stack gap
+PASS Module fit notes are visible and body visibility is undoable without changing Gerbers
+PASS Module pin-map CSV is downloadable through the real inspector control
+PASS All six starters insert actual routed geometry and worker connectivity reports no open net
+PASS Block insertion and all of its nets/parts/copper are one undoable action
+PASS Two UI insertions have isolated nets and fresh ordinary reference designators
+PASS Explicit port mapping shares only the chosen existing project net
+PASS Mapping distinct ports to one net is blocked without a partial edit
+PASS Value edits and copper omission retain ordinary parts and visible unrouted intent
+PASS Board-click ghost placement supports rotation, side flip and connected copper
+PASS Esc cancels pending block placement without touching the project
+PASS Preflight blocks overlapping different-net copper rather than committing a short
+PASS Whole-block R/F transform every component, trace and via together
+PASS Dragging a selected whole block moves the copper and keeps connectivity intact
+PASS Block-copy control places a new editable circuit with fresh internal and external nets
+PASS Capture selection stores components and selected copper in the project library
+PASS Block export downloads the actual edited geometry as a reusable JSON file
+PASS File-input block import asks for confirmation and adds a library copy without replacing the board
+PASS Invalid block file input leaves project data unchanged
+PASS Native schema-5 backup contains placed groups and personal library entries
+PASS Detach removes only group metadata, with exact Gerber/drill equality and undo
+PASS On-board block manager selects a group and supports precise anchor movement
+PASS Fabrication view reads actual exported block reference and polarity silkscreen
+PASS Module sampler renders five distinct representative board bodies
+PASS Circuit sampler renders six complete editable block layouts
+PASS Phone-sized layout keeps the block picker usable without page-width overflow
+PASS New workflows produce no uncaught exceptions or external runtime asset requests
+29/29 module/block browser checks passed.

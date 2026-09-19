@@ -1,0 +1,18 @@
+PASS Controller picker is visible, has twelve families, and defaults to Pico 2 carrier
+PASS Every new variant creates a locked, routable, correctly sized header template
+PASS No-hole hosts cannot accidentally enable invented mounting drills
+PASS FeatherWing-style add-on exposes the bottom mating face and variant-specific FREE contact
+PASS Place-on-current-board preserves the boundary and adds the selected exact interface
+PASS Inspector shows functional contact labels, source model and editable RF/access regions
+PASS Guard dimensions and stack-gap edits are one undoable operation
+PASS RF override requires a recorded reason; the accepted override remains a warning
+PASS Hiding overlays does not disable guards or alter manufacturing output
+PASS Rotate and flip controls transform the attached guard without changing its two-face protection
+PASS Actual worker refills both plane faces around the attached RF exclusion
+PASS Visible Via tool refuses to place a via inside the RF guard
+PASS Saved JSON and project ZIP retain schema 5, host metadata, guards and planes
+PASS KiCad export discloses metadata loss and includes two independent keepout zones
+PASS Bench and clearance inspector render the controller and its separate reference geometry
+PASS Controller selection and template workflow fit a 390 px viewport
+PASS No uncaught browser errors or external runtime dependencies
+17/17 carrier browser checks passed.

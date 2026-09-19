@@ -1,0 +1,235 @@
+{
+  "version": "1.6.2",
+  "passed": 574,
+  "total": 574,
+  "packagingTests": 13,
+  "runtimeUnchanged": true,
+  "gitStatusAfterTests": "",
+  "seconds": 185.35,
+  "suites": [
+    {
+      "name": "platform_browser_test",
+      "exit": 0,
+      "seconds": 21.16
+    },
+    {
+      "name": "browser_test",
+      "exit": 0,
+      "seconds": 23.48
+    },
+    {
+      "name": "via_browser_test",
+      "exit": 0,
+      "seconds": 38.15
+    },
+    {
+      "name": "plane_browser_test",
+      "exit": 0,
+      "seconds": 41.49
+    },
+    {
+      "name": "silkscreen_browser_test",
+      "exit": 0,
+      "seconds": 17.94
+    },
+    {
+      "name": "maker_browser_test",
+      "exit": 0,
+      "seconds": 26.42
+    },
+    {
+      "name": "carrier_browser_test",
+      "exit": 0,
+      "seconds": 40.18
+    },
+    {
+      "name": "quiet_ui_browser_test",
+      "exit": 0,
+      "seconds": 21.79
+    },
+    {
+      "name": "modules_blocks_browser_test",
+      "exit": 0,
+      "seconds": 50.12
+    },
+    {
+      "name": "compact_polarity_browser_test",
+      "exit": 0,
+      "seconds": 26.19
+    }
+  ],
+  "resultFiles": [
+    {
+      "name": "browser-results.json",
+      "passed": 20,
+      "total": 20
+    },
+    {
+      "name": "carrier-browser-results.json",
+      "passed": 17,
+      "total": 17
+    },
+    {
+      "name": "carrier-independent-results.json",
+      "passed": 21,
+      "total": 21
+    },
+    {
+      "name": "carriers-results.json",
+      "passed": 32,
+      "total": 32
+    },
+    {
+      "name": "compact-polarity-browser-results.json",
+      "passed": 15,
+      "total": 15
+    },
+    {
+      "name": "compact-polarity-manufacturing-results.json",
+      "passed": 2,
+      "total": 2
+    },
+    {
+      "name": "compact-polarity-results.json",
+      "passed": 10,
+      "total": 10
+    },
+    {
+      "name": "core-results.json",
+      "passed": 32,
+      "total": 32
+    },
+    {
+      "name": "maker-browser-results.json",
+      "passed": 17,
+      "total": 17
+    },
+    {
+      "name": "maker-manufacturing-results.json",
+      "passed": 10,
+      "total": 10
+    },
+    {
+      "name": "maker-results.json",
+      "passed": 28,
+      "total": 28
+    },
+    {
+      "name": "manufacturing-results.json",
+      "passed": 12,
+      "total": 12
+    },
+    {
+      "name": "modules-blocks-browser-results.json",
+      "passed": 29,
+      "total": 29
+    },
+    {
+      "name": "modules-blocks-independent-results.json",
+      "passed": 16,
+      "total": 16
+    },
+    {
+      "name": "modules-blocks-results.json",
+      "passed": 47,
+      "total": 47
+    },
+    {
+      "name": "plane-browser-results.json",
+      "passed": 23,
+      "total": 23
+    },
+    {
+      "name": "plane-core-results.json",
+      "passed": 31,
+      "total": 31
+    },
+    {
+      "name": "plane-manufacturing-results.json",
+      "passed": 15,
+      "total": 15
+    },
+    {
+      "name": "platform-browser-results.json",
+      "passed": 13,
+      "total": 13
+    },
+    {
+      "name": "platform-manufacturing-results.json",
+      "passed": 12,
+      "total": 12
+    },
+    {
+      "name": "platform-results.json",
+      "passed": 23,
+      "total": 23
+    },
+    {
+      "name": "quiet-ui-browser-results.json",
+      "passed": 18,
+      "total": 18
+    },
+    {
+      "name": "silkscreen-browser-results.json",
+      "passed": 16,
+      "total": 16
+    },
+    {
+      "name": "silkscreen-manufacturing-results.json",
+      "passed": 17,
+      "total": 17
+    },
+    {
+      "name": "silkscreen-results.json",
+      "passed": 30,
+      "total": 30
+    },
+    {
+      "name": "via-browser-results.json",
+      "passed": 21,
+      "total": 21
+    },
+    {
+      "name": "via-manufacturing-results.json",
+      "passed": 7,
+      "total": 7
+    },
+    {
+      "name": "via-results.json",
+      "passed": 27,
+      "total": 27
+    }
+  ],
+  "runtimeSha256": {
+    "index.html": "87c04b3f42855b0d5c4ffae7fed439e39c25d74efbf7cd7bd02d475cc0fddb60",
+    "styles.css": "9ae7a3e162e932f96e1e6ffff6d5524286d2cee948ab657e0c145eea8cd2995c",
+    "COPPERBENCH-portable.html": "677e8bdb8ff336e3e71169332cd74bd9765a99c96279e8649f0f968c9b9a6540",
+    "src/app.js": "7a1cc751ecf6df40a67cb00f98260f80dd609e6069b48275ecde9da92a949b42",
+    "src/block-catalog.js": "e1e3bc67343eb341764075563df8406b472b41a52bef19f78dca8a77de177143",
+    "src/blocks.js": "f234fa4dc112977ff9bbac04fead7f0cbb24487427ef5e4cd76343e6759129e1",
+    "src/carriers.js": "6aab618e4f3a3cf2545af742edc28819767cd9431e3fa06261f12715da93ded4",
+    "src/core.js": "b75bead0eb01e896a36eaa98db9f1cc47036a740c760c0da517ab62325a0f09e",
+    "src/font.js": "a4d112b9c859df1a51aace2a571b47b793a93a58e81761594e50d71ee9807677",
+    "src/geometry.js": "bef1dc59f2bfdbb2900b416f0ba66af5be89a0bd8a8e6075b3fe7a1ca43b89aa",
+    "src/interchange.js": "084aa905e63cc63e8410613d333481534d58328d57938f3d38fb23298eb97ebb",
+    "src/maker-parts.js": "38056b2e655490883e7427e262bb6cfc8c347a1706d01960d69f707e0be7c397",
+    "src/manufacturing.js": "53b16e1b25c2607a083e193c5f9663b47c8d74ace2bc8f40d18113c72f443167",
+    "src/modules-renderer.js": "72f6f46630d73e2e925793e3b89f923b36ee12dfa1320cd3f0ec17607d965265",
+    "src/modules.js": "e4387b291c3c25a1411681c0a0ce73570ce2280f949818350198c3968a80f3c2",
+    "src/planes.js": "caf7eb1a818cde1ac89d84ff332123a628c798a56c639be6d994cd8252cdb01a",
+    "src/platforms.js": "ef875fd54915b5f5fee38c9927b12ff86e115aba50ea4216f6d48176b7d0c50c",
+    "src/renderer.js": "39e53c40fb4b7c5966e67dbe4c7b2210d8324a9ef6e28a5e6d7dadaa1b70c026",
+    "src/router.js": "0dbd2c5e88aa0bf5ddfa08ac93d429f90f503d009792a30b8a38447da307ab7b",
+    "src/vias.js": "7efc82536a4e95c016c1204908eeb8994e2f212be2ead0c92d8c24903a71fc6f",
+    "src/worker-entry.js": "3023b368b26b93e0645a942171a0b5822f60451c66debafd93d7f9db0adf8ca1",
+    "src/worker-source.js": "60dcfdef65f56b13d032e52079f4132bccb35600b61e15eb58d7facaaf6fb531"
+  },
+  "environment": {
+    "python": "3.13.5",
+    "node": "v22.16.0",
+    "chromium": "Chromium 144.0.7559.96 built on Debian GNU/Linux 13 (trixie)",
+    "playwright": "1.57.0",
+    "shapely": "2.1.2",
+    "pillow": "12.3.0"
+  }
+}

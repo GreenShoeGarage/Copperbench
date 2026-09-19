@@ -176,3 +176,38 @@ routing. It is a development tool, not a runtime dependency. A packaging test
 rebuilds the catalog in a temporary tree and compares bytes. Source/portable and
 worker execution share module and block validation; the renderer extension runs
 only in the UI.
+
+## v1.6.2 compact terminal annotation
+
+`core.js` supplies small default silk settings and pin-ordered multi-terminal
+mark positions. `font.js` includes owner/pad/role metadata on derived polarity
+strokes; exporters still receive ordinary line geometry. These tags are not
+new persistent fields. The document schema stays at 5.
+
+`renderer.js` shows physical silk while idle, and fixed 9-pixel context pin tags
+while selecting/hovering/routing. Screen-space exclusion bounds include actual
+projected body height and visible pads. Printable size/offsets never affect tag
+type size. A lack of clear screen space omits a tag rather than covering a body.
+`app.js` provides the existing role editor plus direct print visibility and compact
+print defaults, all undoable and independent of electrical/copper edits.
+
+
+## v1.7 edit proposals and export review
+
+`editing.js` is a DOM-independent proposal engine. It clones the document, preserves
+hard-copper connection groups, checks relevant physical violations and returns a
+candidate. `edit-renderer.js` performs filtered/overlap picking and draws ghosts;
+none of these view objects enter the native project. The shell accepts only a
+proposal whose revision and original document snapshot still match. Connected
+moves invoke same-layer routing for moved endpoints; legacy ordinary moves retain
+their explicit disconnect-and-review behavior. Width splitting updates block
+membership. Printed mark offsets are local to the component transform.
+
+`export-review.js` reads generated text, checks file/outline/drill invariants and
+samples composited ink. It intentionally does not claim independently developed
+CAM validation or exact-area/printability analysis. The export dialog freezes a
+snapshot and includes review metadata in the manufacturing ZIP. The import path
+distinguishes that manifest from a native project. Local saving adds a raw-record
+comparison and explicit resolution, not a transactional storage engine.
+
+[Implementation behavior and limits](EDITING.md) · [Qualification](QUALIFICATION.md)

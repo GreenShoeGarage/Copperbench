@@ -1,0 +1,119 @@
+{
+  "version": "1.7.0",
+  "passed": 28,
+  "total": 28,
+  "results": [
+    {
+      "name": "134 new variants in 17 families; legacy IDs remain unique and available",
+      "pass": true
+    },
+    {
+      "name": "Every new variant validates, retains geometry and metadata through JSON, and exports",
+      "pass": true
+    },
+    {
+      "name": "Every new part preserves pin numbers and coordinates after four rotations and two flips",
+      "pass": true
+    },
+    {
+      "name": "Placed footprints are snapshots, not live library references",
+      "pass": true
+    },
+    {
+      "name": "NE555 and LM358 PDIP and SOIC pin maps agree with numbered reference vectors",
+      "pass": true
+    },
+    {
+      "name": "74HC595 signal and supply pin numbers are retained",
+      "pass": true
+    },
+    {
+      "name": "MCP23017 uses narrow SPDIP-28 with pins 11/14 NC and 12/13 I2C",
+      "pass": true
+    },
+    {
+      "name": "ULN2803C is DW-20, not an incorrectly substituted 18-pin device",
+      "pass": true
+    },
+    {
+      "name": "Named onsemi transistors have E-B-C pin roles and no guessed net",
+      "pass": true
+    },
+    {
+      "name": "Regulator pin map and physical tab identity are explicit",
+      "pass": true
+    },
+    {
+      "name": "Qwiic labels do not assign or merge electrical nets",
+      "pass": true
+    },
+    {
+      "name": "PH, XH and SH remain distinct physical pitches",
+      "pass": true
+    },
+    {
+      "name": "USB4085 has 16 unique signal contacts plus four explicitly common shell terminals",
+      "pass": true
+    },
+    {
+      "name": "Narrow USB shell slots keep their reference width and obey a stricter manufacturer profile",
+      "pass": true
+    },
+    {
+      "name": "Editing names leaves geometry, number, polarity and assigned net unchanged",
+      "pass": true
+    },
+    {
+      "name": "Internal-terminal net conflicts are reported as errors, not invisibly merged",
+      "pass": true
+    },
+    {
+      "name": "Internal groups do not create invisible PCB copper or satisfy unrouted nets",
+      "pass": true
+    },
+    {
+      "name": "Source metadata rejects executable links and malformed terminal references",
+      "pass": true
+    },
+    {
+      "name": "NC assignments produce a warning; a functional pin name is not a circuit rule",
+      "pass": true
+    },
+    {
+      "name": "User review can acknowledge nominal geometry, but new label edits clear that status",
+      "pass": true
+    },
+    {
+      "name": "Uno ICSP appends six pads without touching any of the original 32",
+      "pass": true
+    },
+    {
+      "name": "Uno ICSP top-view coordinates are invariant between shield and carrier templates",
+      "pass": true
+    },
+    {
+      "name": "Unused ICSP removal restores the exact old pin set; net or copper use prevents removal",
+      "pass": true
+    },
+    {
+      "name": "ICSP option rejects unrelated host families",
+      "pass": true
+    },
+    {
+      "name": "Encoder mechanical fixing holes follow transforms and remain NPTH",
+      "pass": true
+    },
+    {
+      "name": "New polarity is printed independently of editor pin-name visibility",
+      "pass": true
+    },
+    {
+      "name": "Pin-map CSV escapes formula-leading user labels",
+      "pass": true
+    },
+    {
+      "name": "The catalog can be searched by family, manufacturer and functional pin",
+      "pass": true
+    }
+  ]
+}

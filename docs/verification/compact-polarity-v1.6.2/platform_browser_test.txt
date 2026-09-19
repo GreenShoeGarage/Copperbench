@@ -1,0 +1,17 @@
+PASS Platforms category exposes twenty-four searchable add-on/carrier parts
+PASS Platform chooser renders a preview and explains nominal dimensions
+PASS Every family creates an editable template; MKR carrier applies margin and hole options
+PASS Starting a template is undoable and restores the previous project
+PASS Unlock, rotate and flip controls move the compound header and its mounts
+PASS Reference visibility is manufacturing-neutral; mounting-hole toggle updates real NPTH
+PASS Place-on-current-board leaves the board boundary and existing data intact
+PASS Searchable pin table finds GPIO aliases and selects the actual connector pad
+PASS Locked Pi interface pads can be clicked and routed to a new component
+PASS Pin-map CSV download contains physical IDs, signal names and top-view coordinates
+PASS Native JSON download preserves embedded platform metadata and linked holes
+PASS Platform workflow stays within the narrow-screen viewport
+PASS No uncaught errors or external runtime asset requests
+{
+  "passed": 13,
+  "total": 13
+}

@@ -1,0 +1,152 @@
+{
+  "passed": 29,
+  "total": 29,
+  "results": [
+    {
+      "name": "v1.7 boots with 193 parts, schema 5 and focused selection controls",
+      "pass": true,
+      "ms": 79
+    },
+    {
+      "name": "Parts filter ignores traces; Copper filter selects a trace",
+      "pass": true,
+      "ms": 1261
+    },
+    {
+      "name": "Overlap cycling reaches a trace beneath its pad using ]",
+      "pass": true,
+      "ms": 926
+    },
+    {
+      "name": "Drag segment previews doglegs without mutation, then commits as one undo",
+      "pass": true,
+      "ms": 1926
+    },
+    {
+      "name": "Escape cancels preview without altering source copper",
+      "pass": true,
+      "ms": 1184
+    },
+    {
+      "name": "Width scope dialog stages and applies a validated width",
+      "pass": true,
+      "ms": 1080
+    },
+    {
+      "name": "Selected-segment width preserves widths of neighbouring sections",
+      "pass": true,
+      "ms": 1024
+    },
+    {
+      "name": "Insert, drag and remove an interior corner using canvas and controls",
+      "pass": true,
+      "ms": 1950
+    },
+    {
+      "name": "Replace-section dialog preserves fixed endpoints and inserts waypoints",
+      "pass": true,
+      "ms": 1284
+    },
+    {
+      "name": "Cleanup proposals remove redundant collinear points, not user intent",
+      "pass": true,
+      "ms": 1101
+    },
+    {
+      "name": "Drag-connected toggle moves a part and its attachment as one transaction",
+      "pass": true,
+      "ms": 1414
+    },
+    {
+      "name": "Exact-coordinate connected move is available in component inspector",
+      "pass": true,
+      "ms": 1432
+    },
+    {
+      "name": "Unsupported off-centre attachment explains rejection without moving board objects",
+      "pass": true,
+      "ms": 1103
+    },
+    {
+      "name": "Connected via move updates attachments on both copper layers",
+      "pass": true,
+      "ms": 1083
+    },
+    {
+      "name": "Dragging printed polarity changes only print geometry, not physical pins",
+      "pass": true,
+      "ms": 1935
+    },
+    {
+      "name": "Compact print inspector supports size and visibility without pin-role changes",
+      "pass": true,
+      "ms": 596
+    },
+    {
+      "name": "Fabrication ZIP contains revision-bound generated-file review manifest",
+      "pass": true,
+      "ms": 1080
+    },
+    {
+      "name": "Export refuses a design changed after its review dialog opened",
+      "pass": true,
+      "ms": 931
+    },
+    {
+      "name": "Fabrication readback is not an accidental geometry-editing surface",
+      "pass": true,
+      "ms": 1092
+    },
+    {
+      "name": "Narrow workbench keeps editing tools reachable without horizontal page overflow",
+      "pass": true,
+      "ms": 865
+    },
+    {
+      "name": "Autosave detects changed stored data and preserves it; JSON backup still works",
+      "pass": true,
+      "ms": 3126
+    },
+    {
+      "name": "Explicit recovery exports both copies before enabling replacement autosave",
+      "pass": true,
+      "ms": 267
+    },
+    {
+      "name": "Unreadable startup autosave is not overwritten by later edits",
+      "pass": true,
+      "ms": 1645
+    },
+    {
+      "name": "Quota errors keep previous autosave and allow independent JSON backup",
+      "pass": true,
+      "ms": 2923
+    },
+    {
+      "name": "Undo during a preview-only drag cancels it without restoring the wrong revision",
+      "pass": true,
+      "ms": 2061
+    },
+    {
+      "name": "A concurrent command safely cancels connected dragging without losing the command",
+      "pass": true,
+      "ms": 1170
+    },
+    {
+      "name": "Cancelling with Escape or Cancel resumes paused managed-plane refill",
+      "pass": true,
+      "ms": 3969
+    },
+    {
+      "name": "Manufacturing ZIP with its JSON manifest reopens as CAM reference, not native project",
+      "pass": true,
+      "ms": 1112
+    },
+    {
+      "name": "Editing uses no external runtime requests or uncaught browser errors",
+      "pass": true,
+      "ms": 0
+    }
+  ],
+  "scope": "DOM/canvas/worker; injected storage and captured downloads, not real-origin persistence"
+}

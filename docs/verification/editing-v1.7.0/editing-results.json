@@ -1,0 +1,162 @@
+{
+  "passed": 39,
+  "total": 39,
+  "results": [
+    {
+      "name": "Successful and failed proposals never mutate the input document",
+      "pass": true
+    },
+    {
+      "name": "Cleanup removes duplicate points and forward collinear points",
+      "pass": true
+    },
+    {
+      "name": "Cleanup does not erase a reversal",
+      "pass": true
+    },
+    {
+      "name": "Straight routes report no cleanup needed",
+      "pass": true
+    },
+    {
+      "name": "Insert a collinear handle without immediately removing it",
+      "pass": true
+    },
+    {
+      "name": "Move a newly inserted corner; endpoint pad contacts remain connected",
+      "pass": true
+    },
+    {
+      "name": "Manual endpoint move cannot detach existing pad",
+      "pass": true
+    },
+    {
+      "name": "One-segment slide creates doglegs and keeps original endpoints",
+      "pass": true
+    },
+    {
+      "name": "A sideways slide cannot silently lose a T junction",
+      "pass": true
+    },
+    {
+      "name": "Preview-only ghost may be invalid but final validation rejects it",
+      "pass": true
+    },
+    {
+      "name": "Cannot remove a trace endpoint",
+      "pass": true
+    },
+    {
+      "name": "Remove an interior handle after cleanup preserves net and copper",
+      "pass": true
+    },
+    {
+      "name": "Replace a selected section, preserving endpoints and line identity",
+      "pass": true
+    },
+    {
+      "name": "Bad indices, nonfinite points, too many replacement waypoints fail",
+      "pass": true
+    },
+    {
+      "name": "Locked routes reject every geometry operation",
+      "pass": true
+    },
+    {
+      "name": "Width edit is validated against minimum trace width",
+      "pass": true
+    },
+    {
+      "name": "Widening cannot short or violate clearance to another net",
+      "pass": true
+    },
+    {
+      "name": "Segment width splits only selected geometry; neighbouring widths survive",
+      "pass": true
+    },
+    {
+      "name": "Split trace pieces retain block membership",
+      "pass": true
+    },
+    {
+      "name": "Connected selection follows hard copper through a via, not airwires",
+      "pass": true
+    },
+    {
+      "name": "Whole-net and touching-route widths have distinct scopes",
+      "pass": true
+    },
+    {
+      "name": "Whole-net width does not skip locked traces",
+      "pass": true
+    },
+    {
+      "name": "Connected part drag preserves pin identity, net, and trace width",
+      "pass": true
+    },
+    {
+      "name": "Connected part drag supports bottom-side pad transforms",
+      "pass": true
+    },
+    {
+      "name": "Via drag preserves attached top and bottom routes",
+      "pass": true
+    },
+    {
+      "name": "Connected move of existing multi-segment route retains fixed interior points",
+      "pass": true
+    },
+    {
+      "name": "Connected drag rejects an off-centre terminal contact",
+      "pass": true
+    },
+    {
+      "name": "Connected drag rejects through-middle contact",
+      "pass": true
+    },
+    {
+      "name": "Locked component and locked attached trace stop connected drag",
+      "pass": true
+    },
+    {
+      "name": "Moving into a foreign pad or outside substrate is rejected",
+      "pass": true
+    },
+    {
+      "name": "Attached plane net is explicitly unsupported by connected drag",
+      "pass": true
+    },
+    {
+      "name": "Unrelated pours are invalidated by accepted geometry changes",
+      "pass": true
+    },
+    {
+      "name": "Stationary part, unknown ID, nonfinite coordinate fail without mutation",
+      "pass": true
+    },
+    {
+      "name": "Printable reference and polarity are separate movable groups",
+      "pass": true
+    },
+    {
+      "name": "Moving reference never moves component pads or polarity settings",
+      "pass": true
+    },
+    {
+      "name": "Printed polarity movement respects rotation and bottom-side mirroring",
+      "pass": true
+    },
+    {
+      "name": "Locked printed markings cannot be dragged",
+      "pass": true
+    },
+    {
+      "name": "Accepted edits survive schema-5 JSON round-trip",
+      "pass": true
+    },
+    {
+      "name": "Library and block collection remain intact",
+      "pass": true
+    }
+  ]
+}

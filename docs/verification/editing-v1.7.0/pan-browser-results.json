@@ -1,0 +1,151 @@
+{
+  "results": [
+    {
+      "name": "Labelled Pan control is keyboard-operable with pressed and grab states",
+      "pass": true,
+      "ms": 218
+    },
+    {
+      "name": "Pan moves only the camera in bench, top face, even over a component",
+      "pass": true,
+      "ms": 1726
+    },
+    {
+      "name": "Pan moves only the camera in bench, bottom face, even over a component",
+      "pass": true,
+      "ms": 1613
+    },
+    {
+      "name": "Pan moves only the camera in copper, top face, even over a component",
+      "pass": true,
+      "ms": 1655
+    },
+    {
+      "name": "Pan moves only the camera in copper, bottom face, even over a component",
+      "pass": true,
+      "ms": 1888
+    },
+    {
+      "name": "Pan moves only the camera in fabrication, top face, even over a component",
+      "pass": true,
+      "ms": 1506
+    },
+    {
+      "name": "Pan moves only the camera in fabrication, bottom face, even over a component",
+      "pass": true,
+      "ms": 1816
+    },
+    {
+      "name": "Middle-button drag pans without selecting or moving a part",
+      "pass": true,
+      "ms": 1147
+    },
+    {
+      "name": "Space-drag preserves a pending part and permits subsequent placement",
+      "pass": true,
+      "ms": 2065
+    },
+    {
+      "name": "Pan can suspend and resume a live trace with no added waypoint or net",
+      "pass": true,
+      "ms": 1645
+    },
+    {
+      "name": "Fit and Home recover the board after moving it away from the centre",
+      "pass": true,
+      "ms": 1427
+    },
+    {
+      "name": "Arrows pan in Pan mode without nudging, rotating, flipping or deleting selection",
+      "pass": true,
+      "ms": 1382
+    },
+    {
+      "name": "Scroll pans in Pan mode; Ctrl-scroll still zooms rather than translating",
+      "pass": true,
+      "ms": 1167
+    },
+    {
+      "name": "Shift-scroll pans horizontally while the ordinary Select wheel retains zoom",
+      "pass": true,
+      "ms": 1175
+    },
+    {
+      "name": "Line and page wheel units are normalised, not assumed to be pixels",
+      "pass": true,
+      "ms": 948
+    },
+    {
+      "name": "Typing and browser shortcuts are not hijacked; on-demand Pan help stays available",
+      "pass": true,
+      "ms": 1604
+    },
+    {
+      "name": "Pointer capture keeps panning when the pointer crosses the canvas edge",
+      "pass": true,
+      "ms": 1644
+    },
+    {
+      "name": "Focus and pointer-capture loss cannot leave a stuck dragging cursor",
+      "pass": true,
+      "ms": 1418
+    },
+    {
+      "name": "One-finger drag in Pan moves the view, not the touched component",
+      "pass": true,
+      "ms": 1178
+    },
+    {
+      "name": "Two-finger translation pans in Select and ignores the remaining lifted finger",
+      "pass": true,
+      "ms": 1142
+    },
+    {
+      "name": "Touch pinch zoom stays anchored beneath the translating gesture centre",
+      "pass": true,
+      "ms": 1129
+    },
+    {
+      "name": "Two-finger gestures cannot drop parts, add holes/vias, or start a trace",
+      "pass": true,
+      "ms": 6149
+    },
+    {
+      "name": "A second finger rolls back an uncommitted component drag before navigating",
+      "pass": true,
+      "ms": 1224
+    },
+    {
+      "name": "Normal mouse and single-touch editing still move parts and remain undoable",
+      "pass": true,
+      "ms": 2756
+    },
+    {
+      "name": "Pan stays labelled and reachable at narrow screen widths without page overflow",
+      "pass": true,
+      "ms": 1403
+    },
+    {
+      "name": "Pan has visible active state in light, dark and high-contrast views",
+      "pass": true,
+      "ms": 3009
+    },
+    {
+      "name": "Loading a document cancels the old tentative drag without restoring it over the new board",
+      "pass": true,
+      "ms": 1412
+    },
+    {
+      "name": "Scrolling refreshes the board coordinate of a stationary routing cursor",
+      "pass": true,
+      "ms": 1413
+    },
+    {
+      "name": "Navigation produces no uncaught errors or external runtime requests",
+      "pass": true,
+      "ms": 0
+    }
+  ],
+  "passed": 29,
+  "total": 29
+}

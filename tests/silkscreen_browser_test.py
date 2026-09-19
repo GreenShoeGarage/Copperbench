@@ -46,9 +46,9 @@ with sync_playwright() as pw:
   try:fn();results.append({'name':name,'pass':True,'ms':round((time.perf_counter()-t)*1000)});print('PASS',name,flush=True)
   except Exception as e:results.append({'name':name,'pass':False,'error':str(e)});print('FAIL',name,e,flush=True);page.screenshot(path=str(IMAGES/f'silkscreen-failure-{len(results)}.png'));traceback.print_exc()
  def builtins():
-  reset();marks=page.evaluate('CBAPP.renderer.polarityHitLabels');check(len(marks)==8);check({m['label'] for m in marks}=={'Anode','Cathode','Positive','Negative'})
+  reset();marks=page.evaluate('CBAPP.state.doc.parts.flatMap(p=>CB.polarityMarks(p))');check(len(marks)==8);check({m['label'] for m in marks}=={'Anode','Cathode','Positive','Negative'});check(page.evaluate('CBAPP.renderer.polarityHitLabels.every(a=>a.mode==="silk")'))
   choose();text=page.locator('#inspector').inner_text();check('Anode' in text and 'Cathode' in text);screenshot('polarity-workbench.png')
- test('Recognizable diode, LED and capacitor terminals have badges and full inspector names',builtins)
+ test('Diode, LED and capacitor terminals have printed marks and full inspector names, without idle badges',builtins)
  def hover():
   reset();choose();q=page.evaluate('()=>{const r=CBAPP.renderer;r.draw();const a=r.polarityHitLabels.find(a=>a.role==="cathode"),b=r.canvas.getBoundingClientRect();return{x:a.x+b.left,y:a.y+b.top,pad:a.padId}}')
   page.mouse.move(q['x'],q['y']);page.wait_for_function('document.getElementById("tooltip").textContent.includes("Cathode")');check(page.evaluate('CBAPP.state.hoverPad')==q['pad'])

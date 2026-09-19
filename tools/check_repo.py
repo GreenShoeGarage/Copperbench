@@ -32,7 +32,7 @@ def main() -> int:
     if not node:
         failures.append('Node.js is required for JavaScript syntax checks')
     else:
-        for path in sorted((ROOT / 'src').glob('*.js')) + [ROOT / 'sw.js', ROOT / 'tests/core.test.js', ROOT / 'tests/platforms.test.js', ROOT / 'tests/vias.test.js', ROOT / 'tests/planes.test.js', ROOT / 'tests/silkscreen.test.js', ROOT / 'tests/maker.test.js', ROOT / 'tests/carriers.test.js', ROOT / 'tests/modules-blocks.test.js']:
+        for path in sorted((ROOT / 'src').glob('*.js')) + [ROOT / 'sw.js', ROOT / 'tests/core.test.js', ROOT / 'tests/platforms.test.js', ROOT / 'tests/vias.test.js', ROOT / 'tests/planes.test.js', ROOT / 'tests/silkscreen.test.js', ROOT / 'tests/maker.test.js', ROOT / 'tests/carriers.test.js', ROOT / 'tests/modules-blocks.test.js', ROOT / 'tests/compact-polarity.test.js']:
             run = subprocess.run([node, '--check', str(path)], text=True, capture_output=True)
             check(run.returncode == 0, f'JavaScript syntax error: {path.relative_to(ROOT)}\n{run.stderr}')
     for path in list((ROOT / 'tools').glob('*.py')) + list((ROOT / 'tests').glob('*.py')):

@@ -1,15 +1,87 @@
 # COPPERBENCH
 ### A PCB workbench that feels like a PCB.
 
-**Version 1.6.1 · Green Shoe Garage / Field Instruments · 18 September 2026**
+**Version 1.7.0 · Green Shoe Garage / Field Instruments · 18 September 2026**
 
-[Quieter workbench](#new-in-v161--quieter-workbench) · [Modules & circuit blocks](#new-in-v16--modules-and-editable-circuits) · [Controller carriers](#controller-carriers) · [Everyday maker parts](#everyday-maker-parts) · [Polarity & silkscreen fix](#polarity-and-silkscreen) · [Power & ground planes](#power-and-ground-planes) · [Create vias](#create-vias) · [HATs & shields](#hats-shields-and-carriers) · [Get started](#start-here) · [Publish to GitHub](docs/GITHUB.md) · [Deploy](docs/DEPLOYMENT.md) · [Verification](docs/TESTING.md) · [Contribute](CONTRIBUTING.md)
+[Editing and export review](docs/EDITING.md) · [Pan the view](#new-in-v163--pan-the-view) · [Compact polarity](#new-in-v162--compact-polarity-markings) · [Quieter workbench](#new-in-v161--quieter-workbench) · [Modules & circuit blocks](#new-in-v16--modules-and-editable-circuits) · [Controller carriers](#controller-carriers) · [Everyday maker parts](#everyday-maker-parts) · [Polarity & silkscreen fix](#polarity-and-silkscreen) · [Power & ground planes](#power-and-ground-planes) · [Create vias](#create-vias) · [HATs & shields](#hats-shields-and-carriers) · [Get started](#start-here) · [Publish to GitHub](docs/GITHUB.md) · [Deploy](docs/DEPLOYMENT.md) · [Verification](docs/TESTING.md) · [Contribute](CONTRIBUTING.md)
 
 Put down a board. Place recognizable parts. Connect their leads. Shape the copper. Add your markings. Inspect the files you will send for fabrication.
 
 COPPERBENCH is a local-first, two-copper-layer PCB layout app with an editable, depth-rendered 3D workbench. **COPPERBENCH is the working title for this release.** The physical bodies are representative; pad geometry and the electrical connection model—not rendered pixels—drive routing, checking and manufacturing export.
 
-![COPPERBENCH v1.6.1 quiet workbench](docs/images/quiet-workbench.png)
+## New in v1.7 — editing and export review
+
+Select the object you intend to edit with **Parts / Copper / Markings / Board
+features** filters. Click a crowded location and press **]** to cycle overlapping
+objects. Slide trace segments, move/insert/remove corners, replace a section and
+clean redundant bends. Widths can target one segment, a trace, touching copper or
+an explicitly selected whole net.
+
+Turn on **Drag connected** for a rule-checked component/via move. Supported
+centered endpoint attachments follow on their existing layers. A blocked or
+unsupported move leaves the original board intact. This is deliberately limited:
+no push-and-shove, locked attachments, through-middle junctions or pour-net moves.
+Both manual trace changes and connected moves use **Keep edit / Cancel** previews
+and one-step undo; they are not live, silent changes to the underlying copper.
+
+![Actual connected-move preview, with original and proposed copper](docs/images/editing-connected.png)
+
+**Position marks** moves printed reference or polarity groups without moving pads.
+Export review checks actual generated files against the reviewed revision, compares
+drills, and reports sampled silk clipping. The ZIP now includes a revision manifest.
+Unreadable local saves or detected other-tab changes pause autosave until explicitly
+resolved; **Log → Recovery snapshots** can download both copies first.
+
+All **193 parts, six circuit blocks and schema-5 projects** are retained. No new
+runtime dependencies. Save a JSON backup before updating; replace the complete
+static folder or portable HTML. See the [editing guide](docs/EDITING.md),
+[verification record](docs/TESTING.md) and [qualification boundaries](docs/QUALIFICATION.md).
+Native browser navigation and the optional third-party parser gate were **blocked**
+in the release environment, not counted as passed. No manufacturer acceptance or
+physical fabrication is claimed.
+
+## New in v1.6.3 — pan the view
+
+**Pan** now has a labelled button beside **Fit**, in all three views and on both
+board faces. Toggle it with **P**, then drag anywhere on the canvas without moving
+parts. **Space-drag** or **middle-drag** pans temporarily, including mid-trace.
+
+Scroll pans while Pan is on; Ctrl/Command-scroll still zooms. On a touchscreen,
+one finger in Pan or two fingers in any tool moves the view, with pinch zoom
+anchored beneath the gesture. **Fit / Home** brings the board back to centre.
+
+Selection, pending placements, unfinished traces, undo history and manufacturing
+geometry are preserved. There is no new idle instruction banner, no dependency,
+and no project-format change (schema 5). The 193 parts, six circuit starters,
+planes, vias and compact printed polarity markings are retained.
+
+![Actual workbench with the Pan button active](docs/images/pan-workbench.png)
+
+[Navigation controls and details](docs/NAVIGATION.md) · [Verification](docs/TESTING.md)
+
+## New in v1.6.2 — compact polarity markings
+
+Removed the always-on A/K billboards and the expanded name badges. The idle
+workbench shows the actual small printable symbols. Selection, hovering a lead,
+or routing exposes **9-pixel pin tags** placed outside projected component bodies,
+including their height when the board is tilted. Full terminal names remain in
+the tooltip, inspector and pin table; the small tags still select their actual pins.
+
+**A/K and +/− are real silkscreen**, enabled by default, with 0.9 mm default print
+height and 0.16 mm stroke. A direct **Print polarity on silkscreen** checkbox is
+available in the selected-part inspector. **Polarity & pin roles → Compact print
+defaults → Apply polarity labels** restores the small enabled print settings.
+Screen tags and printed sizes are independent. Four-lead RGB LEDs now receive
+separate, pin-ordered markings instead of overprinted A/K pairs.
+
+![Actual top Gerber read-back with polarity symbols](docs/images/compact-polarity-silkscreen.png)
+
+Existing explicit print settings and opt-outs are preserved. Back up your JSON,
+inspect **Fabrication → Top silk only / Bottom silk only**, and regenerate the
+manufacturing ZIP. Schema remains **5**. No pad, pin number, net, copper, or drill
+geometry was changed by the label redesign. Read the [polarity guide](docs/POLARITY_AND_SILKSCREEN.md)
+and [verification record](docs/TESTING.md). The [example board](examples/compact-polarity.json)
+is an unconnected illustration, not a complete circuit.
 
 ## New in v1.6.1 — quieter workbench
 
@@ -145,17 +217,17 @@ native project in this version and regenerate its manufacturing ZIP before
 ordering. Previously downloaded Gerbers are not repaired by updating the app.**
 
 Diodes and LEDs now identify **A · Anode** and **K · Cathode**. Polarized radial
-capacitors identify **+ · Positive** and **− · Negative**. Badges anchor to the
-actual pins, remain legible while zooming, and show full role names when selected
-or hovered. The inspector and searchable pin table also show the full names.
+capacitors identify **+ · Positive** and **− · Negative**. Small tags appear while
+selecting or wiring, stay outside projected component bodies, and never expand
+into full-name badges. Full names remain in tooltips, the inspector and pin table.
 
-![Actual polarity badges and full-name inspector](docs/images/polarity-workbench.png)
+![Compact polarity tags and full-name inspector](docs/images/compact-polarity-selected.png)
 
 Select a component and open **Polarity & pin roles** to assign roles to custom or
 imported pins, toggle printing, or adjust symbol size, clearance and offsets.
 Printed A/K or +/− symbols follow the component's rotation and board face and are
 included in the Gerbers. Hiding the reference label does not hide polarity marks;
-disabling printed polarity does not remove the editor badges. No operation
+disabling printed polarity does not remove the contextual pin tags. No operation
 silently swaps pin numbers or reassigns nets. Unknown/numeric pin roles are not
 guessed from net names or body appearance.
 

@@ -1,0 +1,22 @@
+PASS Visible Via button opens controls and creates an assigned plated via
+PASS Repeated placement uses preset/tenting defaults and supports undo/redo
+PASS Unassigned empty-space vias stay visible to manufacturing checks
+PASS Placing directly on an off-grid trace snaps to its center and inherits net
+PASS Conflicting front/back nets produce a red preview and no board mutation
+PASS Board-edge and mounting-hole clashes block standalone placement
+PASS Bad annular rings and undersized drills do not change placement defaults
+PASS Inspector edits dimensions/tenting and respects the via lock
+PASS V during tracing inserts a via and continues a connected bottom-layer route
+PASS Visible layer-change button commits trace plus via as one undoable edit
+PASS Traces start/end on vias and a via remains selectable over its trace
+PASS Via routes can finish directly on an existing same-net trace
+PASS Blocked routing via leaves the trace, side and board unchanged
+PASS Manage vias table selects objects for duplication and deletion
+PASS Moving an attached via exposes disconnection instead of moving copper silently
+PASS JSON backup and actual file-input import retain via details
+PASS KiCad export explicitly warns about via mask/lock limitations
+PASS A blocked arrow-key via move rolls back without an uncaught exception
+PASS Placement, inspector and generated-file views render the actual via
+PASS Narrow-screen users can reach the visible Via tool without page overflow
+PASS No external asset requests or uncaught exceptions in via workflows
+{"passed": 21, "total": 21}

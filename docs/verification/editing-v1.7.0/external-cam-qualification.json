@@ -1,0 +1,7 @@
+{
+  "parser": "gerbonara",
+  "scope": "Third-party parsing and SVG rendering; does not certify circuit function, visible-ink correctness or manufacturer acceptance",
+  "files": [],
+  "status": "blocked",
+  "reason": "No module named 'gerbonara'"
+}

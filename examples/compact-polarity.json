@@ -1,0 +1,524 @@
+{
+  "app": "COPPERBENCH",
+  "schema": 5,
+  "version": "1.6.2",
+  "id": "board_f4a56787ba33",
+  "title": "Polarity · compact & printable",
+  "created": "2026-09-18T19:56:15.536Z",
+  "updated": "2026-09-18T19:56:15.536Z",
+  "board": {
+    "width": 80,
+    "height": 50,
+    "thickness": 1.6,
+    "shape": "rounded",
+    "radius": 3,
+    "points": [],
+    "color": "green"
+  },
+  "parts": [
+    {
+      "id": "p_c2ce783f1672",
+      "name": "Diode · DO-35 7.62",
+      "category": "Through-hole",
+      "body": {
+        "kind": "diode",
+        "w": 4,
+        "h": 1.9,
+        "z": 2.1
+      },
+      "pads": [
+        {
+          "number": "K",
+          "x": -3.81,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 0.9,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "polarity": "cathode"
+        },
+        {
+          "number": "A",
+          "x": 3.81,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 0.9,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "polarity": "anode"
+        }
+      ],
+      "ref": "D1",
+      "value": "1N4148",
+      "source": "Parametric geometry; check against the selected component datasheet.",
+      "verified": false,
+      "libraryId": "diode",
+      "x": 17,
+      "y": 17,
+      "rotation": 0,
+      "side": "top",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 2.95,
+        "size": 1.3,
+        "visible": true
+      }
+    },
+    {
+      "id": "p_c7be8072ff4a",
+      "name": "LED · 5 mm",
+      "category": "Through-hole",
+      "body": {
+        "kind": "led",
+        "w": 5,
+        "h": 5,
+        "z": 7
+      },
+      "pads": [
+        {
+          "number": "K",
+          "x": -1.27,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 0.9,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "polarity": "cathode"
+        },
+        {
+          "number": "A",
+          "x": 1.27,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 0.9,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "polarity": "anode"
+        }
+      ],
+      "ref": "D2",
+      "value": "LED",
+      "source": "Parametric geometry; check against the selected component datasheet.",
+      "verified": false,
+      "appearance": "#f06945",
+      "libraryId": "led5",
+      "x": 40,
+      "y": 17,
+      "rotation": 90,
+      "side": "top",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 4.5,
+        "size": 1.3,
+        "visible": true
+      }
+    },
+    {
+      "id": "p_c01986e8d45b",
+      "name": "Capacitor · radial 2.5",
+      "category": "Through-hole",
+      "body": {
+        "kind": "capacitor",
+        "w": 5,
+        "h": 5,
+        "z": 7.5
+      },
+      "pads": [
+        {
+          "number": "+",
+          "x": -1.25,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 0.9,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "polarity": "positive"
+        },
+        {
+          "number": "-",
+          "x": 1.25,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "drill": 0.9,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "polarity": "negative"
+        }
+      ],
+      "ref": "C1",
+      "value": "10uF",
+      "source": "Parametric geometry; check against the selected component datasheet.",
+      "verified": false,
+      "libraryId": "cap-radial",
+      "x": 63,
+      "y": 17,
+      "rotation": 0,
+      "side": "top",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 4.5,
+        "size": 1.3,
+        "visible": true
+      }
+    },
+    {
+      "id": "p_4fb6a3b265c3",
+      "name": "LED · 0805 · A/K",
+      "category": "Indicators",
+      "ref": "D3",
+      "value": "LED",
+      "body": {
+        "kind": "smdled",
+        "w": 2,
+        "h": 1.25,
+        "z": 0.9
+      },
+      "pads": [
+        {
+          "number": "1",
+          "x": -1.1,
+          "y": 0,
+          "w": 1.1,
+          "h": 1.55,
+          "drill": 0,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "top",
+          "net": null,
+          "signal": "Cathode",
+          "polarity": "cathode"
+        },
+        {
+          "number": "2",
+          "x": 1.1,
+          "y": 0,
+          "w": 1.1,
+          "h": 1.55,
+          "drill": 0,
+          "slot": 0,
+          "shape": "rect",
+          "layers": "top",
+          "net": null,
+          "signal": "Anode",
+          "polarity": "anode"
+        }
+      ],
+      "verified": false,
+      "source": "COPPERBENCH parametric template. No manufacturer footprint is claimed.",
+      "catalog": {
+        "schema": 1,
+        "family": "LEDs",
+        "variant": "0805 SMD LED",
+        "manufacturer": "",
+        "mpn": "",
+        "sourceDate": "2026-09-18",
+        "sources": [],
+        "notes": [
+          "Nominal parametric pattern, not a universal manufacturer footprint. Match pitch, hole diameter, pin order, body and mating clearance to the actual component.",
+          "Check manufacturer cathode index; package marking conventions vary."
+        ],
+        "geometryStatus": "parametric-review-required",
+        "pinNamesEdited": false,
+        "reviewed": false
+      },
+      "libraryId": "maker-led-0805",
+      "x": 17,
+      "y": 35,
+      "rotation": 0,
+      "side": "top",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 2.625,
+        "size": 1.3,
+        "visible": true
+      }
+    },
+    {
+      "id": "p_7ae3471bfff6",
+      "name": "RGB LED · common anode · 5 mm",
+      "category": "Indicators",
+      "ref": "D4",
+      "value": "RGB LED",
+      "body": {
+        "kind": "led",
+        "w": 5,
+        "h": 5,
+        "z": 8
+      },
+      "pads": [
+        {
+          "number": "1",
+          "x": -1.905,
+          "y": 0,
+          "w": 1.05,
+          "h": 1.05,
+          "drill": 0.7,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "signal": "Red",
+          "polarity": "cathode"
+        },
+        {
+          "number": "2",
+          "x": -0.635,
+          "y": 0,
+          "w": 1.05,
+          "h": 1.05,
+          "drill": 0.7,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "signal": "Common anode",
+          "polarity": "anode"
+        },
+        {
+          "number": "3",
+          "x": 0.635,
+          "y": 0,
+          "w": 1.05,
+          "h": 1.05,
+          "drill": 0.7,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "signal": "Green",
+          "polarity": "cathode"
+        },
+        {
+          "number": "4",
+          "x": 1.905,
+          "y": 0,
+          "w": 1.05,
+          "h": 1.05,
+          "drill": 0.7,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "signal": "Blue",
+          "polarity": "cathode"
+        }
+      ],
+      "verified": false,
+      "source": "COPPERBENCH parametric template. No manufacturer footprint is claimed.",
+      "catalog": {
+        "schema": 1,
+        "family": "LEDs",
+        "variant": "5 mm RGB / common anode",
+        "manufacturer": "",
+        "mpn": "",
+        "sourceDate": "2026-09-18",
+        "sources": [],
+        "notes": [
+          "Nominal parametric pattern, not a universal manufacturer footprint. Match pitch, hole diameter, pin order, body and mating clearance to the actual component.",
+          "Template order R, common, G, B. Verify the exact LED datasheet: four-lead RGB pin orders vary. Separate current limiting is not inserted."
+        ],
+        "geometryStatus": "parametric-review-required",
+        "pinNamesEdited": false,
+        "reviewed": false
+      },
+      "libraryId": "maker-rgb-anode",
+      "x": 40,
+      "y": 35,
+      "rotation": 0,
+      "side": "top",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 4.5,
+        "size": 1.3,
+        "visible": true
+      }
+    },
+    {
+      "id": "p_baedfb74d77f",
+      "name": "RGB LED · common cathode · 5 mm",
+      "category": "Indicators",
+      "ref": "D5",
+      "value": "RGB LED",
+      "body": {
+        "kind": "led",
+        "w": 5,
+        "h": 5,
+        "z": 8
+      },
+      "pads": [
+        {
+          "number": "1",
+          "x": -1.905,
+          "y": 0,
+          "w": 1.05,
+          "h": 1.05,
+          "drill": 0.7,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "signal": "Red",
+          "polarity": "anode"
+        },
+        {
+          "number": "2",
+          "x": -0.635,
+          "y": 0,
+          "w": 1.05,
+          "h": 1.05,
+          "drill": 0.7,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "signal": "Common cathode",
+          "polarity": "cathode"
+        },
+        {
+          "number": "3",
+          "x": 0.635,
+          "y": 0,
+          "w": 1.05,
+          "h": 1.05,
+          "drill": 0.7,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "signal": "Green",
+          "polarity": "anode"
+        },
+        {
+          "number": "4",
+          "x": 1.905,
+          "y": 0,
+          "w": 1.05,
+          "h": 1.05,
+          "drill": 0.7,
+          "slot": 0,
+          "shape": "circle",
+          "layers": "both",
+          "net": null,
+          "signal": "Blue",
+          "polarity": "anode"
+        }
+      ],
+      "verified": false,
+      "source": "COPPERBENCH parametric template. No manufacturer footprint is claimed.",
+      "catalog": {
+        "schema": 1,
+        "family": "LEDs",
+        "variant": "5 mm RGB / common cathode",
+        "manufacturer": "",
+        "mpn": "",
+        "sourceDate": "2026-09-18",
+        "sources": [],
+        "notes": [
+          "Nominal parametric pattern, not a universal manufacturer footprint. Match pitch, hole diameter, pin order, body and mating clearance to the actual component.",
+          "Template order R, common, G, B. Verify the exact LED datasheet: four-lead RGB pin orders vary. Separate current limiting is not inserted."
+        ],
+        "geometryStatus": "parametric-review-required",
+        "pinNamesEdited": false,
+        "reviewed": false
+      },
+      "libraryId": "maker-rgb-cathode",
+      "x": 63,
+      "y": 35,
+      "rotation": 0,
+      "side": "top",
+      "locked": false,
+      "label": {
+        "x": 0,
+        "y": 4.5,
+        "size": 1.3,
+        "visible": true
+      }
+    }
+  ],
+  "nets": [],
+  "traces": [],
+  "vias": [],
+  "holes": [],
+  "cutouts": [],
+  "keepouts": [],
+  "zones": [],
+  "art": [
+    {
+      "id": "heading",
+      "kind": "text",
+      "text": "POLARITY / ASSEMBLY",
+      "x": 23,
+      "y": 4,
+      "size": 1.4,
+      "width": 0.18,
+      "rotation": 0,
+      "layer": "top"
+    }
+  ],
+  "assets": [],
+  "profile": {
+    "id": "oshpark-2l",
+    "name": "OSH Park · 2 layer",
+    "verified": "2026-09-17",
+    "revision": 1,
+    "source": "https://docs.oshpark.com/services/two-layer/",
+    "minTrace": 0.1524,
+    "clearance": 0.1524,
+    "edge": 0.381,
+    "minDrill": 0.254,
+    "minRing": 0.127,
+    "minSlot": 0.508,
+    "minMaskWeb": 0.1016,
+    "minSilk": 0.127,
+    "maskExpansion": 0.075,
+    "minHoleGap": 0.127,
+    "minCutout": 1.01,
+    "minWidth": 6.35,
+    "minHeight": 6.35,
+    "maxWidth": 406.4,
+    "maxHeight": 558.8
+  },
+  "settings": {
+    "grid": 1.27,
+    "traceWidth": 0.4,
+    "viaDiameter": 0.9,
+    "viaDrill": 0.4,
+    "viaTented": false,
+    "zoneStep": 0.25,
+    "autoPlanes": true
+  },
+  "assumptions": [
+    {
+      "id": "assume_9f4c01494250",
+      "text": "Two copper layers; through vias only. This layout does not verify circuit function.",
+      "status": "open"
+    }
+  ],
+  "evidence": [],
+  "blockInstances": [],
+  "blockLibrary": [],
+  "baseline": null
+}

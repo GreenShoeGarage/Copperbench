@@ -28,6 +28,9 @@ def main() -> int:
         [node, 'tests/maker.test.js'],
         [node, 'tests/carriers.test.js'],
         [node, 'tests/modules-blocks.test.js'],
+        [node, 'tests/compact-polarity.test.js'],
+        [node, 'tests/editing.test.js'],
+        [node, 'tests/export-review.test.js'],
         [sys.executable, 'tests/verify_manufacturing.py'],
         [sys.executable, 'tests/verify_platforms.py'],
         [sys.executable, 'tests/verify_vias.py'],
@@ -36,6 +39,8 @@ def main() -> int:
         [sys.executable, 'tests/verify_maker.py'],
         [sys.executable, 'tests/verify_carriers.py'],
         [sys.executable, 'tests/verify_modules_blocks.py'],
+        [sys.executable, 'tests/verify_compact_polarity.py'],
+        [sys.executable, 'tests/verify_editing.py'],
     ]
     if not args.skip_browser:
         commands.append([sys.executable, 'tests/browser_test.py'])
@@ -47,6 +52,9 @@ def main() -> int:
         commands.append([sys.executable, 'tests/carrier_browser_test.py'])
         commands.append([sys.executable, 'tests/modules_blocks_browser_test.py'])
         commands.append([sys.executable, 'tests/quiet_ui_browser_test.py'])
+        commands.append([sys.executable, 'tests/compact_polarity_browser_test.py'])
+        commands.append([sys.executable, 'tests/pan_browser_test.py'])
+        commands.append([sys.executable, 'tests/editing_browser_test.py'])
     try:
         for command in commands:
             print('\n> ' + ' '.join(command), flush=True)

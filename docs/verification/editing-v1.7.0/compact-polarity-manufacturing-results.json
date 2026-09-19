@@ -1,0 +1,15 @@
+{
+  "total": 2,
+  "passed": 2,
+  "scope": "38 standalone fixtures; Python/Shapely output-ink checks, not an external CAM product.",
+  "results": [
+    {
+      "name": "All 19 polarized variants retain every top role glyph after Gerber compositing",
+      "pass": true
+    },
+    {
+      "name": "All 19 rotated/flipped variants retain every bottom role glyph, with no top leakage",
+      "pass": true
+    }
+  ]
+}

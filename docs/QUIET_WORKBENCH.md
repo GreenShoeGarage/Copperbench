@@ -58,3 +58,8 @@ A localhost navigation attempt was blocked by the managed Chromium environment
 with ERR_BLOCKED_BY_ADMINISTRATOR before app startup. Real-origin storage,
 downloads, hosted offline lifecycle, external CAM, fabrication acceptance and
 physical-board validation are not claimed. No remote repository was changed.
+
+## Navigation update (v1.6.3)
+
+A labelled **Pan** button now sits beside Fit. Detailed instructions remain in
+on-demand tool help; no idle canvas banner was restored. See [navigation](NAVIGATION.md).
